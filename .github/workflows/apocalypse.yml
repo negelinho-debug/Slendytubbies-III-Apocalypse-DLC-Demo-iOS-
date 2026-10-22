@@ -1,0 +1,144 @@
+
+name: Apocalypse DLC - Recovery
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download APK from Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p input
+          gh release download \
+            --pattern '*.apk' \
+            --dir input
+
+          ls -lh input/
+
+          test "$(find input -name '*.apk' | wc -l)" -eq 1
+
+      - name: Install analysis tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install UnityPy Pillow
+
+      - name: Extract Unity data
+        run: |
+          mkdir -p output/textures
+
+          python - <<'PY'
+          import zipfile
+          import os
+          import glob
+          import shutil
+
+          apk = glob.glob("input/*.apk")[0]
+          path = "assets/bin/Data/"
+
+          with zipfile.ZipFile(apk) as z:
+              files = z.namelist()
+
+              with open("output/apk_files.txt", "w") as f:
+                  f.write("\n".join(files))
+
+              required = [
+                  path + "data.unity3d",
+                  path + "Managed/Metadata/global-metadata.dat",
+                  "lib/arm64-v8a/libil2cpp.so"
+              ]
+
+              for name in required:
+                  if name not in files:
+                      raise RuntimeError(
+                          "Missing: " + name
+                      )
+
+              with z.open(path + "data.unity3d") as src:
+                  with open("game.unity3d", "wb") as dst:
+                      shutil.copyfileobj(src, dst)
+
+          print("APK extracted successfully")
+          PY
+
+      - name: Analyze scenes and textures
+        run: |
+          python - <<'PY'
+          import UnityPy
+          import collections
+          import os
+
+          env = UnityPy.load("game.unity3d")
+
+          counts = collections.Counter()
+          textures = 0
+          names = []
+
+          for obj in env.objects:
+              kind = obj.type.name
+              counts[kind] += 1
+
+              if kind in ("GameObject", "Mesh"):
+                  if len(names) < 100:
+                      try:
+                          names.append(
+                              str(obj.peek_name())
+                          )
+                      except Exception:
+                          pass
+
+              if kind == "Texture2D" and textures < 10:
+                  try:
+                      data = obj.read()
+                      img = data.image
+                      if img is not None:
+                          filename = (
+                              f"output/textures/"
+                              f"texture_{textures:03d}.png"
+                          )
+                          img.save(filename)
+                          textures += 1
+                  except Exception as e:
+                      print("Texture warning:", e)
+
+          with open("output/report.txt", "w") as f:
+              f.write(
+                  "Slendytubbies III Apocalypse DLC\n"
+              )
+              f.write("Unity asset inspection\n\n")
+
+              for kind, count in counts.most_common():
+                  f.write(f"{kind}: {count}\n")
+
+              f.write("\nObject names:\n")
+              for name in names:
+                  f.write(name + "\n")
+
+          print("Asset analysis completed")
+          print("Object counts:", counts)
+          print("Textures exported:", textures)
+          PY
+
+      - name: Upload inspection results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Recovery-Report
+          path: output/
+          if-no-files-found: warn
