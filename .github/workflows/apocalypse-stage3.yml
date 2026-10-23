@@ -1,0 +1,285 @@
+
+name: Apocalypse DLC - Stage 3 Data Audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download APK from GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p input output
+          gh release download --pattern '*.apk' --dir input
+          test "$(find input -maxdepth 1 -name '*.apk' | wc -l)" -eq 1
+
+      - name: Install Unity inspector
+        run: python -m pip install 'UnityPy>=1.20,<2'
+
+      - name: Inspect serialized gameplay data
+        run: |
+          python - <<'PY'
+          import collections
+          import csv
+          import glob
+          import json
+          import os
+          import zipfile
+          import UnityPy
+
+          os.makedirs('output', exist_ok=True)
+
+          apk = glob.glob('input/*.apk')[0]
+
+          with zipfile.ZipFile(apk) as z:
+              z.extract(
+                  'assets/bin/Data/data.unity3d',
+                  'input'
+              )
+              names = set(z.namelist())
+              has_code = (
+                  'lib/arm64-v8a/libil2cpp.so' in names
+              )
+              has_meta = (
+                  'assets/bin/Data/Managed/Metadata/'
+                  'global-metadata.dat' in names
+              )
+
+          bundle = 'input/assets/bin/Data/data.unity3d'
+          env = UnityPy.load(bundle)
+
+          counts = collections.Counter()
+          scene_counts = collections.defaultdict(
+              collections.Counter
+          )
+          readable = collections.Counter()
+          script_instances = collections.Counter()
+          examples = collections.Counter()
+
+          important = (
+              'action', 'battle', 'boss', 'player',
+              'npc', 'dialog', 'speech', 'camera',
+              'patrol', 'custard', 'guardian',
+              'laalaa', 'interaction', 'cutscene'
+          )
+
+          with open(
+              'output/script_data.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as out_csv, open(
+              'output/serialized_samples.jsonl', 'w',
+              encoding='utf-8'
+          ) as out_json:
+
+              w = csv.writer(out_csv)
+              w.writerow([
+                  'unity_file', 'game_object',
+                  'script', 'bytes',
+                  'embedded_typetree',
+                  'serialized_fields'
+              ])
+
+              for obj in env.objects:
+                  kind = obj.type.name
+                  file_name = str(
+                      getattr(obj.assets_file, 'name', '?')
+                  )
+
+                  counts[kind] += 1
+                  scene_counts[file_name][kind] += 1
+
+                  if kind != 'MonoBehaviour':
+                      continue
+
+                  go_name = ''
+                  script_name = 'unresolved'
+
+                  try:
+                      head = obj.parse_monobehaviour_head()
+                      sp = head.m_Script.read()
+
+                      if sp:
+                          ns = str(
+                              getattr(sp, 'm_Namespace', '')
+                          )
+                          sn = str(
+                              getattr(sp, 'm_ClassName', '')
+                          )
+                          script_name = (
+                              (ns + '.' if ns else '') + sn
+                          )
+
+                      gp = getattr(
+                          head, 'm_GameObject', None
+                      )
+
+                      if gp:
+                          go = gp.read()
+                          if go:
+                              go_name = str(
+                                  getattr(go, 'm_Name', '')
+                              )
+                  except Exception:
+                      pass
+
+                  script_instances[script_name] += 1
+
+                  st = getattr(
+                      obj, 'serialized_type', None
+                  )
+                  embedded = bool(
+                      getattr(st, 'node', None)
+                      or getattr(st, 'nodes', None)
+                  )
+
+                  fields = ''
+
+                  if embedded:
+                      try:
+                          data = obj.read_typetree()
+                          fields = ', '.join(
+                              str(k) for k in data.keys()
+                          )
+                          readable['full_data'] += 1
+
+                          key = script_name.lower()
+
+                          if examples[script_name] < 2 and (
+                              any(
+                                  term in key
+                                  for term in important
+                              )
+                              or sum(examples.values()) < 20
+                          ):
+                              payload = json.dumps(
+                                  data,
+                                  ensure_ascii=False,
+                                  default=str
+                              )
+                              out_json.write(
+                                  json.dumps({
+                                      'object': go_name,
+                                      'script': script_name,
+                                      'data': payload[:16000]
+                                  }, ensure_ascii=False) + '\n'
+                              )
+                              examples[script_name] += 1
+
+                      except Exception as ex:
+                          fields = (
+                              'read_failed: '
+                              + type(ex).__name__
+                          )
+                          readable['read_failed'] += 1
+                  else:
+                      readable[
+                          'no_embedded_typetree'
+                      ] += 1
+
+                  w.writerow([
+                      file_name, go_name, script_name,
+                      obj.byte_size, embedded,
+                      fields[:2000]
+                  ])
+
+          with open(
+              'output/script_counts.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as f:
+              w = csv.writer(f)
+              w.writerow(['script', 'instances'])
+
+              for name, amount in (
+                  script_instances.most_common()
+              ):
+                  w.writerow([name, amount])
+
+          with open(
+              'output/scene_assets.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as f:
+              w = csv.writer(f)
+              w.writerow([
+                  'unity_file', 'asset_type', 'count'
+              ])
+
+              for file_name, values in sorted(
+                  scene_counts.items()
+              ):
+                  for kind, amount in values.most_common():
+                      w.writerow([
+                          file_name, kind, amount
+                      ])
+
+          with open(
+              'output/summary.txt', 'w',
+              encoding='utf-8'
+          ) as f:
+              f.write('Apocalypse DLC - Stage 3\n')
+              f.write(
+                  f'Android IL2CPP: {has_code}\n'
+              )
+              f.write(
+                  f'IL2CPP metadata: {has_meta}\n'
+              )
+              f.write(
+                  f'Unity objects: {sum(counts.values())}\n'
+              )
+              f.write(
+                  f'MonoBehaviours: '
+                  f'{counts["MonoBehaviour"]}\n'
+              )
+              f.write(
+                  f'Full serialized instances: '
+                  f'{readable["full_data"]}\n'
+              )
+              f.write(
+                  f'Missing typetree: '
+                  f'{readable["no_embedded_typetree"]}\n'
+              )
+              f.write(
+                  f'Read failures: '
+                  f'{readable["read_failed"]}\n'
+              )
+              f.write(
+                  f'Materials: {counts["Material"]}\n'
+              )
+              f.write(
+                  f'Meshes: {counts["Mesh"]}\n'
+              )
+              f.write(
+                  f'Textures: {counts["Texture2D"]}\n'
+              )
+              f.write(
+                  '\nSource code is NOT recovered.\n'
+                  'No iOS build is produced.\n'
+              )
+
+          print(
+              open(
+                  'output/summary.txt',
+                  encoding='utf-8'
+              ).read()
+          )
+          PY
+
+      - name: Upload Stage 3 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Stage3-Report
+          path: output/
+          if-no-files-found: warn
