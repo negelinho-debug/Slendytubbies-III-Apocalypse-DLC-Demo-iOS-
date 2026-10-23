@@ -1,0 +1,308 @@
+
+name: Apocalypse DLC - Stage 4 IL2CPP Fields
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-fields:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download APK from Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p input output
+          gh release download \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern '*.apk' \
+            --dir input \
+            --clobber
+
+          test "$(find input -maxdepth 1 -name '*.apk' | wc -l)" -eq 1
+          ls -lh input
+
+      - name: Install UnityPy and IL2CPP typetree generator
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install \
+            'UnityPy==1.25.4' \
+            'TypeTreeGeneratorAPI==0.0.10'
+
+      - name: Recover script field layouts from IL2CPP
+        run: |
+          python - <<'PY'
+          import collections
+          import csv
+          import glob
+          import os
+          import traceback
+          import zipfile
+          from pathlib import Path
+
+          import UnityPy
+          from UnityPy.helpers.TypeTreeGenerator import TypeTreeGenerator
+
+          out = Path('output')
+          out.mkdir(exist_ok=True)
+
+          counts = collections.Counter()
+          issues = collections.Counter()
+          errors = []
+          rows = []
+
+          apk_files = glob.glob('input/*.apk')
+
+          if len(apk_files) != 1:
+              raise RuntimeError('Exactly one APK is required')
+
+          with zipfile.ZipFile(apk_files[0]) as archive:
+              game_bundle = archive.read(
+                  'assets/bin/Data/data.unity3d'
+              )
+              il2cpp = archive.read(
+                  'lib/arm64-v8a/libil2cpp.so'
+              )
+              metadata = archive.read(
+                  'assets/bin/Data/Managed/Metadata/global-metadata.dat'
+              )
+
+          print('Loading Unity assets...')
+          env = UnityPy.load(game_bundle)
+
+          print('Loading IL2CPP types...')
+
+          try:
+              generator = TypeTreeGenerator('2017.4.40f1')
+              generator.load_il2cpp(il2cpp, metadata)
+              env.typetree_generator = generator
+
+          except Exception as exc:
+              (out / 'generator_error.txt').write_text(
+                  ''.join(
+                      traceback.format_exception(exc)
+                  )[-12000:],
+                  encoding='utf-8'
+              )
+              raise
+
+          targets = {
+              'AC.ActionSpeech': 10,
+              'AC.ActionCamera': 5,
+              'AC.Cutscene': 12,
+              'AC.ActionCharAnim': 5,
+              'AC.NPC': 5,
+              'AC.ActionSound': 5,
+              'NPCPatrol': 8,
+              'playerFPS': 5,
+              'AC.Interaction': 6,
+              'AC.AC_Trigger': 6,
+              'AC.ActionTeleport': 5,
+              'AC.ActionDialogueOption': 5,
+              'AC.ActionChangeMaterial': 5,
+              'AC.ActionPause': 4,
+              'GameCamera': 3,
+              'MouseLook': 3,
+          }
+
+          encountered = collections.Counter()
+
+          for obj in env.objects:
+              if obj.type.name != 'MonoBehaviour':
+                  continue
+
+              try:
+                  head = obj.parse_monobehaviour_head()
+                  script_ref = head.m_Script.read()
+
+                  if not script_ref:
+                      continue
+
+                  ns = str(
+                      getattr(script_ref, 'm_Namespace', '')
+                  )
+                  name = str(
+                      getattr(script_ref, 'm_ClassName', '')
+                  )
+
+                  cls = (ns + '.' if ns else '') + name
+
+                  if cls not in targets:
+                      continue
+
+                  if encountered[cls] >= targets[cls]:
+                      continue
+
+                  encountered[cls] += 1
+
+                  go_name = ''
+
+                  try:
+                      gp = getattr(
+                          head, 'm_GameObject', None
+                      )
+                      game_obj = (
+                          gp.read() if gp else None
+                      )
+
+                      if game_obj:
+                          go_name = str(
+                              getattr(game_obj, 'm_Name', '')
+                          )
+                  except Exception:
+                      pass
+
+                  try:
+                      data = obj.parse_as_dict()
+
+                      if not isinstance(data, dict):
+                          raise TypeError(
+                              'Expected dictionary data'
+                          )
+
+                      keys = [
+                          str(key) for key in data.keys()
+                      ]
+
+                      counts['decoded'] += 1
+                      state = 'decoded'
+                      issue = ''
+
+                  except Exception as exc:
+                      keys = []
+                      counts['failed'] += 1
+                      state = 'failed'
+
+                      issue = (
+                          f'{type(exc).__name__}: '
+                          f'{str(exc)[:220]}'
+                      )
+
+                      issues[type(exc).__name__] += 1
+
+                  rows.append([
+                      cls,
+                      go_name,
+                      str(
+                          getattr(
+                              obj.assets_file, 'name', '?'
+                          )
+                      ),
+                      int(obj.byte_size),
+                      state,
+                      ', '.join(keys)[:1500],
+                      issue
+                  ])
+
+              except Exception as exc:
+                  counts['header_failed'] += 1
+
+                  if len(errors) < 20:
+                      errors.append(repr(exc))
+
+          with (
+              out / 'decoded_field_layouts.csv'
+          ).open(
+              'w',
+              encoding='utf-8',
+              newline=''
+          ) as f:
+
+              writer = csv.writer(f)
+
+              writer.writerow([
+                  'script',
+                  'game_object',
+                  'asset_file',
+                  'bytes',
+                  'status',
+                  'fields',
+                  'error'
+              ])
+
+              writer.writerows(rows)
+
+          with (
+              out / 'summary.txt'
+          ).open(
+              'w',
+              encoding='utf-8'
+          ) as f:
+
+              f.write(
+                  'Apocalypse DLC - Stage 4 '
+                  '- IL2CPP field recovery\n'
+              )
+
+              f.write(
+                  'Unity version: 2017.4.40f1\n'
+              )
+
+              f.write(
+                  f'Candidate instances tested: {len(rows)}\n'
+              )
+
+              f.write(
+                  f'Decoded: {counts["decoded"]}\n'
+              )
+
+              f.write(
+                  f'Failed: {counts["failed"]}\n'
+              )
+
+              f.write(
+                  f'Header errors: '
+                  f'{counts["header_failed"]}\n'
+              )
+
+              f.write(
+                  'Failure categories: '
+                  + str(dict(issues))
+                  + '\n'
+              )
+
+              f.write(
+                  'This does not reconstruct executable '
+                  'C# methods or build an IPA.\n'
+              )
+
+              if errors:
+                  f.write(
+                      'Sample header errors:\n'
+                      + '\n'.join(errors)
+                      + '\n'
+                  )
+
+          print(
+              (out / 'summary.txt').read_text(
+                  encoding='utf-8'
+              )
+          )
+
+          if counts['decoded'] == 0:
+              print(
+                  'No script fields decoded; '
+                  'see artifact for errors.'
+              )
+          PY
+
+      - name: Upload Stage 4 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Stage4-Field-Report
+          path: output/
+          if-no-files-found: warn
