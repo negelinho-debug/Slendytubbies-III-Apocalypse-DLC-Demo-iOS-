@@ -13,6 +13,9 @@ jobs:
     timeout-minutes: 45
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Python
         uses: actions/setup-python@v5
         with:
@@ -23,11 +26,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p input output
-          gh release download --pattern '*.apk' --dir input
+          gh release download \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern '*.apk' \
+            --dir input \
+            --clobber
+
+          ls -lh input
           test "$(find input -maxdepth 1 -name '*.apk' | wc -l)" -eq 1
 
       - name: Install Unity inspector
-        run: python -m pip install 'UnityPy>=1.20,<2'
+        run: |
+          python -m pip install 'UnityPy>=1.20,<2'
 
       - name: Inspect serialized gameplay data
         run: |
@@ -85,6 +95,7 @@ jobs:
           ) as out_json:
 
               w = csv.writer(out_csv)
+
               w.writerow([
                   'unity_file', 'game_object',
                   'script', 'bytes',
@@ -94,6 +105,7 @@ jobs:
 
               for obj in env.objects:
                   kind = obj.type.name
+
                   file_name = str(
                       getattr(obj.assets_file, 'name', '?')
                   )
@@ -132,6 +144,7 @@ jobs:
                               go_name = str(
                                   getattr(go, 'm_Name', '')
                               )
+
                   except Exception:
                       pass
 
@@ -140,6 +153,7 @@ jobs:
                   st = getattr(
                       obj, 'serialized_type', None
                   )
+
                   embedded = bool(
                       getattr(st, 'node', None)
                       or getattr(st, 'nodes', None)
@@ -150,9 +164,11 @@ jobs:
                   if embedded:
                       try:
                           data = obj.read_typetree()
+
                           fields = ', '.join(
                               str(k) for k in data.keys()
                           )
+
                           readable['full_data'] += 1
 
                           key = script_name.lower()
@@ -169,6 +185,7 @@ jobs:
                                   ensure_ascii=False,
                                   default=str
                               )
+
                               out_json.write(
                                   json.dumps({
                                       'object': go_name,
@@ -176,6 +193,7 @@ jobs:
                                       'data': payload[:16000]
                                   }, ensure_ascii=False) + '\n'
                               )
+
                               examples[script_name] += 1
 
                       except Exception as ex:
@@ -184,14 +202,18 @@ jobs:
                               + type(ex).__name__
                           )
                           readable['read_failed'] += 1
+
                   else:
                       readable[
                           'no_embedded_typetree'
                       ] += 1
 
                   w.writerow([
-                      file_name, go_name, script_name,
-                      obj.byte_size, embedded,
+                      file_name,
+                      go_name,
+                      script_name,
+                      obj.byte_size,
+                      embedded,
                       fields[:2000]
                   ])
 
@@ -199,6 +221,7 @@ jobs:
               'output/script_counts.csv', 'w',
               encoding='utf-8', newline=''
           ) as f:
+
               w = csv.writer(f)
               w.writerow(['script', 'instances'])
 
@@ -211,7 +234,9 @@ jobs:
               'output/scene_assets.csv', 'w',
               encoding='utf-8', newline=''
           ) as f:
+
               w = csv.writer(f)
+
               w.writerow([
                   'unity_file', 'asset_type', 'count'
               ])
@@ -228,41 +253,47 @@ jobs:
               'output/summary.txt', 'w',
               encoding='utf-8'
           ) as f:
+
               f.write('Apocalypse DLC - Stage 3\n')
-              f.write(
-                  f'Android IL2CPP: {has_code}\n'
-              )
-              f.write(
-                  f'IL2CPP metadata: {has_meta}\n'
-              )
+              f.write(f'Android IL2CPP: {has_code}\n')
+              f.write(f'IL2CPP metadata: {has_meta}\n')
+
               f.write(
                   f'Unity objects: {sum(counts.values())}\n'
               )
+
               f.write(
                   f'MonoBehaviours: '
                   f'{counts["MonoBehaviour"]}\n'
               )
+
               f.write(
                   f'Full serialized instances: '
                   f'{readable["full_data"]}\n'
               )
+
               f.write(
                   f'Missing typetree: '
                   f'{readable["no_embedded_typetree"]}\n'
               )
+
               f.write(
                   f'Read failures: '
                   f'{readable["read_failed"]}\n'
               )
+
               f.write(
                   f'Materials: {counts["Material"]}\n'
               )
+
               f.write(
                   f'Meshes: {counts["Mesh"]}\n'
               )
+
               f.write(
                   f'Textures: {counts["Texture2D"]}\n'
               )
+
               f.write(
                   '\nSource code is NOT recovered.\n'
                   'No iOS build is produced.\n'
