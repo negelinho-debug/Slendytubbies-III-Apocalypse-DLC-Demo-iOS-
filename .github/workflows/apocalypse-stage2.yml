@@ -1,0 +1,348 @@
+
+name: Apocalypse DLC - Script Links
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze-scripts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download APK from latest Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p input
+          gh release download --pattern '*.apk' --dir input
+          test "$(find input -maxdepth 1 -name '*.apk' | wc -l)" -eq 1
+          ls -lh input
+
+      - name: Install UnityPy
+        run: python -m pip install 'UnityPy>=1.20,<2'
+
+      - name: Inspect IL2CPP metadata and scene script links
+        run: |
+          python - <<'PYINSPECT'
+          import csv
+          import os
+          import glob
+          import struct
+          import zipfile
+          import collections
+          import sys
+          import shutil
+
+          OUT = 'output'
+          os.makedirs(OUT, exist_ok=True)
+
+          APK = glob.glob('input/*.apk')
+          if len(APK) != 1:
+              raise SystemExit('Expected exactly one APK')
+
+          with zipfile.ZipFile(APK[0]) as z:
+              metadata = z.read(
+                  'assets/bin/Data/Managed/Metadata/global-metadata.dat'
+              )
+              with z.open(
+                  'assets/bin/Data/data.unity3d'
+              ) as source:
+                  with open('game.unity3d', 'wb') as dest:
+                      shutil.copyfileobj(source, dest)
+
+          magic, version = struct.unpack_from('<II', metadata, 0)
+
+          if magic != 0xFAB11BAF or version != 24:
+              raise SystemExit('Unsupported IL2CPP metadata')
+
+          def section(index):
+              o, size = struct.unpack_from(
+                  '<II', metadata, 8 + index * 8
+              )
+              if o + size > len(metadata):
+                  raise ValueError('Invalid metadata section')
+              return o, size
+
+          string_o, string_len = section(2)
+          types_o, types_len = section(19)
+          methods_o, methods_len = section(5)
+
+          if types_len % 104 or methods_len % 56:
+              raise SystemExit('Unexpected metadata layout')
+
+          def string_at(idx):
+              if idx < 0 or idx >= string_len:
+                  return ''
+              start = string_o + idx
+              end = metadata.find(
+                  b'\0', start, string_o + string_len
+              )
+              if end < 0:
+                  return ''
+              return metadata[start:end].decode(
+                  'utf-8', 'replace'
+              )
+
+          classes = []
+
+          for i in range(types_len // 104):
+              x = struct.unpack_from(
+                  '<26i', metadata, types_o + i * 104
+              )
+              classes.append({
+                  'name': string_at(x[0]),
+                  'namespace': string_at(x[1]),
+                  'method_start': x[13],
+                  'method_count': x[20] & 0xffff
+              })
+
+          methods = []
+
+          for i in range(methods_len // 56):
+              x = struct.unpack_from(
+                  '<14i', metadata, methods_o + i * 56
+              )
+              methods.append(string_at(x[0]))
+
+          focus_terms = (
+              'battle', 'boss', 'custard',
+              'laalaa', 'ending', 'enddemo',
+              'player', 'flashlight', 'health',
+              'enemy', 'surviv', 'monster'
+          )
+
+          focus = []
+
+          with open(
+              f'{OUT}/classes.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as f:
+              w = csv.writer(f)
+              w.writerow([
+                  'namespace', 'class_name',
+                  'method_count'
+              ])
+
+              for cls in classes:
+                  w.writerow([
+                      cls['namespace'],
+                      cls['name'],
+                      cls['method_count']
+                  ])
+
+                  if any(
+                      term in cls['name'].lower()
+                      for term in focus_terms
+                  ):
+                      focus.append(cls)
+
+          with open(
+              f'{OUT}/focus_methods.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as f:
+              w = csv.writer(f)
+              w.writerow([
+                  'namespace', 'class_name',
+                  'method_name'
+              ])
+
+              for cls in focus:
+                  start = cls['method_start']
+                  end = start + cls['method_count']
+
+                  for i in range(
+                      max(0, start),
+                      min(end, len(methods))
+                  ):
+                      w.writerow([
+                          cls['namespace'],
+                          cls['name'],
+                          methods[i]
+                      ])
+
+          import UnityPy
+
+          env = UnityPy.load('game.unity3d')
+
+          counts = collections.Counter()
+          status = collections.Counter()
+          script_refs = collections.Counter()
+
+          with open(
+              f'{OUT}/scene_script_links.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as f:
+              w = csv.writer(f)
+              w.writerow([
+                  'asset_file',
+                  'game_object',
+                  'namespace',
+                  'script_class',
+                  'assembly',
+                  'link_status'
+              ])
+
+              for obj in env.objects:
+                  counts[obj.type.name] += 1
+
+                  if obj.type.name != 'MonoBehaviour':
+                      continue
+
+                  asset_file = str(
+                      getattr(
+                          getattr(obj, 'assets_file', None),
+                          'name', '?'
+                      )
+                  )
+
+                  game_object = ''
+                  namespace = ''
+                  script_class = ''
+                  assembly = ''
+                  link_status = 'unresolved'
+
+                  try:
+                      try:
+                          d = obj.parse_monobehaviour_head()
+                      except (AttributeError, TypeError):
+                          d = obj.read(check_read=False)
+
+                      pp = getattr(d, 'm_Script', None)
+
+                      if pp is None:
+                          link_status = 'no-script-pointer'
+                      else:
+                          script = (
+                              pp.read()
+                              if hasattr(pp, 'read')
+                              else pp.deref_parse_as_object()
+                          )
+
+                          if script is None:
+                              link_status = 'script-not-resolved'
+                          else:
+                              script_class = str(
+                                  getattr(
+                                      script, 'm_ClassName', ''
+                                  )
+                              )
+                              namespace = str(
+                                  getattr(
+                                      script, 'm_Namespace', ''
+                                  )
+                              )
+                              assembly = str(
+                                  getattr(
+                                      script, 'm_AssemblyName', ''
+                                  )
+                              )
+
+                              if script_class:
+                                  link_status = 'resolved'
+                                  script_refs[
+                                      (namespace, script_class, assembly)
+                                  ] += 1
+                              else:
+                                  link_status = 'script-name-empty'
+
+                      try:
+                          go_ptr = getattr(
+                              d, 'm_GameObject', None
+                          )
+
+                          if go_ptr:
+                              go = (
+                                  go_ptr.read()
+                                  if hasattr(go_ptr, 'read')
+                                  else go_ptr.deref_parse_as_object()
+                              )
+                              game_object = str(
+                                  getattr(go, 'm_Name', '')
+                              )
+                      except Exception:
+                          pass
+
+                  except Exception:
+                      link_status = 'parse-failed'
+
+                  status[link_status] += 1
+
+                  w.writerow([
+                      asset_file,
+                      game_object,
+                      namespace,
+                      script_class,
+                      assembly,
+                      link_status
+                  ])
+
+          with open(
+              f'{OUT}/script_usage.csv', 'w',
+              encoding='utf-8', newline=''
+          ) as f:
+              w = csv.writer(f)
+              w.writerow([
+                  'namespace',
+                  'script_class',
+                  'assembly',
+                  'component_instances'
+              ])
+
+              for (ns, cls, asm), n in script_refs.most_common():
+                  w.writerow([ns, cls, asm, n])
+
+          with open(
+              f'{OUT}/scene_analysis.txt', 'w',
+              encoding='utf-8'
+          ) as f:
+              f.write('Apocalypse DLC - Stage 2\n\n')
+
+              for key, n in counts.most_common():
+                  f.write(f'{key}: {n}\n')
+
+              f.write('\nScript resolution:\n')
+
+              for key, n in status.most_common():
+                  f.write(f'{key}: {n}\n')
+
+              f.write('\nResolved scripts:\n')
+
+              for (ns, cls, asm), n in script_refs.most_common(40):
+                  f.write(f'{ns}.{cls} [{asm}]: {n}\n')
+
+          with open(
+              f'{OUT}/metadata_summary.txt', 'w',
+              encoding='utf-8'
+          ) as f:
+              f.write(f'Types: {len(classes)}\n')
+              f.write(f'Methods: {len(methods)}\n')
+              f.write(f'Focused classes: {len(focus)}\n')
+              f.write(
+                  'Source code has NOT been recovered.\n'
+              )
+
+          print('Classes:', len(classes))
+          print('Methods:', len(methods))
+          print('Script resolution:', dict(status))
+          print('Stage 2 finished')
+          PYINSPECT
+
+      - name: Upload analysis report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Stage2-Report
+          path: output/
+          if-no-files-found: warn
