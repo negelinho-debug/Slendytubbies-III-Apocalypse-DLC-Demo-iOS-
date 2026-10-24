@@ -1,0 +1,161 @@
+
+name: Apocalypse DLC - Stage 6 Verify Recovered Game Methods
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-methods:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Get latest available Stage 5 artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p output/stage5 output/report
+          gh run list --repo "$GITHUB_REPOSITORY" \
+            --workflow apocalypse-stage5.yml --limit 25 \
+            --json databaseId --jq '.[].databaseId' > output/report/stage5-runs.txt
+          RUN_ID=''
+          while read -r run; do
+            [ -n "$run" ] || continue
+            echo "Trying Stage 5 run $run"
+            rm -rf output/stage5
+            mkdir -p output/stage5
+            if gh run download "$run" --repo "$GITHUB_REPOSITORY" \
+              --name Apocalypse-Stage5-Method-Report \
+              --dir output/stage5; then
+              RUN_ID="$run"
+              break
+            fi
+          done < output/report/stage5-runs.txt
+          if [ -z "$RUN_ID" ]; then
+            echo 'No Stage 5 Method Report artifact found. Run apocalypse-stage5.yml first.' \
+              | tee output/report/summary.txt
+            exit 1
+          fi
+          printf '%s\n' "$RUN_ID" > output/report/stage5-run-id.txt
+          find output/stage5 -type f | head -n 30
+
+      - name: Install DLL metadata reader
+        run: python -m pip install 'dnfile>=0.15,<1'
+
+      - name: Audit restored IL methods without pretending this is an iOS build
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import csv, json, struct
+          import dnfile
+
+          root = Path('output/stage5')
+          out = Path('output/report')
+          out.mkdir(parents=True, exist_ok=True)
+          files = sorted(root.rglob('*.dll'))
+          results = []
+          totals = dict(assemblies=0, methods=0, native_or_abstract=0,
+                        parsed_il_bodies=0, nontrivial_il_bodies=0,
+                        undecodable_bodies=0)
+          failures = []
+
+          def code_size(pe, rva):
+              # Read actual CIL method headers; method name alone is not code.
+              data = pe.get_data(rva, 12)
+              if not data:
+                  return None
+              if (data[0] & 3) == 2:
+                  return data[0] >> 2
+              if (data[0] & 3) == 3 and len(data) >= 12:
+                  flags_size = struct.unpack_from('<H', data)[0]
+                  words = flags_size >> 12
+                  if words < 3:
+                      return None
+                  size = struct.unpack_from('<I', data, 4)[0]
+                  return size if size < 1_000_000 else None
+              return None
+
+          for path in files:
+              entry = dict(file=str(path.relative_to(root)), methods=0,
+                           native_or_abstract=0, parsed_il_bodies=0,
+                           nontrivial_il_bodies=0, undecodable_bodies=0)
+              try:
+                  pe = dnfile.dnPE(str(path), fast_load=False)
+                  table = getattr(getattr(pe, 'net', None), 'mdtables', None)
+                  method_rows = getattr(getattr(table, 'MethodDef', None), 'rows', [])
+                  for m in method_rows:
+                      entry['methods'] += 1
+                      rva = int(m.Rva or 0)
+                      if not rva:
+                          entry['native_or_abstract'] += 1
+                          continue
+                      size = code_size(pe, rva)
+                      if size is None:
+                          entry['undecodable_bodies'] += 1
+                      elif size > 0:
+                          entry['parsed_il_bodies'] += 1
+                          if size > 8:
+                              entry['nontrivial_il_bodies'] += 1
+                  pe.close()
+              except Exception as exc:
+                  failures.append(f'{path.name}: {type(exc).__name__}: {exc}')
+              else:
+                  totals['assemblies'] += 1
+                  for k in totals:
+                      if k != 'assemblies':
+                          totals[k] += entry[k]
+              results.append(entry)
+
+          with (out/'assemblies.csv').open('w', newline='', encoding='utf-8') as f:
+              fields = list(results[0]) if results else [
+                  'file', 'methods', 'native_or_abstract',
+                  'parsed_il_bodies', 'nontrivial_il_bodies',
+                  'undecodable_bodies'
+              ]
+              writer = csv.DictWriter(f, fieldnames=fields)
+              writer.writeheader()
+              writer.writerows(results)
+
+          (out/'results.json').write_text(json.dumps({
+              'dll_files_found': len(files),
+              'totals': totals,
+              'failures': failures
+          }, indent=2), encoding='utf-8')
+
+          summary = [
+              '# Apocalypse DLC — Stage 6 (native port feasibility)',
+              f"Recovered DLL files: {len(files)}",
+              f"Readable assemblies: {totals['assemblies']}",
+              f"Methods listed in metadata: {totals['methods']}",
+              f"Methods with parsable nonempty CIL bodies: {totals['parsed_il_bodies']}",
+              f"Methods with >8 bytes of CIL: {totals['nontrivial_il_bodies']}",
+              f"Unrecognized method bodies: {totals['undecodable_bodies']}",
+              f"Files that could not be parsed: {len(failures)}",
+              '',
+              'CAUTION: Nonempty CIL does NOT prove recovered gameplay works.',
+              'This audit NEVER builds or produces an IPA.',
+              'An original Unity iOS project/runtime and functioning game code are',
+              'required before a genuine iOS compilation can begin.'
+          ]
+          (out/'summary.txt').write_text(
+              '\n'.join(summary)+'\n', encoding='utf-8'
+          )
+          print('\n'.join(summary))
+          if failures:
+              print('DLL parsing failures:', *failures[:10], sep='\n')
+          PY
+
+      - name: Upload Stage 6 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Stage6-Feasibility-Report
+          path: output/report/
+          retention-days: 14
+          if-no-files-found: warn
