@@ -1,0 +1,195 @@
+
+name: Apocalypse DLC - iOS Build with Original Icon
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Download original Apocalypse DLC APK
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p input native output
+
+          gh release download \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern '*.apk' \
+            --dir input \
+            --clobber
+
+          APK_COUNT="$(find input -maxdepth 1 -name '*.apk' | wc -l | tr -d ' ')"
+
+          if [ "$APK_COUNT" -ne 1 ]; then
+            echo "ERROR: Need exactly one original APK"
+            exit 1
+          fi
+
+          APK="$(find input -maxdepth 1 -name '*.apk' | head -n 1)"
+          echo "APK=$APK" >> "$GITHUB_ENV"
+          ls -lh "$APK"
+
+      - name: Install icon tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install \
+            'androguard==4.1.3' 'Pillow>=10,<12'
+
+      - name: Extract original icon
+        shell: bash
+        run: |
+          set -euo pipefail
+          .venv/bin/python - <<'PY'
+          import os
+          import io
+          import json
+          import zipfile
+          from pathlib import Path
+          from androguard.core.apk import APK
+          from PIL import Image
+
+          apk_file = Path(os.environ["APK"])
+          out = Path("output")
+          iconset = out / "AppIcon.appiconset"
+          iconset.mkdir(parents=True, exist_ok=True)
+
+          apk = APK(str(apk_file))
+          icons = []
+
+          with zipfile.ZipFile(apk_file) as z:
+              for dpi in (640, 480, 320, 240, 160, 120, 65536):
+                  path = apk.get_app_icon(max_dpi=dpi)
+                  if not path or path not in z.namelist():
+                      continue
+
+                  raw = z.read(path)
+                  try:
+                      img = Image.open(io.BytesIO(raw))
+                      img.load()
+                  except Exception:
+                      continue
+
+                  icons.append((img.width * img.height, path, raw))
+
+          if not icons:
+              raise SystemExit("Original raster icon not found")
+
+          _, path, raw = max(icons, key=lambda x: x[0])
+
+          suffix = Path(path).suffix.lower() or ".bin"
+          (out / ("original-icon-unaltered" + suffix)).write_bytes(raw)
+
+          img = Image.open(io.BytesIO(raw)).convert("RGBA")
+          canvas = Image.new("RGBA", img.size, (0, 0, 0, 255))
+          canvas.alpha_composite(img)
+          img = canvas.convert("RGB")
+
+          img.resize(
+              (1024, 1024),
+              Image.Resampling.LANCZOS
+          ).save(out / "Original-Icon.png")
+
+          sizes = [
+              ("iphone", "20x20", "2x", 40),
+              ("iphone", "20x20", "3x", 60),
+              ("iphone", "29x29", "2x", 58),
+              ("iphone", "29x29", "3x", 87),
+              ("iphone", "40x40", "2x", 80),
+              ("iphone", "40x40", "3x", 120),
+              ("iphone", "60x60", "2x", 120),
+              ("iphone", "60x60", "3x", 180),
+              ("ios-marketing", "1024x1024", "1x", 1024)
+          ]
+
+          entries = []
+          for i, (idiom, size, scale, pixels) in enumerate(sizes):
+              filename = f"icon-{i}-{pixels}.png"
+              img.resize(
+                  (pixels, pixels),
+                  Image.Resampling.LANCZOS
+              ).save(iconset / filename)
+              entries.append({
+                  "idiom": idiom,
+                  "size": size,
+                  "scale": scale,
+                  "filename": filename
+              })
+
+          (iconset / "Contents.json").write_text(
+              json.dumps({
+                  "images": entries,
+                  "info": {"author": "xcode", "version": 1}
+              }, indent=2)
+          )
+
+          print("Original icon:", path)
+          print("iOS icon assets prepared")
+          PY
+
+      - name: Extract original game binaries
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          unzip -p "$APK" \
+            lib/arm64-v8a/libil2cpp.so \
+            > native/libil2cpp.so
+
+          unzip -p "$APK" \
+            assets/bin/Data/Managed/Metadata/global-metadata.dat \
+            > native/global-metadata.dat
+
+          test -s native/libil2cpp.so
+          test -s native/global-metadata.dat
+
+          file native/libil2cpp.so \
+            | tee output/android-binary-type.txt
+
+      - name: Test original code with iOS linker
+        shell: bash
+        run: |
+          set -uo pipefail
+
+          SDK="$(xcrun --sdk iphoneos --show-sdk-path)"
+
+          xcrun --sdk iphoneos clang \
+            -target arm64-apple-ios13.0 \
+            -isysroot "$SDK" \
+            -dynamiclib \
+            -o output/Apocalypse.dylib \
+            native/libil2cpp.so \
+            > output/linker-log.txt 2>&1
+
+          STATUS=$?
+          cat output/linker-log.txt
+
+          echo "Linker exit code: $STATUS" \
+            | tee output/result.txt
+
+          if [ "$STATUS" -ne 0 ]; then
+            echo "Android binary is not directly compatible with iOS"
+            exit "$STATUS"
+          fi
+
+          echo "Library linked, but this is not yet a playable IPA"
+
+      - name: Save original icon and build report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-iOS-Icon-And-Link-Report
+          path: output/
+          retention-days: 14
+          if-no-files-found: warn
