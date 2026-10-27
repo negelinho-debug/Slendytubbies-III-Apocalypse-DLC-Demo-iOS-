@@ -1,0 +1,159 @@
+
+name: Apocalypse - Restore Scripts From Original PC Folder
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export-full-game:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+
+    steps:
+      - name: Download original PC archive
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p work/download work/game work/logs
+          gh release download pc-recovery-v1 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip' \
+            --dir work/download
+
+          unzip -q \
+            work/download/slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip \
+            -d work/game
+
+      - name: Install AssetRipper CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/assetripper
+
+          curl -fL --retry 3 \
+            -o work/AssetRipper_linux_x64.zip \
+            'https://github.com/nowl-it/AssetRipperCLI/releases/download/v1.0.1/AssetRipper_linux_x64.zip'
+
+          unzip -q work/AssetRipper_linux_x64.zip \
+            -d work/assetripper
+
+      - name: Export full game directory
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          global_managers="$(find "$PWD/work/game" \
+            -type f -name 'globalgamemanagers' \
+            -print -quit)"
+
+          if [ -z "$global_managers" ]; then
+            echo "globalgamemanagers not found"
+            exit 1
+          fi
+
+          game_root="$(dirname "$(dirname "$global_managers")")"
+
+          exe="$(find "$game_root" -maxdepth 1 \
+            -type f -iname '*.exe' -print -quit)"
+
+          if [ -z "$exe" ]; then
+            echo "Game EXE not found"
+            exit 1
+          fi
+
+          dll="$(find "$game_root" -type f \
+            -name 'Assembly-CSharp.dll' -print -quit)"
+
+          if [ -z "$dll" ]; then
+            echo "Assembly-CSharp.dll missing"
+            exit 1
+          fi
+
+          echo "Game folder: $game_root"
+          echo "Game DLL: $dll"
+
+          assetripper="$(find "$PWD/work/assetripper" \
+            -type f \( -name 'AssetRipper' \
+            -o -name 'AssetRipper.GUI.Free' \) \
+            -print -quit)"
+
+          test -n "$assetripper"
+          chmod +x "$assetripper"
+
+          mkdir -p work/export
+
+          "$assetripper" --cli \
+            --input "$game_root" \
+            --output "$PWD/work/export" \
+            --mode Unity \
+            --script-content-level Level0 \
+            2>&1 | tee work/logs/assetripper-full-root.log
+
+      - name: Check recovered CSharp scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          scripts = list(Path("work/export").rglob("*.cs"))
+
+          dummy = [
+              x for x in scripts
+              if "Dummy class. This could have happened"
+              in x.read_text(
+                  encoding="utf-8-sig",
+                  errors="replace"
+              )
+          ]
+
+          real = len(scripts) - len(dummy)
+
+          report = (
+              f"C# files: {len(scripts)}\n"
+              f"Dummy files: {len(dummy)}\n"
+              f"Non-dummy files: {real}\n"
+          )
+
+          Path("work/logs/CSharp-Report.txt").write_text(
+              report
+          )
+
+          print(report)
+
+          if not scripts or real == 0:
+              raise SystemExit(
+                  "No real scripts recovered."
+              )
+          PY
+
+      - name: Pack recovered Unity project
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tar -C work/export -czf \
+            work/Apocalypse-ReExported-With-Scripts.tar.gz .
+
+      - name: Upload recovered project
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-ReExported-With-Scripts
+          path: work/Apocalypse-ReExported-With-Scripts.tar.gz
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Upload diagnostic logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Scripts-Diagnostics
+          path: work/logs/
+          retention-days: 7
+          if-no-files-found: ignore
