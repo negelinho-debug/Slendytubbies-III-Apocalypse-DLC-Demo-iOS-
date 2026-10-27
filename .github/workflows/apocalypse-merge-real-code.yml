@@ -1,0 +1,128 @@
+
+name: Apocalypse - Merge Real CSharp into Unity Project
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  merge-real-code:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Get recovered Unity project
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-Recovered-Unity-Project
+          run-id: 40539890861
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: work/base
+
+      - name: Get real CSharp from ILSpy
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-Real-CSharp-ILSpy
+          run-id: 40561361497
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: work/code
+
+      - name: Unpack Unity project
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/project work/output
+
+          tar -xzf \
+            work/base/Apocalypse-Recovered-Unity-Project.tar.gz \
+            -C work/project
+
+          test -d \
+            work/project/ExportedProject/Assets/Scripts/Assembly-CSharp
+
+          test -d work/code/RealCSharp
+
+      - name: Replace dummy scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import shutil
+
+          source = Path('work/code/RealCSharp')
+
+          target = Path(
+              'work/project/ExportedProject/Assets/Scripts/Assembly-CSharp'
+          )
+
+          replaced = 0
+          added = 0
+
+          for script in sorted(source.rglob('*.cs')):
+              rel = script.relative_to(source)
+              dest = target / rel
+
+              if dest.is_file():
+                  replaced += 1
+              else:
+                  added += 1
+
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(script, dest)
+
+          leftovers = [
+              str(p.relative_to(target))
+              for p in target.rglob('*.cs')
+              if 'Dummy class. This could have happened'
+              in p.read_text(
+                  encoding='utf-8-sig',
+                  errors='replace'
+              )
+          ]
+
+          report = {
+              'recovered': replaced + added,
+              'replaced': replaced,
+              'new_files': added,
+              'remaining_dummies': leftovers
+          }
+
+          print(json.dumps(report, indent=2))
+
+          Path('work/output/REPORT.json').write_text(
+              json.dumps(report, indent=2)
+          )
+
+          if replaced < 700:
+              raise SystemExit(
+                  'Too few scripts matched'
+              )
+          PY
+
+      - name: Package merged project
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tar -czf \
+            work/output/Apocalypse-Unity-Real-Code.tar.gz \
+            -C work/project .
+
+          ls -lh \
+            work/output/Apocalypse-Unity-Real-Code.tar.gz
+
+      - name: Upload merged Unity project
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Unity-With-Real-Code
+          path: work/output/
+          retention-days: 7
+          if-no-files-found: error
