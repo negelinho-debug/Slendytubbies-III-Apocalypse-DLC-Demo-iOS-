@@ -1,0 +1,193 @@
+
+name: Apocalypse - Check Recovered Game
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check-game:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Download merged Unity project
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-Unity-With-Real-Code
+          run-id: 40566720391
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: work/download
+
+      - name: Extract project
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p work/project work/reports
+
+          tar -xzf \
+            work/download/Apocalypse-Unity-Real-Code.tar.gz \
+            -C work/project
+
+          test -d work/project/ExportedProject/Assets
+
+      - name: Check real scripts and scenes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          assets = Path(
+              "work/project/ExportedProject/Assets"
+          )
+
+          script_root = assets / "Scripts/Assembly-CSharp"
+          scripts = sorted(script_root.rglob("*.cs"))
+          scenes = sorted(assets.rglob("*.unity"))
+
+          dummy = []
+          real = []
+          missing_meta = []
+          guid_map = {}
+
+          for script in scripts:
+              content = script.read_text(
+                  encoding="utf-8-sig",
+                  errors="replace"
+              )
+
+              if "Dummy class. This could have happened" in content:
+                  dummy.append(script)
+              else:
+                  real.append(script)
+
+              meta = Path(str(script) + ".meta")
+
+              if not meta.exists():
+                  missing_meta.append(script)
+                  continue
+
+              match = re.search(
+                  r"(?m)^guid:\s*([0-9a-f]{32})",
+                  meta.read_text(errors="replace")
+              )
+
+              if match:
+                  guid_map[match.group(1)] = str(script)
+
+          demo = [
+              scene for scene in scenes
+              if scene.name == "DEMOLEVEL.unity"
+          ]
+
+          player = script_root / "PlayerBattleMechanics.cs"
+
+          player_ok = (
+              player.exists()
+              and player not in dummy
+              and "class PlayerBattleMechanics"
+              in player.read_text(errors="replace")
+          )
+
+          scene_refs = set()
+
+          for scene in scenes:
+              content = scene.read_text(
+                  encoding="utf-8-sig",
+                  errors="replace"
+              )
+
+              refs = re.findall(
+                  r"m_Script:\s*\{fileID:\s*11500000,"
+                  r"\s*guid:\s*([0-9a-f]{32})",
+                  content
+              )
+
+              scene_refs.update(refs)
+
+          missing_refs = sorted(
+              guid for guid in scene_refs
+              if guid not in guid_map
+          )
+
+          report = f"""
+          # APOCALYPSE DLC - PROJECT CHECK
+
+          C# scripts: {len(scripts)}
+          Non-dummy scripts: {len(real)}
+          Remaining dummy scripts: {len(dummy)}
+
+          Scenes found: {len(scenes)}
+          DEMOLEVEL exists: {bool(demo)}
+
+          PlayerBattleMechanics recovered: {player_ok}
+
+          Scripts missing .meta: {len(missing_meta)}
+          Scene script GUIDs: {len(scene_refs)}
+          Unmatched scene script GUIDs: {len(missing_refs)}
+
+          NOTE:
+          This is a static project inspection.
+          Unity compilation and iOS compatibility
+          are NOT tested.
+          """
+
+          print(report)
+
+          details = [
+              "\n## Remaining dummy scripts\n",
+              *[str(p) for p in dummy],
+              "\n## Scripts missing meta files\n",
+              *[str(p) for p in missing_meta],
+              "\n## Unmatched scene GUIDs\n",
+              *missing_refs,
+          ]
+
+          output = report + "\n".join(details)
+
+          Path("work/reports/REPORT.md").write_text(
+              output,
+              encoding="utf-8"
+          )
+
+          summary = Path(
+              __import__("os").environ["GITHUB_STEP_SUMMARY"]
+          )
+
+          summary.write_text(
+              report,
+              encoding="utf-8"
+          )
+
+          if len(scripts) < 700:
+              print("ERROR: Too few scripts")
+              sys.exit(1)
+
+          if not demo:
+              print("ERROR: DEMOLEVEL missing")
+              sys.exit(1)
+
+          if not player_ok:
+              print("ERROR: Player script not recovered")
+              sys.exit(1)
+
+          print("STATIC PROJECT CHECK COMPLETED")
+          PY
+
+      - name: Upload diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Code-Check-Report
+          path: work/reports/
+          retention-days: 7
+          if-no-files-found: warn
