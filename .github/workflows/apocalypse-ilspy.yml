@@ -1,0 +1,127 @@
+
+name: Apocalypse - Recover Real CSharp with ILSpy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover-code:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Download original Apocalypse DLC
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p work/download work/game work/output
+
+          gh release download pc-recovery-v1 \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip' \
+            --dir work/download
+
+          unzip -q \
+            work/download/slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip \
+            -d work/game
+
+      - name: Install .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Install ILSpy
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          dotnet tool install --global ilspycmd \
+            --version 11.1.0.9782
+
+          echo "$HOME/.dotnet/tools" >> "$GITHUB_PATH"
+
+      - name: Decompile original game DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          dll="$(find "$PWD/work/game" \
+            -type f \
+            -path '*/Managed/Assembly-CSharp.dll' \
+            -print -quit)"
+
+          if [ -z "$dll" ]; then
+            dll="$(find "$PWD/work/game" \
+              -type f \
+              -iname 'Assembly-CSharp*.dll' \
+              -print -quit)"
+          fi
+
+          if [ -z "$dll" ]; then
+            echo "ERROR: Assembly-CSharp DLL not found"
+            exit 1
+          fi
+
+          echo "Original game DLL: $dll"
+
+          mkdir -p work/output/RealCSharp
+
+          ilspycmd \
+            --project \
+            --nested-directories \
+            --languageversion CSharp6 \
+            --referencepath "$(dirname "$dll")" \
+            --outputdir "$PWD/work/output/RealCSharp" \
+            "$dll"
+
+      - name: Verify recovered code
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path("work/output/RealCSharp")
+          files = list(root.rglob("*.cs"))
+
+          meaningful = [
+              p for p in files
+              if len(p.read_text(
+                  encoding="utf-8-sig",
+                  errors="replace"
+              ).strip()) > 100
+          ]
+
+          report = (
+              f"Recovered C# files: {len(files)}\n"
+              f"Files over 100 characters: "
+              f"{len(meaningful)}\n"
+          )
+
+          Path("work/output/REPORT.txt").write_text(
+              report,
+              encoding="utf-8"
+          )
+
+          print(report)
+
+          if not meaningful:
+              raise SystemExit(
+                  "No usable C# source files recovered"
+              )
+          PY
+
+      - name: Upload recovered CSharp
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Real-CSharp-ILSpy
+          path: work/output/
+          retention-days: 7
+          if-no-files-found: error
