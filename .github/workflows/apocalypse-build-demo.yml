@@ -1,0 +1,194 @@
+
+name: Apocalypse - Build DEMOLEVEL
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build-demo:
+    runs-on: windows-2022
+    timeout-minutes: 110
+
+    steps:
+      - name: Download recovered Unity project
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          New-Item -ItemType Directory -Force work/artifact, work/project | Out-Null
+
+          gh run download 40539890861 `
+            --repo "$env:GITHUB_REPOSITORY" `
+            --name Apocalypse-Recovered-Unity-Project `
+            --dir work/artifact
+
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Could not download Unity artifact'
+          }
+
+          $bundle = Get-ChildItem work/artifact -Recurse -File -Filter '*.tar.gz' |
+            Select-Object -First 1
+
+          if (-not $bundle) {
+            throw 'Unity project archive missing'
+          }
+
+          tar -xzf $bundle.FullName -C work/project
+
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Could not unpack project'
+          }
+
+          $assets = Get-ChildItem work/project -Recurse -Directory -Filter Assets |
+            Select-Object -First 1
+
+          if (-not $assets) {
+            throw 'Assets directory missing'
+          }
+
+          "PROJECT_ROOT=$($assets.Parent.FullName)" >> $env:GITHUB_ENV
+
+      - name: Install Unity 2017.1.1f1
+        shell: pwsh
+        run: |
+          $url = 'https://download.unity3d.com/download_unity/5d30cf096e79/Windows64EditorInstaller/UnitySetup64-2017.1.1f1.exe'
+
+          Invoke-WebRequest -Uri $url -OutFile work/UnitySetup64.exe
+
+          $p = Start-Process `
+            -FilePath "$PWD/work/UnitySetup64.exe" `
+            -ArgumentList '/S', '/D=C:\Unity2017' `
+            -Wait -PassThru
+
+          if ($p.ExitCode -ne 0) {
+            throw "Unity installation failed"
+          }
+
+          if (-not (Test-Path 'C:\Unity2017\Editor\Unity.exe')) {
+            throw 'Unity Editor missing'
+          }
+
+      - name: Install Unity license
+        shell: pwsh
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:UNITY_LICENSE)) {
+            throw 'A valid Unity 2017 license is required'
+          }
+
+          $dir = Join-Path $env:PROGRAMDATA 'Unity'
+          New-Item -ItemType Directory -Force $dir | Out-Null
+
+          [System.IO.File]::WriteAllText(
+            (Join-Path $dir 'Unity_lic.ulf'),
+            $env:UNITY_LICENSE
+          )
+
+      - name: Add DEMOLEVEL build script
+        shell: pwsh
+        run: |
+          $editor = Join-Path $env:PROJECT_ROOT 'Assets/Editor'
+          New-Item -ItemType Directory -Force $editor | Out-Null
+
+          @'
+          using System;
+          using System.IO;
+          using System.Collections.Generic;
+          using UnityEngine;
+          using UnityEditor;
+
+          public static class ApocalypseCI
+          {
+              public static void Build()
+              {
+                  string menu = null;
+                  string demo = null;
+
+                  foreach (string guid in AssetDatabase.FindAssets("t:Scene"))
+                  {
+                      string path = AssetDatabase.GUIDToAssetPath(guid);
+
+                      if (path.EndsWith("/Chap4Menu.unity"))
+                          menu = path;
+
+                      if (path.EndsWith("/DEMOLEVEL.unity"))
+                          demo = path;
+                  }
+
+                  if (demo == null)
+                      throw new Exception("DEMOLEVEL scene missing");
+
+                  var scenes = new List<string>();
+
+                  if (menu != null)
+                      scenes.Add(menu);
+
+                  scenes.Add(demo);
+
+                  string output = Path.Combine(
+                      Directory.GetParent(Application.dataPath).FullName,
+                      "Build/Apocalypse.exe"
+                  );
+
+                  Directory.CreateDirectory(
+                      Path.GetDirectoryName(output)
+                  );
+
+                  BuildPipeline.BuildPlayer(
+                      scenes.ToArray(),
+                      output,
+                      BuildTarget.StandaloneWindows64,
+                      BuildOptions.None
+                  );
+
+                  if (!File.Exists(output))
+                      throw new Exception("Game build failed");
+
+                  Debug.Log("DEMOLEVEL BUILD SUCCESS");
+              }
+          }
+          '@ | Set-Content `
+            -Path (Join-Path $editor 'ApocalypseCI.cs') `
+            -Encoding utf8
+
+      - name: Build Apocalypse DEMOLEVEL
+        shell: pwsh
+        run: |
+          & 'C:\Unity2017\Editor\Unity.exe' `
+            -batchmode `
+            -nographics `
+            -quit `
+            -projectPath "$env:PROJECT_ROOT" `
+            -executeMethod ApocalypseCI.Build `
+            -logFile "$PWD/work/UnityEditor.log"
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Unity build failed: $LASTEXITCODE"
+          }
+
+          if (-not (Test-Path (Join-Path $env:PROJECT_ROOT 'Build/Apocalypse.exe'))) {
+            throw 'No executable was produced'
+          }
+
+      - name: Upload playable build
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-DEMOLEVEL-Windows-First-Build
+          path: ${{ env.PROJECT_ROOT }}/Build/
+          retention-days: 3
+          if-no-files-found: error
+
+      - name: Upload Unity Editor log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Unity-Editor-Log
+          path: work/UnityEditor.log
+          retention-days: 7
+          if-no-files-found: ignore
