@@ -1,0 +1,149 @@
+
+name: Apocalypse - Make Git Branch Without LFS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  remove-lfs-dependency:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout our Unity project, without LFS downloads
+        uses: actions/checkout@v4
+        with:
+          ref: unity2019-apocalypse
+          lfs: false
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Download the saved original Unity terrain files
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-DLC-Unity2019-Candidate
+          run-id: 40649602879
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/recovery
+
+      - name: Restore the two real terrain assets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          archive="${RUNNER_TEMP}/recovery/Apocalypse-DLC-Unity2019-Source.tar.gz"
+
+          test -s "$archive"
+
+          mkdir -p "${RUNNER_TEMP}/restore"
+
+          tar -xzf "$archive" -C "${RUNNER_TEMP}/restore" \
+            'ExportedProject/Assets/TerrainData/Demo 2.asset' \
+            'ExportedProject/Assets/TerrainData/Demo 3.asset' \
+            'ExportedProject/ProjectSettings/ProjectSettings.asset'
+
+          git switch -c unity2019-no-lfs
+
+          # Remove LFS tracking on the new branch.
+          git rm .gitattributes
+
+          for number in 2 3; do
+            source_file="${RUNNER_TEMP}/restore/ExportedProject/Assets/TerrainData/Demo ${number}.asset"
+            target_file="Assets/TerrainData/Demo ${number}.asset"
+            cp "$source_file" "$target_file"
+          done
+
+          # Restore the original Unity settings.
+          cp "${RUNNER_TEMP}/restore/ExportedProject/ProjectSettings/ProjectSettings.asset" \
+            ProjectSettings/ProjectSettings.asset
+
+          python3 - <<'PYFIX'
+          from pathlib import Path
+
+          p = Path('ProjectSettings/ProjectSettings.asset')
+          s = p.read_text()
+
+          old = '  applicationIdentifier: {}'
+
+          assert s.count(old) == 1, \
+              'Unexpected original PlayerSettings'
+
+          p.write_text(
+              s.replace(
+                  old,
+                  '  applicationIdentifier:\n'
+                  '    iPhone: app.chili6614.lake1071'
+              )
+          )
+
+          editor = Path(
+              'Assets/Editor/ApocalypseBuild2019.cs'
+          )
+
+          code = editor.read_text()
+
+          editor.write_text(
+              code.replace(
+                  'com.negelinho.apocalypsedlc',
+                  'app.chili6614.lake1071'
+              )
+          )
+          PYFIX
+
+          # Check file sizes before pushing.
+          python3 - <<'PY'
+          from pathlib import Path
+
+          for n in (2, 3):
+              p = Path(
+                  f"Assets/TerrainData/Demo {n}.asset"
+              )
+
+              size = p.stat().st_size
+
+              print(f"{p}: {size:,} bytes")
+
+              if not (90_000_000 < size < 100_000_000):
+                  raise SystemExit(
+                      "Unexpected terrain size"
+                  )
+          PY
+
+          git add -A
+
+          for number in 2 3; do
+            file="Assets/TerrainData/Demo ${number}.asset"
+
+            actual="$(git cat-file -s ":${file}")"
+
+            test "$actual" -gt 90000000 || {
+              echo "ERROR: ${file} is still an LFS pointer"
+              exit 1
+            }
+          done
+
+          git config user.name 'github-actions[bot]'
+
+          git config user.email \
+            '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git commit -m \
+            'Keep original Apocalypse terrain without Git LFS'
+
+          git push origin \
+            HEAD:refs/heads/unity2019-no-lfs
+
+      - name: Confirm new branch
+        shell: bash
+        run: |
+          {
+            echo '## Apocalypse DLC: source branch without LFS created'
+            echo 'New branch: `unity2019-no-lfs`'
+            echo 'Use that branch in Unity Build Automation.'
+            echo 'This does not build or test an IPA.'
+          } >> "$GITHUB_STEP_SUMMARY"
