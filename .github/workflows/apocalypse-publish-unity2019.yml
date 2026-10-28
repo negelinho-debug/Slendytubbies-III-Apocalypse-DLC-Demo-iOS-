@@ -1,0 +1,118 @@
+
+name: Apocalypse - Publish Unity 2019 Source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Download Unity 2019 project
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-DLC-Unity2019-Candidate
+          run-id: 40649602879
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: work/artifact
+
+      - name: Extract real game source
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p work/unpacked work/source
+
+          tar -xzf \
+            work/artifact/Apocalypse-DLC-Unity2019-Source.tar.gz \
+            -C work/unpacked
+
+          cp -a \
+            work/unpacked/ExportedProject/. \
+            work/source/
+
+          test -d work/source/Assets
+          test -d work/source/ProjectSettings
+
+          test -f \
+            "work/source/Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity"
+
+          test -f \
+            work/source/ProjectSettings/ProjectVersion.txt
+
+      - name: Install Git LFS
+        shell: bash
+        run: |
+          if ! command -v git-lfs >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y git-lfs
+          fi
+
+          git lfs version
+
+      - name: Create Unity source branch
+        shell: bash
+        working-directory: work/source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          git init -b unity2019-apocalypse
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git lfs install --local
+
+          cat > .gitignore <<'EOF'
+          [Ll]ibrary/
+          [Tt]emp/
+          [Oo]bj/
+          [Ll]ogs/
+          [Bb]uilds/
+          [Uu]ser[Ss]ettings/
+          .vs/
+          .vscode/
+          EOF
+
+          while IFS= read -r -d '' file; do
+            relative="${file#./}"
+            git lfs track "$relative"
+          done < <(
+            find . -type f -size +20M -print0
+          )
+
+          git add -A
+
+          git commit -m \
+            "Prepare original Apocalypse DLC for Unity 2019"
+
+          git remote add origin \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          git push origin \
+            HEAD:refs/heads/unity2019-apocalypse
+
+      - name: Show result
+        shell: bash
+        run: |
+          {
+            echo "## Apocalypse DLC - Unity source published"
+            echo
+            echo "Branch: unity2019-apocalypse"
+            echo
+            echo "Original DEMOLEVEL included."
+            echo
+            echo "Next: Unity Build Automation import."
+            echo
+            echo "IPA has not been built yet."
+          } >> "$GITHUB_STEP_SUMMARY"
