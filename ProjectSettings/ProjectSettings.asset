@@ -1,3 +1,4 @@
+
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!129 &1
@@ -26,7 +27,7 @@ PlayerSettings:
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
-  m_SplashScreenLogoAnimationZoom: 1
+  m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
   m_SplashScreenBackgroundPortraitAspect: 1
   m_SplashScreenBackgroundLandscapeUvs:
@@ -112,7 +113,7 @@ PlayerSettings:
   psp2AcquireBGM: 1
   wiiUTVResolution: 0
   wiiUGamePadMSAA: 1
-  wiiUSupportsNunchuk: 0
+  wiiUSupportsNunchuck: 0
   wiiUSupportsClassicController: 0
   wiiUSupportsBalanceBoard: 0
   wiiUSupportsMotionPlus: 0
@@ -145,7 +146,8 @@ PlayerSettings:
   useHDRDisplay: 0
   targetPixelDensity: 0
   resolutionScalingMode: 0
-  applicationIdentifier: {}
+  applicationIdentifier:
+    iPhone: app.chili6614.lake1071
   buildNumber: {}
   AndroidBundleVersionCode: 0
   AndroidMinSdkVersion: 0
@@ -167,6 +169,7 @@ PlayerSettings:
   iPhoneSdkVersion: 0
   iOSTargetOSVersionString:
   tvOSSdkVersion: 0
+  tvOSRequireExtendedGameController: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString:
   uIPrerenderedIcon: 0
@@ -442,11 +445,11 @@ PlayerSettings:
   psp2NPTrophyPackPath:
   psp2NPSupportGBMorGJP: 0
   psp2NPAgeRating: 0
+  psp2NPTrophyPackPath:
   psp2NPTitleDatPath:
   psp2NPCommsID:
   psp2NPCommunicationsID:
   psp2NPCommsPassphrase:
-  psp2NPCommsSig:
   psp2ParamSfxPath:
   psp2ManualPath:
   psp2LiveAreaGatePath:
@@ -467,7 +470,6 @@ PlayerSettings:
   psp2SoundPath:
   psp2TrophyCommId:
   psp2TrophyPackagePath:
-  psp2PackagedResourcesPath:
   psp2SaveDataQuota: 0
   psp2ParentalLevel: 0
   psp2ShortTitle:
@@ -483,7 +485,7 @@ PlayerSettings:
   psp2HealthWarning: 0
   psp2UseLibLocation: 0
   psp2InfoBarOnStartup: 0
-  psp2InfoBarColor: 0
+  psp2InfoBarColor:
   psp2ScriptOptimizationLevel: 0
   psmSplashimage: {fileID: 0}
   splashScreenBackgroundSourceLandscape: {fileID: 0}
@@ -568,9 +570,6 @@ PlayerSettings:
   XboxOneSCId:
   XboxOneGameOsOverridePath:
   XboxOnePackagingOverridePath:
-  XboxOneAppManifestOverridePath:
-  XboxOnePackageEncryption: 0
-  XboxOnePackageUpdateGranularity: 0
   XboxOneDescription:
   XboxOneLanguage: []
   XboxOneCapability: []
