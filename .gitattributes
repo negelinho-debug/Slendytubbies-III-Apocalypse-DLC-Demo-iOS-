@@ -1,2 +1,0 @@
-Assets/TerrainData/Demo[[:space:]]3.asset filter=lfs diff=lfs merge=lfs -text
-Assets/TerrainData/Demo[[:space:]]2.asset filter=lfs diff=lfs merge=lfs -text
