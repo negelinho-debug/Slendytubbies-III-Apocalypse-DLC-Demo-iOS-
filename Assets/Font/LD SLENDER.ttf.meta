@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 45517993bba88a24c96083507cb1833b
+timeCreated: 1793118041
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  name:
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: KG Lego House
+  fontNames:
+  - KG Lego House
+  - LD_Slender
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 910713414715ac34ab1d3ba8f29bc1e6, type: 3}
+  customCharacters:
+  fontRenderingMode: 0
+  output:
+    hasEmptyFontData: 0
+  ascentCalculationMode: 1
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Mat_S_Floor_Plates 1
+  m_Shader: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 7383076837e94d34e982acaca6c3ede8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: 66ffddd83a555924c892a19aa10b2ab0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _CubeBlur: 4.125
+      _CubeStrength: 1.2
+      _Fresnel: 2.2857144
+      _FresnelExponent: 2.526316
+      _FresnelReflection: 0
+      _FresnelStrength: 2.526316
+      _Gloss: 8
+      _Shininess: 0.054743774
+      _Spec: 0.5
+      _Specular: 0.8
+    m_Colors:
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _ReflectColor: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 0.5019608}
+      _SpecColor: {r: 0.7205882, g: 0.7205882, b: 0.7205882, a: 1}

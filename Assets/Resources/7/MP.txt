@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: 本机游戏
+PLAY ONLINE: 在线游戏
+CHARACTER CUSTOMIZATION: 角色定制
+OPTIONS: 选项
+CREDITS: 人员名单
+EXIT: 离开
+Are you sure you want to quit this game?:  你确定要退出游戏吗？
+NO: 不
+YES: 是
+ZEOWORKS PRESENTS: ZEOWORKS 呈现
+HATS: 帽子
+CHANGE FUR COLOR: 修改毛色
+CUSTOM SKIN: 定制皮肤
+HEAD: 头
+BODY: 身体
+ARMS: 手臂
+LEGS: 腿
+URL: 网址
+APPLY: 套用
+BACK: 後退
+FUR COLOR: 毛色
+DEFAULT: 预设
+RANDOM COLOR: 随机颜色
+COST: 花费
+CUSTARDS: 奶昔
+LOCKED: 已上锁
+UNLOCK: 解锁
+BUY: 购买
+YOU NEED MORE CUSTARDS: 你需要更多的奶昔
+EQUIPMENT: 装备
+Night Vision Camera: 夜视相机
+Flashlight: 手电筒
+You must sign in to use custom skins: 你需要登入来使用定制皮肤
+USE CUSTOM SKIN: 使用定制皮肤
+SIGN IN: 注册
+SIGN OUT: 注销
+LOGIN: 登录
+USERNAME: 用户名
+PASSWORD: 密码
+CONNECT: 连接
+CREATE AN ACCOUNT: 创建一个帐号
+ERROR: INCORRECT USERNAME / PASSWORD!: 错误：错误的用户名/密码？
+TRY AGAIN: 重试
+CONNECTING: 连接中
+COULD NOT CONNECT TO SERVER: 无法与服务器连接
+SERVER MAY BE FULL: 服务器应该满了
+PLEASE TRY ANOTHER SERVER: 请尝试另一台服务器
+SELECT A SERVER: 选择服务器 
+SERVER: 服务器
+Room Name: 房间名称
+Private: 私人
+Game Mode: 游戏模式
+Players: 玩家
+Map Name: 地图名称
+Host Game: 主机游戏
+Game Settings: 游戏设置
+Map size: 地图大小
+Small: 小
+Medium: 中
+Large: 大
+Recommended Players: 推荐玩家
+Timer: 倒计时
+# Minutes: # 分钟
+Custard Amount: 奶昔数量
+Mute Guests: 游客静音
+Start Game: 开始游戏
+COLLECT: 搜集
+CO-OP: 合作
+VERSUS: 对战
+SURVIVAL: 生存
+INFECTION: 感染
+Join: 加入
+Player name: 玩家名称
+Connected: 已连接
+Chat: 聊天
+You need to sign in to chat: 你需要登入来聊天
+Respawning in #: 重生於 #
+A helpless victim has joined: 一个无助的受害者加了进来。
+A player has been caught: 一个玩家被抓了
+# Joined: # 加入
+# Killed #: # 杀了 #
+# Died: # 死亡
+# Left: # 剩下
+# Became infected: # 被感染
+Kill All Survivors: 杀死所有的幸存者
+Fight Off Infected Players To Win: 对抗感染的玩家来赢得此局
+Kill All Helpless Victims: 杀死所有的无助的受害者
+Survive All Waves: 在所有的波中生存下来
+Kills: 击杀
+Deaths: 死亡
+Draw...: 平局…
+# Wins...: # 获胜…
+# Is The Winner: # 是赢家
+Most Kills: 击杀数最多
+# Is In the Lead: # 处於领先地位
+Restarting: 重新开始
+Starting new round: 开始新的一局
+All players have been killed...: 所有玩家都被杀了…
+Your team survived...: 你的队伍赢了…
+All custards have been found...: 所有的奶昔都被找到了…
+Time is up: 时间到
+Survivors win: 幸存者获胜
+Waiting for more players...: 等待更多玩家…
+You are infected: 你被感染了
+Infected: 已感染
+Infected win: 感染者获胜
+Round: 回合
+Survive: 生存
+Loading...: 载入中…
+Spectator Mode: 观众模式
+You are now in Spectator Mode: 你现在在观众模式
+Respawn: 重生
+Custards: 奶昔
+Wave #: 波 #
+# Remaining: # 剩下
+Press 'E' To Buy Supplies: 按'E'购买供应品
+Shop: 商店
+Supplies: 供应品
+Get to the waypoint: 到达航点
+Buy: 购买
+Sell: 卖出
+Heal: 愈合
+Ammo: 弹药
+Toast: 烤面包
+# Custards remaining...: # 个奶昔剩下…
+Collect All # Custards: 搜集所有
+Mouse Sensitivity: 滑鼠灵敏度
+Resolution: 分辨率
+Language: 语言
+This version is outdated, please download the latest version: 这个版本是过时的，请下载最新版本
+Update Now: 立即更新
+Remind Me Later: 稍後通知
+Notice: 提醒
+You will be unable to access online features until you update.: 你将不能访问网路功能，直到你更新为止。
+Paused: 已暂停
+Quit: 离开
+Resume: 返回
+You're sending messages too quickly!:  你发信太快了！
+
+Restart Match: 重新开始本局
+End Match: 结束本局
+Restarting match...: 正在重启本局…

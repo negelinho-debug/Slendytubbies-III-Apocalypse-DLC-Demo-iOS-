@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: play aloen
+PLAY ONLINE: play wit fgts
+CHARACTER CUSTOMIZATION: custom fgt
+OPTIONS: setups
+CREDITS: stuff people ignore 
+EXIT: get out
+Are you sure you want to quit this game?: u sure? pusi
+NO: na
+YES: ye
+ZEOWORKS PRESENTS: those guys from slendytubbies present
+HATS: head stuff
+CHANGE FUR COLOR: change fgt color
+CUSTOM SKIN: custom skeens
+HEAD: hed
+BODY: body
+ARMS: arms
+LEGS: leggo
+URL: link
+APPLY: sure
+BACK: bak
+FUR COLOR: fgt color 
+DEFAULT: originla
+RANDOM COLOR: surprise me 
+COST: price
+CUSTARDS: cussturd 
+LOCKED: nope
+UNLOCK: unnope
+BUY: buy
+YOU NEED MORE CUSTARDS: sorry youre poor
+EQUIPMENT: stuff
+Night Vision Camera: magic camera 
+Flashlight: light thing
+You must sign in to use custom skins: u need account 2 use customs
+USE CUSTOM SKIN: use custom skeen
+SIGN IN: sign
+SIGN OUT: unsign
+LOGIN: login
+USERNAME: name
+PASSWORD: secret stuff
+CONNECT: connect
+CREATE AN ACCOUNT: create acc
+ERROR: INCORRECT USERNAME / PASSWORD!: error: do you even write?
+TRY AGAIN: retry
+CONNECTING: checking if it wurks
+COULD NOT CONNECT TO SERVER: nope sorry 
+SERVER MAY BE FULL: probably it’s overfgted
+PLEASE TRY ANOTHER SERVER: please try another srv
+SELECT A SERVER: select a srv
+SERVER: srv
+Room Name: room naem 
+Private: secret
+Game Mode: game moed
+Players: fgts
+Map Name: map nam 
+Host Game: create gam
+Game Settings: game stuff
+Map size: map largity
+Small: smol
+Medium: eh
+Large: oh shit
+Recommended Players: recommended fgts
+Timer: numbers
+# Minutes: # minuts
+Custard Amount: amount of pink goo
+Mute Guests: stfu guests
+Start Game: begin
+COLLECT: collect
+CO-OP: temwurk
+VERSUS: versus
+SURVIVAL: survivl 
+INFECTION: infecshun
+Join: join
+Player name: fgt name
+Connected: connectd
+Chat: chat
+You need to sign in to chat: u need account 2 chat
+Respawning in #: appearing in #
+A helpless victim has joined: a scared fgt joined
+A player has been caught: a fgt has ben kill
+# Joined: # joined
+# Killed #: # dunked #
+# Died: # is ded
+# Left: # ran away
+# Became infected: # becam infect
+Kill All Survivors: kill all living
+Fight Off Infected Players To Win: fight off infectd fgts 2 win
+Kill All Helpless Victims: kill all scared fgts
+Survive All Waves: survive all wevs
+Kills: dunks
+Deaths: deths
+Draw...: draw?
+# Wins...: # win
+# Is The Winner: # is da winr
+Most Kills: most dunks
+# Is In the Lead: # is da king
+Restarting: restarting
+Starting new round: starting new gaem
+All players have been killed...: all fgts have ded
+Your team survived...: ur tem survivd
+All custards have been found...: all cuss turds have been eaten… o wait
+Time is up: 2 late
+Survivors win: living win
+Waiting for more players...: waitin 4 moar fgts 
+You are infected: u r infect
+Infected: infect
+Infected win: infect win
+Round: round
+Survive: dont die
+Loading...: loading
+Spectator Mode: stalker mode
+You are now in Spectator Mode: u r now in stalker mode
+Respawn: appear
+Custards: cussturd
+Wave #: wave #
+# Remaining: # left
+Press 'E' To Buy Supplies: 
+Shop: store
+Supplies: supplyes
+Get to the waypoint: go to the arrow thing
+Buy: buy
+Sell: pawn
+Heal: heel
+Ammo: pewpews
+Toast: tost
+# Custards remaining...: # cussturds left
+Collect All # Custards: collect
+Mouse Sensitivity: mouse spd
+Resolution: screen size
+Language: languag
+This version is outdated, please download the latest version: this vershun is old!! pls download new vershun
+Update Now: download
+Remind Me Later: na, l8r
+Notice: hey u!
+You will be unable to access online features until you update.: u wont play with other fgts until u redownload
+Paused: stopd
+Quit: get out
+Resume: unstop
+You're sending messages too quickly!: stop right now u flooding fak!
+
+Restart Match: play agen
+End Match: end match
+Restarting match...: restarting gaem…

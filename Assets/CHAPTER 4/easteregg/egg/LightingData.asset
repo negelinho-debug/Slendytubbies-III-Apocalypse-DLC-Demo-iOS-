@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1120 &112000000
+LightingDataAsset:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: LightingData
+  m_Scene: {fileID: 102900000, guid: 18ff2ed5971c09d42a45e2f65c692b7d, type: 3}
+  m_Lightmaps: []
+  m_LightProbes: {fileID: 0}
+  m_LightmapsMode: 1
+  m_BakedAmbientProbeInLinear:
+    sh[ 0]: 0
+    sh[ 1]: 0
+    sh[ 2]: 0
+    sh[ 3]: 0
+    sh[ 4]: 0
+    sh[ 5]: 0
+    sh[ 6]: 0
+    sh[ 7]: 0
+    sh[ 8]: 0
+    sh[ 9]: 0
+    sh[10]: 0
+    sh[11]: 0
+    sh[12]: 0
+    sh[13]: 0
+    sh[14]: 0
+    sh[15]: 0
+    sh[16]: 0
+    sh[17]: 0
+    sh[18]: 0
+    sh[19]: 0
+    sh[20]: 0
+    sh[21]: 0
+    sh[22]: 0
+    sh[23]: 0
+    sh[24]: 0
+    sh[25]: 0
+    sh[26]: 0
+  m_LightmappedRendererData: []
+  m_LightmappedRendererDataIDs: []
+  m_EnlightenSceneMapping:
+    m_Renderers: []
+    m_Systems: []
+    m_Probesets: []
+    m_SystemAtlases: []
+    m_TerrainChunks: []
+  m_EnlightenSceneMappingRendererIDs: []
+  m_Lights:
+  - targetObject: 5514
+    targetPrefab: 0
+  - targetObject: 5515
+    targetPrefab: 0
+  - targetObject: 5516
+    targetPrefab: 0
+  - targetObject: 5517
+    targetPrefab: 0
+  - targetObject: 5518
+    targetPrefab: 0
+  - targetObject: 5519
+    targetPrefab: 0
+  - targetObject: 5520
+    targetPrefab: 0
+  - targetObject: 5521
+    targetPrefab: 0
+  - targetObject: 5522
+    targetPrefab: 0
+  - targetObject: 5523
+    targetPrefab: 0
+  - targetObject: 5524
+    targetPrefab: 0
+  - targetObject: 5525
+    targetPrefab: 0
+  - targetObject: 5526
+    targetPrefab: 0
+  - targetObject: 5527
+    targetPrefab: 0
+  - targetObject: 5528
+    targetPrefab: 0
+  - targetObject: 5529
+    targetPrefab: 0
+  - targetObject: 5530
+    targetPrefab: 0
+  - targetObject: 5531
+    targetPrefab: 0
+  - targetObject: 5532
+    targetPrefab: 0
+  - targetObject: 5533
+    targetPrefab: 0
+  m_LightBakingOutputs:
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  m_BakedReflectionProbeCubemaps: []
+  m_BakedReflectionProbes: []
+  m_EnlightenData: 556e69747946530000000006352e782e7800323031372e312e3166310000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_EnlightenDataVersion: 112

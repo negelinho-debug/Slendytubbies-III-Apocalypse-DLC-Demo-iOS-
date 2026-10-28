@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: JUGAR SOLO
+PLAY ONLINE: JUGAR ONLINE
+CHARACTER CUSTOMIZATION: CUSTOMIZACIÓN DE PERSONAJE
+OPTIONS: OPCIONES
+CREDITS: CRÉDITOS
+EXIT: SALIR
+Are you sure you want to quit this game?: ¿Estás seguro de que quieres salir de este juego?
+NO: NO
+YES: SÍ
+ZEOWORKS PRESENTS: ZEOWORKS PRESENTA
+HATS: GORROS
+CHANGE FUR COLOR: CAMBIAR COLOR DE PELAJE
+CUSTOM SKIN: SKIN PERSONALIZADO
+HEAD: CABEZA
+BODY: CUERPO
+ARMS: BRAZOS
+LEGS: PIERNAS
+URL: URL
+APPLY: APLICAR
+BACK: VOLVER
+FUR COLOR: COLOR DE PELAJE
+DEFAULT: PREDETERMINADO
+RANDOM COLOR: COLOR AL AZAR
+COST: COSTO
+CUSTARDS: PAPILLAS
+LOCKED: BLOQUEADO
+UNLOCK: DESBLOQUEAR
+BUY: COMPRAR
+YOU NEED MORE CUSTARDS: NECESITAS MÁS PAPILLAS
+EQUIPMENT: EQUIPAMIENTO
+Night Vision Camera: CÁMARA DE VISIÓN NOCTURNA
+Flashlight: LINTERNA
+You must sign in to use custom skins: Debes iniciar sesión para usar skins personalizados
+USE CUSTOM SKIN: USAR SKIN PERSONALIZADO
+SIGN IN: INICIAR SESIÓN
+SIGN OUT: CERRAR SESIÓN
+LOGIN: INICIAR SESIÓN
+USERNAME: NOMBRE DE USUARIO
+PASSWORD: CONTRASEÑA
+CONNECT: CONECTAR
+CREATE AN ACCOUNT: CREAR UNA CUENTA
+ERROR: INCORRECT USERNAME / PASSWORD!: ERROR: ¡NOMBRE DE USUARIO / CONTRASEÑA INCORRECTA!
+TRY AGAIN: INTENTAR DE NUEVO
+CONNECTING: CONECTANDO
+COULD NOT CONNECT TO SERVER: NO SE PUDO CONECTAR AL SERVIDOR
+SERVER MAY BE FULL: EL SERVIDOR QUIZÁS ESTÉ LLENO
+PLEASE TRY ANOTHER SERVER: POR FAVOR INTENTE OTRO SERVIDOR
+SELECT A SERVER: SELECCIONA UN SERVIDOR
+SERVER: SERVIDOR
+Room Name: NOMBRE DE SALA
+Private: Privado
+Game Mode: Modo de Juego
+Players: Jugadores
+Map Name: Nombre de Mapa
+Host Game: Crear Partida
+Game Settings: Configuración de Partida
+Map size: Tamaño de mapa
+Small: Pequeño
+Medium: Mediano
+Large: Grande
+Recommended Players: Jugadores Recomendados
+Timer: Temporizador
+# Minutes: # Minutos
+Custard Amount: Cantidad de Papillas
+Mute Guests: Silenciar Invitados
+Start Game: Iniciar Partida
+COLLECT: RECOGER
+CO-OP: CO-OP
+VERSUS: VERSUS
+SURVIVAL: SUPERVIVENCIA
+INFECTION: INFECCIÓN
+Join: Unirse
+Player name: Nombre de jugador
+Connected: Conectado
+Chat: Chat
+You need to sign in to chat: Debes iniciar sesión para chatear
+Respawning in #: Reapareciendo en #
+A helpless victim has joined: Una víctima indefensa se ha unido
+A player has been caught: Un jugador ha sido atrapado
+# Joined: # se unió
+# Killed #: # mató a #
+# Died: # murió
+# Left: # salió
+# Became infected: # se volvió infectado
+Kill All Survivors: Mata A Todos Los Sobrevivientes
+Fight Off Infected Players To Win: Lucha Contra Los Jugadores Infectados Para Ganar
+Kill All Helpless Victims: Mata A Todas Las Víctimas Indefensas
+Survive All Waves: Sobrevive Todas Las Oleadas
+Kills: Asesinatos
+Deaths: Muertes
+Draw...: Empate…
+# Wins...: # Gana…
+# Is The Winner: # Es El Ganador
+Most Kills: Más Asesinatos
+# Is In the Lead: # tomó la delantera
+Restarting: Reiniciando
+Starting new round: Iniciando nueva ronda
+All players have been killed...: Todos los jugadores fueron asesinados…
+Your team survived...: Tu equipo sobrevivió…
+All custards have been found...: Todas las papillas fueron encontradas…
+Time is up: Se acabó el tiempo
+Survivors win: Ganan los sobrevivientes
+Waiting for more players...: Esperando más jugadores…
+You are infected: Estás infectado
+Infected: Infectado
+Infected win: Ganan los Infectados
+Round: Ronda
+Survive: Sobrevive
+Loading...: Cargando…
+Spectator Mode: Modo Espectador
+You are now in Spectator Mode: Ahora estás en Modo Espectador
+Respawn: Reaparecer
+Custards: Papillas
+Wave #: Ronda #
+# Remaining: # Restantes
+Press 'E' To Buy Supplies: Presiona ‘E’ Para Comprar Suministros
+Shop: Tienda
+Supplies: Suministros
+Get to the waypoint: Llega a las coordenadas
+Buy: Comprar
+Sell: Vender
+Heal: Curar
+Ammo: Munición
+Toast: Tostadas
+# Custards remaining...: # Papillas restantes…
+Collect All # Custards: Consigue Todas Las
+Mouse Sensitivity: Sensibilidad del Mouse
+Resolution: Resolución
+Language: Idioma
+This version is outdated, please download the latest version: Esta versión está desactualizada, por favor descarga la última versión
+Update Now: Actualizar Ahora
+Remind Me Later: Recuérdamelo Más Tarde
+Notice: Aviso
+You will be unable to access online features until you update.: No podrás acceder a las características online hasta que actualices.
+Paused: Pausado
+Quit: Salir
+Resume: Resumir
+You're sending messages too quickly!: ¡Estás enviando mensajes muy rápido!
+
+Restart Match: Reiniciar Partida 
+End Match: Terminar Partida
+Restarting match...: Reiniciando partida…

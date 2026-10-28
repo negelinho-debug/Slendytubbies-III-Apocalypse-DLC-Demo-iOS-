@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: JOGAR SOLO
+PLAY ONLINE: JOGAR ONLINE
+CHARACTER CUSTOMIZATION: CUSTOMIZAÇÃO DE PERSONAGEM
+OPTIONS: OPÇÕES
+CREDITS: CRÉDITOS
+EXIT: SAIR
+Are you sure you want to quit this game?:  Tem certeza que quer sair do jogo?
+NO: NÃO
+YES: SIM
+ZEOWORKS PRESENTS: ZEOWORKS APRESENTA
+HATS: CHAPÉUS
+CHANGE FUR COLOR: MUDAR COR DO PELO
+CUSTOM SKIN: SKIN CUSTOMIZADA
+HEAD: CABEÇA
+BODY: CORPO
+ARMS: BRAÇOS
+LEGS: PERNAS
+URL: URL
+APPLY: APLICAR
+BACK: VOLTAR
+FUR COLOR: COR DO PELO
+DEFAULT: PADRÃO
+RANDOM COLOR: COR ALEATÓRIA
+COST: CUSTO
+CUSTARDS: CREMES
+LOCKED: BLOQUEADO
+UNLOCK: DESBLOQUEAR
+BUY: COMPRAR
+YOU NEED MORE CUSTARDS: VOCÊ PRECISA DE MAIS CREMES
+EQUIPMENT: EQUIPAMENTO
+Night Vision Camera: Câmera de Visão Noturna
+Flashlight: Lanterna
+You must sign in to use custom skins: Você deve fazer login para usar skins customizadas
+USE CUSTOM SKIN: USAR SKIN CUSTOMIZADA
+SIGN IN: REGISTRAR-SE
+SIGN OUT: LOGOFF
+LOGIN: LOGIN
+USERNAME: USERNAME
+PASSWORD: SENHA
+CONNECT: CONECTAR
+CREATE AN ACCOUNT: CRIAR UMA CONTA
+ERROR: INCORRECT USERNAME / PASSWORD!: ERRO: USERNAME / SENHA INCORRETO!
+TRY AGAIN: TENTE NOVAMENTE
+CONNECTING: CONECTANDO
+COULD NOT CONNECT TO SERVER: NÃO FOI POSSÍVEL CONECTAR AO SERVIDOR
+SERVER MAY BE FULL: O SERVIDOR DEVE ESTAR CHEIO
+PLEASE TRY ANOTHER SERVER: POR FAVOR TENTE OUTRO SERVIDOR
+SELECT A SERVER: SELECIONE UM SERVIDOR 
+SERVER: SERVIDOR
+Room Name: Nome da Sala
+Private: Privado
+Game Mode: Modo de Jogo
+Players: Jogadores
+Map Name: Nome do Mapa
+Host Game: Criar Servidor
+Game Settings: Configurações de Jogo
+Map size: Tamanho do Mapa
+Small: Pequeno
+Medium: Médio
+Large: Grande
+Recommended Players: Jogadores Recomendados
+Timer: Temporizador
+# Minutes: # Minutos
+Custard Amount: Quantidade de Cremes
+Mute Guests: Calar Convidados
+Start Game: Iniciar Jogo
+COLLECT: COLETAR
+CO-OP: CO-OP
+VERSUS: VERSUS
+SURVIVAL: SOBREVIVÊNCIA
+INFECTION: INFECÇÃO
+Join: Entrar
+Player name: Nome do jogador
+Connected: Conectado
+Chat: Chat
+You need to sign in to chat: Você precisa fazer login para usar o chat
+Respawning in #: Respawnando em #
+A helpless victim has joined: Uma vítima indefesa entrou
+A player has been caught: Um jogador foi capturado
+# Joined: # Entrou
+# Killed #: # Matou #
+# Died: # Morreu
+# Left: # Saiu
+# Became infected: # Se infectou
+Kill All Survivors: Mate Todos os Sobreviventes
+Fight Off Infected Players To Win: Lute Contra os Jogadores Infectados Para Ganhar
+Kill All Helpless Victims: Mate Todas as Vítimas Indefesas
+Survive All Waves: Sobreviva a Todas as Hordas
+Kills: Kills
+Deaths: Mortes
+Draw...: Empate…
+# Wins...: # Vitórias…
+# Is The Winner: # É o Vencedor
+Most Kills: A Maioria das Kills
+# Is In the Lead: # Está na Liderança
+Restarting: Reiniciando
+Starting new round: Iniciando novo round
+All players have been killed...: Todos os jogadores foram mortos…
+Your team survived...: Seu grupo sobreviveu…
+All custards have been found...: Todos os cremes foram encontrados…
+Time is up: O tempo acabou
+Survivors win: Sobreviventes venceram
+Waiting for more players...: Esperando por mais jogadores…
+You are infected: Você foi infectado
+Infected: Infectado
+Infected win: Infectados venceram
+Round: Round
+Survive: Sobreviva
+Loading...: Carregando…
+Spectator Mode: Modo Espectador
+You are now in Spectator Mode: Você está agora no Modo Espectador
+Respawn: Respawn
+Custards: Cremes
+Wave #: Horda #
+# Remaining: # Restantes
+Press 'E' To Buy Supplies: Pressione 'E' Para Comprar Suprimentos
+Shop: Loja
+Supplies: Suprimentos
+Get to the waypoint: Chegue ao waypoint
+Buy: Comprar
+Sell: Vender
+Heal: Curar
+Ammo: Munição
+Toast: Torrada
+# Custards remaining...: # Cremes restantes…
+Collect All # Custards: Colete Todos os
+Mouse Sensitivity: Sensibilidade do Mouse
+Resolution: Resolução
+Language: Idioma
+This version is outdated, please download the latest version: Esta versão está desatualizada, por favor baixe a versão mais recente
+Update Now: Atualizar Agora
+Remind Me Later: Lembrar Mais Tarde
+Notice: Aviso
+You will be unable to access online features until you update.: Você não será capaz de acessar recursos online até você atualizar.
+Paused: Pausado
+Quit: Sair
+Resume: Retomar
+You're sending messages too quickly!:  Você está enviando mensagens muito rápido!
+
+Restart Match: Reiniciar Partida
+End Match: Acabar Partida
+Restarting match...: Reiniciando partida…

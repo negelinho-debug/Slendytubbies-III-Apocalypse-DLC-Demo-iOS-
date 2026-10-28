@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: SPIL SOLO
+PLAY ONLINE: SPIL ONLINE
+CHARACTER CUSTOMIZATION: CHARACTER CUSTOMIZATION
+OPTIONS: INDSTILLINGER
+CREDITS: KREDITTEKSTER
+EXIT: AFSLUT
+Are you sure you want to quit this game?: Er du sikker på at du vil gå ud af dette spil?
+NO: NEJ
+YES: JA
+ZEOWORKS PRESENTS: ZEOWORKS PRÆSENTERER
+HATS: HATTE
+CHANGE FUR COLOR: SKIFT PELS FARVE
+CUSTOM SKIN: BRUGERDEFINEREDE UDSEENDE
+HEAD: HOVED
+BODY: KROP
+ARMS: ARME
+LEGS: BEN
+URL: URL
+APPLY: ANVEND
+BACK: TILBAGE
+FUR COLOR: PELS FAVRE
+DEFAULT: STANDARD
+RANDOM COLOR: TILFÆLDIG FARVE
+COST: PRIS
+CUSTARDS: JORDBÆRIS
+LOCKED: LÅST
+UNLOCK: LÅS OP
+BUY: KØB
+YOU NEED MORE CUSTARDS: DU SKAL BRUGE FLERE JORDBÆRIS
+EQUIPMENT: UDSTYR
+Night Vision Camera: Natte Syns Kamera
+Flashlight: Lommelygte
+You must sign in to use custom skins: Du skal logge ind for at bruge brugerdefinerede udseende
+USE CUSTOM SKIN: BRUG BRUGERDEFINEREDE UDSEENDE
+SIGN IN: LOG IND
+SIGN OUT: LOG UD
+LOGIN: LOG IND
+USERNAME: BRUGERNAVN
+PASSWORD: ADGANGSKODE
+CONNECT: FORBIND
+CREATE AN ACCOUNT: LAV EN KONTO
+ERROR: INCORRECT USERNAME / PASSWORD!: FEJL: FORKERT BRUGERNAVN/ADGANGSKODE!
+TRY AGAIN: PRØV IGEN
+CONNECTING: FORBINDER
+COULD NOT CONNECT TO SERVER: KUNNE IKKE FORBINDE TIL SERVEREN
+SERVER MAY BE FULL: SERVEREN ER MÅSKE FULD
+PLEASE TRY ANOTHER SERVER: PRØV VENLIGST EN ANDEN SERVER
+SELECT A SERVER: VÆLG EN SERVER
+SERVER: SERVER
+Room Name: Rum Navn
+Private: Privat
+Game Mode: Spilletilstand
+Players: Spillere
+Map Name: Bane Navn
+Host Game: Vært Spil
+Game Settings: Spil Indstillinger
+Map size: Bane størrelse
+Small: Lille
+Medium: Medium
+Large: Stor
+Recommended Players: Anbefalet Spillere
+Timer: Ur
+# Minutes: # Minutter
+Custard Amount: Jordbæris Mængde
+Mute Guests: Afbryd lyden fra gæst
+Start Game: Start Spil
+COLLECT: SAMLE
+CO-OP: CO-OP
+VERSUS: VERSUS
+SURVIVAL: SURVIVAL
+INFECTION: INFECTION
+Join: Tilslut
+Player name: Spiller navn
+Connected: Forbundet
+Chat: Chat
+You need to sign in to chat: Du skal logge ind for at bruge chatten
+Respawning in #: Respawner om #
+A helpless victim has joined: Et hjælpeløs offer har tilsluttet sig.
+A player has been caught: En spiller er blevet fanget
+# Joined: # tilsluttet sig
+# Killed #: # dræbte #
+# Died: # døde
+# Left: # gik ud
+# Became infected: # blev inficeret
+Kill All Survivors: # dræb alle overlevende
+Fight Off Infected Players To Win: Kæmp imod inficeret spillere for at vinde.
+Kill All Helpless Victims: Dræb alle hjælpeløse offere
+Survive All Waves: Overlev alle runder
+Kills: Drab
+Deaths: Dødsfald
+Draw...: Uafgjort…
+# Wins...: Sejre…
+# Is The Winner: # er vinderen
+Most Kills: Flest drab
+# Is In the Lead: # er I spidsen
+Restarting: Genstarter
+Starting new round: Starter ny runde
+All players have been killed...: Alle spillere er blevet dræbt…
+Your team survived...: Dit hold overlevede…
+All custards have been found...: Alle jordbæris er blevet fundet…
+Time is up: Tiden er gået
+Survivors win: Overlevende vinder
+Waiting for more players...: Venter på flere spillere
+You are infected: Du er inficeret
+Infected: Inficeret
+Infected win: De inficeret vinder
+Round: Runde
+Survive: Overlev
+Loading...: Indlæser…
+Spectator Mode: Tilskuer tilstand
+You are now in Spectator Mode: Du er nu i tilskuer tilstand
+Respawn: Respawn
+Custards: Jordbæris
+Wave #: Runde #
+# Remaining: # tilbage
+Press 'E' To Buy Supplies: Tryk “e” for at købe forsyninger
+Shop: Butik
+Supplies: Forsyninger
+Get to the waypoint: Kom hen til waypointet
+Buy: Køb
+Sell: Sælg
+Heal: Helbred
+Ammo: Ammo
+Toast: Kager
+# Custards remaining...: # jordbæris tilbage
+Collect All # Custards: Samle alle
+Mouse Sensitivity: Musens følsomhed
+Resolution: Opløsning
+Language: Sprog
+This version is outdated, please download the latest version: Denne version er forældet, Vær sød at downloade den nyeste version.
+Update Now: Opdatere nu
+Remind Me Later: Påmind mig senere
+Notice: Bemærk
+You will be unable to access online features until you update.: Du vil være ude af stand til at spille online indtil du opdatere.
+Paused: Pausede
+Quit: Forlad
+Resume: Fortsæt
+You're sending messages too quickly!: Du sender beskedere for hurtigt!
+
+Restart Match: Genstart kamp
+End Match: Slut kamp
+Restarting match...: Genstartere kamp

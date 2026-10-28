@@ -1,0 +1,58 @@
+[Original Text]: [Translated Text]
+
+ZeoWorks Presents: ZeoWorks présente
+Campaign: Campagne
+Continue Game: Continuer la Partie
+New Game: Nouvelle Partie
+Select Chapter: Séléction du Chapitre
+Options: Options
+Credits: Crédits
+Exit: Quitter
+Language: Langue
+Chapter 0 - "It Was Good": Chapitre 0 - “C’était Bon”
+Chapter 1 - "A New Day": Chapitre 1 - “Un Nouveau Jour”
+Chapter 2 - "The Journey": Chapitre 2 - “Le Voyage”
+Chapter 3 - "Run Away": Chapitre 3 - “Fuyez”
+Back: Retour
+Apply: Appliquer
+Video: Vidéo
+Audio: Son
+Quality: Qualité
+Resolution: Résolution
+Volume: Volume
+Are you sure you want to quit?: Êtes-vous sûr de vouloir quitter?
+
+This game was downloaded from http://zeoworks.com. If you downloaded it from somewhere else, we suggest you to report it on our website or Facebook page and redownload the game from our website, as this version might be outdated.: Ce jeu a été téléchargé sur http://zeoworks.com. Si vous l’avait téléchargé ailleurs, veuillez nous contactez à ce sujet sur notre site web ou notre page Facebook pour ensuite télécharger le jeu depuis notre site.
+
+This language is based on broken English, dark humour and swearing. Are you sure you want to continue?: Ce langage est basé sur un Anglais Approximatif, langage vulgaire et humour noir. Êtes-vous certains de vouloir continuer?
+
+Translated by [your name]: Traduit par Ruption Shine
+Po died: Po est morte 
+HOLD: Maintenir
+PRESS: Appuyer
+Teletubby House: Maison des Télétubbies
+Lake: Plage
+Wrong Way: Mauvais Chemin
+Custard Location: Emplacement du Tubby-Délice
+Cave: Grotte
+Mountains: Montagnes
+
+Autosaving...: Sauvegarde Automatique
+Press any key to continue: Appuyer n’importe où pour continuer
+
+In a distant land lies underground machines, created by the unknown; capable of creating life forms.  These machines have been creating creatures known as teletubbies for hundreds of years.  The machines worked in a secret underground lair.  One of their creations known as the "teletubby guardian", who had white fur; was designed to monitor a test group of four teletubbies in secret.  They were known as "Tinky winky, Dipsy, Laa Laa and Po".   The four teletubbies lived together in a dome-like home within a boxed landscape known as the "main land".  The group were like hampsters in a cage, not knowing that they were being monitored within a fixed area.  They also lived with an artificial intelligent machine known as "Noo Noo".  The teletubby guardian monitored the groups behavior and documented it into a database, ensured the groups health and also had to ensure that the group did not leave the area.  Over the years the guardian grew a strong bond with the group, enjoying watching over them, despite the group not knowing of the guardians existence.  One day, things went horribly wrong.: Dans un pays lointain se trouvent des machines souterraines, créées par l'inconnu; Capable de créer des formes de vie.  Ces machines créent des créatures connues sous le nom de télétubbies depuis des centaines d'années.  Les machines travaillaient dans un repaire souterrain secret.  L'une de leurs créations connue sous le nom de «Gardien Télétubbie», qui avait une fourrure blanche; a eu comme rôle de surveiller secrétement un groupe de test composé de quatre télétubbies. Ils se nommaient "Tinky Winky, Dipsy, Laa-Laa et Po".  Les quatre télétubbies vivaient ensemble dans une maison en forme de dôme dans un paysage connu comme étant le «pays principal».  Le groupe était comparable à des hampsters dans une cage, inconscients qu'ils étaient surveillés dans une zone fixe.  Ils vivaient aussi avec une machine artificielle et intelligente appelée «Noo Noo». Le Gardien Télétubbie a observé le comportement du groupe et l'a documenté dans une base de données, a assuré leur santé et a également dû s'assurer que le groupe ne quitte pas la zone. Au fil des ans, le gardien a grandi avec le groupe, prenant un plaisir à les surveiller, malgré le fait que le groupe ne connaissait pas l'existence des gardiens. Un jour, les choses ont mal tournées.
+
+It has begun, Tinky Winky has killed Po and the rest of his friends. You believe that the custards are responsible for his attacks.  You use your computer in an attempt to contact other tubbies at the satellite station, but with no success. Without any delay you prepare a plan to find all of the infected custards before traveling to the satellite station for help.  It's up to you to find out the truth.: Cela s’est déroulé ainsi, Tinky Winky a tué Po et le reste de ses amis.  Vous croyez que les tubby-délices sont responsables de son comportement.  Vous utilisez votre ordinateur pour tenter de contacter d'autres télétubbies à la Station de Satellite, mais sans succès.  Sans délai, vous préparez un plan pour trouver tout les tubby-délices infectés avant de vous rendre à la Station de Satellite pour recevoir de l'aide.  C'est à vous de découvrir la vérité.
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You were able to escape to the cave.  From there you must travel through maze-like corridors to get to the outskirts. Once you're at the outskirts, you'll find the satellite station.: Au dernier tubby-délice, vous tombez nez-à-nez avec Tinky Winky.  Il s’est transformé en monstre devant vos yeux et a essayé de vous tuer.  Vous avez été en mesure de lui échapper en rentrant dans la Grotte.  De là, vous devrez traverser un chemin labyrinthique pour atteindre la Périphérie.  Une fois atteinte, vous trouverez la Station de Satellite.
+
+Au dernier tubby-délice, vous tombez nez-à-nez avec Tinky Winky.  Il s’est transformé en monstre devant vos yeux et a essayé de vous tuer.
+
+You've travelled a long way,  You escaped those creatures at the Secret Lair. You ran away from Tinky Winky's new phase at the main land. You made your way through the Outskirts and encountered Laa Laa. But after all that's happened so far, you're still alive. At last, you arrive at the Satellite station.: Vous avez traversé un long chemin, vous vous êtes échappé de ces créatures dans le Repère Souterrain.  Vous vous êtes échappé de Tinky Winky au Pays Principal.  Vous avez passé votre chemin jusqu’à la Périphérie où vous avez trouvé Laa-Laa.  Mais malgrès tout ça, vous êtes toujours vivant.  Enfin, vous êtes arrivé à la Station de Satellite.
+
+Good Ending: Bonne Fin
+Bad Ending: Mauvaise Fin
+Evil Ending: Fin Maléfique
+Regretful Ending: Fin Regrettable
+
+Head over to multiplayer and continue the story: Rendez-vous en Multijoueur et continuez l’histoire

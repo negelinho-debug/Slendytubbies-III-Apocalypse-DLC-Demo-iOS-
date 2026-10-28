@@ -1,0 +1,78 @@
+[Original Text]:[Translated Text]
+
+ZeoWorks Presents:<color=#b30000>Zeo</color>Works Presenta
+CAMPAIGN:CAMPAÑA
+CONTINUE GAME:CONTINUAR JUEGO
+PLAY DEMO CHAPTER:JUGAR CAPÍTULO DEMO
+SELECT CHAPTER:SELECCIONAR CAPÍTULO
+OPTIONS:OPCIONES
+CREDITS:CRÉDITOS
+QUIT:SALIR
+LANGUAGE:IDIOMA
+Chapter 0 - "It Was Good":Capítulo 0 - “Era Bueno”
+Chapter 1 - "A New Day":Capítulo 1 - “Un Nuevo Día”
+Chapter 2 - "The Journey":Capítulo 2 - “El Viaje”
+Chapter 3 - "Run Away":Capítulo 3 – “Huida”
+BACK:VOLVER
+APPLY:APLICAR
+VIDEO:VIDEO
+AUDIO:AUDIO
+QUALITY:CALIDAD
+RESOLUTION:RESOLUCION
+VOLUME:VOLUMEN
+Are you sure you want to quit?:¿Estás seguro de que quieres salir?
+
+This game was downloaded from http://zeoworks.com. If you downloaded it from somewhere else, we suggest you to report it on our website or Facebook page and redownload the game from our website, as this version might be outdated.:Este juego fue descargado de http://zeoworks.com. Si lo descargaste de algún otro lado, sugerimos que lo reportes en nuestro sitio o página de Facebook y redescargues el juego de nuestro sitio, ya que esta versión puede estar desactualizada.
+
+This language is based on broken English, dark humour and swearing. Are you sure you want to continue?:Este idioma está basado en un Inglés roto, humor negro y palabrotas. ¿Seguro que quieres continuar?
+
+Translated by [your name]:Traducido por Santikun
+Po died:Po murió
+HOLD:MANTENER
+PRESS:PRESIONAR
+Teletubby House:Casa Teletubby
+Lake:Lago
+Wrong Way:Dirección Equivocada
+Custard Location:Ubicación de Papilla
+Cave:Cueva
+Mountains:Montañas
+
+Loading...:Cargando...
+Press any key to continue:Presiona cualquier tecla para continuar
+
+In a distant land lies underground machines, created by the unknown; capable of creating life forms.  These machines have been creating creatures known as teletubbies for hundreds of years.  The machines worked in a secret underground lair.  One of their creations known as the "teletubby guardian", who had white fur; was designed to monitor a test group of four teletubbies in secret.  They were known as Tinky Winky, Dipsy, Laa Laa and Po.   The four teletubbies lived together in a dome-like home within a boxed landscape known as the "main land".  The group were like hampsters in a cage, not knowing that they were being monitored within a fixed area.  They also lived with an artificial intelligent machine known as "Noo Noo".  The teletubby guardian monitored the groups behavior and documented it into a database, ensured the groups health and also had to ensure that the group did not leave the area.  Over the years the guardian grew a strong bond with the group, enjoying watching over them, despite the group not knowing of the guardians existence.  One day, things went horribly wrong.:En una tierra distante yacen máquinas subterráneas, creadas por lo desconocido; capaces de crear formas de vida.  Estas máquinas han estado creando criaturas conocidas como teletubbies por cientos de años.  Las máquinas funcionaban en una guarida subterránea secreta.  Una de sus creaciones conocidas como el “guardían teletubby”, quien tenía pelaje blanco; fue diseñada para monitorear un grupo de pruebas de cuatro teletubbies en secreto.  Ellos eran conocidos como Tinky Winky, Dipsy, Laa Laa y Po.  Los cuatro teletubbies vivieron juntos en una casa como un domo en un paisaje encajonado conocido como “tierra principal”.  El grupo era como hamsters en una jaula, sin saber que estaban siendo monitoreados en un area fija.  También vivían con una máquina artificialmente inteligente conocida como “Noo Noo”. El guardían teletubby monitoreaba el comportamiento de los grupos y lo documentaba en una base de datos, se aseguraba de la salud de los grupos y de que el mismo no deje el área.  Tras los años, el guardían desarrolló un fuerte vínculo con el grupo, disfrutando verlos, a pesar de que el grupo no sabía de la existencia del guardían.  Un día, las cosas salieron horriblemente mal.  
+
+It has begun. Tinky Winky has killed Po and the rest of his friends. You believe that the custards are responsible for his attacks.  You use your computer in an attempt to contact other tubbies at the satellite station, but with no success. Without any delay you prepare a plan to find all of the infected custards before traveling to the satellite station for help.  It's up to you to find out the truth.:Ha comenzado. Tinky Winky asesinó a Po y al resto de sus amigos. Crees que las papillas son responsables de sus ataques.  Usas tu computadora en un intento de contactar otros tubbies en la estación de satélite, pero sin éxito. Sin ningún retraso preparas un plan para encontrar todas las papillas infectadas antes de viajar a la estación de satélite por ayuda.  Está en ti descubrir la verdad.
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You were able to escape to the cave.  From there you must travel through maze-like corridors to get to the outskirts. Once you're at the outskirts, you'll find the satellite station.:En la última ubicación de papilla encontraste a Tinky Winky.  Se transformó en un monstruo justo en frente de tus ojos e intentó asesinarte. Pudiste escapar hacia la cueva. Desde ahí deberás viajar a través de corredores como una suerte de laberinto para llegar a las afueras. Una vez en las afueras, encontrarás la estación de satélite.
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You were able to escape to the mountains.  The mountains stretch out for miles, they are cold and almost inhabitable.  You must travel through them and get to the outskirts.  You'll be able to find the satellite station from there.:En la última ubicación de papilla encontraste a Tinky Winky.  Se transformó en un monstruo justo en frente de tus ojos e intentó asesinarte. Pudiste escapar hacia las montañas.  Las montañas se extienden por millas, son frías y casi inhabitables.  Debes viajar a través de ellas y llegar a las afueras.  Podrás encontrar la estación de satélite desde allí.
+
+You've travelled a long way.  You escaped those creatures at the Secret Lair. You ran away from Tinky Winky's new phase at the main land. You made your way through the Outskirts and encountered Laa Laa. But after all that's happened so far, you're still alive. At last, you arrive at the Satellite Station.:Viajaste un largo camino.  Escapaste de esas criaturas en l Guarida Secreta. Huiste de la fase nueva de Tinky Winky en la tierra principal. Hiciste tu camino hasta las Afueras y encontraste a Laa Laa. Pero luego de todo lo que ocurrió hasta ahora, sigues vivo. Finalmente, llegas a la Estación de Satélite.
+
+Good Ending:Final Bueno
+Bad Ending:Final Malo
+Evil Ending:Final Malvado
+Regretful Ending:Final Arrepentido
+
+Head over to multiplayer and continue the story:Ve al multijugador y continúa la historia
+
+INSERT CARD:INSERTE TARJETA
+INVALID CARD:TARJETA INVÁLIDA
+NOT ENOUGH PERMISSIONS:PERMISOS INSUFICIENTES
+<color=red>Zeo</color>Works Presents:<color=red>Zeo</color>Works Presenta
+<color=grey>Directed by</color> Santiago P.:<color=grey>Dirigido por</color> Santiago P.
+<color=grey>Co-Directed by</color> Sean Toman:<color=grey>Co-Dirigido por</color> Sean
+Window Mode:Modo de Ventana
+CONTROLS:CONTROLES
+Part Two:Parte Dos
+<color=red>MELTDOWN</color>:<color=red>COLAPSO</color>
+Variant #1 Achieved:Variante #1 Conseguida
+Look mom, I'm on YouTube!:¡Mira mamá, salgo en YouTube!
+Variant #2 Achieved:Variante #2 Conseguida
+Variant #3 Achieved:Variante #3 Conseguida
+Individual volume options can be found in gameplay pause menu:Opciones de volumen individuales pueden encontrarse en el menú de pausa del juego
+Variant #4 Achieved:Variante #4 Conseguida
+Coming soon:Muy pronto
+Thanks for playing!:¡Gracias por jugar!
+test:you put the lam in the saaaaaaaaaaaaas

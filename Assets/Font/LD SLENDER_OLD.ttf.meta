@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: f29c7a095f32b6b408a954fef5e6378f
+timeCreated: 1793118042
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  name:
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: LD Slender
+  fontNames:
+  - LD Slender
+  fallbackFontReferences: []
+  customCharacters:
+  fontRenderingMode: 0
+  output:
+    hasEmptyFontData: 0
+  ascentCalculationMode: 1
+  userData:
+  assetBundleName:
+  assetBundleVariant:

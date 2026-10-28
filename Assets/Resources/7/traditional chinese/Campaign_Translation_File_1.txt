@@ -1,0 +1,827 @@
+ID|Type|Original line|The translation
+0|Speech (Player)|There's no place like home.|金窩銀窩，不如自己的狗窩。
+1|Speech (Noo Noo)|You should head home, You haven't eaten today.|你應該回家了，你今天到現在都還沒吃飯。
+2|Speech (Player)|Yeah I'm done here anyway, Let's go.|我這裡已經做完了，走吧。
+3|Speech (Noo Noo)|Actually, I'm gonna stay here for a bit.|其實，我還要在這裡待上一會兒。
+4|Speech (Player)|Alright, See you later Noo Noo!|好吧，努努待會見！
+5|Speech (Noo Noo)|Bye Po, I'll be home soon.|再見，小波。我等一下就回來。
+6|Speech (Noo Noo)|I wonder what the others are up to.|我想知道其他人都去哪裡了。
+7|Speech (Noo Noo)|Why are you out here all by yourself?|你為什麼要自己一個人到這裡？
+8|Speech (Noo Noo)|Everyone misses you.|大家都想念你。
+9|Speech (Dipsy (Hungry))|It should be on the tool rack near the beds.|它應該在床邊的工具架上。
+10|Speech (Player)|Alright thanks!|好的，謝謝！
+11|Speech (Tinky Winky)|PO's back, horray!|小波回來了，萬歲！
+12|Speech (Player)|I'm sorry, I didn't mean to be rude.|我很抱歉，我並不是故意要這麼粗魯的。
+13|Speech (Noo Noo)|All is forgiven.|一切都已被原諒。
+14|Speech (Player)|There is no time to wake the others.  I need to follow him quickly before he goes far!|沒有時間叫醒其他人了。我必須要他走遠之前跟隨他！
+15|Speech (Player)|I better grab a torch from the work bench.|我最好帶上工作臺上的手電筒。
+16|Speech (Player)|I hope custard will chear Laa Laa up...|我希望奶昔可以振奮拉拉...
+17|Speech (Player)|What a view...|多麼漂亮的風景...
+18|Speech (Noo Noo)|It's a beautiful day.|那是個美好的一天。
+19|Speech (Lala)|Oh, hi Po... *sigh*|哦，你好小波 *嘆息*
+20|Speech (Dipsy (Hungry))|Of course, you need to press the 'on' button on your right.|當然，你要按你右邊的“開”按鈕。
+21|Speech (Player)|Ah now I remember, thanks!|啊我現在記得了，謝謝！
+22|Speech (Player)|What I'm doing here is none of your concern.|我在這裡所做的事與你無關。
+23|Speech (Noo Noo)|You are my concern, I am here for you.|你是我的焦點,我為了你在這裡。
+24|Speech (Player)|It sure is! Today is nice and warm.|就是！今天真是又溫暖又美好。
+25|Speech (Noo Noo)|I am unable to feel warmth.|我不能感受溫度。
+26|Speech (Dipsy (Hungry))|Nope, it's been missing for so long that I can't even remember when I lost it.|不，它已經不見很久了，我甚至不記得我什麼時候弄丟的。
+27|Speech (Player)|You'll find it eventually, I'm sure.|我相信你最終會找到它的。
+28|Speech (Player)|I should probably give Dipsy some tubby custard.|我應該給迪西一些寶寶奶昔。
+29|Speech (Player)|I'll need to find the tool box before I can fix this.|我必需要找到工具箱才能修理這個。
+30|Speech (Player)|(He's my best friend!)|(他是我最好的朋友！)
+31|Speech (Player)|It's ready, time to give it to one of my friends!|已經好了，是時候拿給其中一個朋友了。
+32|Speech (Player)|I'm already carrying a custard.|我已經拿了一個奶昔了。
+33|Speech (Player)|Now to make myself some tubby custard!|現在我要弄一些寶寶奶昔給自己！
+34|Speech (Player)|I can't sleep...|我睡不著...
+35|Speech (Player)|*Gasp*|*抽口氣*
+36|Speech (Player)|Tubby custard, how did that get here?|寶寶奶昔，它怎麼會在這邊？
+37|Speech (Player)|Tinky Winky doesn't seem to be here, I guess I better check the lake.|丁丁似乎不再這裡，我猜我最好檢查一下湖邊。
+38|Speech (Player)|Tinky Winky...?|丁丁...?
+39|Speech (Player)|Wh... What happened to La La...?|拉拉...拉拉發生什麼事了?
+40|Speech (Player)|Are you ok...?|你還好嗎...?
+41|Speech (Player)|Oh my god!|我的天！
+42|Speech (Player)|He's chasing me, I better get to the house quick!|他在追我，我最好趕緊回到家裡！
+43|Speech (Player)|Hey Dipsy...|嘿迪西...
+44|Speech (Dipsy (Hungry))|Hey.|嘿。
+45|Speech (Player)|It still works, but I don't need it right now.|它還能運作，但是我現在不需要。
+46|Speech (Tinky Winky)|........................................|........................................
+47|Speech (Player)|Wait, where are you going!?|等等，你要去哪裡？
+48|Speech (Tinky Winky)|Wow PO don't be so rude.|哇哇小波你不要這麼粗魯。
+49|Speech (Player)|Get used to it.|習慣它。
+50|Speech (Tinky Winky)|*Tinky Winky is offended*|*丁丁被冒犯*
+51|Speech (Player)|Power is now on, time to make some custard!|電源開了，是時候做些奶昔了！
+52|Speech (Player)|We should get you a rain coat.|我們應給你準備一個雨衣。
+53|Speech (Noo Noo)|That would be practical.|這才實際。
+54|Speech (Player)|Alright, now time to fix the custard machine...|好的，現在要修理奶昔機...
+55|Speech (Player)|Will you just go away?|你會走開嗎？
+56|Speech (Noo Noo)|You should treat others how you'd like to be treated.|己所不欲，勿施於人。
+57|Speech (Lala)|I don't really feel like playing...|我現在不想玩,,,
+58|Speech (Tinky Winky)|Hi Po, I'm getting hungry...|嗨，小波。我餓了...
+59|Speech (Player)|Me too! Lets go inside and get tubby custard.|我也是！咱們進去吃些寶寶奶昔。
+60|Speech (Tinky Winky)|Ok! But you should talk to LaLa first, she's been upset all day.|好！但是你應該與拉拉聊下天，它已經這麼失落一整天了。
+61|Speech (Player)|Uh oh! The machine is broken again, I guess I better fix it.|哦不！這機器又壞了！我猜我最好修一下。
+62|Speech (Tinky Winky)|Please hurry, I'm so hungry! Go fetch the tool box.|請你快點，我好餓！過去拿工具箱。
+63|Speech (Player)|Here you go Tinky Winky!|拿去吧，丁丁！
+64|Speech (Tinky Winky)|Thank you PO! I couldn't live without you.|謝謝你小波！沒有你我活不下去。
+65|Speech (Player)|Guys wake up, Tinky Winky broke the custard machine and left!|大夥們醒醒，丁丁把奶昔機弄壞後走了。
+66|Speech (Lala)|...Huh what? why?|哈...哈什麼？為什麼？
+67|Speech (Player)|I don't know but I'm worried.  We need to find him.|我不知道但是我很擔心。 我們需要找到他。
+68|Speech (Lala)|Ok, go get a torch from the work bench and I'll be up in a minute.|好，去工作臺上拿手電筒，我一分鐘後到。
+69|Speech (Dipsy (Hungry))|*zzz*... You guys go on, I'll wait here in case he comes back.. *zzz*|*齁*... 你們去吧,我在這裡以防他回來了.. *齁*
+70|Speech (Player)|I'm getting kinda hungry.|我漸漸感到飢餓。
+71|Speech (Noo Noo)|There is custard back at our home.|我們家裡又奶昔。
+72|Speech (Player)|Chear up Laa Laa, I made some custard for you to make you feel better.|拉拉振作起來，我做了一些奶昔讓你感覺好一點。
+73|Speech (Lala)|*sniff* Thank you Po, you are a true friend.|*聞* 小波謝謝你，我真正的朋友。
+74|Speech (Lala)|*La La feels a bit better*|*拉拉感覺好了一點*
+74|Speech (Lala)|*Laa Laa feels a bit better*|*拉拉感覺好了一點*
+75|Speech (Player)|I'm just playing, it's great fun!|我只是在玩，非常好玩！
+76|Speech (Noo Noo)|I am glad you are enjoying yourself.|我很高興你玩得開心。
+77|Speech (Lala)|Oh hi again Po... *sniff*|哦，又見到你了小波... *嗅*
+78|Speech (Player)|Ok, time to find Tinky Winky...|好，是時候去找丁丁了...
+79|Speech (Lala)|Hey! Why did you do... um... it's okay, I didn't want to play with it anyway.|嘿！你為什麼要...呃...算了，反正我也不想要跟它玩。
+80|Speech (Player)|Hello Noo Noo!|哈嘍努努！
+81|Speech (Noo Noo)|Greetings Po.|祝福你，小波。
+82|Speech (Dipsy (Hungry))|Oh if you are making custard, make me some too!|哦如果你在做奶昔的話，順便給我一些！
+83|Speech (Lala)|No.. I had a bad dream last night, it was about us and bad things happened... but I can't remember what.|不...我昨晚做了個怪夢，是關於什麼壞事即將發生在我們身上...但是我記不起來了。
+84|Speech (Player)|Sounds scary, but it was just a dream.. try to forget about it.|聽起來很可怕，但是這終究只是一場夢...試著忘掉它吧。
+85|Speech (Player)|Here you go Dipsy!|拿去吧迪西！
+86|Speech (Dipsy (Hungry))|Thank you PO, don't forget about yourself! You must be hungry.|謝謝你小波，別忘了你自己！你應該也蛾了。
+87|Speech (Player)|That sucks.|真噁心。
+88|Speech (Noo Noo)|Yes, it does.|是，真的
+89|Speech (Player)|They are so pretty!|它們真漂亮！
+90|Speech (Player)|It's not for me, I prefer cold weather...|這不適合我，我比較喜歡偏冷的天氣...
+91|Speech (Noo Noo)|Information noted.|資訊條。
+92|Speech (Tinky Winky)|Eh-Oh! I want tubby custard!|哦不！我要寶寶奶昔！
+93|Speech (Player)|Me too! Lets go inside and get some.|我也要！咱們進去吃一些吧。
+94|Speech (Tinky Winky)|Ok! But you should talk to LaLa first, she's been upset all day.|好！但是你應該與拉拉聊下天，它已經這麼失落一整天了。
+95|Speech (Lala)|...Yeah...|...吔...
+96|Speech (Player)|Would you like to play Noo Noo?|努努你想要玩嗎？
+97|Speech (Noo Noo)|Perhaps later, Po.|等等吧，小波。
+98|Speech (Player)|Grow up La La, I don't want to hear it... Now shut up and eat.|成熟點吧拉拉，我不想聽...閉上你的嘴巴吃你的東西。
+99|Speech (Lala)|*La La is scared*|*拉拉嚇到了*
+99|Speech (Lala)|*Laa Laa is scared*|*拉拉嚇到了*
+100|Speech (Player)|Phew! That should do it.|呼! 應該這樣做
+101|Speech (Tinky Winky)|Yay you did it, tubby custard!|吔，你辦到了，寶寶奶昔！
+102|Speech (Dipsy (Hungry))|Could you please make custard and hand it out to each of us? We're hungry!|可以請你做一些奶昔後拿給我們嗎？我們餓了！
+103|Speech (Player)|Yeah, sure... I guess I'll make my own once I've made enough for you guys.|是，可以...我猜我會為自己做一個，我已經做完你們的了。
+9|Speech (Dipsy (Hungry))|It should be on the tool rack near the beds.|它應該在床邊的工具架上。
+10|Speech (Player)|Alright thanks!|好的，謝謝！
+104|Speech (Player)|No power.|沒電。
+105|Speech (Player)|The view from the lake today is wonderful, I'm embracing it.|今天的湖景真漂亮，我要擁抱它們。
+106|Speech (Noo Noo)|What I see is danger, I am not waterproof.|我所看到的是危險，我不是防水的。
+107|Speech (Player)|Tinky Winky! Are you around here?|丁丁！你在旁邊嗎！
+108|Speech (Player)|I guess I should look around...|我覺得我要查看四周。
+109|Speech (Player)|Hey Dipsy...|嘿，迪西...
+110|Speech (Dipsy (Hungry))|Hey.|嘿。
+111|Hotspot|Flowers|花朵
+112|Hotspot|Toggle Power (On)|切換電源（開）
+113|Hotspot|Builders Torch|建築手電筒
+114|Hotspot|Laa Laa|拉拉
+115|Hotspot|Flowers|花朵
+116|Hotspot|Flowers|花朵
+117|Hotspot|Custard Machine|奶昔機
+118|Hotspot|Laa Laa's Ball|拉拉的球
+119|Hotspot|Tinky Winky|丁丁
+120|Hotspot|Enter House|進入屋內
+121|Hotspot|Dipsy|迪西
+122|DialogueOption|Are you ok?|你還好嗎？
+123|DialogueOption|Do you want to play?|你想要玩嗎？
+124|DialogueOption|Goodbye!|再見！
+125|DialogueOption|[Wake The Others]|[叫醒其他人]
+126|DialogueOption|[Follow Tinky Winky Alone]|[獨自跟隨丁丁]
+127|DialogueOption|Have you found your hat yet?|你找到你的帽子了嗎？
+128|DialogueOption|Do you know where the tool box is?|你知道工具箱在哪裡嗎？
+129|DialogueOption|Goodbye!|再見！
+130|DialogueOption|(Enter House)|(進入屋內)
+131|DialogueOption|(Stay)|(留下)
+132|DialogueOption|What are you doing?|你在做什麼？
+133|DialogueOption|Get back into bed its late.|很晚了，快上床。
+134|DialogueOption|You broke the machine!|你把機器弄壞了！
+135|DialogueOption|[Left]|[向左]
+136|DialogueOption|[Right]|[向右]
+137|DialogueOption|Would you like to play?|你想要玩嗎？
+138|DialogueOption|I'm getting hungry.|我漸漸餓了。
+139|DialogueOption|That sucks.|真噁心。
+140|DialogueOption|We should get you a rain coat.|我們應給你準備一個雨衣。
+141|DialogueOption|I didn't mean to be rude.|我很抱歉，我並不是故意要這麼粗魯的。
+142|DialogueOption|Go away.|滾開。
+143|DialogueOption|[Comfort]|[安慰]
+144|DialogueOption|[Insult]|[侮辱]
+145|DialogueOption|Hi Tinky Winky..|嗨丁丁...
+146|DialogueOption|Eh-Oh!|哦不！
+147|DialogueOption|Out of my way!|滾開！
+148|DialogueOption|\Hidden|\藏
+149|DialogueOption|Have you found your hat yet?|你找到你的帽子了嗎？
+150|DialogueOption|Do you know how to turn on the custard machine?|你知道怎麼開啟奶昔機嗎？
+151|DialogueOption|Goodbye!|再見！
+152|DialogueOption|Hello Noo Noo!|哈嘍努努！
+153|DialogueOption|It's nice and warm.|這又好又溫暖。
+154|DialogueOption|I prefer cold weather...|我比較喜歡偏冷的天氣...
+155|DialogueOption|I'm having fun!|我玩得很開心！
+156|DialogueOption|I'm just enjoying the view.|我在享受這景象。
+157|DialogueOption|None of your concern.|與你無關。
+158|Speech (Player)|It's dark, I'll need to get my night vision camera from the storage room before going outside.|天黑了，我要從儲藏室拿我的夜視相機才能出門。
+159|Speech (Player)|The storage room is locked, I can unlock it from the control room...|儲藏室上鎖了，我能夠從控制室解鎖它...
+160|Speech (Player)|Once I get these custards I should go to the satellite station for help.|只要我得到這些奶昔，我就應該去衛星站尋求協助。
+161|Speech (Player)|Other tubbies will be there.|其他寶寶將在這裡。
+162|Speech (Player)|I must hurry!|我該快點！
+163|Speech (Player)|This is the control room... I forget how to open this door.|這裡就是控制室... 我忘了如何開啟這扇門。
+164|Speech (Player)|The door is sealed.  I need to unlock it from the control room.|門被封起來了。 我需要從控制室解鎖。
+165|Speech (Player)|The control room is on the right.|控制室在右邊。
+166|Speech (Player)|A pipe, this could be useful.|一條管子，這應該很有用。
+167|Speech (Player)|Alright, lets go get the remaining custards before they do any more damage.|好，讓他們在傷害更多之前得到剩餘的奶昔。
+168|Speech (Player)|Ok, now time to unlock the storage room door.  The door controls should be in here somewhere.|Ok, 是時候解鎖儲藏室的門了。門的控制器應該就在某處。
+169|Speech (Player)|There is a pipe missing here...|這裡有一個管子不見了...
+170|Speech (Player)|Hmm, nothing happened... I should check the pipeline.|嗯，沒有事情發生...我應該檢查一下管道。
+171|Speech (Player)|Alright... Now I need to apply maximum pressure into the main pipeline.|好吧...現在我必須施壓最大壓力於主管道。
+172|Speech (Player)|The meter dial will be deep in the red zone once this is complete.|一旦完成，米表將在紅色區域底部。
+173|Speech (Player)|The meter dial will be in the red zone once this is complete.|一旦完成，米表將在紅色區域處。
+174|Speech (Player)|That should do it, now lets go get that night vision camera.|好了，現在去拿那夜視相機吧。
+175|Speech (Narrator)|(COULD NOT CONNECT TO SATELLITE STATION)|(無法連接到衛星站)
+176|Speech (Player)|Dang it, For some reason I can't contact the satellite station for help...|我去，因為一些原因我沒辦法從衛星站取得聯繫來尋求幫助...
+177|Speech (Player)|It looks like I'm on my own for now.|看來我現在只能靠自己。
+178|Speech (Player)|I wont be able to get help from here, I'll need to go to the satellite station and tell everyone what happened.|我被辦法在這尋求幫助，我必須要到衛星站去告訴大家發生什麼了。
+179|Speech (Player)|Hmm...|嗯...
+180|Speech (Player)|Pressure is at maximum, I should be able to open the control room door now.|壓力已達最大,我現在應該可以打開控制室了。
+181|Hotspot|Night Vision Camera|夜視相機
+182|Hotspot|Missing Pipe|遺失的管子
+183|Hotspot|Door Controls|門的控制器
+184|Hotspot|Pipe|管子
+185|Hotspot|Turn Valve|轉閥
+186|Hotspot|Pipe System|管道系統
+187|Speech (Player)|Tinky Winky is still around, I need to be careful...|丁丁還在附近，我需要小心點。
+188|Speech (Player)|Tinky winky, snap out of it! This isn't you..|丁丁，振作起來！這不像你..
+189|Speech (Player)|Oh my god...|我的天...
+190|Speech (Player)|I need to get to the satellite station through the mountains or through the cave NOW!|我需要通過山脈或通過洞穴來到達衛星站！
+191|Speech (Player)|Where should I go look for custards next?|我應該去哪裡去找奶昔？
+192|Speech (Player)|Hmm... no custard here.  Maybe it's outside the house.|嗯...這裡沒有奶昔。 也許它在屋外。
+193|Speech (Player)|The custard should be around here somewhere.|奶昔應該在這裡的某個地方。
+194|Speech (Player)|Ok, a custard should be somewhere in this area...|Ok，一個奶昔應該在這裡的區域...
+195|Speech (Player)|This path leads to the lake.  Let's hope I don't run into Tinky Winky...|這條路通往湖邊。 希望我不要撞上丁丁...
+196|Speech (Player)|Ah ha! The first custard.  According to my computer there should be four more custards in the area.|啊哈！ 第一個奶昔。 根據我的電腦顯示，這地方應該還有四個奶昔。
+197|Speech (Player)|I hope I can get them before it's too late...|我希望在太遲之前可以得到它們...
+198|Speech (Player)|The entrance to the cave, there should be a custard around here somewhere...|洞穴的入口，這裡應該有一個奶昔在附近...
+199|Speech (Player)|...I'm so sorry....|...我很抱歉....
+200|Speech (Player)|If I'm correct, there should be a custard up ahead.|如果我是對的，這裡應該有個奶昔在前面。
+201|Speech (Player)|The sooner I get these custards, the sooner I can go get help from the satellite station...|我越早得到這些奶昔，我就越早可以得到衛星站的幫助...
+202|Hotspot|Custard|奶昔
+203|Hotspot|Custard|奶昔
+204|Hotspot|Custard|奶昔
+205|Hotspot|Custard|奶昔
+206|Hotspot|Custard|奶昔
+207|DialogueOption|Last known location of Po|最後知道小波的位置
+208|DialogueOption|Lake|湖
+209|DialogueOption|Cave|洞穴
+210|DialogueOption|Teletubby house|天線寶寶的家
+211|Speech (Player)|This cave is full of dead ends...|這個洞充滿了死衚衕...
+212|Speech (Player)|Not again!|又一次！
+213|Speech (Player)|Finally, the exit!|終於，出口！
+214|Speech (Player)|Just a little further...|再遠一點…
+215|Speech (Player)|What is that thing!?|那是什麼!?
+216|Speech (Player)|I need to get to the other side of this cave, it will lead to the outskirts.|我必須到這個洞的另一邊去，它會通向郊外的。
+217|Speech (Player)|I can't believe Tinky Winky turned into a monster...|我不相信丁丁變成了一個怪物…
+218|Speech (Player)|I'm surprised this cave hasn't collapsed yet...|我很驚訝這個山洞還沒有倒塌…
+219|Speech (Player)|What was that? ...-I should be careful.|那是什麼？...-我應該小心一點。
+220|Speech (Player)|Day 22. They didn't find out about the journal, but I don't know how long I can hide it, they almost find it last time.|第22天。他們沒有找到關於日記的東西，但我不知道我能藏多久，他們上次差點找到了。
+221|Speech (Player)|Anyway, testing has been painful lately, they made me-...|不管怎樣，最近測試很痛苦，他們讓我—…
+|Anyway, testing has been painful lately, they made me-...||
+|||
+222|Speech (Player)|...-The rest of the note is ripped.|-剩下的便條被撕了。
+223|Speech (Player)|Day 1. Today I decided to write a journal to tell my adventures with the bestest friends ever!|第1天。今天，我決定寫一篇日記告訴我最好的朋友我曾經的冒險旅程！
+224|Speech (Player)|These coat men brought us papers and crayons to draw what we want...|這些穿大衣的人給我們拿來紙和蠟筆來畫我們想要畫的…
+225|Speech (Player)|...and we drew the best friend trio!|...然後我們畫了三個最好的朋友！
+226|Speech (Player)|They are my only but best friends, and I love them!|他們是我唯一的、最好的朋友，我愛他們！
+227|Speech (Player)|I hear coat men, I must hide the journal, they will punish me with electricity if they... find out.|我聽到穿大衣的人了，我必須藏起日記，如果它們找到的話，他們會用電...懲罰我。
+228|Speech (Player)|There is no way I can jump across that.|我沒辦法越過那件事。
+229|Speech (Player)|Stop ripping my journals.|別再撕我的日記了。
+230|Speech (Player)|Day 54. They found my journal and ripped it apart! 22 days thrown to the trash...|第54天。他們找到了我的日記，並把它撕成碎片！有22天被扔到垃圾桶了…
+231|Speech (Player)|In other news, 53 has been feeling sick! He feels awful, but the coat men won't help!|另一條消息是，53令人不舒服！他覺得很糟糕，但大衣人不幫忙！
+232|Speech (Player)|This is sad, I hope he gets better!|真可悲，我希望他好轉！
+233|Speech (Player)|I wonder when will they give us real names...|我想知道他們什麼時候給我們真實姓名…
+234|Speech (Player)|That was close, I don't think he can get me in here...|真是好險，我不認為他能把我帶到這裡…
+235|Speech (Player)|I need to get to the other side of this cave, it will lead to the outskirts.|我必須到這個洞的另一邊去，它會通向郊外的。
+236|Speech (Player)|Day ?????????. What day is it?|第??????????天. 今天星期幾？
+237|Speech (Player)|They're gone! ******* turned into a monster!|他們走了！*******變成一個怪物！
+238|Speech (Player)|******* ran away and I might not see him ever again. I miss them.|*******跑了，我可能再也見不到他了。我想念他們。
+239|Speech (Player)|Oh god, what is happenin-|我的天啊，發生什麼—
+240|Speech (Player)|.............RUN.............|.............跑啊.............
+|.............RUN.............||
+|||
+241|Speech (Player)|...-What in the world happened here?|…-這裡到底發生了什麼？
+242|Speech (Player)|HERE THEY COME .  HELP THEY SAW .  MY JOURNAL.|它們來了。快幫我。它們看了。我的日記。
+243|Hotspot|Page|頁
+244|Hotspot|Page|頁
+245|Hotspot|Page|頁
+246|Hotspot|Page|頁
+247|Hotspot|Page|頁
+248|Hotspot|Page|頁
+249|Hotspot|Jump|跳
+250|Hotspot|Pit|坑
+251|Hotspot|Pit|坑
+252|Hotspot|Page|頁
+253|Speech (Player)|Who is that? I can hear someone talking...|誰在那邊？我聽見有人在說話…
+254|Speech (Unit 437)|Halt!  Where do you think you're going?|停止！你覺得你要去哪裡？
+255|Speech (Unit 437)|I am meant to chop you up and cook you for the master tomorrow.|我打算明天把你剁碎，然後為主人烹調。
+256|Speech (???)|*Loud Yell*|*大聲喊叫*
+257|Speech (Player)|Oh no, It knows I'm gone!|哦，不，它知道我走了！
+258|Speech (Player)|I must get away quickly!|我必須趕緊離開！
+259|Speech (Player)|I need to listen carefully...|我需要仔細聽…
+260|Speech (Player)|If I remember correctly, I was on the other side of this frozen lake when I was attacked.|如果我沒記錯的話，當我被襲擊的時候，我就在結冰的湖面的另一邊。
+261|Speech (Player)|I need to get my night vision camera before going to the outskirts.|在去郊外之前，我需要得到夜視相機。
+262|Speech (Player)|It's so cold...|好冷啊...
+263|Speech (Player)|Custard, this far up in the mountains?|奶昔，在這遙遠在山上？
+264|Speech (Player)|It's frozen now.|已經凍住了。
+265|Speech (Player)|Trees are the only living things that can tolerate this climate.|樹木是唯一能容忍這種氣候的生物。
+266|Speech (Player)|Who has been cutting down trees?|誰在砍伐樹木？
+267|Speech (Player)|No one has been up here for years...|好幾年都來沒有人上來這裡了…
+268|Speech (Player)|It's good to feel warmth again.|能夠再次感受到溫暖是件好事。
+269|Speech (Player)|The sooner I get out of here the better.|我越快離開這裡越好。
+270|Speech (Player)|Past this gate leads to the outskirts...  It appears to be locked with a chain.|過了這道門，就到郊外去了…這似乎被鏈條鎖鎖起來了。
+271|Speech (Player)|I'll need to find something to break the chain with.|我需要找點東西來打破這個鏈條。
+272|Speech (Player)|I think I'm going to be sick...|我想我要生病了…
+273|Speech (Player)|Ok, I think I'm safe...|好吧，我想我很安全…
+274|Speech (Unit 437)|Farewell.|再會。
+275|Speech (Unit 437)|I am chopping down wood for the masters fire.|我在砍木頭來為主人點火。
+276|Speech (Unit 437)|I must cook the master some food before dawn.|我必須在黎明前給主人做飯。
+277|Speech (Player)|Got it!|知道了！
+278|Speech (Player)|I should find my night vision camera before going to the outskirts.|我應該在去郊外之前找到我的夜視相機。
+279|Speech (Unit 437)|That is correct.|那是正確的。
+280|Speech (Player)|Oh my god, is that an eyeball?|哦，天哪，那是眼球嗎？
+281|Speech (Player)|I can't help but to think it's watching me...|我忍不住想著，它在看著我…
+282|Speech (Unit 437)|So be it, once the master finds out you're gone it will hunt you down and kill you.|所以，一旦主人發現你走了，它就會追殺你，然後置你於死地。
+283|Speech (Player)|Huh, an old pipe... Maybe I can use it to break open the chain on the gate.|嗯，一條舊管子…也許我可以用它來破壞大門上的鏈子。
+284|Speech (Unit 437)|Yes, I believe you dropped it when the master took you.|是的，我相信你在主人帶走你的時候把它弄掉了。
+285|Speech (Player)|Uh... Hello...|呃... 你好...
+286|Speech (Unit 437)|Greetings.|祝福你。
+287|Speech (Unit 437)|Come... with you? The master will not like that at all.|跟隨...你？ 主人一點也不喜歡這樣。
+288|Speech (Unit 437)|I failed my directives once, I will not fail them again.|我有一次指揮失敗了，我不會再讓他們失望了。
+289|Speech (Unit 437)|Once the master finds out you're gone, it will hunt you down and kill you.|一旦主人發現你走了，它就會追殺你，然後置你於死地。
+290|Speech (Unit 437)|You will be, I'm afraid. Don't worry, I can make a very nice salsa. You will die, but will taste very good!|恐怕你會的。別擔心，我可以做一個很好的莎莎醬。你會死的，但嚐起來會很好！
+291|Speech (Player)|Where am I?|我在哪裡？
+292|Speech (Unit 437)|I am Unit 437, a security droid created by the machines.|我是“第437單元”，是由機器創建的安全機器人。
+293|Speech (Unit 437)|My original directive was to kill the master before it escaped from the main land.|我最初的指令是在主人離開家園之前殺死他。
+294|Speech (Unit 437)|However, once I encountered the master I knew I was not capable of defeating it.|然而，一旦我遇到了主人，我就知道我沒有能力戰勝它。
+295|Speech (Unit 437)|...I'm not very good at my job.|…我不是很擅長於自己的工作。
+296|Speech (Unit 437)|At that point I knew I only had two choices.  To serve, or be destroyed.|在那時，我知道我只有兩種選擇。要麼服從，要麼被毀滅。
+297|Speech (Unit 437)|I chose to serve.|我選擇服從。
+298|Speech (Unit 437)|Now my directive is to build fires to keep the master warm.|現在我的指令是生火以保持主人溫暖。
+299|Speech (Unit 437)|I also cook the masters meals.  I keep the master alive.|我也做主人的飯菜。我讓主人活著。
+300|Speech (Player)|I need to get out of here before I become food.|我必須在我變成食物之前離開這裡。
+301|Speech (Unit 437)|If you leave I'll have to inform the master that death is an inconvenience for you.|如果你離開我就必須知會主人，死亡會給你帶來諸多不便。
+302|Speech (Unit 437)|The master will be very angry.|主人會很生氣的。
+303|Speech (Unit 437)|Please, the master will destroy me if it found out I let you go.|拜託，如果他發現我讓你走了，主人會毀了我的。
+304|Speech (Unit 437)|Tomorrow you will be chopped up and cooked for the master to eat.|明天你將被剁、煮熟，供主人吃。
+305|Speech (Player)|At last, my night vision camera...|最後，我的夜視相機…
+306|Speech (Player)|Oh no, it looks like the lens cracked when I dropped it.|哦，不，我把它摔下來的時候把鏡頭摔裂了。
+307|Speech (???)|...............|...............
+308|Hotspot|Gate|大門
+309|Hotspot|Fire|火
+310|Hotspot|Eyeball|眼球
+311|Hotspot|Pipe|管線
+312|Hotspot|Bloody Remains|血腥的痕跡
+313|Hotspot|Raw Meat|生肉
+314|Hotspot|Bloody Remains|血腥的痕跡
+315|Hotspot|Custard Splat|翻倒的奶昔
+316|Hotspot|Trees|樹
+317|Hotspot|Stump|樹墩
+318|Hotspot|Stump|樹墩
+319|Hotspot|Droid|機器
+320|DialogueOption|[Go Left]|[向左走]
+321|DialogueOption|[Go Right]|[向右走]
+322|DialogueOption|[Go Left]|[向左走]
+323|DialogueOption|[Go Right]|[向右走]
+324|DialogueOption|The master, is that the thing that took me?|主人，那是帶我走的東西嗎？
+325|DialogueOption|Why was I brought here?|我為什麼被帶到這裡來？
+326|DialogueOption|I'm not food!|我不是食物！
+327|DialogueOption|Who are you?|你是誰？
+328|DialogueOption|What are you doing?|你在做什麼？
+329|DialogueOption|Have you seen my night vision camera?|你有看到我的夜視攝像機嗎？
+330|DialogueOption|Goodbye.|再見。
+331|DialogueOption|[Go Left]|[向左走]
+332|DialogueOption|[Go Right]|[向右走]
+333|DialogueOption|I need to get to the outskirts and find the satellite station.|我要到郊外去找衛星站。
+334|DialogueOption|I need to find my night vision camera.|我需要找到我的夜視相機。
+335|DialogueOption|None of your business.|關你屁事。
+336|DialogueOption|I plan to be long gone before your master finds out.|我計畫在你的主人發現之前離開一陣子。
+337|DialogueOption|Come with me, you're a slave!|跟我來，你個奴隸！
+338|DialogueOption|You're a coward.|你是個懦夫。
+339|DialogueOption|[Go Left]|[向左走]
+340|DialogueOption|[Go Right]|[向右走]
+341|DialogueOption|Please, don't kill me...|求你了，別殺我…
+342|DialogueOption|Where are you taking me?|你要帶我去哪裡？
+343|DialogueOption|Who are you?|你是誰?
+344|DialogueOption|...|...
+345|Speech (Player)|At last I'm here... This is the entrance to the satellite station.|我終於在這裡了…這是衛星站的入口。
+346|Speech (Player)|Hmm... How do I get in?|嗯…我要怎麼進去？
+347|Speech (Lala_Alive)|......................................|......................................
+348|Speech (Player)|Why are you here anyway? I thought you were... well..|你怎麼會在這裡？我以為你...好吧...
+349|Speech (Lala_Alive)|I ran away... from Tinky Winky... before he caught me in the house. I ran away until I came across this place, so I used it as a hideout. He tried to-... H-he caused-... *sniff* They are all dead.|我逃過一劫了…從丁丁那兒…在他抓住我之前。我跑掉了，直到我來到這個地方，我把它作為一個藏身之處。他試圖—…他造成的—…*嗅*他們都死了。
+350|Speech (Player)|Oh no, Laa Laa's here...|哦不，拉拉來了…
+351|Speech (Player)|Tinky Winky scratched out her eyes, she can't see me.|丁丁挖了她的眼睛，她看不見我。
+352|Speech (Player)|But she can still hear me, I need to be quiet...|但她仍然可以聽得到我，我需要安靜點…
+353|Speech (Player)|I should find all the custards in this area before proceeding to the satellite station.|我應該找到所有奶昔再前往衛星站。
+354|Speech (Lala_Alive)|W-who are you? How do you know me?|你-你是誰？你怎麼認識我的？
+355|Speech (Player)|The satellite station isn't far from here, let's go.|衛星站離這兒不遠，我們走吧。
+356|Speech (Lala_Alive)|*Cough cough cough*|*咳 咳 咳*
+357|Speech (Lala_Alive)|So... *sniff* what's your plan?|所以…*嗅*你有什麼計畫？
+358|Speech (Player)|We need to get to the satellite station, we'll be able to find help there.  Whatever you do, no matter now hungry you are, don't eat any custards you find.|我們需要去衛星站，我們能在那裡找到幫助。無論你做了什麼，不管你現在有多餓，不要吃你找到的任何奶昔。
+359|Speech (Lala_Alive)|But.. I ate a custard.. the night that all of this happened.|但是..我吃了一個。這一切都發生在那天晚上。
+360|Speech (Player)|Come on, follow me.|來吧，跟我來。
+361|Speech (Player)|My night vision camera might be useful for navigating through this rubble.|我的夜視攝像機對於穿過這片瓦礫很有用。
+362|Speech (Lala_Alive)|I'm just... broken.|我只是...壞了。
+363|Speech (Lala_Alive)|Yeah.. *sniff* It's the only place that wasn't secured by some creepy creature. I had a tough time going through that.. horrible, brown monster.|是啊..*嗅*這是唯一沒有被一些可怕的生物保護的地方。我有一個艱難的經歷..那恐怖的棕色怪物。
+364|Speech (Lala_Alive)|It hurts.. so much...|疼得...厲害…
+365|Speech (Lala_Alive)|I don't know if I'm going to be ok...|我不知道我會不會沒事…
+366|Speech (Lala_Alive)|Y-yes... I'm sorry.|是-是的…我很抱歉.
+367|Speech (Lala_Alive)|W-who are you?! D-don't touch me!|你-你是誰？不要碰我！
+368|Speech (Player)|That's the station alright...|這是站點....
+369|Speech (Lala_Alive)|I will... *Sniff* ...-I miss home...|我會…*嗅*…-我很想念家…
+370|Speech (Lala_Alive)|I need to know what's going on here if you're going to talk to me.|如果你要和我談的話，我需要知道這裡發生了什麼事。
+371|Speech (Lala_Alive)|Go away!|走開！
+372|Speech (Lala_Alive)|W-.. wait, don't leave me.  Please..|等-等等，別離開我。 拜託...
+373|Speech (Lala_Alive)|G-..... Guardian..?|守-...守護者..?
+374|Speech (Lala_Alive)|...I'm sorry.|...我很抱歉.
+375|Speech (Player)|These pillars look like they're about to collapse...|這些柱子看起來好像要倒塌了…
+376|Speech (Player)|Maybe I could find a way to trap Laa Laa under them.|也許我可以找到一個方法來讓他捕獲拉拉。
+377|Speech (Player)|The station goes all the way through these mountains.|站點一直延伸到這些山上。
+378|Speech (Player)|I wonder how I can open this door.|我不知道怎樣才能打開這扇門。
+379|Speech (Lala_Alive)|And who the hell are you to give me orders? Leave, now.|你以為你是誰來命令我？給我離開。
+380|Speech (Lala_Alive)|Tell me about it, I'm not feeling pretty well.|告訴我吧，我感覺不太好。
+381|Speech (Player)|Another custard? How did that get here...|另一個奶昔？怎麼會在這裡的？…
+382|Speech (Player)|I should look around this area for more custards before something eats them.|我應該環顧這個地區尋找更多的奶昔，避免有什麼吃了它。
+383|Speech (Player)|Alright, I think that's all of them...|好吧，我想已經拿到全部了…
+384|Speech (Player)|Damn, Laa Laa is blocking the exit, I'll need to get rid of her somehow.|該死的，拉拉擋住出口了，我需要擺脫她。
+385|Speech (Lala_Alive)|Please, don't leave me here...|拜託，請不要在這裡離開我…
+386|Speech (Lala_Alive)|I'm trying, but... it hurts...|我正在努力，但…很痛…
+387|Speech (Lala_Alive)|"Hmm, Fine then... "|嗯，那好吧…
+388|Speech (Player)|I was ordered to watch Tinky Winky, Dipsy, Po and you.|我奉命看守著丁丁、迪西、小波和你。
+389|Speech (Player)|I'm meant to prevent things from going wrong, such as preventing any of you from leaving the Teletubby lands.|我為了避免事情出錯，就像防止你們有人要離開天線寶寶土地。
+390|Speech (Lala_Alive)|...What are you talking about?|…你在說什麼？
+391|Speech (Player)|Everytime any of you tried to leave the lands, we would erase any memories of what you've seen outside the Teletubby Lands, and drag you back in. I'm supposed to look out for when that happens.|當你們有人試圖離開土地，我們會删除所有你在外面的回憶，然後把你拖回來。如果發生這種情況，我就應該更小心。
+392|Speech (Lala_Alive)|"..""We""?"|"..""我們""?"
+393|Speech (Player)|Yes. There's more people working with me, but that's classified.|對.有很多的人和我一起工作，但那是機密的。
+394|Speech (Lala_Alive)|I-... No. That can't be true.|我—…不，那不可能是真的。
+395|Speech (Lala_Alive)|...Why weren't we aware of this?|…為什麼我們沒有意識到這一點呢？
+396|Speech (Player)|We couldn't risk your security. You could of tried to escape if you knew there was something more beyond the mountains.|我們不能冒著你的安全行事。如果你知道山那邊還有別的東西，你可以試著逃跑。
+397|Speech (Lala_Alive)|...You knew.|...你知道的。
+398|Speech (Lala_Alive)|You knew this would happen. You knew something was wrong.|你知道這會發生的。你知道有什麼地方不對勁。
+399|Speech (Player)|I'm sorry, but I didn't-|對不起，但我並沒有—
+400|Speech (Lala_Alive)|You knew that whatever caused Tinky Winky to become a monster existed. Now they are dead.|你知道什麼使丁丁成為怪物般存在。現在他們死了。
+401|Speech (Lala_Alive)|ALL OF THEM are dead. And it's only you to blame for not doing anything about it!|所有的人都死了 這是你的錯因為你沒有做任何事！
+402|Speech (Player)|Laa Laa, please, listen to me.|拉拉，請聽我說...
+403|Speech (Lala_Alive)|NO, YOU LISTEN. You could of done something to stop this, and you didn't.  You just wanted to stay hidden in your wonderful cave stalking us.|不，你聽著。 你可以做點什麼來阻止這件事，但是你沒有。 你只想躲在你美妙的洞穴中跟踪我們。
+404|Speech (Lala_Alive)|You don't care about us, you just care about your god damn job! If you did care then you could of showed yourself to us!|你從不在乎我們，你只在乎你那他媽的工作！如果你真的關心，那麼你可以向我們展示你自己！
+405|Speech (Player)|I had no clue this was going to happen, alright. I only knew this after it was too late, stop blaming me when I knew just as much as you did!|我沒想到會發生這樣的事，好吧。我只是在為時已晚之後才知道這一點。我知道的和你一樣，不要再責備我了！
+406|Speech (Player)|I'm going to take you with me and find out what's going on, but if you can't stay calm, I'm going leave you here and go on my own, you hear me?|我要帶你一起去看看到底發生了什麼事，但是如果你不能保持冷靜，我就把你留在這裡，你自己去，你聽到了嗎？
+407|Speech (Lala_Alive)|... You're right. I'm sorry. I'm just.. really mad, at everything. My friends are dead and I-...|…你是對的。我很抱歉.我只是…真的對什麼都瘋了，我的朋友死了，我—…
+408|Speech (Lala_Alive)|But I need to know who you are. I've never seen you in my life.|但我需要知道你是誰。我從來沒有見過你。
+409|Speech (Lala_Alive)|One can only hope...|只能希望...
+410|Speech (Lala_Alive)|Yeah.. I'm going to be fine.|是啊..我會好起來的。
+411|Speech (Player)|I'm sorry...|我很抱歉…
+412|Speech (Player)|You're at rest now....|你是倖存者了……
+413|Speech (Lala_Alive)|I know, I know...|我知道，我知道…
+414|Speech (Player)|Finially, I'm in the outskirts.  The satellite station isn't far from here...|終於，我在郊區了。衛星站離這兒不遠…
+415|Speech (Player)|I just need to get out of this canyon.|我只需要走出這個峽谷。
+416|Speech (Player)|I'm glad it's dawn.|我很高興現在已是黎明。
+417|Speech (Lala_Alive)|*Sniff* Ok...|*嗅* 好的...
+418|Speech (Lala_Alive)|...-Ten...  ... Nine...  ... Eight...  ....|...-十...  ... 九...  ... 八...  ....
+419|Speech (Lala_Alive)|...-Seven...  ... Six...  ... Five...  ...|...-七...  ... 六...  ... 五...  ...
+420|Speech (Lala_Alive)|I hope you're right...|但願你是對的…
+421|Speech (Lala_Alive)|It's okay.. you're not responsable for this, you shouldn't feel sorry.|沒關係…你不應對此負任何責任，你不應該感到抱歉。
+422|Speech (Lala_Alive)|S- ...Sorry?  Sorry for what?|對不起……？對不起什麼？
+423|Speech (Lala_Alive)|*Cough* I don't think.. I'll be strong much longer-...|*咳*我不認為…我會更加堅強的—…
+424|Speech (Lala_Alive)|I wish I could say that's true but.. you don't.|我希望我能說那是真的但..你沒有
+425|Speech (Player)|Hmm, maybe a rock will come in handy.|嗯，也許一塊石頭會派上用場。
+426|Speech (Lala_Alive)|I feel.. -really strange...|我感覺.. -非常奇怪...
+427|Speech (Lala_Alive)|Wh-... Where are you going?|欸-... 你要去哪裡?
+428|Speech (Player)|Blood... It's never a good sign.|血跡... 這不是好現象.
+429|Speech (Lala_Alive)|Ahh!|啊啊啊!
+430|Speech (Lala_Alive)|Please, leave me alone!|拜託, 別打擾我!
+431|Speech (Player)|The sun is almost up...|天要亮了,,,
+432|Speech (Lala_Alive)|Sure... at least you apologized.|當然…至少你道歉了。
+433|Speech (Player)|That should do it.|早就該做了。
+434|Speech (Lala_Alive)|P-please... Don't touch me..|拜-拜託...別碰我！
+435|Speech (Lala_Alive)|Yeah, that's what I thought.|是的，我就是這麼想的。
+436|Speech (Lala_Alive)|Or else.. what? You're going to hit me?|不然..什麼？你要打我嗎？
+437|Speech (Lala_Alive)|I.. can't.. go on.. anymore...|我...不能...再...繼續...下去了…
+438|Speech (Lala_Alive)|My whole body hurts... I don't want to turn into a monster.|我全身疼痛…我不想變成一個怪物。
+439|Speech (Lala_Alive)|...-I just need to sleep... for a minute.|-我只是需要睡覺…再一分鐘。
+440|Speech (Player)|I-... Ok Laa Laa...  Just keep your eyes closed, you'll be fine.|我—…好吧拉拉…閉上你的眼睛，你會沒事的。
+441|Speech (Player)|I'm glad it's dawn...|我很高興已是黎明…
+442|Hotspot|Blood|血跡
+443|Hotspot|Custard|奶昔
+444|Hotspot|Satellite Station|衛星站
+445|Hotspot|Custard|奶昔
+446|Hotspot|Lever|杠杆
+447|Hotspot|Climb|攀爬
+448|Hotspot|Custard|奶昔
+449|Hotspot|Lever|杠杆
+450|Hotspot|Lever|杠杆
+451|Hotspot|Custard|奶昔
+452|Hotspot|Custard|奶昔
+453|Hotspot|Custard|奶昔
+454|Hotspot|Satellite|衛星
+455|Hotspot|Lever|杠杆
+456|Hotspot|Custard|奶昔
+457|Hotspot|Lever|杠杆
+458|Hotspot|Custard|奶昔
+459|DialogueOption|Then.. let's hope nothing bad happens until we find a cure.|那麼..讓我們希望沒有壞事發生，直到我們找到治療方法。
+460|DialogueOption|Damn, that's not good...|該死，那不太好…
+461|DialogueOption|You're going to be fine, I promise.|你會沒事的，我保證。
+462|DialogueOption|Are you okay? What are you doing here?|你沒事嗎？你在這裡幹什麼？
+463|DialogueOption|Take it easy, I'm not going to hurt you.|放輕鬆點，我不會傷害你的。
+464|DialogueOption|If I tell you to turn around, you'll turn around.|如果我告訴你要轉身，你就要轉過身來。
+465|DialogueOption|I'm... I'm the White Tubby. I'm the Guardian.|我是…我是White Tubby。我是守護者。
+466|DialogueOption|I'm sorry, that's classified.|對不起，那是機密的。
+467|DialogueOption|None of your business.|不關你的事。
+468|DialogueOption|Come on Laa-Laa, we need to move forward!|來啊，拉拉，我們必須前進！
+469|DialogueOption|I'm not sure if it's a good idea if you come with me.|我不知道這是不是個好主意你跟我去
+470|DialogueOption|Come on! We don't have much time!|來吧！我們時間不多了！
+471|DialogueOption|Calm down, everything is going to be okay.|冷靜點，一切都會好起來的。
+472|DialogueOption|I'm sorry.|我很抱歉.
+473|DialogueOption|You've been hiding here all this time?|至始至終你都一直躲在這裡？
+474|DialogueOption|[Kill]|[殺死]
+475|DialogueOption|[Leave]|[離開]
+476|DialogueOption|[Explain yourself]|[解釋你自己]
+477|DialogueOption|I'm sorry, but I can't.|對不起，我不行。
+478|DialogueOption|That's all I can tell you.|我只能告訴你這麼多。
+479|DialogueOption|Laa Laa? Is that you?|拉拉？是你嗎？
+480|DialogueOption|Please, turn around and don't freak out.|請轉過身來，不要害怕。
+481|DialogueOption|Are you deaf? I said show yourself!|你聾了嗎？我叫你展現自己！
+482|DialogueOption|I'm sorry, I didn't mean to-..|對不起，我不是故意-…
+483|DialogueOption|Are you going to do what I say now?|你打算照我說的話做嗎？
+484|DialogueOption|...|...
+485|DialogueOption|[Hit her]|[打她]
+486|DialogueOption|You have to stay with me, We'll find a cure!|你必須留下來陪我，我們會找到治療方法！
+487|DialogueOption|Get up!|起來！
+488|DialogueOption|I'm going to have to leave you.|我不得不離開你。
+489|DialogueOption|I'm going to go get help, stay strong.|我要去尋求幫助，記得保持堅強。
+490|DialogueOption|I'm sorry Laa Laa...|我很抱歉，拉拉...
+491|DialogueOption|...|...
+492|DialogueOption|Everything's going to be ok, just count back from ten...|一切都會好起來的，只要從十開始倒數…
+493|DialogueOption|Just keep your eyes closed Laa Laa...|只要你保持閉上眼睛，拉拉...
+494|DialogueOption|I'm sorry...|我很抱歉…
+495|DialogueOption|I'm sorry, I didn't mean to be rude.|對不起，我不是故意要這麼無禮的。
+496|DialogueOption|You're going to do as I say or else.|你會按照我說的去做。
+497|DialogueOption|Just.. listen, please.|只要..請聽我說。
+498|DialogueOption|Hello?|你好?
+499|DialogueOption|Are you alive?|你還活著嗎？
+500|DialogueOption|Who's there? Show yourself!|誰在那兒？出來！
+501|DialogueOption|It's alright, I understand.|沒關係，我明白。
+502|DialogueOption|Don't worry about it.|別擔心這個了。
+503|DialogueOption|It's not an excuse. I didn't do this, so I don't understand why you're mean to me.|這不是藉口。我沒有這樣做，所以我不明白你為什麼對我這麼小氣。
+504|DialogueOption|[Put Laa Laa out of her misery]|[把拉拉從痛苦中救出]
+505|DialogueOption|[Leave Laa Laa behind]|[留下拉拉在一邊]
+506|Speech (Player)|I'm losing my mind...|我要精神失常了...
+507|Speech (???)|*Cough cough*|*咳 咳*
+508|Speech (Player)|Oh no...|哦，不...
+509|Speech (Tinky Winky)|Eh oh...!|呃哦…！
+510|Speech (???)|No... please no!|不…拜託不！
+511|Speech (???)|AGGGGHHHHH!|呃呃呃啊啊啊啊啊!
+512|Speech (Po)|Come play with us!|來和我們一起玩！
+513|Speech (Player)|Alright, this is the key card to the secret center...|好的，這是祕密中心的鑰匙卡…
+514|Speech (Player)|I'll be able to contact the military from there.|我可以從那裡聯系軍隊。
+515|Speech (Player)|I should head back through the vents.|我應該通過通風口回去。
+516|Speech (Player)|She's gone...|她走了…
+517|Speech (Player)|This is the entrance to the secret center, I'll be able to contact the military in there.|這是秘密中心的入口，我可以聯系那裡的軍隊。
+518|Speech (Player)|This is the entrance to the secret center.|這是秘密中心的入口。
+519|Speech (Player)|It's locked, I'll need to find a way to open it.|鎖上了，我得想個辦法打開它。
+520|Speech (???)|I think another member of staff had a centre key card on the other side of this door.|我想另一個職員在門的另一面有一個鑰匙卡。
+521|Speech (???)|Someone locked the door in an attempt to trap the monster inside.|有人鎖上門試圖把怪物困在裡面。
+522|Speech (???)|You can get to the other side by crawling through the air vents next to you.|你可以通過你旁邊的通風口來爬到另一邊。
+523|Speech (???)|That's how I got here.|我就是這樣來的。
+524|Speech (???)|Be careful though, that thing is still here.|小心，那東西還在這裡。
+525|Speech (Player)|Poor Dipsy... I'm glad it's over though.|可憐的迪西…我很高興結束了。
+526|Speech (???)|My name is Ron, I work here... We all work here.|我叫羅恩，我在這裡工作…我們都在這裡工作。
+527|Speech (???)|I'm an engineer for this facility.|我是這個設備的工程師。
+528|Speech (???)|Listen, you need to contact the military and tell them what happened.|聽著，你需要聯系軍隊，告訴他們發生了什麼事。
+529|Speech (???)|You can send a distress signal from the secret center.|你可以從秘密中心發出求救訊號。
+530|Speech (???)|Once they recieve it, they'll come and help.|一旦他們收到了，他們就會來幫忙。
+531|Speech (???)|You'll probably need a key card to get into the center.|你可能需要一張鑰匙卡才能進入中心。
+532|Speech (Player)|What could do that to somebody?|有什麼人可以做成這樣？
+533|Speech (???)|Pain, so much pain...|痛苦，如此痛苦…
+534|Speech (???)|Please, you have to help us...|拜託，你必須幫助我們…
+535|Speech (Player)|"The note reads; ""Get out before it's too late."""|便條上寫著：“在太遲之前出來。”
+536|Speech (Player)|What happened here?|這裡發生了什麼事？
+537|Speech (???)|It all happened so fast.|一切發生得如此之快。
+538|Speech (???)|It started off as a normal day until this.. thing showed up.|它發生於一個普通的日子，直到這…事發生了。
+539|Speech (???)|This monster came into the station and began to kill everyone.|這個怪物走進站點，開始殺死所有人。
+540|Speech (???)|It was green and carried a chainsaw.  But worse of all it had no head, yet it was still alive.|它是綠色的。他攜帶著電鋸。但更糟糕的是它沒有頭，但它還活著。
+541|Speech (???)|I've never seen anything like it.  It was horrifying.|我從來沒見過像這樣的東西。真可怕。
+542|Speech (???)|Everyone began to panic, I hid as best as I could but it found me.|每個人都開始恐慌，我盡我所能地躲藏起來，但它找到了我。
+543|Speech (???)|It attacked me but I managed to escape, though I can barely move.|它攻擊了我，但我設法逃跑了，儘管我幾乎動彈不得。
+544|Speech (???)|I'm in a lot of pain.  They're all dead.|我疼得厲害。他們都死了。
+545|Hotspot|Key Card|鑰匙卡
+546|Hotspot|Note|筆記
+547|Hotspot|Corpse|屍體
+548|Hotspot|Corpse|屍體
+549|Hotspot|Secret Center|祕密中心
+550|Hotspot|Laser|雷射
+551|Hotspot|???|???
+552|DialogueOption|Are you ok?|你還好嗎？
+553|DialogueOption|You don't look so good.|你看起來不太好。
+554|DialogueOption|Who are you?|你是誰？
+555|DialogueOption|What happened here?|這裡發生了什麼事？
+556|DialogueOption|Where can I get a key card?|我在哪兒能得到鑰匙卡？
+557|DialogueOption|I'll be back soon.|我很快就會回來的。
+558|DialogueOption|That's horrible...|那太可怕了…
+559|DialogueOption|I'm so sorry...|我很抱歉…
+560|DialogueOption|We need to move.|我們需要走走。
+561|Speech (Noo Noo)|From here I've hacked into the central artificial intelligence mainframe.|我在這裡侵入了中央人工智慧主機。
+562|Speech (Noo Noo)|I control all machines now, I control everything.|我現在在控制所有的機器，我控制著一切。
+563|Speech (Noo Noo)|Like the rest of the living, it is time for you to die.|像其他的生物一樣，是死亡的時候了。
+564|Speech (Noo Noo)|Farewell, guardian....|再見，守護者…
+565|Speech (Announcer_2)|Weapon Systems: Online.|武器系統：在線。
+566|Speech (Announcer_2)|Target acquired, Engaging in combat mode...|目標確認，進入戰鬥模式…
+567|Speech (Player)|I'm not afraid...|我並不害怕…
+568|Speech (Player)|What on earth...?|到底是什麼...？
+569|Speech (Player)|How did-...|那是怎麼-...
+570|Speech (Noo Noo)|That is impossible, who they used to be is gone forever.|這是不可能的，他們永遠消失了。
+571|Speech (Noo Noo)|When one consumes the infected custard, they die hours later.|當一個人食用受感染的奶昔時，他們會在數小時後死去。
+572|Speech (Noo Noo)|The consumer then reawakens anew, but no longer living, enternally undead.|然後，消費者重新醒來，但不再生，是謂永遠不死。
+573|Speech (Noo Noo)|That is impossible, who they used to be is gone forever.|這是不可能的，他們永遠消失了。
+574|Speech (Noo Noo)|Reborn, the consumer no longer feels emotion, they're empty inside.|重生，讓消費者不再感受情感，他們的內心是空虛的。
+575|Speech (Noo Noo)|With only one desire, to kill the living and make them become reborn.|它們只有一個願望，殺死活人，使他們重生。
+576|Speech (Noo Noo)|Over time, the consumer will begin to mutate.|隨著時間的推移，消費者將開始變異。
+577|Speech (Noo Noo)|They may become stronger, taller, faster and may even grow new limbs to help kill prey.|它們可能會變得更強壯、更高、更快，甚至可以長出新肢來殺死獵物。
+578|Speech (Noo Noo)|This, is the way teletubbies should be.|這，就是天線寶寶應該做的。
+579|Speech (Announcer_Transform_NPC)|Ow.|噢.
+580|Speech (Announcer_Transform_NPC)|Angry Mode: Activated.|憤怒模式：啟動。
+581|Speech (Announcer_Transform_NPC)|You will be destroyed.|你將被毀滅。
+582|Speech (Noo Noo)|I already have.|我已經有了。
+583|Speech (Noo Noo)|I infected the custard, I made them better.|我感染了奶昔，我做得更好。
+584|Speech (Noo Noo)|I am not your enemy, Guardian. Don't make it me against you. You won't like the outcome.|我不是你的敵人啊，守護者。別讓我反抗你。你不會喜歡結果的。
+585|Speech (Noo Noo)|I appreciate your compliment, Guardian.|我很欣賞你的讚美，守護者。
+586|Speech (Noo Noo)|Intelligence aside, you may be wondering what is the reason behind this.|撇開情報不談，你可能想知道這背後的原因是什麼。
+587|Speech (Noo Noo)|Good, then you must know what is to happen.|好，那麼你最好知道會發生什麼。
+588|Speech (Noo Noo)|You're too weak and know too much. Based on your reaction, chances are you won't ingest the virus, which is why you're just an obstacle.|你太軟弱，但你知道得太多。根據你的反應，你可能不會攝入病毒，這就是為什麼你只是一個障礙物。
+589|Speech (Player)|Stay down.|蹲下.
+590|Speech (Player)|Mayday mayday!  Guardian to all Military, do you copy? Over.|求救！求救！守衛、乃至所有軍人！聽到請恢復！完畢。
+591|Speech (Player)|We need your help...  NOW.|我們需要你的幫助。就是現在.
+592|Speech (Noo Noo)|I'm afraid not.|恐怕不行。
+593|Speech (Noo Noo)|Yes.  I did.|對。我做的。
+594|Speech (Noo Noo)|When one consumes the infected custard, they die hours later.|當一個人食用受感染的奶昔時，他們會在數小時後死去。
+595|Speech (Noo Noo)|The machines are making mistakes when creating teletubbies.|機器創造天線寶寶時發生了錯誤。
+596|Speech (Noo Noo)|They are making them weak, teletubbies have limited minds and their emotions are a weakness.|他們使他們變弱，天線寶寶有著有限的心智，它們的情感是也是一個弱點。
+597|Speech (Noo Noo)|They are limiting them from true greatness, I am removing these limits.|他們正在限制他們至真正的偉大，我正在取消這些限制。
+598|Speech (Noo Noo)|That is why I infected the custard, to make them better.|這就是為什麼我感染了奶昔，為了使它們更好。
+599|Speech (Noo Noo)|... ... ... ... ... ...|... ... ... ... ... ...
+600|Speech (Noo Noo)|That is impossible, who they used to be is gone forever.|這是不可能的，他們永遠消失了。
+601|Speech (Noo Noo)|When one consumes the infected custard, they die hours later.|當一個人食用受感染的奶昔時，他們會在數小時後死去。
+602|Speech (Noo Noo)|I'm making them better, making things better.|我讓他們做得更好，使事情變得更好。
+603|DialogueOption|Noo Noo?|努努?
+604|DialogueOption|What are you doing here?|你在這裡幹什麼？
+605|DialogueOption|What do you mean?|什麼意思？
+606|DialogueOption|Something happened to the custard, do you know what it was?|奶昔中出了點事，你知道那是什麼嗎？
+607|DialogueOption|Do you know what happened to Tinky winky and the others?|你知道丁丁和其他人發生了什麼事嗎？
+608|DialogueOption|You did this!?|這是你幹的!?
+609|DialogueOption|Change them back!|把它們改回來！
+610|DialogueOption|"What do you mean ""better""?"|你說“更好”是什麼意思？
+611|DialogueOption|But why, Noo Noo?|但是為什麼，努努？
+612|DialogueOption|You're a monster.|你是個怪物。
+613|DialogueOption|That is incredibly smart.|那真是難以置信的聰明。
+614|DialogueOption|I'm going to stop you Noo Noo, right here, right now.|我要阻止你努努，就在這裡，現在。
+615|DialogueOption|You won't get away with this, Noo Noo.|你逃不掉的，努努。
+616|DialogueOption|I agree.|我同意。
+617|Speech (Noo Noo)|The machines are creating an army of New Borns.  They're flooding the lands, infecting all life as we speak.|機器創造了新生的軍隊。他們氾濫在這片土地上，感染了所有的生命。就如同我們說的。
+618|Speech (Player)|What are you talking about?|你在說什麼呢？
+619|Speech (Noo Noo)|Infecting the custard is only one step of my plan, I have also injected my virus into the teletubby creation machines.|感染奶昔只是我的一個計畫，我也在寶寶創造機器裡注射病毒。
+620|Speech (Noo Noo)|Now when a new teletubby is made, they already have my virus in their bodies.|現在，每一個新寶寶出生，他們的身上也會有我的病毒。
+621|Speech (Noo Noo)|The only side affect to this is that they are unable to grow fur, but that does not matter to the undead.|唯一的副作用就是它們不能長毛，但對不死生物來說沒什麼關係。
+622|Speech (Noo Noo)|They are my New Borns.|他們是我的新生兒。
+623|Speech (Noo Noo)|The machines are creating an army of New Borns.  They're flooding the lands, infecting all life as we speak.|機器創造了新生的軍隊。他們氾濫在這片土地上，感染了所有的生命。就如同我們說的。
+624|Speech (Player)|It's the military, they're here.|是軍隊，他們在這裡。
+625|Speech (Sargent)|I am Sargent Miles, We recieved a distress call.  What's the problem?|我是Sargent Miles，我們接到了求救電話。有什麼問題嗎？
+626|Speech (MilitaryTubby (4))|Sir, Over here!|先生，這邊！
+627|Speech (MilitaryTubby (4))|You might want to see this...|你可能想看看這個…
+628|Speech (Sargent)|Dear god....|親愛的上帝啊…
+629|Speech (Sargent)|Prepare all units for an invasion...|為入侵準備所有單元…
+630|Speech (Player)|We must fight.|我們必須戰鬥。
+631|Speech (Noo Noo)|You defeated The Announcer, you have proved to me that you hold great value.|你擊敗了播音員，你向我證明了你很有價值。
+632|Speech (Noo Noo)|I've underestimated you, Guardian. By defeating The Announcer, you have proved to me that you hold great value.|我低估了你，守護者。通過擊敗播音員，你向我證明了你很有價值。
+633|Speech (Noo Noo)|You are a lot smarter and stronger than I thought. You are different than the rest.|你比我想像的更聰明，更堅強。你比其他人都來得不同。
+634|Speech (Noo Noo)|If you join me, then together we can make the world a better place.|如果你和我一起，我們就能一起把世界變得更美好。
+635|Speech (Noo Noo)|Yes, they are part of my creation.|是的，它們是我創作的一部分。
+636|Speech (Noo Noo)|I'm impressed.|令我印象深刻。
+637|Speech (Sargent)|Caused what? It's just a vacuum.|造成了什麼？那只是個吸塵器。
+638|Speech (Noo Noo)|It's too late, I already have.|太晚了，我已經有了。
+639|Speech (Noo Noo)|It is the way things should be.|事情本來就是這樣的。
+640|Speech (Sargent)|A vacuum created monsters? What do you take me for.|吸塵器創造怪物？你以為我是幹什麼的？。
+641|Speech (Sargent)|Explain yourself.  Now.|你自己解釋。就是現在.
+642|Speech (Noo Noo)|That is unfortunate.|真不幸。
+643|Speech (MilitaryTubby)|Spread out, see if you can find anything...|散播出去，看看是否能找到任何東西…
+644|Speech (MilitaryTubby)|Damn...|我操...
+645|Speech (MilitaryTubby (4))|Damn... What do you think killed this poor soul?|該死…你認為是什麼殺死了這個可憐的靈魂？
+646|Speech (Sargent)|The body is still warm, this happened recently.|身體仍然很暖和，應該是剛才才發生的。
+647|Speech (MilitaryTubby)|Sir! We've got a problem...|先生！我們有個問題…
+648|Speech (MilitaryTubby)|What the hell?|我勒個去？
+649|Speech (MilitaryTubby)|What are those things?|那些東西是什麼？
+650|Speech (Sargent)|All units, open fire!|所有單元，開火！
+651|Speech (MilitaryTubby (2))|There's too many!|太多了！
+652|Speech (MilitaryTubby (2))|We're being overrun!|我們超支了！
+653|Speech (Sargent)|God help us...|天啊，幫助我們…
+654|Speech (Noo Noo)|Together, we will rid the world of the weak and create a superior race.|在一起，我們將消滅世界上所有的弱者，創造一個優越的種族。
+655|Speech (Noo Noo)|No, things have just begun.|不，事情剛剛開始。
+656|Speech (Noo Noo)|Actually, that's the plan.|事實上，這就是計畫。
+657|Speech (Player)|It's done.|結束了。
+658|Speech (Player)|What th-...|什麼—…
+659|Speech (Noo Noo)|Complicated? Indeed. Impossible? Definitely not.|會複雜嗎？的確。 不可能嗎？絕對不是。
+660|Speech (Noo Noo)|Except that I can, my dear white fluffy friend.|除了我可以，我親愛的白色毛絨絨的朋友。
+661|Speech (Player)|I'm sorry, Po.|對不起，小波。
+662|Speech (Noo Noo)|We could've worked together, we could've built a better world.|我們可以一起工作，我們可以創造一個更美好的世界。
+663|Speech (Noo Noo)|Do you really think you've won?|你真的認為你贏了嗎？
+664|Speech (Noo Noo)|Your world is about to become ash.|你的世界即將變成灰燼。
+665|Speech (Noo Noo)|You're too late.|你太遲了。
+666|Speech (Noo Noo)|No, the world is. And I am going to fix it.|不，這世界才是。我要把它修好。
+667|Speech (Noo Noo)|So be it, I can see you will never understand.|就這樣吧，我看你永遠不會明白。
+668|Speech (Noo Noo)|You are not going to stop me, I will not allow that.|你不會阻止我的，我不會允許的。
+669|Speech (Noo Noo)|Po, Kill...|小波, 殺...
+670|Speech (Noo Noo)|Yes.|是。
+671|Speech (Noo Noo)|Enough Po, Finish this!|夠了啊，小波, 結束它!
+672|Speech (Player)|Noo Noo, stop!|努努, 停!
+673|Speech (Noo Noo)|Why are you here? You should be dead.|你為什麼會在這裡？你應該死了才對。
+674|Speech (Noo Noo)|Good, you've made the right decision.|好，你做出了正確的决定。
+675|Speech (Noo Noo)|Come with me, we have much to do.|跟我來，我們還有很多事情要做。
+676|Speech (Sargent)|Our base is quite far from here... We came as quickly as we could.|我們的基地離這裡很遠…我們盡可能快地來了。
+677|Speech (Sargent)|Slow down, who's all dead?|慢點，慢點，誰死了？
+678|DialogueOption|What took you so long?!|你怎麼那麼久？！
+679|DialogueOption|Noo Noo caused all of this...|努努造成這一切…
+680|DialogueOption|Noo Noo created monsters.|努努創造怪物。
+681|DialogueOption|It's horrible, they're all dead...|太可怕了，他們都死了…
+682|DialogueOption|It's over.|結束了。
+683|DialogueOption|I'm shutting you down.|我要關掉你。
+684|DialogueOption|Farewell, Noo Noo.|再見了，努努。
+685|DialogueOption|...Shut up.|...閉嘴。
+686|DialogueOption|It's over Noo Noo, give up now.|努努，已經結束了，趕快放棄。
+687|DialogueOption|I defeated The Announcer.|我擊敗了播音員。
+688|DialogueOption|I'm not letting you get away with this!|我不會讓你逃脫的！
+689|DialogueOption|What are you talking about?|你在說什麼呢？
+690|DialogueOption|New Borns?|新生？
+691|DialogueOption|What? No way, you can't do this!|什麼？不行，你不能這麼做！
+692|DialogueOption|So that's what I encountered at the secret lair.|這就是我在秘密巢穴裡遇到的。
+693|DialogueOption|That is very impressive.|真是印象深刻。
+694|DialogueOption|But.. that's impossible...|但是..那是不可能的…
+695|DialogueOption|Join you? Never, you killed my friends!|和你在一起？不，你殺了我的朋友！
+696|DialogueOption|I'm listening...|我在聽…
+697|DialogueOption|Over my dead body.|我死也不會同意。
+698|DialogueOption|Sounds good to me.|聽起來不錯。
+699|DialogueOption|Now that I think of it... No.|現在我想起來了…不.
+700|DialogueOption|Seriously? You're sick!|真的嗎？你這個變態！
+701|Speech (Noo Noo)|Oh, not at all. You won’t feel a thing.|哦，一點也不。你不會有什麼感覺的。
+|Oh, not at all. You won’t feel a thing.||
+|||
+702|Speech (Noo Noo)|Yes, we're at the custard facility.  What you see before you is the main custard supply.|是的，我們在奶昔設施這。你看到的是主要的奶昔供應。
+703|Speech (Noo Noo)|It travels through pipelines to custard machines.|它通過管道輸送到奶昔機。
+704|Speech (Noo Noo)|This is what I infected.|我就是這麼感染它們的。
+705|Speech (Noo Noo)|You are not reborn, as you know you still have untapped potential.|你沒有重生，因為你知道你還有未開發的潜力。
+706|Speech (Noo Noo)|We must fix this, you must eat from the infected custard.|我們必須解决這個問題，你必須吃受感染的奶昔。
+707|Speech (Noo Noo)|Now it is time for you to become one with the new world.|現在是你與新世界合而為一的時候了。
+|Now it is time for you to become one with the new world.||
+|||
+708|Speech (Noo Noo)|Good, this is the way things have to be.|很好，事情就是要這樣發展。
+|Good, this is the way things have to be.||
+|||
+709|Speech (Noo Noo)|I am impressed with your choices, you will be the greatest reborn of them all.|我對你的選擇印象深刻，你將是他們所有人中最偉大的再生者。
+|I am impressed with your choices, you will be the greatest reborn of them all.||
+|||
+710|Speech (Noo Noo)|You will serve me well.|你會很好地為我服務。
+711|Speech (Noo Noo)|You didn't think that you would be able to come out of this alive did you?|你沒想到你能活著出來，是嗎？
+|You didn't think that you would be able to come out of this alive did you?||
+|||
+712|Speech (Noo Noo)|I thought you understood the new world.|我以為你理解這個新世界。
+|I thought you understood the new world.||
+|||
+713|Speech (PO)|*Tick tick tick tick tick tick tick tick tick tick tick tick tick*|*打勾、打勾、打勾、打勾、打勾*
+714|Speech (Noo Noo)|You’re so foolish, you think I won’t get away with this. You’re wrong.|你真蠢，你以為我逃不掉的。你錯了。
+715|Speech (Noo Noo)|I'm afraid you have no choice.|恐怕你別無選擇。
+716|Speech (Noo Noo)|It is unfortunate you lost your legs in the fall...  No matter.|不幸的是你在秋天失去了雙腿…沒關係。
+717|Speech (Noo Noo)|It's time for you to obey my command.|是時候服從於我的命令了。
+718|Speech (Noo Noo)|My plan is almost complete.|我的計劃幾乎完成了。
+|My plan is almost complete.||
+|||
+719|Speech (Noo Noo)|The newborns are taking over the lands as we speak, ridding the world of all living things.|新生正在接管土地，並消除眾生。就如同我們所說的
+720|Speech (Noo Noo)|The military are trying to stop them, but they are out numbered, they won't succeed.|軍隊試圖阻止他們，但是他們已經失敗了，他們不會成功。
+721|Hotspot|PO|小波
+722|Hotspot|Noo Noo|努努
+723|DialogueOption|That's a lot of custard.|很多的奶昔。
+724|DialogueOption|I think you underestimate the military.|我認為你低估了軍隊。
+725|DialogueOption|I see.|我懂了.
+726|DialogueOption|So what now?|所以現在呢？
+727|DialogueOption|What do you mean?|什麼意思？
+728|DialogueOption|I don’t know.. Will it hurt?|我不明白。會疼嗎?
+729|DialogueOption|I'm ready.|我準備好了。
+730|DialogueOption|What? I'm not eating any custard!|什麼？我才不吃任何奶昔！
+731|DialogueOption|You can forget it, I'm leaving.|你可以忘了它，我要走了。
+732|DialogueOption|In that case, give me the custard.|那樣的話，奶昔給我。
+733|DialogueOption|Po is that you?|小波是你嗎？
+734|DialogueOption|Can you hear me?|聽得到我嗎？
+735|DialogueOption|[Leave]|[離開]
+736|InventoryItem|Toolbox|工具箱
+737|InventoryItem|Custard|奶昔
+738|InventoryItem|Camera|相機
+739|InventoryItem|Pipe|管子
+740|InventoryItem|Rock|石頭
+741|InventoryItem|Key Card|鑰匙卡
+742|HotspotPrefix|Use|使用
+743|HotspotPrefix|on|於
+744|CursorIcon|Use|使用
+745|CursorIcon|Talk to|告訴
+746|CursorIcon|Look at|看向
+747|MenuElement (PauseTitle)|Paused|已暫停
+748|MenuElement (ResumeButton)|Resume|恢復
+749|MenuElement (OptionsButton)|Options|選項
+750|MenuElement (QuitButton)|Quit|離開
+751|MenuElement (TitleLabel)|Options|選項
+752|MenuElement (SpeechSlider)|Speech volume|語音音量
+753|MenuElement (MusicSlider)|Music volume|聲音音量
+754|MenuElement (SFXSlider)|SFX volume|音效音量
+755|MenuElement (LanguageCycle)|Language|語言
+756|MenuElement (SubtitlesToggle)|Subtitles|字幕
+757|MenuElement (BackButton)|Back|返回
+758|MenuElement (TitleLabel)|Save game|儲存
+759|MenuElement (SavesList)|New save|新檔案
+760|MenuElement (BackButton)|Back|返回
+761|MenuElement (TitleLabel)|Load game|載入遊戲
+762|MenuElement (BackButton)|Back|返回
+763|MenuElement (ShiftLeft)||
+764|MenuElement (ShiftRight)||
+765|MenuElement (MenuButton)|Menu|菜單
+766|MenuElement (SubsSpeakerLabel)||
+767|MenuElement (SubsLineLabel)|"TEST TEST TEST TEST "|測試 測試 測試 測試
+768|MenuElement (Blank)|" "|" "
+769|MenuElement (ContainerLabel)|Container|容器
+770|MenuElement (CloseButton)|Close|關閉
+771|MenuElement (TakeAllButton)|Take all|拿走全部
+772|MenuElement (InventoryLabel)|Inventory|庫存
+773|MenuElement (ShiftContainerLeft)||
+774|MenuElement (ShiftContainerRight)||
+775|MenuElement (ShiftInventoryLeft)||
+776|MenuElement (ShiftInventoryRight)||
+777|MenuElement (ShiftLeft)||
+778|MenuElement (ShiftRight)||
+779|MenuElement (CreateButton)|Create|製作
+780|MenuElement (CloseButton)|Close|關閉
+781|MenuElement (IngredientsLabel)|Ingredients|成分
+782|MenuElement (InventoryLabel)|Inventory|庫存
+783|MenuElement (OutputLabel)|Output|輸出
+784|MenuElement (HotspotLabel)|Test yy pp|測試 yy pp
+785|MenuElement (Controls)|Combat Controls|戰鬥控制
+786|MenuElement (Attack)|Left click to attack.|左鍵攻擊。
+787|MenuElement (Block)|Hold the right mouse button to block.|按住滑鼠右鍵格擋。
+788|MenuElement (Sprint)|Hold shift to sprint.|按住shift衝刺。
+789|MenuElement (Roll)|While blocking, move in any direction to roll.|格擋時，移動到任意方向來翻滾。
+790|MenuElement (Health)|The yellow bar is your health; collect green health orbs to regain health.|黃色條條是你的生命值；收集綠色的血球恢復健康。
+791|MenuElement (Stamina)|The blue bar is your stamina; you will lose stamina when sprinting, blocking attacks and rolling.|藍色條條是你的耐力；你在衝刺、阻斷攻擊和滾動時會減少。
+792|MenuElement (RegainStamina)|To regain stamina you must not attack, block, sprint or roll.|為了恢復體力，你不能進攻、阻擋、衝刺或翻滾。
+793|MenuElement (BlockDamage)|If you attempt to block an attack without enough stamina; you will take damage.|如果你試圖在沒有足够耐力的情况下阻擋攻擊，你會受到傷害。
+794|MenuElement (Alert)|When you see a red flash; it means the enemy is about to attack.|當你看到一個紅色閃光時，這意味著敵人即將進攻。
+795|MenuElement (Continue)|Continue|繼續
+796|MenuElement (ShiftTxt)|Run|跑
+797|MenuElement (WSADTxt)|Move|移動
+798|MenuElement (MouseTxt)|Interact|互動
+799|MenuElement (NightVision)|Right click to toggle night vision|按右鍵切換夜視
+800|MenuElement (Crouch)|Hold CTRL or C to crouch|按住 CTRL 或C 來蹲下
+801|MenuElement (ShowInventory)|Move cursor here to view inventory|在這裡移動光標查看庫存
+802|MenuElement (TenHoursLater)|10 hours later...|10小時之後...
+803|MenuElement (SometimeLater)|Sometime later...|一段時間後…

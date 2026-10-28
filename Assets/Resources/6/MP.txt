@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: ИГРАЈ САМ
+PLAY ONLINE: ИГРАЈ СО ДРУГИ
+CHARACTER CUSTOMIZATION: ПРИЛАГОДИ КАРАКТЕР
+OPTIONS: ОПЦИИ
+CREDITS: КРЕДИТИ
+EXIT: ИЗЛЕЗ
+Are you sure you want to quit this game?:  Сигурни ли сте дека сакате да ја исклучите играта?
+NO: НЕ
+YES: ДА
+ZEOWORKS PRESENTS: ZEOWORKS ПРЕЗЕНТИРААТ
+HATS: КАПИ
+CHANGE FUR COLOR: СМЕНИ ЈА БОЈАТА НА КОЖАТА
+CUSTOM SKIN: ОБИЧАЕНА КОЖА
+HEAD: ГЛАВА
+BODY: ТЕЛО
+ARMS: РАЦИ
+LEGS: НОЗИ
+URL: УРЛ
+APPLY: АПЛИЦИРАЈ
+BACK: ГРБ
+FUR COLOR: БОЈА НА КРЗНО
+DEFAULT: ОРИГИНАЛНО
+RANDOM COLOR: РАНДОМНА БОЈА
+COST: ВРЕДЕЊЕ
+CUSTARDS: ТАБИ КРЕМА
+LOCKED: ЗАКЛУЧЕНО
+UNLOCK: ОТКЛУЧИ
+BUY: КУПИ
+YOU NEED MORE CUSTARDS: ТИ ТРЕБА ПОВЕЌЕ ТАБИ КРЕМА
+EQUIPMENT: ОПРЕМА
+Night Vision Camera: Камера за ноќно гледање
+Flashlight: Фенерче
+You must sign in to use custom skins: Треба да се зазпишете за да користете само направени крзни
+USE CUSTOM SKIN: КОРИСТЕТЕ САМО НАПРАВЕНИ КРЗНИ
+SIGN IN: ЗАПИШИ СЕ
+SIGN OUT: ОДПИШИ СЕ
+LOGIN: ЛОГИРАЈ
+USERNAME: USERNAME
+PASSWORD: PASSWORD
+CONNECT: КОНЕКТИРАЈ
+CREATE AN ACCOUNT: НАПРАВИ АКАУНТ
+ERROR: INCORRECT USERNAME / PASSWORD!: ЕРРОР: НЕТОЧЕН USERNAME/PASSWORD
+TRY AGAIN: ПРОВАЈТЕ ПАК
+CONNECTING: КОНЕКТИРАЈ
+COULD NOT CONNECT TO SERVER: НЕМОЖЕШЕ ДА СЕ КОНЕКТИРАШ ДО СЕРВЕРОТ
+SERVER MAY BE FULL: СЕРВЕРОТ МОЖЕ ДА Е ПОЛН
+PLEASE TRY ANOTHER SERVER: ВЕ МОЛИМЕ ПРОВАЈТЕ ДРУГ СЕРВЕР
+SELECT A SERVER: СЕЛЕКТИРАЈТЕ СЕРВЕР
+SERVER: СЕРВЕР
+Room Name: ИМЕ НА СОБА
+Private: ПРИВАТНО
+Game Mode: МОДА НА ИГРАТА
+Players: ИГРАЧИ
+Map Name: Име на мапата
+Host Game: Направи игра
+Game Settings: опции на играта
+Map size: големина на мапата
+Small: Мало
+Medium: Средно
+Large: Големо
+Recommended Players: Рекомендирани играчи
+Timer: Тајмер
+# Minutes: # Минути
+Custard Amount: Величина на таби крем
+Mute Guests: Мутирај посители
+Start Game: Почни игра
+COLLECT: КОЛЕКТИРАЈ
+CO-OP: CO-OP
+VERSUS: ПРОТИВ
+SURVIVAL: СУРВИВАЛ
+INFECTION: ИНФЕКЦИЈА
+Join: Уклучи
+Player name: Име на играчот
+Connected: Конектирано
+Chat: Чат
+You need to sign in to chat: Треба да се запишете за да зборувате на чат
+Respawning in #: Отпуштување на #
+A helpless victim has joined: Безпомошен виктим се уклучи
+A player has been caught: Играч беше фанат
+# Joined: # Се уклучи
+# Killed #: # го уби #
+# Died: # Умре
+# Left: # Оставени
+# Became infected: # Се инфицираа
+Kill All Survivors: Уби ги сите
+Fight Off Infected Players To Win: Бори се со инфицирани играчи за да победете
+Kill All Helpless Victims: Уби ги сите безпомошни виктими
+Survive All Waves: Преживувај 
+Kills: Убиства
+Deaths: Смрт
+Draw...: подготви се....
+# Wins...: #Победи
+# Is The Winner: # Е победникот
+Most Kills: Највеќе убиства
+# Is In the Lead: # Е прв
+Restarting: Рестартирање
+Starting new round: Почнување нова рунда
+All players have been killed...: Сите играчи беа убиени...
+Your team survived...: Твојот тим прежива
+All custards have been found...: Сите таби крема беа најдени
+Time is up: Времето е завршено
+Survivors win: Преживиените се победниците
+Waiting for more players...: Чекај за повеќе играчи...
+You are infected: Ти си инфициран
+Infected: Инфициран
+Infected win: Инфицираните се победници
+Round: Рунда
+Survive: Преживувај
+Loading...: Лоадирање...
+Spectator Mode: Спектатор мод
+You are now in Spectator Mode: Вие сте сега на спектатор мод
+Respawn: Одново роди се
+Custards: Таби крема
+Wave #: Бран #
+# Remaining: #
+Press 'E' To Buy Supplies: Притисни 'Е' за да купиш резерви
+Shop: Продавница
+Supplies: Резерви
+Get to the waypoint: Оди до патната точка
+Buy: Купи
+Sell: Продавај
+Heal: Исцели
+Ammo: Амуниција
+Toast: Тост
+# Custards remaining...: # Таби крема останати...
+Collect All # Custards: Земи ги сите
+Mouse Sensitivity: Брзина на маусот
+Resolution: Резолуција
+Language: Јазик
+This version is outdated, please download the latest version: Оваа верзија е стара, ве молиме симнете ја најновата верзија
+Update Now: Упдејтирај сега
+Remind Me Later: Потсетете ме после
+Notice: Забележи
+You will be unable to access online features until you update.: Ќе неможете да добиете пристап до онлај карактеристики
+Paused: Паузирај
+Quit: Излез
+Resume: Продолжи
+You're sending messages too quickly!:  Вие праќате премногу пораки пре брзо!
+
+Restart Match: Почни битка одново
+End Match: Заврши битка
+Restarting match...: Рестартирање битка...

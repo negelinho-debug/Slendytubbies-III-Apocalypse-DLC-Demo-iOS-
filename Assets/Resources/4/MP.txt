@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: SPEEL ALLEEN
+PLAY ONLINE: SPEEL ONLINE
+CHARACTER CUSTOMIZATION: KARAKTER AANPASSEN
+OPTIONS: OPTIES
+CREDITS: CREDITS
+EXIT: VERLATEN
+Are you sure you want to quit this game?:  Weet je zeker dat je dit spel wilt verlaten?
+NO: NEE
+YES: JA
+ZEOWORKS PRESENTS: ZEOWORKS PRESENTEERT
+HATS: HOEDEN
+CHANGE FUR COLOR: KLEUR VERANDEREN
+CUSTOM SKIN: ANDERE SKIN
+HEAD: HOOFD
+BODY: LICHAAM
+ARMS: ARMEN
+LEGS: BENEN
+URL: URL
+APPLY: TOEPASSEN
+BACK: TERUG
+FUR COLOR: KLEUR
+DEFAULT: NORMAAL
+RANDOM COLOR: WILLEKEURIGE KLEUR
+COST: KOSTEN
+CUSTARDS: CUSTARDS
+LOCKED: VERGRENDELD
+UNLOCK: ON-GRENDELEN
+BUY: KOOP
+YOU NEED MORE CUSTARDS: JE MOET MEER CUSTARDS HEBBEN
+EQUIPMENT: MATERIAAL
+Night Vision Camera: Nacht Vizier Camera
+Flashlight: Zaklamp
+You must sign in to use custom skins: Je moet ingelogt zijn om andere skins te gebruiken
+USE CUSTOM SKIN: GEBRUIK ANDERE SKIN
+SIGN IN: REGISTEREN
+SIGN OUT: UITLOGGEN
+LOGIN: INLOGGEN
+USERNAME: GEBRUIKERSNAAM
+PASSWORD: WACHTWOORD
+CONNECT: VERBINDEN
+CREATE AN ACCOUNT: MAAK EEN ACCOUNT
+ERROR: INCORRECT USERNAME / PASSWORD!: VERKEERDE GEBRUIKERSNAAM / WACHTWOORD!
+TRY AGAIN: PROBEER OPNIEUW
+CONNECTING: AAN HET VERBINDEN
+COULD NOT CONNECT TO SERVER: KAN NIET VERBINDEN MET DE SERVER
+SERVER MAY BE FULL: SERVER IS MISSCHIEN VOL
+PLEASE TRY ANOTHER SERVER: PROBEER EEN ANDERE SERVER
+SELECT A SERVER: SELECTEER EEN SERVER
+SERVER: SERVER
+Room Name: Room Naam
+Private: Prive
+Game Mode: Game Modus 
+Players: Spelers
+Map Name: Map Naam
+Host Game: Host een Spel
+Game Settings: Spel Opties
+Map size: Map Groote
+Small: Smal
+Medium: Normaal
+Large: Groot
+Recommended Players: Aanbeloven Spelers
+Timer: Timer
+# Minutes: Minuten 
+Custard Amount: Custard Hoeveelheid
+Mute Guests: Mute Gasten
+Start Game: Start Spel
+COLLECT: PAKKEN
+CO-OP: CO-OP
+VERSUS: VERSUS
+SURVIVAL: SURVIVAL
+INFECTION: INFECTION
+Join: Meedoen
+Player name: Speler Naam
+Connected: Verbonden
+Chat: Chat
+You need to sign in to chat: Je moet inloggen om te chatten
+Respawning in #: Weer Meedoen In
+A helpless victim has joined: Een hulploos slachtoffer doet mee
+A player has been caught: Een speler is gepakt
+# Joined: Verbonden
+# Killed #: Doode
+# Died: Is Dood
+# Left: Is Weggegaan
+# Became infected: Is geïnfecteerd
+Kill All Survivors: Dood Alle Overlevers
+Fight Off Infected Players To Win: Vecht Tegen De Geïnfecteerde Spelers Om Te Winnen
+Kill All Helpless Victims: Dood Alle Hulpeloze Slachtoffers
+Survive All Waves: Overleef Alle Waves 
+Kills: Gedood 
+Deaths: Doodgegaan
+Draw...: Gelijkspel….
+# Wins...: Wint….
+# Is The Winner: Is De Winnaar
+Most Kills: Meeste Gedood
+# Is In the Lead: Is In The Leiding
+Restarting: Opnieuw Beginnen
+Starting new round: Begginnen met een nieuwe ronde
+All players have been killed...: Alle Spelers zijn gedood…
+Your team survived...: Je Team heeft het overleefd….
+All custards have been found...: Alle Custards zijn gevonden….
+Time is up: De tijd is om
+Survivors win: Overlevers Winnen
+Waiting for more players...: Wachten op meer spelers….
+You are infected: Jij bent geïnfecteerd
+Infected: Geïnfecteerd
+Infected win: Geïnfecteerden winnen
+Round: Ronde
+Survive: Overleef
+Loading...: Laden…
+Spectator Mode: Toeschouwer Modus 
+You are now in Spectator Mode: Je zit in Toeschouwer Modus
+Respawn: Respawnen
+Custards: Custards
+Wave #: Wave
+# Remaining: Te Gaan
+Press 'E' To Buy Supplies: Druk op ‘E’ om te kopen
+Shop: Winkel
+Supplies: Benodigdheden
+Get to the waypoint: Ga naar de waypoint
+Buy: Kopen
+Sell: Verkopen
+Heal: Healen
+Ammo: Munitie
+Toast: Toast
+# Custards remaining...: Custards te gaan… 
+Collect All # Custards: Verzamel Alle
+Mouse Sensitivity: Muis Gevoeligheid
+Resolution: Resolutie
+Language: Taal
+This version is outdated, please download the latest version: Deze versie is verouderd, download de laaste versie alsjeblieft
+Update Now: Update Nu
+Remind Me Later: Herriner Mij Later
+Notice: Ho! Wacht Even!
+You will be unable to access online features until you update.: Je kan niet Online gaan als je niet gaat updaten.
+Paused: Gepauzeerd
+Quit: Sluiten
+Resume: Verdergaan
+You're sending messages too quickly!: Je Verzend Berichten Te Snel! 
+
+Restart Match: Match opnieuw beginnen
+End Match: Einde Match
+Restarting match...: Match Opnieuw Starten….

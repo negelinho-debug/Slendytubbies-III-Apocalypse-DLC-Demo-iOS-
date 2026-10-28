@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Tubby_Body
+  m_Shader: {fileID: 4800000, guid: 98e108223867c314690eefc8c3a21903, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Cube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: 43ed87852d2e4e546b8c955f6952796c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 78866e14043b6b94f9ef9d671afb1c57, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _BumpScale: 1
+      _Cutoff: 0.4
+      _DetailNormalMapScale: 1
+      _DstBlend: 0
+      _EdgeFade: 0.15
+      _FurLength: 0.05
+      _Gloss: 1
+      _Glossiness: 0.1
+      _HairColoring: 0.1
+      _HairHardness: 0.1
+      _HairShading: 0.05
+      _HairThinness: 3.24
+      _Metallic: 0
+      _Mode: 0
+      _OcclusionStrength: 1
+      _Parallax: 0.02
+      _ReflMinLevel: 0
+      _Reflection: 0
+      _RimPower: 4
+      _Shininess: 8
+      _SkinAlpha: 0.5
+      _SrcBlend: 1
+      _UVSec: 0
+      _ZWrite: 1
+    m_Colors:
+      _BonusAmbient: {r: 0, g: 0, b: 0, a: 1}
+      _Color: {r: 0.85294116, g: 0.85294116, b: 0.85294116, a: 1}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      _ForceGlobal: {r: 0, g: 0, b: 0, a: 0}
+      _ForceLocal: {r: 0, g: 0, b: 0, a: 0}
+      _ReflColor: {r: 1, g: 1, b: 1, a: 1}
+      _RimColor: {r: 0, g: 0, b: 0, a: 0}
+      _SpecColor: {r: 0, g: 0, b: 0, a: 1}

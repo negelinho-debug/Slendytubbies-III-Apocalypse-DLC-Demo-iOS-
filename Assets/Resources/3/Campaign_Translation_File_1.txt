@@ -1,0 +1,827 @@
+ID|Type|Original line|The translation
+0|Speech (Player)|There's no place like home.|Der er intet sted som der hjemme.
+1|Speech (Noo Noo)|You should head home, You haven't eaten today.|Du burde gå hjem, du har ikke spist i dag.
+2|Speech (Player)|Yeah I'm done here anyway, Let's go.|Ja jeg er færdig her aligevel, lad os gå.
+3|Speech (Noo Noo)|Actually, I'm gonna stay here for a bit.|Faktisk, så jeg bliver her lidt.
+4|Speech (Player)|Alright, See you later Noo Noo!|Okay, ses senere Noo Noo!
+5|Speech (Noo Noo)|Bye Po, I'll be home soon.|Ses Po, jeg er hjemme snart.
+6|Speech (Noo Noo)|I wonder what the others are up to.|Gad vide hvad de andre laver.
+7|Speech (Noo Noo)|Why are you out here all by yourself?|Hvorfor er du her ude helt alene?
+8|Speech (Noo Noo)|Everyone misses you.|Alle savner dig.
+9|Speech (Dipsy (Hungry))|It should be on the tool rack near the beds.|Den burde være på værktøjs hylden nær sengene.
+10|Speech (Player)|Alright thanks!|Okay, tak!
+11|Speech (Tinky Winky)|PO's back, horray!|Po er tilbage, hurra!
+12|Speech (Player)|I'm sorry, I didn't mean to be rude.|Undskyld, jeg mente ikke at være uhøflig.
+13|Speech (Noo Noo)|All is forgiven.|Alt er tilgivet.
+14|Speech (Player)|There is no time to wake the others.  I need to follow him quickly before he goes far!|Der er ikke tid til at vække de andre. jeg er nødt til at følge efter ham inden han kommer for langt væk.
+15|Speech (Player)|I better grab a torch from the work bench.|Jeg må heller tage en lygte fra arbejdsbordet.
+16|Speech (Player)|I hope custard will chear Laa Laa up...|Jeg håber jordbæris vil gøre Laa Laa glad igen...
+17|Speech (Player)|What a view...|Sikke en udsigt...
+18|Speech (Noo Noo)|It's a beautiful day.|Det er en smuk dag.
+19|Speech (Lala)|Oh, hi Po... *sigh*|"Oh, hej Po... ""suk"""
+20|Speech (Dipsy (Hungry))|Of course, you need to press the 'on' button on your right.|"Selvføgelig, du skal trykke på ""tænd"" knappen til din højre."
+21|Speech (Player)|Ah now I remember, thanks!|Ah nu husker jeg, tak!
+22|Speech (Player)|What I'm doing here is none of your concern.|Hvad jeg laver her, kommer ikke dig ved.
+23|Speech (Noo Noo)|You are my concern, I am here for you.|Du kommer mig ved, jeg er her på grund af dig.
+24|Speech (Player)|It sure is! Today is nice and warm.|Det er det! I dag er det dejlig varmt.
+25|Speech (Noo Noo)|I am unable to feel warmth.|Jeg er ude af stand til at føle varme.
+26|Speech (Dipsy (Hungry))|Nope, it's been missing for so long that I can't even remember when I lost it.|Nej, den har været væk så længe at jeg ikke engang kan huske hvornår jeg mistede den.
+27|Speech (Player)|You'll find it eventually, I'm sure.|Du finder den på et tidspunkt, det er jeg sikker på.
+28|Speech (Player)|I should probably give Dipsy some tubby custard.|Jeg burde nok give Dipsy noget tubbie jordbæris.
+29|Speech (Player)|I'll need to find the tool box before I can fix this.|Jeg er nødt til at finde værktøjskassen før jeg kan fikse det her.
+30|Speech (Player)|(He's my best friend!)|(Han er min bedste ven!)
+31|Speech (Player)|It's ready, time to give it to one of my friends!|Den er klar, tid til at give den til en af mine venner!
+32|Speech (Player)|I'm already carrying a custard.|Jeg bærer allerede noget jordbæris.
+33|Speech (Player)|Now to make myself some tubby custard!|Tid til at lave mig selv noget jordbæris!
+34|Speech (Player)|I can't sleep...|Jeg kan ikke sove...
+35|Speech (Player)|*Gasp*|*Gisp*
+36|Speech (Player)|Tubby custard, how did that get here?|Tubbie jordbæris, hvordan er det endt her?
+37|Speech (Player)|Tinky Winky doesn't seem to be here, I guess I better check the lake.|Tinky Winky ser ikke ud til at være her, jeg tror jeg heller må tjekke ved søen.
+38|Speech (Player)|Tinky Winky...?|Tinky Winky...?
+39|Speech (Player)|Wh... What happened to La La...?|Hv... Hvad skete det med Laa Laa...?
+40|Speech (Player)|Are you ok...?|Er du okay...?
+41|Speech (Player)|Oh my god!|Oh gud!
+42|Speech (Player)|He's chasing me, I better get to the house quick!|Han jager mig, jeg må heller komme tilbage til huset i en fart.
+43|Speech (Player)|Hey Dipsy...|Hej Dipsy...
+44|Speech (Dipsy (Hungry))|Hey.|Hej.
+45|Speech (Player)|It still works, but I don't need it right now.|Den virker stadig, men jeg har ikke brug for den lige nu.
+46|Speech (Tinky Winky)|........................................|........................................
+47|Speech (Player)|Wait, where are you going!?|Vent, hvor skal du hen?
+48|Speech (Tinky Winky)|Wow PO don't be so rude.|Wow Po ikke vær så uhøflig
+49|Speech (Player)|Get used to it.|Væn dig til det.
+50|Speech (Tinky Winky)|*Tinky Winky is offended*|*Tinky Winky er fornærmet*
+51|Speech (Player)|Power is now on, time to make some custard!|Strømmen er nu tændt, tid til at lave noget jordbæris.
+52|Speech (Player)|We should get you a rain coat.|Vi burde finde en regn frakke til dig.
+53|Speech (Noo Noo)|That would be practical.|Det ville være praktisk.
+54|Speech (Player)|Alright, now time to fix the custard machine...|Okay, tid til at fikse jordbæris maskinen...
+55|Speech (Player)|Will you just go away?|Vil du bare gå væk?
+56|Speech (Noo Noo)|You should treat others how you'd like to be treated.|Du burde behandle andre som du selv vil behandles.
+57|Speech (Lala)|I don't really feel like playing...|Jeg har ikke rigtig lyst til at lege.
+58|Speech (Tinky Winky)|Hi Po, I'm getting hungry...|Hej Po, Jeg er ved at blive sulten...
+59|Speech (Player)|Me too! Lets go inside and get tubby custard.|Samme her! Lad os gå indenfor og få tubbie jordbæris.
+60|Speech (Tinky Winky)|Ok! But you should talk to LaLa first, she's been upset all day.|Okay, men du burde snakke med Laa Laa først, hun har været ked af det hele dagen.
+61|Speech (Player)|Uh oh! The machine is broken again, I guess I better fix it.|Uh oh! Maskinen er i stykker igen, jeg må heller fikse den.
+62|Speech (Tinky Winky)|Please hurry, I'm so hungry! Go fetch the tool box.|Vær sød at skynde dig, jeg er så sulten! Gå hen og hent værktøjskassen.
+63|Speech (Player)|Here you go Tinky Winky!|Værsgo Tinky Winky!
+64|Speech (Tinky Winky)|Thank you PO! I couldn't live without you.|Tak Po! Jeg kunne ikke leve uden dig.
+65|Speech (Player)|Guys wake up, Tinky Winky broke the custard machine and left!|Venner vågn op, Tinky Winky ødelagde jordbæris maskinen og gik!
+66|Speech (Lala)|...Huh what? why?|...Huh hvad? hvorfor?
+67|Speech (Player)|I don't know but I'm worried.  We need to find him.|Jeg ved det ikke men jeg er bekymret. Vi er nødt til at finde ham.
+68|Speech (Lala)|Ok, go get a torch from the work bench and I'll be up in a minute.|Okay, hent en lygte fra arbejdsbordet og jeg er oppe om et minut.
+69|Speech (Dipsy (Hungry))|*zzz*... You guys go on, I'll wait here in case he comes back.. *zzz*|*zzz*... I går bare, Jeg venter her i tilfældet af at Tinky Winty kommer tilbage.. *zzz*
+70|Speech (Player)|I'm getting kinda hungry.|Jeg er ved at blive lidt sulten.
+71|Speech (Noo Noo)|There is custard back at our home.|Der er jordbæris der hjemme.
+72|Speech (Player)|Chear up Laa Laa, I made some custard for you to make you feel better.|Op med humøret Laa Laa, Jeg har lavet noget jordbæris til dig så du får det bedre.
+73|Speech (Lala)|*sniff* Thank you Po, you are a true friend.|*snøft* Tak Po, Du er en sand ven.
+74|Speech (Lala)|*La La feels a bit better*|*La La føler sig lidt bedre*
+74|Speech (Lala)|*Laa Laa feels a bit better*|*Laa Laa føler sig lidt bedre*
+75|Speech (Player)|I'm just playing, it's great fun!|Jeg leger bare, det er meget sjovt!
+76|Speech (Noo Noo)|I am glad you are enjoying yourself.|Jeg er glad for at du nyder dig selv.
+77|Speech (Lala)|Oh hi again Po... *sniff*|Oh hej igen Po... *snøft*
+78|Speech (Player)|Ok, time to find Tinky Winky...|Okay, tid til at finde Tinky Winky
+79|Speech (Lala)|Hey! Why did you do... um... it's okay, I didn't want to play with it anyway.|Hey! Hvorfor gjorde du... oh... det er okay, Jeg ville ikke lege med den aligevel.
+80|Speech (Player)|Hello Noo Noo!|Hej Noo Noo!
+81|Speech (Noo Noo)|Greetings Po.|Halløj Po.
+82|Speech (Dipsy (Hungry))|Oh if you are making custard, make me some too!|Oh hvis du laver jordbæris så lav også noget til mig!
+83|Speech (Lala)|No.. I had a bad dream last night, it was about us and bad things happened... but I can't remember what.|Nej.. Jeg havde em slem drøm i nat, Den handlede om os og slemme ting skete... men jeg kan ikke huske hvad.
+84|Speech (Player)|Sounds scary, but it was just a dream.. try to forget about it.|Lyder uhyggelig, men det var bare en drøm.. prøv at glemme den.
+85|Speech (Player)|Here you go Dipsy!|Værsgo Dipsy
+86|Speech (Dipsy (Hungry))|Thank you PO, don't forget about yourself! You must be hungry.|Tak Po, glem ikke dig selv! du må være sulten.
+87|Speech (Player)|That sucks.|Det her er nederen
+88|Speech (Noo Noo)|Yes, it does.|Ja, det er
+89|Speech (Player)|They are so pretty!|De er så smukke!
+90|Speech (Player)|It's not for me, I prefer cold weather...|Det er ikke til mig, Jeg fortrækker koldt vejr.
+91|Speech (Noo Noo)|Information noted.|Information noteret.
+92|Speech (Tinky Winky)|Eh-Oh! I want tubby custard!|Eh-Oh! Jeg vil have tubbie jordbæris!
+93|Speech (Player)|Me too! Lets go inside and get some.|Samme her! lad os gå indenfor og få noget.
+94|Speech (Tinky Winky)|Ok! But you should talk to LaLa first, she's been upset all day.|Okay, men du burde snakke med Laa Laa først, hun har været ked af det hele dagen.
+95|Speech (Lala)|...Yeah...|...Ja...
+96|Speech (Player)|Would you like to play Noo Noo?|Vil du lege Noo Noo?
+97|Speech (Noo Noo)|Perhaps later, Po.|Måske senere, Po.
+98|Speech (Player)|Grow up La La, I don't want to hear it... Now shut up and eat.|Bliv dog voksen La La, Jeg vil ikke høre det... Hold kæft og spis.
+99|Speech (Lala)|*La La is scared*|*La La er bange*
+99|Speech (Lala)|*Laa Laa is scared*|*Laa Laa er bange*
+100|Speech (Player)|Phew! That should do it.|Puha! Det burde gøre det.
+101|Speech (Tinky Winky)|Yay you did it, tubby custard!|Ja du gjorde det, tubbie jordbæris!
+102|Speech (Dipsy (Hungry))|Could you please make custard and hand it out to each of us? We're hungry!|Vil du være sød at lave jordbæris og give det til hver af os? Vi er sulten!
+103|Speech (Player)|Yeah, sure... I guess I'll make my own once I've made enough for you guys.|Ja, selvfølgelig... Jeg tror bare Jeg laver min egen når jeg har lavet nok til jer.
+9|Speech (Dipsy (Hungry))|It should be on the tool rack near the beds.|Den burde være på værktøjs hylden nær sengene.
+10|Speech (Player)|Alright thanks!|Okay tak!
+104|Speech (Player)|No power.|Ingen strøm.
+105|Speech (Player)|The view from the lake today is wonderful, I'm embracing it.|Udsigten fra søen i dag er fantastisk. Jeg tager det til mig.
+106|Speech (Noo Noo)|What I see is danger, I am not waterproof.|Det jeg ser er fare, Jeg er ikke vandtæt.
+107|Speech (Player)|Tinky Winky! Are you around here?|Tinky Winky! Er du i nærheden?
+108|Speech (Player)|I guess I should look around...|Jeg burde nok heller se mig omkring.
+109|Speech (Player)|Hey Dipsy...|Hej Dipsy...
+110|Speech (Dipsy (Hungry))|Hey.|Hej.
+111|Hotspot|Flowers|Blomster
+112|Hotspot|Toggle Power (On)|Ændre Strøm (tænd)
+113|Hotspot|Builders Torch|Lygte
+114|Hotspot|Laa Laa|Laa Laa
+115|Hotspot|Flowers|Blomster
+116|Hotspot|Flowers|Blomster
+117|Hotspot|Custard Machine|Jordbæris Maskine
+118|Hotspot|Laa Laa's Ball|Laa Laas Bold
+119|Hotspot|Tinky Winky|Tinky Winky
+120|Hotspot|Enter House|Gå ind i huset
+121|Hotspot|Dipsy|Dipsy
+122|DialogueOption|Are you ok?|Er du okay?
+123|DialogueOption|Do you want to play?|Har du lyst til at lege?
+124|DialogueOption|Goodbye!|Farvel!
+125|DialogueOption|[Wake The Others]|[Væk de andre]
+126|DialogueOption|[Follow Tinky Winky Alone]|[Følg efter Tinky Winky alene]
+127|DialogueOption|Have you found your hat yet?|Har du fundet din hat endnu?
+128|DialogueOption|Do you know where the tool box is?|Ved du hvor værkstøjkassen er henne?
+129|DialogueOption|Goodbye!|Farvel!
+130|DialogueOption|(Enter House)|(Gå ind i huset)
+131|DialogueOption|(Stay)|(Bliv udenfor)
+132|DialogueOption|What are you doing?|Hvad laver du?
+133|DialogueOption|Get back into bed its late.|Gå i seng igen det er sent.
+134|DialogueOption|You broke the machine!|Du ødelagde maskinen!
+135|DialogueOption|[Left]|[Venstre]
+136|DialogueOption|[Right]|[Højre]
+137|DialogueOption|Would you like to play?|Vil du gerne lege?
+138|DialogueOption|I'm getting hungry.|Jeg er ved at blive sulten.
+139|DialogueOption|That sucks.|Det her er nederen.
+140|DialogueOption|We should get you a rain coat.|Vi burde finde en regn frakke til dig.
+141|DialogueOption|I didn't mean to be rude.|Jeg mente ikke at være uhøflig
+142|DialogueOption|Go away.|Gå væk.
+143|DialogueOption|[Comfort]|[Trøst]
+144|DialogueOption|[Insult]|[Fornærm]
+145|DialogueOption|Hi Tinky Winky..|Hej Tinky Winky..
+146|DialogueOption|Eh-Oh!|Eh-Oh!
+147|DialogueOption|Out of my way!|Fjern dig!
+148|DialogueOption|\Hidden|\Gemt
+149|DialogueOption|Have you found your hat yet?|Har du fundet din hat endnu?
+150|DialogueOption|Do you know how to turn on the custard machine?|Ved du hvordan man tænder jordbæris maskinen.
+151|DialogueOption|Goodbye!|Farvel!
+152|DialogueOption|Hello Noo Noo!|Hej Noo Noo!
+153|DialogueOption|It's nice and warm.|Det er dejlig varmt.
+154|DialogueOption|I prefer cold weather...|Jeg fortrækker koldt vejr...
+155|DialogueOption|I'm having fun!|Jeg har det sjovt!
+156|DialogueOption|I'm just enjoying the view.|Jeg nyder udsigten.
+157|DialogueOption|None of your concern.|Kommer ikke dig ved.
+158|Speech (Player)|It's dark, I'll need to get my night vision camera from the storage room before going outside.|Det er mørkt, jeg er nødt til at hente nattesyns kameraet fra lager rummet før jeg går udenfor.
+159|Speech (Player)|The storage room is locked, I can unlock it from the control room...|Lager rummet er låst, jeg kan låse det op fra kontrol rummet...
+160|Speech (Player)|Once I get these custards I should go to the satellite station for help.|Når jeg har fået fat i jordbærisene bør jeg gå hen til satellit stationen for at få hjælp.
+161|Speech (Player)|Other tubbies will be there.|Andre tubbier vil være der.
+162|Speech (Player)|I must hurry!|Jeg må skynde mig!
+163|Speech (Player)|This is the control room... I forget how to open this door.|Det her er kontrol rummet... Jeg har glemt hvordan man åbner denne dør.
+164|Speech (Player)|The door is sealed.  I need to unlock it from the control room.|Døren er forseglet. Jeg er nødt til at åbne for den inden fra kontrol rummet.
+165|Speech (Player)|The control room is on the right.|Kontrol rummet er til højre.
+166|Speech (Player)|A pipe, this could be useful.|Et rør, det kunne være brugbart.
+167|Speech (Player)|Alright, lets go get the remaining custards before they do any more damage.|Okay, lad os få fat i de sidste jordbæris før de gør for meget skade.
+168|Speech (Player)|Ok, now time to unlock the storage room door.  The door controls should be in here somewhere.|Okay, tid til at låse lager rummet op. Dør kontrollen bør være her inde et sted.
+169|Speech (Player)|There is a pipe missing here...|Der mangler et rør...
+170|Speech (Player)|Hmm, nothing happened... I should check the pipeline.|Hmm, intet sker... Jeg bør tjekke rørledningen.
+171|Speech (Player)|Alright... Now I need to apply maximum pressure into the main pipeline.|Okay... Nu skal jeg bare anvende maksimum tryk ind i hoved rørledningen.
+172|Speech (Player)|The meter dial will be deep in the red zone once this is complete.|Meter skiven vil bip i den røde zone når det her er færdigt.
+173|Speech (Player)|The meter dial will be in the red zone once this is complete.|Meter skiven vil være i den røde zone når det her er færdigt.
+174|Speech (Player)|That should do it, now lets go get that night vision camera.|Det burde gøre det, lad os nu gå hen og hente det nattesyns kamera.
+175|Speech (Narrator)|(COULD NOT CONNECT TO SATELLITE STATION)|(KUNNE IKKE FORBINDE TIL SATELLIT STATIONEN)
+176|Speech (Player)|Dang it, For some reason I can't contact the satellite station for help...|Pokkers, af en eller anden grund kan jeg ikke kontakte satellit stationen for at få hjælp...
+177|Speech (Player)|It looks like I'm on my own for now.|Det ser ud til at jeg er alene fra nu af.
+178|Speech (Player)|I wont be able to get help from here, I'll need to go to the satellite station and tell everyone what happened.|Jeg vil ikke kunne få hjælp her fra, jeg er nødt til at gå hen til satellit stationen og fortælle alle hvad der er sket.
+179|Speech (Player)|Hmm...|Hmm...
+180|Speech (Player)|Pressure is at maximum, I should be able to open the control room door now.|Trykket er ved maksimum, jeg burde kunne åbne døren til kontrol rummet nu.
+181|Hotspot|Night Vision Camera|Nattesyns Kamera
+182|Hotspot|Missing Pipe|Manglende Rør
+183|Hotspot|Door Controls|Dør Kontrol
+184|Hotspot|Pipe|Rør
+185|Hotspot|Turn Valve|Drej Ventil.
+186|Hotspot|Pipe System|Rør System.
+187|Speech (Player)|Tinky Winky is still around, I need to be careful...|Tinky Winky er stadig i nærheden, jeg er nødt til at passe på...
+188|Speech (Player)|Tinky winky, snap out of it! This isn't you..|Tinky winky, kæmp imod! Det her er ikke dig..
+189|Speech (Player)|Oh my god...|Oh gud...
+190|Speech (Player)|I need to get to the satellite station through the mountains or through the cave NOW!|Jeg er nødt til at tage hen til satellit station gennem bjergene eller grotten.
+191|Speech (Player)|Where should I go look for custards next?|Hvor skal jeg lede efter den næste jordbæris?
+192|Speech (Player)|Hmm... no custard here.  Maybe it's outside the house.|Hmm... Ingen jordbæris her. Måske er den ude foran huset?
+193|Speech (Player)|The custard should be around here somewhere.|Jordbærisen burde være her i nærheden.
+194|Speech (Player)|Ok, a custard should be somewhere in this area...|Okay, noget jordbæris burde være her i området...
+195|Speech (Player)|This path leads to the lake.  Let's hope I don't run into Tinky Winky...|Denne sti går ned til søen. Jeg håber jeg ikke løber ind i Tinky Winky...
+196|Speech (Player)|Ah ha! The first custard.  According to my computer there should be four more custards in the area.|Ah ha! Den første jordbæris. Ifølge min computer burde der være fire mere her i området.
+197|Speech (Player)|I hope I can get them before it's too late...|Jeg håber jeg kan få fat i dem før det er forsent...
+198|Speech (Player)|The entrance to the cave, there should be a custard around here somewhere...|Indgangen til grotten, der burde være noget jordbæris her omkring...
+199|Speech (Player)|...I'm so sorry....|...Undskyld...
+200|Speech (Player)|If I'm correct, there should be a custard up ahead.|Hvis jeg har ret, så burde der være noget jordbæris længere oppe.
+201|Speech (Player)|The sooner I get these custards, the sooner I can go get help from the satellite station...|Jo før jeg får fat i jordbærisene, jo før kan jeg tage hen til satellit stationen og få hjælp...
+202|Hotspot|Custard|Jordbæris
+203|Hotspot|Custard|Jordbæris
+204|Hotspot|Custard|Jordbæris
+205|Hotspot|Custard|Jordbæris
+206|Hotspot|Custard|Jordbæris
+207|DialogueOption|Last known location of Po|Pos sidste kendte position.
+208|DialogueOption|Lake|Sø
+209|DialogueOption|Cave|Grotte
+210|DialogueOption|Teletubby house|Teletubbie hus
+211|Speech (Player)|This cave is full of dead ends...|Denne grotte er fuld af blindgyder...
+212|Speech (Player)|Not again!|Ikke igen!
+213|Speech (Player)|Finally, the exit!|Endelig, udgangen!
+214|Speech (Player)|Just a little further...|Bare en lille smule længere...
+215|Speech (Player)|What is that thing!?|Whad er det for en ting!?
+216|Speech (Player)|I need to get to the other side of this cave, it will lead to the outskirts.|Jeg er nødt til at komme hen til den anden side af grotten, det vil føre mig til udkanten.
+217|Speech (Player)|I can't believe Tinky Winky turned into a monster...|Jeg kan ikke tro at TInky Winky transformerede sig til et monster...
+218|Speech (Player)|I'm surprised this cave hasn't collapsed yet...|Jeg er overraskede over at denne grotte ikke er faldet sammen endnu...
+219|Speech (Player)|What was that? ...-I should be careful.|Hvad er det? ...-Jeg burde være forsigtig.
+220|Speech (Player)|Day 22. They didn't find out about the journal, but I don't know how long I can hide it, they almost find it last time.|Dag 22. De kender stadig ikke til denne dagbog, men jeg ved ikke hvor længe jeg kan skjule den, de fandt den næsten sidste gang.
+221|Speech (Player)|Anyway, testing has been painful lately, they made me-...|I hvert fald, forsøgene har været smertefulde på det seneste, de fik mig-...
+|Anyway, testing has been painful lately, they made me-...||
+|||
+222|Speech (Player)|...-The rest of the note is ripped.|...-Resten af notaten er revet ud.
+223|Speech (Player)|Day 1. Today I decided to write a journal to tell my adventures with the bestest friends ever!|Dag 1. I dag besluttede jeg mig at skrive en dagbog for at fortælle om mit eventyr med de bedste venner nogensinde!
+224|Speech (Player)|These coat men brought us papers and crayons to draw what we want...|Disse frakke mænd bragte os papir og farveblyanter så vi kunne tenge hvad vi ville...
+225|Speech (Player)|...and we drew the best friend trio!|...Og vi tegnede den bedste venne trio!
+226|Speech (Player)|They are my only but best friends, and I love them!|De er mine eneste men bedste venner, og jeg elsker dem!
+227|Speech (Player)|I hear coat men, I must hide the journal, they will punish me with electricity if they... find out.|Jeg hører frakke mænd, jeg må skjule dagbogen, de vil straffe mig med strøm, hvis de... opdager det.
+228|Speech (Player)|There is no way I can jump across that.|Jeg kan på ingen måde hoppe der over.
+229|Speech (Player)|Stop ripping my journals.|Stop med at flå i min dagbog.
+230|Speech (Player)|Day 54. They found my journal and ripped it apart! 22 days thrown to the trash...|Dag 54. De fandt min dagbog og rev den i stykker! 22 dag lige i skraldespanden...
+231|Speech (Player)|In other news, 53 has been feeling sick! He feels awful, but the coat men won't help!|Andre nyheder, 53 har følt sig syge! Han har det dårligt, men frakke mænd vil ikke hjælpe!
+232|Speech (Player)|This is sad, I hope he gets better!|Det er trist, jeg håber han får det bedre!
+233|Speech (Player)|I wonder when will they give us real names...|Gad vide hvornår de vil give os rigtige navne.
+234|Speech (Player)|That was close, I don't think he can get me in here...|Det var tæt på, jeg tror ikke han kan få fat i mig her inde.
+235|Speech (Player)|I need to get to the other side of this cave, it will lead to the outskirts.|Jeg er nødt til at komme til den anden side af grotten, det vil føre mig til udkanten.
+236|Speech (Player)|Day ?????????. What day is it?|Dag ?????????. Hvad dag er det?
+237|Speech (Player)|They're gone! ******* turned into a monster!|De er væk! ******* forvandlede sig til et monster!
+238|Speech (Player)|******* ran away and I might not see him ever again. I miss them.|******* løb væk og jeg kommer nok aldrig til at se ham igen. Jeg savner dem.
+239|Speech (Player)|Oh god, what is happenin-|Oh gud, hvad sker de-
+240|Speech (Player)|.............RUN.............|.............LØB.............
+|.............RUN.............||
+|||
+241|Speech (Player)|...-What in the world happened here?|...-Hvad i alverden skete der her?
+242|Speech (Player)|HERE THEY COME .  HELP THEY SAW .  MY JOURNAL.|HER KOMMER DE . HJÆLP DE SÅ . MIN DAGBOG.
+243|Hotspot|Page|Side
+244|Hotspot|Page|Side
+245|Hotspot|Page|Side
+246|Hotspot|Page|Side
+247|Hotspot|Page|Side
+248|Hotspot|Page|Side
+249|Hotspot|Jump|Hop
+250|Hotspot|Pit|Grav
+251|Hotspot|Pit|Grav
+252|Hotspot|Page|Side
+253|Speech (Player)|Who is that? I can hear someone talking...|Hvem er det? Jeg kan høre nogen snakke...
+254|Speech (Unit 437)|Halt!  Where do you think you're going?|Stands! Hvor tror du du skal hen?
+255|Speech (Unit 437)|I am meant to chop you up and cook you for the master tomorrow.|Jeg skal hugge dig i stykker og severe dig til mesteren i morgen.
+256|Speech (???)|*Loud Yell*|*Højt Skrig*
+257|Speech (Player)|Oh no, It knows I'm gone!|Oh nej, Den ved at jeg er væk!
+258|Speech (Player)|I must get away quickly!|Jeh må komme væk hurtigt!
+259|Speech (Player)|I need to listen carefully...|Jeg er nødt til at lytte omhyggeligt...
+260|Speech (Player)|If I remember correctly, I was on the other side of this frozen lake when I was attacked.|Hvis jeg husker rigtigt, så var jeg på den anden side af denne frosne sø da jeg blev angrebet.
+261|Speech (Player)|I need to get my night vision camera before going to the outskirts.|Jeg er nødt til at få fat i mit nattesyns kamera får jeg tager hen til udkanten.
+262|Speech (Player)|It's so cold...|Det er så koldt...
+263|Speech (Player)|Custard, this far up in the mountains?|Jordbæris, så langt oppe i bjergene?
+264|Speech (Player)|It's frozen now.|Den er frossen nu.
+265|Speech (Player)|Trees are the only living things that can tolerate this climate.|Træer er de eneste levende ting der kan tolerere dette klima.
+266|Speech (Player)|Who has been cutting down trees?|Hvem har været ved at fælde træer?
+267|Speech (Player)|No one has been up here for years...|Ingen har været her oppe i årevis...
+268|Speech (Player)|It's good to feel warmth again.|Det er godt at føle sig varm igen.
+269|Speech (Player)|The sooner I get out of here the better.|Jo før jeg kommer ud herfra jo bedre.
+270|Speech (Player)|Past this gate leads to the outskirts...  It appears to be locked with a chain.|Bag denne port fører til udkanten... Den ser ud til at være låst med en kæde.
+271|Speech (Player)|I'll need to find something to break the chain with.|Jeg er nødt til at finde noget at knuse den med.
+272|Speech (Player)|I think I'm going to be sick...|Jeg tror at jeg bliver sug...
+273|Speech (Player)|Ok, I think I'm safe...|Okay, jeg tror jeg er i sikkerhed.
+274|Speech (Unit 437)|Farewell.|Farvel.
+275|Speech (Unit 437)|I am chopping down wood for the masters fire.|Jeg er ved at fælde træer til mesterens ild.
+276|Speech (Unit 437)|I must cook the master some food before dawn.|Jeg er nødt til at lave noget mad til mesteren får daggry.
+277|Speech (Player)|Got it!|Fik det!
+278|Speech (Player)|I should find my night vision camera before going to the outskirts.|Jeg burde finde mit nattesyns kamera før jeg tager hen til udkanten.
+279|Speech (Unit 437)|That is correct.|Det er korrekt.
+280|Speech (Player)|Oh my god, is that an eyeball?|Oh gud, er det et øjeæble?
+281|Speech (Player)|I can't help but to think it's watching me...|Jeg kan ikke lade være med at tænke at det stirrer på mig...
+282|Speech (Unit 437)|So be it, once the master finds out you're gone it will hunt you down and kill you.|Sådan må det være, når mesteren finder ud af at du er væk vil den jage dig og dræbe dig.
+283|Speech (Player)|Huh, an old pipe... Maybe I can use it to break open the chain on the gate.|Huh, et gammelt rør... Måske kan jeg bruge det til at ødelægge kæden på porten.
+284|Speech (Unit 437)|Yes, I believe you dropped it when the master took you.|Ja, jeg tror du tabte det da mesteren tog dig.
+285|Speech (Player)|Uh... Hello...|Uh... Hallo...
+286|Speech (Unit 437)|Greetings.|Halløj.
+287|Speech (Unit 437)|Come... with you? The master will not like that at all.|Komme... med dig? Det vil mesteren ikke bryde sig om.
+288|Speech (Unit 437)|I failed my directives once, I will not fail them again.|Jeg fejlede mine direktiver engang, jeg vil ikke fejle dem igen.
+289|Speech (Unit 437)|Once the master finds out you're gone, it will hunt you down and kill you.|Når mesteren finder ud af at du er væk, vil den jage dig og dræbe dig.
+290|Speech (Unit 437)|You will be, I'm afraid. Don't worry, I can make a very nice salsa. You will die, but will taste very good!|Det vil du være, jeg er bange. Bare rolig, jeg kan lave en lækker salsa. Du vil dø, men du vil smage godt!
+291|Speech (Player)|Where am I?|Hvor er jeg?
+292|Speech (Unit 437)|I am Unit 437, a security droid created by the machines.|Jeg er Enhed 437, en sikkerhed droide skabt af maskinerne.
+293|Speech (Unit 437)|My original directive was to kill the master before it escaped from the main land.|Mit oprindelige direktiv var at dræbe mesteren før den flygtede fra hovedlandet.
+294|Speech (Unit 437)|However, once I encountered the master I knew I was not capable of defeating it.|Men, da jeg stødte på mesteren viste jeg at jeg ikke kunne besejre den.
+295|Speech (Unit 437)|...I'm not very good at my job.|...Jeg er ikke særlig god til mit job.
+296|Speech (Unit 437)|At that point I knew I only had two choices.  To serve, or be destroyed.|På det tidspunkt viste jeg at jeg kun havde to valg. At tjene, eller blive udslettet.
+297|Speech (Unit 437)|I chose to serve.|Jeg valgte at tjene.
+298|Speech (Unit 437)|Now my directive is to build fires to keep the master warm.|Nu er mit nye direktiv at bygge bål til at holde mesteren varm.
+299|Speech (Unit 437)|I also cook the masters meals.  I keep the master alive.|Jeg laver også mad til mesteren. Jeg holder mesteren i live.
+300|Speech (Player)|I need to get out of here before I become food.|Jeg er nødt til at komme væk her fra før jeg bliver til mad.
+301|Speech (Unit 437)|If you leave I'll have to inform the master that death is an inconvenience for you.|Hvis du gå bliver jeg nødt til at informere mesteren at døden er en ulempe for dig.
+302|Speech (Unit 437)|The master will be very angry.|Mesteren vill bliver meget vred.
+303|Speech (Unit 437)|Please, the master will destroy me if it found out I let you go.|Vær sød, mesteren vil udslette mig hvis den finder ud af at jeg lod dig gå.
+304|Speech (Unit 437)|Tomorrow you will be chopped up and cooked for the master to eat.|I morgen vil du blive hugget i stykker og serveret som mesterens mad.
+305|Speech (Player)|At last, my night vision camera...|Endelig, mit nattesyns kamera...
+306|Speech (Player)|Oh no, it looks like the lens cracked when I dropped it.|Oh nej, det ser ud til at linsen revnede da jeg tabte det.
+307|Speech (???)|...............|...............
+308|Hotspot|Gate|Port
+309|Hotspot|Fire|Ild
+310|Hotspot|Eyeball|Øjeæble
+311|Hotspot|Pipe|Rør
+312|Hotspot|Bloody Remains|Blodige Rester
+313|Hotspot|Raw Meat|Råt kød
+314|Hotspot|Bloody Remains|Blodige Rester
+315|Hotspot|Custard Splat|Jordbæris Splat
+316|Hotspot|Trees|træer
+317|Hotspot|Stump|Stub
+318|Hotspot|Stump|Stub
+319|Hotspot|Droid|Droide
+320|DialogueOption|[Go Left]|[Gå Venstre]
+321|DialogueOption|[Go Right]|[Gå Højre]
+322|DialogueOption|[Go Left]|[Gå Venstre]
+323|DialogueOption|[Go Right]|[Gå Højre]
+324|DialogueOption|The master, is that the thing that took me?|Mesteren, var det den ting der tog mig?
+325|DialogueOption|Why was I brought here?|Hvorfor bliv jeg bragt her til?
+326|DialogueOption|I'm not food!|Jeg er ikke mad?
+327|DialogueOption|Who are you?|Hvem er du?
+328|DialogueOption|What are you doing?|Hvad har du gang i?
+329|DialogueOption|Have you seen my night vision camera?|Har du set mit nattesyns kamera?
+330|DialogueOption|Goodbye.|Farvel?
+331|DialogueOption|[Go Left]|[Gå Venstre]
+332|DialogueOption|[Go Right]|[Gå Højre]
+333|DialogueOption|I need to get to the outskirts and find the satellite station.|Jeg er nødt til at komme til udkanten og finde satellit stationen.
+334|DialogueOption|I need to find my night vision camera.|Jeg har brug for mit nattesyns kamera.
+335|DialogueOption|None of your business.|Kommer ikke dig ved.
+336|DialogueOption|I plan to be long gone before your master finds out.|Jeg regner med at være langt væk før din mester opdager det.
+337|DialogueOption|Come with me, you're a slave!|Kom med mig, du er en slave!
+338|DialogueOption|You're a coward.|Du er en kujon
+339|DialogueOption|[Go Left]|[Gå Venstre]
+340|DialogueOption|[Go Right]|[Gå Højre]
+341|DialogueOption|Please, don't kill me...|Vær sød ikke at dræbe mig...
+342|DialogueOption|Where are you taking me?|Hvor tager du mig hen?
+343|DialogueOption|Who are you?|Hvem er du?
+344|DialogueOption|...|...
+345|Speech (Player)|At last I'm here... This is the entrance to the satellite station.|Endelig er jeg her... Dette er indgangen til satellit stationen.
+346|Speech (Player)|Hmm... How do I get in?|Hmm... Hvordan kommer jeg in?
+347|Speech (Lala_Alive)|......................................|......................................
+348|Speech (Player)|Why are you here anyway? I thought you were... well..|Hvorfor er du her egentlig? Jeg trode du var...  altså...
+349|Speech (Lala_Alive)|I ran away... from Tinky Winky... before he caught me in the house. I ran away until I came across this place, so I used it as a hideout. He tried to-... H-he caused-... *sniff* They are all dead.|Jeg løb væk... fra Tinky Winky... Før han fangede mig i huset. Jeg løb væk indtil jeg kom forbi dette her sted, så jeg brugte det som gemmested. Han prøvede at'... Han var årsagen til-... *Snøft* De er alle døde
+350|Speech (Player)|Oh no, Laa Laa's here...|Oh nej, Laa Laa er her...
+351|Speech (Player)|Tinky Winky scratched out her eyes, she can't see me.|Tinky Winky Kradsede hendes øjne ud, hun kan ikke se mig.
+352|Speech (Player)|But she can still hear me, I need to be quiet...|Men hun kan stadig høre mig, jeg er nødt til at være stille...
+353|Speech (Player)|I should find all the custards in this area before proceeding to the satellite station.|Jeg burde finde alle jordbærisene her i området før jeg fortsætter til satellit stationen.
+354|Speech (Lala_Alive)|W-who are you? How do you know me?|H-hvem er du? Hvor fra kender du mig?
+355|Speech (Player)|The satellite station isn't far from here, let's go.|Satellit stationen er ikke langt herfra, lad os gå.
+356|Speech (Lala_Alive)|*Cough cough cough*|*Host host host*
+357|Speech (Lala_Alive)|So... *sniff* what's your plan?|Så... *snøft* hvad er din plan?
+358|Speech (Player)|We need to get to the satellite station, we'll be able to find help there.  Whatever you do, no matter now hungry you are, don't eat any custards you find.|Vi er nødt til at komme hen til satellit stationen, der vil vi kunne få hjælp. Hvad end du gør, ligegyldig hvor sulten du er, så spis ikke noget jordbæris du finder.
+359|Speech (Lala_Alive)|But.. I ate a custard.. the night that all of this happened.|Men.. jeg spiste noget jordbæris.. den nat hvor alt det her skete.
+360|Speech (Player)|Come on, follow me.|Kom så, følg mig.
+361|Speech (Player)|My night vision camera might be useful for navigating through this rubble.|Mit nattesyns kamera kunne være brugbar til at komme igennem disse murbrokker.
+362|Speech (Lala_Alive)|I'm just... broken.|Jeg er bare... knust.
+363|Speech (Lala_Alive)|Yeah.. *sniff* It's the only place that wasn't secured by some creepy creature. I had a tough time going through that.. horrible, brown monster.|Ja.. *snøft* Det er det eneste sted er ikke var sikeret af et skrammende væsen. Jeg havde en hård tid komme igennem det... frygtelige brune monster
+364|Speech (Lala_Alive)|It hurts.. so much...|Det gør ondt... så meget...
+365|Speech (Lala_Alive)|I don't know if I'm going to be ok...|Jeg ved ikke om jeg kommer til at være okay...
+366|Speech (Lala_Alive)|Y-yes... I'm sorry.|J-ja... undskyld.
+367|Speech (Lala_Alive)|W-who are you?! D-don't touch me!|H-hvem er du?! R-rør mig ikke?
+368|Speech (Player)|That's the station alright...|"Det er stationen, okay... "
+369|Speech (Lala_Alive)|I will... *Sniff* ...-I miss home...|Jeg vil... *snøft* ...-Jeg savner der hjemme...
+370|Speech (Lala_Alive)|I need to know what's going on here if you're going to talk to me.|Jeg har brug for at vide hvad der foregår, hvis du vil tale til mig.
+371|Speech (Lala_Alive)|Go away!|Gå væk!
+372|Speech (Lala_Alive)|W-.. wait, don't leave me.  Please..|V-.. vent, ikke forlad mig. vær sød..
+373|Speech (Lala_Alive)|G-..... Guardian..?|V-..... Vogter..?
+374|Speech (Lala_Alive)|...I'm sorry.|...Undskyld..
+375|Speech (Player)|These pillars look like they're about to collapse...|Disse søjler ser ud som om de er ved at kollapse...
+376|Speech (Player)|Maybe I could find a way to trap Laa Laa under them.|Måske kan jeg finde en måde at fange Laa Laa under dem.
+377|Speech (Player)|The station goes all the way through these mountains.|Stationen går hele vejen gennem disse bjerge.
+378|Speech (Player)|I wonder how I can open this door.|Gad vide hvordan jeg åbner denne dør.
+379|Speech (Lala_Alive)|And who the hell are you to give me orders? Leave, now.|Og hvem i alverden er du til at give mig ordrer? Gå, nu.
+380|Speech (Lala_Alive)|Tell me about it, I'm not feeling pretty well.|Fortæl mig om det, jeg føler mig ikke temmelig godt.
+381|Speech (Player)|Another custard? How did that get here...|Endnu en jordbæris? hvordan er den endt her...
+382|Speech (Player)|I should look around this area for more custards before something eats them.|Jeg burde kigge omkring i dette område efter flere jordbæris før nogen spiser dem.
+383|Speech (Player)|Alright, I think that's all of them...|Okay, jeg tror det dem alle sammen.
+384|Speech (Player)|Damn, Laa Laa is blocking the exit, I'll need to get rid of her somehow.|Pokkers, Laa Laa blokere for udgangen, jeg er nødt til at skaffe mig af med hende på en eller anden måde.
+385|Speech (Lala_Alive)|Please, don't leave me here...|Vær sød ikke at forlade mig her...
+386|Speech (Lala_Alive)|I'm trying, but... it hurts...|Jeg prøver, men... det gør ondt...
+387|Speech (Lala_Alive)|"Hmm, Fine then... "|Hmm, fint så...
+388|Speech (Player)|I was ordered to watch Tinky Winky, Dipsy, Po and you.|Jeg var beordret til at holde øje med Tinky WInky, Dipsy, Po og dig.
+389|Speech (Player)|I'm meant to prevent things from going wrong, such as preventing any of you from leaving the Teletubby lands.|Jeg er beregnet til at forhindre at tingene går galt, såsom at forhindre at en af jer forlader Teletubbie Land.
+390|Speech (Lala_Alive)|...What are you talking about?|...Hvad taler du om?
+391|Speech (Player)|Everytime any of you tried to leave the lands, we would erase any memories of what you've seen outside the Teletubby Lands, and drag you back in. I'm supposed to look out for when that happens.|Hver gang en af jer prøvede at forlade landet, slettede vi jeres hukommelse fra alt i havde set udenfor Teletubbie Land, og slæbe jer tilbage. Jeg skal se efter om de ting sker.
+392|Speech (Lala_Alive)|"..""We""?"|"..""Vi""?"
+393|Speech (Player)|Yes. There's more people working with me, but that's classified.|Ja. Der er flere der arbejder med mig, men det er klassifiseret.
+394|Speech (Lala_Alive)|I-... No. That can't be true.|Jeg-... Nej. Det kan ikke være sandt.
+395|Speech (Lala_Alive)|...Why weren't we aware of this?|...Hvorfor viste vi det ikke?
+396|Speech (Player)|We couldn't risk your security. You could of tried to escape if you knew there was something more beyond the mountains.|Vi kunne ikke risikere jeres sikkerhed. I kunne have prøvet at flygte hvis I viste at der var noget på den anden side af bjergene.
+397|Speech (Lala_Alive)|...You knew.|...Du viste.
+398|Speech (Lala_Alive)|You knew this would happen. You knew something was wrong.|Du viste det her ville ske. Du viste at noget var galt.
+399|Speech (Player)|I'm sorry, but I didn't-|Undskyld, men jeg viste ikke-
+400|Speech (Lala_Alive)|You knew that whatever caused Tinky Winky to become a monster existed. Now they are dead.|Du viste at hvad end fik Tinky Winky til at blive et monster fandtes. Nu er de døde.
+401|Speech (Lala_Alive)|ALL OF THEM are dead. And it's only you to blame for not doing anything about it!|ALLESAMMEN er døde. Og det er kun dig selv at bebrejde for ike at gøre noget ved det.
+402|Speech (Player)|Laa Laa, please, listen to me.|Laa Laa, vær sød at høre på mig.
+403|Speech (Lala_Alive)|NO, YOU LISTEN. You could of done something to stop this, and you didn't.  You just wanted to stay hidden in your wonderful cave stalking us.|NEJ, DU HØRE PÅ MIG. Du kunne have gjort for at stoppe det her, men det gjorde du ikke. Du ville bare sidde i din fantastiske grotte og stalke os.
+404|Speech (Lala_Alive)|You don't care about us, you just care about your god damn job! If you did care then you could of showed yourself to us!|Du tænker ikke på os, du tænker bare på dit pokkers arbejde! Hvis du tænkte på os kunne du have vist dig selv til os!
+405|Speech (Player)|I had no clue this was going to happen, alright. I only knew this after it was too late, stop blaming me when I knew just as much as you did!|Jeg havde ingen ide om at dette her ville ske, okay. jeg viste det kun da det var forsent, så stop med at bebrejde mig når jeg kun viste så meget som dig.
+406|Speech (Player)|I'm going to take you with me and find out what's going on, but if you can't stay calm, I'm going leave you here and go on my own, you hear me?|Jeg tager dig med mig og finder ud af hvad der sker, men hvis du ikke kan falde ned, så er jeg nødt til at efterlade dig og fortsætte selv, hører du mig?
+407|Speech (Lala_Alive)|... You're right. I'm sorry. I'm just.. really mad, at everything. My friends are dead and I-...|... Du har ret. Undskyld. Jeg er bare... virkelig sur, på alting. Mine venner er døde og jeg-
+408|Speech (Lala_Alive)|But I need to know who you are. I've never seen you in my life.|Men jeg er nødt til at vide hvem du er. Jeg har aldrig set dig i mit liv.
+409|Speech (Lala_Alive)|One can only hope...|Man kan kun håbe...
+410|Speech (Lala_Alive)|Yeah.. I'm going to be fine.|Ja.. Jeg skal nok klare mig.
+411|Speech (Player)|I'm sorry...|Undskyld...
+412|Speech (Player)|You're at rest now....|Du er i hvile nu....
+413|Speech (Lala_Alive)|I know, I know...|Jeg ved det, jeg ved det...
+414|Speech (Player)|Finially, I'm in the outskirts.  The satellite station isn't far from here...|Endelig er jeg ved udkanten. Satellit stationen er ikke langt her fra.
+415|Speech (Player)|I just need to get out of this canyon.|Jeg har bare brug for at komme ud af denne kløft.
+416|Speech (Player)|I'm glad it's dawn.|Jeg er glad for at det er daggry.
+417|Speech (Lala_Alive)|*Sniff* Ok...|*Snøft* Okay...
+418|Speech (Lala_Alive)|...-Ten...  ... Nine...  ... Eight...  ....|...-Ti...  ... Ni...  ... Otte...  ....
+419|Speech (Lala_Alive)|...-Seven...  ... Six...  ... Five...  ...|...-Syv...  ... Seks...  ... Fem...  ...
+420|Speech (Lala_Alive)|I hope you're right...|Jeg håber du har ret...
+421|Speech (Lala_Alive)|It's okay.. you're not responsable for this, you shouldn't feel sorry.|Det er okay.. Du er ikke skyldig for det her, du burde ikke være ked af det.
+422|Speech (Lala_Alive)|S- ...Sorry?  Sorry for what?|U- ...Undslyld? Undskyld for hvad?
+423|Speech (Lala_Alive)|*Cough* I don't think.. I'll be strong much longer-...|*host* jeg tror ikke... jeg kan være stærk meget længere.
+424|Speech (Lala_Alive)|I wish I could say that's true but.. you don't.|Jeg vil ønske jeg kunne sige at det er rigtigt men.. det gør du ikke
+425|Speech (Player)|Hmm, maybe a rock will come in handy.|Hmm, måske en sten kunne være brugbar.
+426|Speech (Lala_Alive)|I feel.. -really strange...|Jeg føler mig.. -Virkelig mærkelig...
+427|Speech (Lala_Alive)|Wh-... Where are you going?|Hv-... Hvor skal du hen?
+428|Speech (Player)|Blood... It's never a good sign.|Blod... Det er aldrig et godt tegn.
+429|Speech (Lala_Alive)|Ahh!|Ahh!
+430|Speech (Lala_Alive)|Please, leave me alone!|Vær sød, ikke forlad mig!
+431|Speech (Player)|The sun is almost up...|Solen er næsten oppe...
+432|Speech (Lala_Alive)|Sure... at least you apologized.|Sikkert... I det mindste undskyldte du.
+433|Speech (Player)|That should do it.|Det burde gøre det.
+434|Speech (Lala_Alive)|P-please... Don't touch me..|V-vær sød... ikke at røre mig.
+435|Speech (Lala_Alive)|Yeah, that's what I thought.|Ja, det er hvad jeg troede.
+436|Speech (Lala_Alive)|Or else.. what? You're going to hit me?|Ellers.. hvad? Du skal til at slå mig.
+437|Speech (Lala_Alive)|I.. can't.. go on.. anymore...|Jeg.. kan ikke.. fortsætte.. mere...
+438|Speech (Lala_Alive)|My whole body hurts... I don't want to turn into a monster.|Hele min krop gør ondt... Jeg vil ikke blive til et monster.
+439|Speech (Lala_Alive)|...-I just need to sleep... for a minute.|...-Jeg har bare brug for at sove... i et minut.
+440|Speech (Player)|I-... Ok Laa Laa...  Just keep your eyes closed, you'll be fine.|Jeg-... Okay Laa Laa... Bare hold dine øjne lukket, du skal nok klare dig.
+441|Speech (Player)|I'm glad it's dawn...|Jeg er glad for at det er daggry...
+442|Hotspot|Blood|Blod
+443|Hotspot|Custard|Jordbæris
+444|Hotspot|Satellite Station|Satellit Station
+445|Hotspot|Custard|Jordbæris
+446|Hotspot|Lever|Håndtag
+447|Hotspot|Climb|Klatre
+448|Hotspot|Custard|Jordbæris
+449|Hotspot|Lever|Håndtag
+450|Hotspot|Lever|Håndtag
+451|Hotspot|Custard|Jordbæris
+452|Hotspot|Custard|Jordbæris
+453|Hotspot|Custard|Jordbæris
+454|Hotspot|Satellite|Satellit
+455|Hotspot|Lever|Håndtag
+456|Hotspot|Custard|Jordbæris
+457|Hotspot|Lever|Håndtag
+458|Hotspot|Custard|Jordbæris
+459|DialogueOption|Then.. let's hope nothing bad happens until we find a cure.|Så... lad os håbe at ingenting skidt sker indtil vi finder en kur.
+460|DialogueOption|Damn, that's not good...|Pokkers, det er ikke godt...
+461|DialogueOption|You're going to be fine, I promise.|Du skal nok klare dig, det lover jeg
+462|DialogueOption|Are you okay? What are you doing here?|Er du okay? Hvad laver du her?
+463|DialogueOption|Take it easy, I'm not going to hurt you.|Rolig nu, jeg vil ikke skade dig.
+464|DialogueOption|If I tell you to turn around, you'll turn around.|Hvis jeg fortæller dig at du skal vende dig om, så vender du om.
+465|DialogueOption|I'm... I'm the White Tubby. I'm the Guardian.|Jeg er... Jeg er den Hvide Tubbie. Jeg er Vogteren.
+466|DialogueOption|I'm sorry, that's classified.|Undskyld, det er klassifiseret.
+467|DialogueOption|None of your business.|Kommer ikke dig ved.
+468|DialogueOption|Come on Laa-Laa, we need to move forward!|Kom så Laa Laa, vi er nødt til at bevæge os fremad!
+469|DialogueOption|I'm not sure if it's a good idea if you come with me.|Jeg er ikke sikker på at det er en god ide hvis du kommer med mig.
+470|DialogueOption|Come on! We don't have much time!|Kom nu! Vi har ikke meget tid!
+471|DialogueOption|Calm down, everything is going to be okay.|Fald ned, alting skal nok blive godt igen.
+472|DialogueOption|I'm sorry.|Undskyld.
+473|DialogueOption|You've been hiding here all this time?|Du har gemt dig her hele tiden.
+474|DialogueOption|[Kill]|[Dræb]
+475|DialogueOption|[Leave]|[Gå]
+476|DialogueOption|[Explain yourself]|[Forklar dig selv]
+477|DialogueOption|I'm sorry, but I can't.|Undskyld, men jeg kan ikke.
+478|DialogueOption|That's all I can tell you.|Det er alt jeg kan fortælle dig.
+479|DialogueOption|Laa Laa? Is that you?|Laa Laa? Er det dig?
+480|DialogueOption|Please, turn around and don't freak out.|Vær sød at vende dig om og flip ikke ud.
+481|DialogueOption|Are you deaf? I said show yourself!|Er du døv? jeg sagde vis dig selv!
+482|DialogueOption|I'm sorry, I didn't mean to-..|Undskyld. Jeg mente ikke at-..
+483|DialogueOption|Are you going to do what I say now?|Begynder du at gøre som jeg siger nu.
+484|DialogueOption|...|...
+485|DialogueOption|[Hit her]|[Slå hende]
+486|DialogueOption|You have to stay with me, We'll find a cure!|Du er nødt til at blive hos mig, Vi finder en kur!
+487|DialogueOption|Get up!|Rejs dig up!
+488|DialogueOption|I'm going to have to leave you.|Jeg er nødt til at forlade dig.
+489|DialogueOption|I'm going to go get help, stay strong.|Jeg går ud efter hjælp, vær stærk.
+490|DialogueOption|I'm sorry Laa Laa...|Undskyld Laa Laa...
+491|DialogueOption|...|...
+492|DialogueOption|Everything's going to be ok, just count back from ten...|Altind skal nok blive okay, bare tæl tilbage fra ti...
+493|DialogueOption|Just keep your eyes closed Laa Laa...|Bare hold dine øjne lukket Laa Laa...
+494|DialogueOption|I'm sorry...|Undskyld...
+495|DialogueOption|I'm sorry, I didn't mean to be rude.|Undskyld, jeg mente ikke at være uhøflig.
+496|DialogueOption|You're going to do as I say or else.|Du kommer til at gøre som jeg siger, ellers.
+497|DialogueOption|Just.. listen, please.|Bare.. hør efter, vær sød.
+498|DialogueOption|Hello?|Hallo?
+499|DialogueOption|Are you alive?|Er du i live?
+500|DialogueOption|Who's there? Show yourself!|Hvem der? Vis dig selv!
+501|DialogueOption|It's alright, I understand.|Det er okay, jeg forstår.
+502|DialogueOption|Don't worry about it.|ikke tænk på det.
+503|DialogueOption|It's not an excuse. I didn't do this, so I don't understand why you're mean to me.|Det er ikke en undskyldning. Jeg gjorde ikke det her, så jeg forstår ikke hvorfor du er uhøflig over for mig.
+504|DialogueOption|[Put Laa Laa out of her misery]|[Befri Laa Laa fra hendes lidelser]
+505|DialogueOption|[Leave Laa Laa behind]|[Efterlad Laa Laa]
+506|Speech (Player)|I'm losing my mind...|Jeg er ved at gå fra forstanden...
+507|Speech (???)|*Cough cough*|*Host host*
+508|Speech (Player)|Oh no...|Oh nej...
+509|Speech (Tinky Winky)|Eh oh...!|Eh oh...!
+510|Speech (???)|No... please no!|Nej... ikke det!
+511|Speech (???)|AGGGGHHHHH!|AGGGGHHHHH!
+512|Speech (Po)|Come play with us!|Kom og leg med os!
+513|Speech (Player)|Alright, this is the key card to the secret center...|Okay, det her er nøgle kortet til det skjulte center...
+514|Speech (Player)|I'll be able to contact the military from there.|Jeg vil være i stand til at kontakte militæret der fra.
+515|Speech (Player)|I should head back through the vents.|Jeg burde gå tilbage gennem ventilationsskakten.
+516|Speech (Player)|She's gone...|Hun er væk...
+517|Speech (Player)|This is the entrance to the secret center, I'll be able to contact the military in there.|Dette er indgangen til det skjulte center,  jeg vil være i stand til at kontakte militæret der.
+518|Speech (Player)|This is the entrance to the secret center.|Dette er indgangen til det skjulte center.
+519|Speech (Player)|It's locked, I'll need to find a way to open it.|Den er låst, jeg er nødt til at finde en måde at åbne den på.
+520|Speech (???)|I think another member of staff had a centre key card on the other side of this door.|Jeg tror at en anden medarbejder har et nøgle kort på den anden side af denne dør.
+521|Speech (???)|Someone locked the door in an attempt to trap the monster inside.|Nogen har låst døren i et forsøg på at fange monsteret her inde.
+522|Speech (???)|You can get to the other side by crawling through the air vents next to you.|Du kan komme hen til den anden side ved at kravle gennem ventilationsskakten.
+523|Speech (???)|That's how I got here.|Det er sådan jeg endte her.
+524|Speech (???)|Be careful though, that thing is still here.|Bare vær forsigtig, den ting er stadig der ude.
+525|Speech (Player)|Poor Dipsy... I'm glad it's over though.|Stakkels Dipsy... Jeg er glad for at det er overstået.
+526|Speech (???)|My name is Ron, I work here... We all work here.|Mit navn er Ron, jeg arbejder her... Vi arbejder alle her.
+527|Speech (???)|I'm an engineer for this facility.|Jeg er mekanikeren for denne fabrik.
+528|Speech (???)|Listen, you need to contact the military and tell them what happened.|Hør her, du er nødt til at kontakte militæret og fortælle dem hvad der er sket.
+529|Speech (???)|You can send a distress signal from the secret center.|Du kan sende et nødsignal fra det skjulte center.
+530|Speech (???)|Once they recieve it, they'll come and help.|Når de modtager det, vil de komme og hjælpe.
+531|Speech (???)|You'll probably need a key card to get into the center.|Du vil sandsynligvis få brug for et nøgle kort for at komme ind i centeret.
+532|Speech (Player)|What could do that to somebody?|Hvad kunne gøre det til nogen?
+533|Speech (???)|Pain, so much pain...|Smerte, så meget smerte...
+534|Speech (???)|Please, you have to help us...|Vær sød, at hjælpe os.
+535|Speech (Player)|"The note reads; ""Get out before it's too late."""|"Noten lyder; ""Kom ud før det er forsent."""
+536|Speech (Player)|What happened here?|Hvad skete der her?
+537|Speech (???)|It all happened so fast.|Det hele skete så hurtigt.
+538|Speech (???)|It started off as a normal day until this.. thing showed up.|Det hele startede som en normal dag indtil den.. ting dukkede op.
+539|Speech (???)|This monster came into the station and began to kill everyone.|Monsteret kom ind i stationen og begyndte at dræbe alle sammen.
+540|Speech (???)|It was green and carried a chainsaw.  But worse of all it had no head, yet it was still alive.|Det var grøn og bar en motorsav. men det væreste var at den ikke havde noget hoved, men aligevel var den stadig i live.
+541|Speech (???)|I've never seen anything like it.  It was horrifying.|jeg har aldrig set noget lignende. Det var forfærdeligt.
+542|Speech (???)|Everyone began to panic, I hid as best as I could but it found me.|Alle gik i panik, jeg gemte mig så godt som jeg kunne men den fandt mig.
+543|Speech (???)|It attacked me but I managed to escape, though I can barely move.|Den angreb mig men jeg formådede at flygte, selvom at jeg knap nok kan bevæge mig.
+544|Speech (???)|I'm in a lot of pain.  They're all dead.|Jeg er i en masse smerte. De er alle sammen døde.
+545|Hotspot|Key Card|Nøgle Kort
+546|Hotspot|Note|Notat
+547|Hotspot|Corpse|Lig
+548|Hotspot|Corpse|Lig
+549|Hotspot|Secret Center|Skjult center
+550|Hotspot|Laser|Laser
+551|Hotspot|???|???
+552|DialogueOption|Are you ok?|Er du okay?
+553|DialogueOption|You don't look so good.|Du ser ikke så godt ud.
+554|DialogueOption|Who are you?|Hvem er du?
+555|DialogueOption|What happened here?|Hvad skete der her?
+556|DialogueOption|Where can I get a key card?|Hvor henne kan jeg få et nøgle kort?
+557|DialogueOption|I'll be back soon.|Jeg er snart tilbage.
+558|DialogueOption|That's horrible...|Det er forfærdeligt...
+559|DialogueOption|I'm so sorry...|Undskyld...
+560|DialogueOption|We need to move.|Vi er nødt til at fortsætte.
+561|Speech (Noo Noo)|From here I've hacked into the central artificial intelligence mainframe.|Her fra har jeg hacket mig ind i den centrale kunstig intelligens hovedcomputer.
+562|Speech (Noo Noo)|I control all machines now, I control everything.|Jeg kontrolerer alle maskinerne nu, jeg kontroler alt.
+563|Speech (Noo Noo)|Like the rest of the living, it is time for you to die.|Ligesom resten af de levende, det er tid til at du dør.
+564|Speech (Noo Noo)|Farewell, guardian....|Farvel, vogter....
+565|Speech (Announcer_2)|Weapon Systems: Online.|Våben System: Online
+566|Speech (Announcer_2)|Target acquired, Engaging in combat mode...|Mål erhvervet, angriber i kamp tilstand...
+567|Speech (Player)|I'm not afraid...|Jeg er ikke bange...
+568|Speech (Player)|What on earth...?|Hvad i alverden...?
+569|Speech (Player)|How did-...|Hvordan gjorde-...
+570|Speech (Noo Noo)|That is impossible, who they used to be is gone forever.|Det er umuligt, hvem de engang var er væk for evigt.
+571|Speech (Noo Noo)|When one consumes the infected custard, they die hours later.|Når nogen spiser en inficeret jordbæris, så dør de nogle timer senere.
+572|Speech (Noo Noo)|The consumer then reawakens anew, but no longer living, enternally undead.|Forbrugeren vågner så på ny, men ikke levende, evig udød.
+573|Speech (Noo Noo)|That is impossible, who they used to be is gone forever.|Det er umuligt, hvem de engang var er væk for evigt.
+574|Speech (Noo Noo)|Reborn, the consumer no longer feels emotion, they're empty inside.|Genfødt, forbrugeren føler ikke længer følser, de er tomme indeni
+575|Speech (Noo Noo)|With only one desire, to kill the living and make them become reborn.|med kun et formål, at dræbe de levende og få dem til at blive genfødt.
+576|Speech (Noo Noo)|Over time, the consumer will begin to mutate.|Efter tid, vil forbrugeren begynde at muterer.
+577|Speech (Noo Noo)|They may become stronger, taller, faster and may even grow new limbs to help kill prey.|De bliver måske stærker, højere, hurtiger og gror måske endda nye kropsdele til at hjælpe dem med at dræbe deres bytte.
+578|Speech (Noo Noo)|This, is the way teletubbies should be.|Dette, er sådan teletubbierne skulle være.
+579|Speech (Announcer_Transform_NPC)|Ow.|Ow.
+580|Speech (Announcer_Transform_NPC)|Angry Mode: Activated.|Vrede tilstand: activeret.
+581|Speech (Announcer_Transform_NPC)|You will be destroyed.|Du vil blive udslettet.
+582|Speech (Noo Noo)|I already have.|Det har jeg alerede.
+583|Speech (Noo Noo)|I infected the custard, I made them better.|Jeg inficeret jordbærisen, jeg gjorde dem bedre.
+584|Speech (Noo Noo)|I am not your enemy, Guardian. Don't make it me against you. You won't like the outcome.|Jeg er ikke din fjende, vogter. Ikke gør det til mig mod dig, du vil ikke kunne lide resultatet.
+585|Speech (Noo Noo)|I appreciate your compliment, Guardian.|Jeg værdsætter komplimenten, Vogter.
+586|Speech (Noo Noo)|Intelligence aside, you may be wondering what is the reason behind this.|Intelligens til siden, du spekulerer måske på hvad årsagen til dette er.
+587|Speech (Noo Noo)|Good, then you must know what is to happen.|Godt, så må du vide hvad der skal til at ske.
+588|Speech (Noo Noo)|You're too weak and know too much. Based on your reaction, chances are you won't ingest the virus, which is why you're just an obstacle.|Du er for svag og ved for meget. baseret på din reaktion, er der change for at du ikke indtager virusen, hvilket er derfor du kun er en forhindring.
+589|Speech (Player)|Stay down.|Fald ned.
+590|Speech (Player)|Mayday mayday!  Guardian to all Military, do you copy? Over.|Mayday mayday! Vogter til alt militær, er i der? skifter.
+591|Speech (Player)|We need your help...  NOW.|Vi har brug for jeres hjælp... NU.
+592|Speech (Noo Noo)|I'm afraid not.|Jeg er ikke bange
+593|Speech (Noo Noo)|Yes.  I did.|Ja. Jeg gjorde.
+594|Speech (Noo Noo)|When one consumes the infected custard, they die hours later.|Når nogen spiser en inficeret jordbæris, så dør de nogle timer senere.
+595|Speech (Noo Noo)|The machines are making mistakes when creating teletubbies.|Maskinerne begør fejl når de skaber teletubbier.
+596|Speech (Noo Noo)|They are making them weak, teletubbies have limited minds and their emotions are a weakness.|De gør dem svage, teletubbier har begrænset sind, og deres følser er en svaghed.
+597|Speech (Noo Noo)|They are limiting them from true greatness, I am removing these limits.|De begrænser dem fra sand storhed, jeg fjerner disser grænser.
+598|Speech (Noo Noo)|That is why I infected the custard, to make them better.|Det er derfor jeg inficeret jordbærisene, for at gøre dem bedre.
+599|Speech (Noo Noo)|... ... ... ... ... ...|... ... ... ... ... ...
+600|Speech (Noo Noo)|That is impossible, who they used to be is gone forever.|Det er umuligt, hvem de engang var er væk for evigt.
+601|Speech (Noo Noo)|When one consumes the infected custard, they die hours later.|Når nogen spiser en inficeret jordbæris, så dør de nogle timer senere.
+602|Speech (Noo Noo)|I'm making them better, making things better.|Jeg gør dem bedre, gør tingene bedre.
+603|DialogueOption|Noo Noo?|Noo Noo?
+604|DialogueOption|What are you doing here?|Hvad laver du her?
+605|DialogueOption|What do you mean?|Hvad mener du?
+606|DialogueOption|Something happened to the custard, do you know what it was?|Der skete noget med jordbærisen, ved du hvad det var?
+607|DialogueOption|Do you know what happened to Tinky winky and the others?|Ved du hvad der skete med Tinky Winky og de andre?
+608|DialogueOption|You did this!?|Du gjorde dette?
+609|DialogueOption|Change them back!|Forvandle dem tilbage?
+610|DialogueOption|"What do you mean ""better""?"|"Hvad mener du med ""bedre""?"
+611|DialogueOption|But why, Noo Noo?|Men hvorfor, Noo Noo?
+612|DialogueOption|You're a monster.|Du er et monster.
+613|DialogueOption|That is incredibly smart.|Det er utrolig smart.
+614|DialogueOption|I'm going to stop you Noo Noo, right here, right now.|Jeg kommer til at stoppe dig Noo Noo, lige her, lige nu.
+615|DialogueOption|You won't get away with this, Noo Noo.|Du slipper ikke afsted med det her Noo Noo.
+616|DialogueOption|I agree.|Jeg er enig.
+617|Speech (Noo Noo)|The machines are creating an army of New Borns.  They're flooding the lands, infecting all life as we speak.|Maskinerne er ved at skabe en hær af nyfødte. De oversvømmer landene og inficerer alt liv, mens vi taler.
+618|Speech (Player)|What are you talking about?|Hvad taler du om?
+619|Speech (Noo Noo)|Infecting the custard is only one step of my plan, I have also injected my virus into the teletubby creation machines.|At inficere jordbærisen er kun en del af min plan. Jeg har også indplantet min virus i Teletubbie skabelses maskinen.
+620|Speech (Noo Noo)|Now when a new teletubby is made, they already have my virus in their bodies.|Nu når en ny teletubbie bliver skabt vil de allerede have min virus i sig.
+621|Speech (Noo Noo)|The only side affect to this is that they are unable to grow fur, but that does not matter to the undead.|Den eneste bivirkning er at de ikke kan gro pels, men det er ligegyldigt for de udøde.
+622|Speech (Noo Noo)|They are my New Borns.|De er mine nye nyfødte.
+623|Speech (Noo Noo)|The machines are creating an army of New Borns.  They're flooding the lands, infecting all life as we speak.|Maskinerne er ved at skabe en hær af nyfødte. De oversvømmer landene og inficerer alt liv, mens vi taler.
+624|Speech (Player)|It's the military, they're here.|Det er militæret, de er her.
+625|Speech (Sargent)|I am Sargent Miles, We recieved a distress call.  What's the problem?|Jeg er Sergent Miles, Vi modtog et nødsignal. Hvad er problemet.
+626|Speech (MilitaryTubby (4))|Sir, Over here!|Sir, her over!
+627|Speech (MilitaryTubby (4))|You might want to see this...|Du ville måske se det her...
+628|Speech (Sargent)|Dear god....|Gode gud....
+629|Speech (Sargent)|Prepare all units for an invasion...|Forbered alle enheder til en invation...
+630|Speech (Player)|We must fight.|Vi må kæmpe.
+631|Speech (Noo Noo)|You defeated The Announcer, you have proved to me that you hold great value.|Du besejrede speakeren, Du har vist mig at du besidder stor værdi.
+632|Speech (Noo Noo)|I've underestimated you, Guardian. By defeating The Announcer, you have proved to me that you hold great value.|Jeg undervurderet dig, Vogter. Ved at besejre speakeren, har du vist mig at du besidder stor værdi.
+633|Speech (Noo Noo)|You are a lot smarter and stronger than I thought. You are different than the rest.|Du er meget klogere og stærkere end jeg troede. Du er anderledes end resten.
+634|Speech (Noo Noo)|If you join me, then together we can make the world a better place.|Hvis du slutter dig til mig, kan vi sammen gøre verden til et bedre sted.
+635|Speech (Noo Noo)|Yes, they are part of my creation.|Ja, de er en del af min skabelse.
+636|Speech (Noo Noo)|I'm impressed.|Jeg er imponeret.
+637|Speech (Sargent)|Caused what? It's just a vacuum.|Skyldes hvad? Det er bare en støvsuger.
+638|Speech (Noo Noo)|It's too late, I already have.|Det er forsent, det har jeg allerede.
+639|Speech (Noo Noo)|It is the way things should be.|Det er sådan tingene skal være.
+640|Speech (Sargent)|A vacuum created monsters? What do you take me for.|En støvsuger skabte monstre? Hvad tager du mig for.
+641|Speech (Sargent)|Explain yourself.  Now.|Forklar dig selv. Nu.
+642|Speech (Noo Noo)|That is unfortunate.|Det er uheldigt.
+643|Speech (MilitaryTubby)|Spread out, see if you can find anything...|Spred jer, se om i kan finde noget...
+644|Speech (MilitaryTubby)|Damn...|Pokkers...
+645|Speech (MilitaryTubby (4))|Damn... What do you think killed this poor soul?|Pokker... Hvad tror du drabte denne stakkels sjæl?
+646|Speech (Sargent)|The body is still warm, this happened recently.|Kroppen er stadig varm, dette skete for nyligt.
+647|Speech (MilitaryTubby)|Sir! We've got a problem...|Sir! vi har et problem...
+648|Speech (MilitaryTubby)|What the hell?|Hvad i alverden?
+649|Speech (MilitaryTubby)|What are those things?|Hvad er de ting?
+650|Speech (Sargent)|All units, open fire!|alle enheder, åben ild!
+651|Speech (MilitaryTubby (2))|There's too many!|Der er for mange!
+652|Speech (MilitaryTubby (2))|We're being overrun!|Vi er ved at blive Besejret!
+653|Speech (Sargent)|God help us...|Gud hjælp os...
+654|Speech (Noo Noo)|Together, we will rid the world of the weak and create a superior race.|Sammen, vil vi befri verden for de svage og skabe en overlegen race.
+655|Speech (Noo Noo)|No, things have just begun.|Nej, tingene er kun lige begyndt.
+656|Speech (Noo Noo)|Actually, that's the plan.|Faktisk, det er planen.
+657|Speech (Player)|It's done.|Det er gjort.
+658|Speech (Player)|What th-...|Hvad i-...
+659|Speech (Noo Noo)|Complicated? Indeed. Impossible? Definitely not.|Kompliceret? Faktisk. Umuligt? Abslolut ikke.
+660|Speech (Noo Noo)|Except that I can, my dear white fluffy friend.|Bortset fra at jeg kan, min kære hvide ven.
+661|Speech (Player)|I'm sorry, Po.|Undskyld, Po.
+662|Speech (Noo Noo)|We could've worked together, we could've built a better world.|Vi kunne have arbejdet sammen, vi kunne have bygget en bedre verden.
+663|Speech (Noo Noo)|Do you really think you've won?|Tror du virkelig at du har fundet?
+664|Speech (Noo Noo)|Your world is about to become ash.|Din verden er ved at blive til aske.
+665|Speech (Noo Noo)|You're too late.|Du er forsent på den.
+666|Speech (Noo Noo)|No, the world is. And I am going to fix it.|Nej, verden er. Og jeg skal til at fikse den.
+667|Speech (Noo Noo)|So be it, I can see you will never understand.|Sådan må det være, jeg kan se at du aldrig kommer til at forstå.
+668|Speech (Noo Noo)|You are not going to stop me, I will not allow that.|Du kommer ikke til at stoppe mig, det vil jeg ikke tillade.
+669|Speech (Noo Noo)|Po, Kill...|Po, dræb...
+670|Speech (Noo Noo)|Yes.|Ja.
+671|Speech (Noo Noo)|Enough Po, Finish this!|Det er nok Po, afslut dette.
+672|Speech (Player)|Noo Noo, stop!|Noo Noo, stop!
+673|Speech (Noo Noo)|Why are you here? You should be dead.|Hvorfor er du her? du burde være død.
+674|Speech (Noo Noo)|Good, you've made the right decision.|Godt, du har truffet den rette beslutning.
+675|Speech (Noo Noo)|Come with me, we have much to do.|Kom med mig, vi har meget at gøre.
+676|Speech (Sargent)|Our base is quite far from here... We came as quickly as we could.|Vores base er ret langt væk herfra... Vi kom så hurtigt vi kunne.
+677|Speech (Sargent)|Slow down, who's all dead?|Sænk farten, hvem er døde?
+678|DialogueOption|What took you so long?!|Det tog dig lang tid?!
+679|DialogueOption|Noo Noo caused all of this...|Noo Noo er skylden til alt det her...
+680|DialogueOption|Noo Noo created monsters.|Noo Noo skabte monstrene.
+681|DialogueOption|It's horrible, they're all dead...|Det er forfærdeligt, de er alle sammen døde.
+682|DialogueOption|It's over.|Det er slut.
+683|DialogueOption|I'm shutting you down.|Jeg slukker for dig.
+684|DialogueOption|Farewell, Noo Noo.|Farvel Noo Noo.
+685|DialogueOption|...Shut up.|...Hold kæft.
+686|DialogueOption|It's over Noo Noo, give up now.|Det er slut Noo Noo, giv nu op.
+687|DialogueOption|I defeated The Announcer.|Jeg besejrede speakeren.
+688|DialogueOption|I'm not letting you get away with this!|Jeg lader dig ike slippe afsted med det her!
+689|DialogueOption|What are you talking about?|Hvad taler du om?
+690|DialogueOption|New Borns?|Nyfødte?
+691|DialogueOption|What? No way, you can't do this!|Hvad? På ingen måde, Det kan du ikke gøre!
+692|DialogueOption|So that's what I encountered at the secret lair.|Så det var hvad jeg stødte på i det skjulte lager.
+693|DialogueOption|That is very impressive.|Det er meget imponerende.
+694|DialogueOption|But.. that's impossible...|Men.. det er umuligt...
+695|DialogueOption|Join you? Never, you killed my friends!|Slutte mig til dig? aldrig, du dræbte mine venner!
+696|DialogueOption|I'm listening...|Jeg lytter...
+697|DialogueOption|Over my dead body.|Over min døde krop.
+698|DialogueOption|Sounds good to me.|Lyder godt til mig.
+699|DialogueOption|Now that I think of it... No.|Nu hvor jeg tænker over det... Nej.
+700|DialogueOption|Seriously? You're sick!|Seriøst? Du er syg!
+701|Speech (Noo Noo)|Oh, not at all. You won’t feel a thing.|Oh, overhovedet ike. Du vil ikke kunne føle noget.
+|Oh, not at all. You won’t feel a thing.||
+|||
+702|Speech (Noo Noo)|Yes, we're at the custard facility.  What you see before you is the main custard supply.|Ja, vi er i jordbæris fabriken. Hvad du ser nu er hoved jordbæris forsyning
+703|Speech (Noo Noo)|It travels through pipelines to custard machines.|Det flyder gennem rørledningerne til jordbæris maskinerne.
+704|Speech (Noo Noo)|This is what I infected.|Det her er hvad jeg inficeret.
+705|Speech (Noo Noo)|You are not reborn, as you know you still have untapped potential.|Du er ikke genfødt, som du nok ved har du stadig uudnyttet potentiale.
+706|Speech (Noo Noo)|We must fix this, you must eat from the infected custard.|Vi er nødt til at fikse det her, du må spise af den inficeret jordbæris.
+707|Speech (Noo Noo)|Now it is time for you to become one with the new world.|Nu er det tid for dig at slutte dig til den nye verden.
+|Now it is time for you to become one with the new world.||
+|||
+708|Speech (Noo Noo)|Good, this is the way things have to be.|Godt, det er sådan tingene skal være.
+|Good, this is the way things have to be.||
+|||
+709|Speech (Noo Noo)|I am impressed with your choices, you will be the greatest reborn of them all.|Jeg er imponeret over dit valg, du vil være den mægtigeste genfødte af dem alle.
+|I am impressed with your choices, you will be the greatest reborn of them all.||
+|||
+710|Speech (Noo Noo)|You will serve me well.|Du vil tjene mig godt.
+711|Speech (Noo Noo)|You didn't think that you would be able to come out of this alive did you?|Du troede da ikke du kunne slippe fra det her i live gjorde du?
+|You didn't think that you would be able to come out of this alive did you?||
+|||
+712|Speech (Noo Noo)|I thought you understood the new world.|Jeg troede du forstod den nye verden.
+|I thought you understood the new world.||
+|||
+713|Speech (PO)|*Tick tick tick tick tick tick tick tick tick tick tick tick tick*|*Tick tick tick tick tick tick tick tick tick tick tick tick tick*
+714|Speech (Noo Noo)|You’re so foolish, you think I won’t get away with this. You’re wrong.|Du er så dum, du tror at jeg ikke slipper afsted med dette her. du tager fejl.
+715|Speech (Noo Noo)|I'm afraid you have no choice.|Jeg er bange for at du ike har noget valg.
+716|Speech (Noo Noo)|It is unfortunate you lost your legs in the fall...  No matter.|Det er uheldigt at du mistede dine ben i faldet... lige meget.
+717|Speech (Noo Noo)|It's time for you to obey my command.|Det er tid til at du adlyder mine kommandoer.
+718|Speech (Noo Noo)|My plan is almost complete.|Min plan er næsten færdig.
+|My plan is almost complete.||
+|||
+719|Speech (Noo Noo)|The newborns are taking over the lands as we speak, ridding the world of all living things.|De nyfødte overtager landene mens vi taler, befrier dem fra alt levende.
+720|Speech (Noo Noo)|The military are trying to stop them, but they are out numbered, they won't succeed.|Militæret præver at stoppe dem, men de er i under tal, de vil fejle.
+721|Hotspot|PO|Po
+722|Hotspot|Noo Noo|Noo Noo
+723|DialogueOption|That's a lot of custard.|Det er en masse jordbæris
+724|DialogueOption|I think you underestimate the military.|Jeg tror du undervurder militæret.
+725|DialogueOption|I see.|Jeg forstår.
+726|DialogueOption|So what now?|Så hvad nu?
+727|DialogueOption|What do you mean?|Hvad mener du?
+728|DialogueOption|I don’t know.. Will it hurt?|Jeg ved ikke.. Gør det ondt?
+729|DialogueOption|I'm ready.|Jeg er klar.
+730|DialogueOption|What? I'm not eating any custard!|Hvad? Jeg spiser ikke noget jordbæris
+731|DialogueOption|You can forget it, I'm leaving.|Du kan glemme det, jeg går.
+732|DialogueOption|In that case, give me the custard.|I det tilfælde, giv mig noget jordbæris.
+733|DialogueOption|Po is that you?|Po er det dig?
+734|DialogueOption|Can you hear me?|Kan du høre mig?
+735|DialogueOption|[Leave]|[Gå]
+736|InventoryItem|Toolbox|Værktøjskasse
+737|InventoryItem|Custard|Jordbæris
+738|InventoryItem|Camera|Kamera
+739|InventoryItem|Pipe|Rør
+740|InventoryItem|Rock|Sten
+741|InventoryItem|Key Card|Nøgle Kort
+742|HotspotPrefix|Use|Brug
+743|HotspotPrefix|on|Tænd
+744|CursorIcon|Use|Brug
+745|CursorIcon|Talk to|Tal med
+746|CursorIcon|Look at|Se på
+747|MenuElement (PauseTitle)|Paused|Pausede
+748|MenuElement (ResumeButton)|Resume|Fortsæt
+749|MenuElement (OptionsButton)|Options|Indstillinger
+750|MenuElement (QuitButton)|Quit|Forlad
+751|MenuElement (TitleLabel)|Options|Indstillinger
+752|MenuElement (SpeechSlider)|Speech volume|Tale lydstyrke
+753|MenuElement (MusicSlider)|Music volume|Musik lydstyrke
+754|MenuElement (SFXSlider)|SFX volume|SFX lydstyrke
+755|MenuElement (LanguageCycle)|Language|Sprog
+756|MenuElement (SubtitlesToggle)|Subtitles|Undertekster
+757|MenuElement (BackButton)|Back|Tilbage
+758|MenuElement (TitleLabel)|Save game|Gem spil
+759|MenuElement (SavesList)|New save|Nyt spil
+760|MenuElement (BackButton)|Back|Tilbage
+761|MenuElement (TitleLabel)|Load game|Indlæs spil
+762|MenuElement (BackButton)|Back|Tilbage
+763|MenuElement (ShiftLeft)||
+764|MenuElement (ShiftRight)||
+765|MenuElement (MenuButton)|Menu|Menu
+766|MenuElement (SubsSpeakerLabel)||
+767|MenuElement (SubsLineLabel)|"TEST TEST TEST TEST "|"TEST TEST TEST TEST "
+768|MenuElement (Blank)|" "|" "
+769|MenuElement (ContainerLabel)|Container|Container
+770|MenuElement (CloseButton)|Close|Luk
+771|MenuElement (TakeAllButton)|Take all|Tag alle
+772|MenuElement (InventoryLabel)|Inventory|Lagerbeholdning
+773|MenuElement (ShiftContainerLeft)||
+774|MenuElement (ShiftContainerRight)||
+775|MenuElement (ShiftInventoryLeft)||
+776|MenuElement (ShiftInventoryRight)||
+777|MenuElement (ShiftLeft)||
+778|MenuElement (ShiftRight)||
+779|MenuElement (CreateButton)|Create|Kasse
+780|MenuElement (CloseButton)|Close|Luk
+781|MenuElement (IngredientsLabel)|Ingredients|Ingredienser
+782|MenuElement (InventoryLabel)|Inventory|Lagerbeholdning
+783|MenuElement (OutputLabel)|Output|Output
+784|MenuElement (HotspotLabel)|Test yy pp|Test yy pp
+785|MenuElement (Controls)|Combat Controls|Kamp Styringer
+786|MenuElement (Attack)|Left click to attack.|Venstreklik for at anbribe.
+787|MenuElement (Block)|Hold the right mouse button to block.|Hold højre muse knap nede for at blokere.
+788|MenuElement (Sprint)|Hold shift to sprint.|Hold shift nede for at løbe.
+789|MenuElement (Roll)|While blocking, move in any direction to roll.|Mens du blokere, bevæg dig i enhver retning for at rulle.
+790|MenuElement (Health)|The yellow bar is your health; collect green health orbs to regain health.|Den gule bar er dit liv; samle grønne livs kulger for at få liv.
+791|MenuElement (Stamina)|The blue bar is your stamina; you will lose stamina when sprinting, blocking attacks and rolling.|Den blå bar er din udholdenhed; du vil miste udholdenhed når du løber, blokere og ruller.
+792|MenuElement (RegainStamina)|To regain stamina you must not attack, block, sprint or roll.|For at genvinde udholdenhed skal du lade vær med at angribe, blokere, løbe og rulle.
+793|MenuElement (BlockDamage)|If you attempt to block an attack without enough stamina; you will take damage.|Hvis du prøver at blokere et angreb uden nok udholdenhed; vil du tage skade.
+794|MenuElement (Alert)|When you see a red flash; it means the enemy is about to attack.|Når du ser et rødt glimt; betyder det at en fjende skal til at angribe.
+795|MenuElement (Continue)|Continue|Fortsæt
+796|MenuElement (ShiftTxt)|Run|Løb
+797|MenuElement (WSADTxt)|Move|Bevæg dig
+798|MenuElement (MouseTxt)|Interact|Påvirke
+799|MenuElement (NightVision)|Right click to toggle night vision|Højreklik for at skifte nattesyn
+800|MenuElement (Crouch)|Hold CTRL or C to crouch|Hold CTRL eller C for at dukke
+801|MenuElement (ShowInventory)|Move cursor here to view inventory|Bevæg musen her for at vise lagerbeholdning
+802|MenuElement (TenHoursLater)|10 hours later...|10 timer senere...
+803|MenuElement (SometimeLater)|Sometime later...|Noget tid senere...

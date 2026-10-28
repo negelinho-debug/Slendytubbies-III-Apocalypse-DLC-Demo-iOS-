@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: JOUER EN SOLO
+PLAY ONLINE: JOUER EN LIGNE
+CHARACTER CUSTOMIZATION: PERSONNALISATION DU PERSONNAGE
+OPTIONS: OPTIONS
+CREDITS: CRÉDITS
+EXIT: QUITTER
+Are you sure you want to quit this game?: ÊTES-VOUS SÛR DE VOULOIR QUITTER LE JEU?
+NO: NON
+YES: OUI
+ZEOWORKS PRESENTS: ZEOWORKS PRÉSENTE
+HATS: CHAPEAUX
+CHANGE FUR COLOR: CHANGER COULEUR DE FOURRURE
+CUSTOM SKIN: SKIN PERSONNALISABLE
+HEAD: TÊTE
+BODY: CORPS
+ARMS: BRAS
+LEGS: JAMBES
+URL: URL
+APPLY: APPLIQUER
+BACK: RETOUR
+FUR COLOR: COULEUR DE FOURRURE
+DEFAULT: DÉFAUT
+RANDOM COLOR: COULEUR ALÉATOIRE
+COST: COÛT
+CUSTARDS: TUBBY-DÉLICE
+LOCKED: BLOQUÉ
+UNLOCK: DEBLOQUER
+BUY: ACHETER
+YOU NEED MORE CUSTARDS: VOUS MANQUEZ DE TUBBY-DÉLICES
+EQUIPMENT: ÉQUIPEMENT
+Night Vision Camera: Caméra de Vision Nocturne
+Flashlight: Lampe de Poche
+You must sign in to use custom skins: Vous devez vous inscrire pour personnaliser les skins
+USE CUSTOM SKIN: UTILISER LES SKINS PERSONNALISABLES
+SIGN IN: S’INSCRIRE
+SIGN OUT: SE DÉCONNECTER
+LOGIN: S’IDENTIFIER
+USERNAME: NOM D’UTILISATEUR
+PASSWORD: MOT DE PASSE
+CONNECT: SE CONNECTER
+CREATE AN ACCOUNT: CRÉER UN COMPTE
+ERROR: INCORRECT USERNAME / PASSWORD!: ERREUR: NOM D’UTILISATEUR / MOT DE PASSE INCORRECT
+TRY AGAIN: RÉESSAYER
+CONNECTING: CONNEXION
+COULD NOT CONNECT TO SERVER: ECHEC DE CONNEXION
+SERVER MAY BE FULL: LE SERVEUR DOIT ÊTRE PLEIN
+PLEASE TRY ANOTHER SERVER: ESSAYER UN AUTRE SERVEUR
+SELECT A SERVER: CHOISISSEZ UN SERVEUR
+SERVER: SERVEUR
+Room Name: Nom de la Chambre
+Private: Privé
+Game Mode: Mode de Jeu
+Players: Joueur
+Map Name: Nom de la Map
+Host Game: Créer un Serveur
+Game Settings: Réglages
+Map size: Grandeur de la Map
+Small: Petite
+Medium: Moyenne
+Large: Grande
+Recommended Players: Joueurs Recommandés
+Timer: Minuteur
+# Minutes: # Minutes
+Custard Amount: Quantité de Tubby-Délice
+Mute Guests: Invités Muets
+Start Game: Commencer
+COLLECT: COLLECTER
+CO-OP: CO-OP
+VERSUS: VERSUS
+SURVIVAL: SURVIE
+INFECTION: INFECTION
+Join: Joindre
+Player name: Nom du Joueur
+Connected: Connecté
+Chat: Chat
+You need to sign in to chat: Vous devez vous inscrire pour discuter
+Respawning in #: Réapparaître à #
+A helpless victim has joined: Une victime impuissante a rejoint la partie
+A player has been caught: Un joueur s’est fait avoir
+# Joined: # Présent
+# Killed #: # Tué
+# Died: # Mort
+# Left: # Parti
+# Became infected: # Devenu Infecté
+Kill All Survivors: Tuer tous les Survivants
+Fight Off Infected Players To Win: Combattre les Joueurs Infectés pour gagner
+Kill All Helpless Victims: Tuer toutes les victimes impuissantes
+Survive All Waves: Survivre toutes les étapes
+Kills: Éliminations
+Deaths: Morts
+Draw...: Dessiner….
+# Wins...: # Victoires
+# Is The Winner: # Est le gagnant
+Most Kills: Plus grand nombre d'éliminations
+# Is In the Lead: # Est en tête
+Restarting: Redémarrage
+Starting new round: Début d’un nouveau tour
+All players have been killed...: Tous les joueurs ont étés tués
+Your team survived...: Votre équipe a survécu
+All custards have been found...: Tous les Tubby-Délices ont étés trouvés
+Time is up: Le temps est écoulé
+Survivors win: Les survivants gagnent
+Waiting for more players...: Attente de nouveaux joueurs
+You are infected: Vous êtes infecté
+Infected: Infecté
+Infected win: Les infectés gagnent
+Round: Tour
+Survive: Survivre
+Loading...: Chargement….
+Spectator Mode: Mode Spectateur
+You are now in Spectator Mode: Vous êtes maintenant en Mode Spectateur
+Respawn: Réapparaître
+Custards: Tubby-Délices
+Wave #: Étape #
+# Remaining: # Restant
+Press 'E' To Buy Supplies: Appuyer sur ‘E’ pour Acheter Provisions
+Shop: Magasin
+Supplies: Provisions
+Get to the waypoint: Aller au point de repère
+Buy: Acheter
+Sell: Vendre
+Heal: Soigner
+Ammo: Munitions
+Toast: Toast
+# Custards remaining...: # Tubby-Délices restants
+Collect All # Custards: Collecter les
+Mouse Sensitivity: Sensibilité de la Souris
+Resolution: Résolution
+Language: Langue
+This version is outdated, please download the latest version: Cette version n’est plus d’actualité, veuillez télécharger la dernière version
+Update Now: Mettre à Jour maintenant
+Remind Me Later: Me le rappeler plus tard
+Notice: Remarque
+You will be unable to access online features until you update.: Vous ne pourrez accéder aux fonctionnalités en ligne qu'après la mise à jour.
+Paused: En Pause
+Quit: Quitter
+Resume: Résumé
+You're sending messages too quickly!: Vous envoyez les messages trop rapidement
+
+Restart Match: Recommencer la Partie
+End Match: Terminer la Partie
+Restarting match...: Redémarrer la Partie

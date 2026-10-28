@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PrefabPools
+  - FirstPersonCamera
+  - PersistentEngine
+  - GameEngine
+  - BackgroundCamera
+  - Monster
+  - GROUND
+  - Custard
+  - Chainsaw
+  - Paper
+  - SavableObjects
+  - AntiCheat
+  - Rock
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - NavMesh
+  - BackgroundImage
+  - Boss
+  - MAP
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

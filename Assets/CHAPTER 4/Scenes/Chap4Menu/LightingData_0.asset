@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1120 &112000000
+LightingDataAsset:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: LightingData
+  m_Scene: {fileID: 102900000, guid: 69a22d0a98a9db74b81da1774ed5ae89, type: 3}
+  m_Lightmaps:
+  - serializedVersion: 2
+    m_Lightmap: {fileID: 2800000, guid: 927cab8978fc2e54fb60a6e42d74b5c6, type: 2}
+    m_DirLightmap: {fileID: 2800000, guid: 8d93a1af73ecc7346ae179822e02b631, type: 2}
+    m_ShadowMask: {fileID: 0}
+  m_LightProbes: {fileID: 25800000, guid: 3f1e7206fa8c2ed40ad2c4e0a9acb57a, type: 2}
+  m_LightmapsMode: 1
+  m_BakedAmbientProbeInLinear:
+    sh[ 0]: 0.0043977024
+    sh[ 1]: 0.0033351462
+    sh[ 2]: 9.237055E-05
+    sh[ 3]: -0.0001301927
+    sh[ 4]: -0.00012463209
+    sh[ 5]: 7.817405E-05
+    sh[ 6]: -0.00011561818
+    sh[ 7]: -0.00011082873
+    sh[ 8]: -0.00021963289
+    sh[ 9]: 0.0035842333
+    sh[10]: 0.002530486
+    sh[11]: 5.516084E-05
+    sh[12]: -8.524822E-05
+    sh[13]: -8.709307E-05
+    sh[14]: 5.2049232E-05
+    sh[15]: -0.00011676249
+    sh[16]: -7.436272E-05
+    sh[17]: -0.00026026464
+    sh[18]: 0.002900479
+    sh[19]: 0.0017802689
+    sh[20]: 3.276195E-05
+    sh[21]: -5.280998E-05
+    sh[22]: -5.6558336E-05
+    sh[23]: 3.434329E-05
+    sh[24]: -0.00010005168
+    sh[25]: -4.3840773E-05
+    sh[26]: -0.00024196181
+  m_LightmappedRendererData:
+  - uvMesh: {fileID: 4300000, guid: a4f9655f8b621894d88de821c4eba812, type: 2}
+    terrainDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    terrainChunkDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    lightmapIndex: 0
+    lightmapIndexDynamic: 65535
+    lightmapST: {x: 0.47605318, y: 0.47605318, z: 0.56666094, w: -0.0075578606}
+    lightmapSTDynamic: {x: 1, y: 1, z: 0, w: 0}
+  - uvMesh: {fileID: 4300000, guid: a4f9655f8b621894d88de821c4eba812, type: 2}
+    terrainDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    terrainChunkDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    lightmapIndex: 0
+    lightmapIndexDynamic: 65535
+    lightmapST: {x: 0.4841219, y: 0.4841219, z: -0.08581095, w: -0.0076859603}
+    lightmapSTDynamic: {x: 1, y: 1, z: 0, w: 0}
+  - uvMesh: {fileID: 4300000, guid: a4f9655f8b621894d88de821c4eba812, type: 2}
+    terrainDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    terrainChunkDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    lightmapIndex: 0
+    lightmapIndexDynamic: 65535
+    lightmapST: {x: 0.47605318, y: 0.47605318, z: -0.08438077, w: 0.47681713}
+    lightmapSTDynamic: {x: 1, y: 1, z: 0, w: 0}
+  - uvMesh: {fileID: 4300000, guid: a4f9655f8b621894d88de821c4eba812, type: 2}
+    terrainDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    terrainChunkDynamicUVST: {x: 0, y: 0, z: 0, w: 0}
+    lightmapIndex: 0
+    lightmapIndexDynamic: 65535
+    lightmapST: {x: 0.47605318, y: 0.47605318, z: 0.24374422, w: -0.0075578606}
+    lightmapSTDynamic: {x: 1, y: 1, z: 0, w: 0}
+  m_LightmappedRendererDataIDs:
+  - targetObject: 2130
+    targetPrefab: 0
+  - targetObject: 2138
+    targetPrefab: 0
+  - targetObject: 2182
+    targetPrefab: 0
+  - targetObject: 2184
+    targetPrefab: 0
+  m_EnlightenSceneMapping:
+    m_Renderers: []
+    m_Systems: []
+    m_Probesets: []
+    m_SystemAtlases: []
+    m_TerrainChunks: []
+  m_EnlightenSceneMappingRendererIDs: []
+  m_Lights:
+  - targetObject: 2468
+    targetPrefab: 0
+  - targetObject: 2469
+    targetPrefab: 0
+  - targetObject: 2470
+    targetPrefab: 0
+  - targetObject: 2471
+    targetPrefab: 0
+  m_LightBakingOutputs:
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  - probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmappingMask: 0
+  m_BakedReflectionProbeCubemaps:
+  - {fileID: 8900000, guid: 6c698f98fa2012843890396737e10cf4, type: 3}
+  m_BakedReflectionProbes: []
+  m_EnlightenData: 556e69747946530000000006352e782e7800323031372e312e3166310000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_EnlightenDataVersion: 112

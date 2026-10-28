@@ -1,0 +1,827 @@
+ID,Type,Original line,The translation
+0,Speech (Player),There's no place like home.,Er is geen plaats zoals thuis.
+1,Speech (Noo Noo),"You should head home, You haven't eaten today.","Ik denk dat je nu wel naar huis moet gaan, je hebt bijna niet eens gegeten."
+2,Speech (Player),"Yeah I'm done here anyway, Let's go.","Ja ik ben klaar hier, In ieder geval, Laten we gaan."
+3,Speech (Noo Noo),"Actually, I'm gonna stay here for a bit.","Eigenlijk, Blijf ik hier now even."
+4,Speech (Player),"Alright, See you later Noo Noo!","Oke, Ik zie je later Noo Noo!"
+5,Speech (Noo Noo),"Bye Po, I'll be home soon.","Doei Po, Ok kom thuis straks."
+6,Speech (Noo Noo),I wonder what the others are up to.,Wat zouden de anderen eigenlijk aan het doen zijn.
+7,Speech (Noo Noo),Why are you out here all by yourself?,Waarom ben jij hier helmaal alleen?
+8,Speech (Noo Noo),Everyone misses you.,Iedereen mist jouw.
+9,Speech (Dipsy (Hungry)),It should be on the tool rack near the beds.,Het moet bij de gereedschaps tafel liggen vlakbij de bedden.
+10,Speech (Player),Alright thanks!,Oke dankjewel!
+11,Speech (Tinky Winky),"PO's back, horray!","Po is terug, Hoera!"
+12,Speech (Player),"I'm sorry, I didn't mean to be rude.","Sorry, Ik probeerde niet vervelend te wezen."
+13,Speech (Noo Noo),All is forgiven.,Ik vergeef je.
+14,Speech (Player),There is no time to wake the others.  I need to follow him quickly before he goes far!,Er is geen tijd om de anderen wakker te maken. Ik moet snel achter hem aan anders gaat hij te ver weg!
+15,Speech (Player),I better grab a torch from the work bench.,Het lijkt mij beter dat ik de zaklamp ga pakken bij de gereetschaps tafel.
+16,Speech (Player),I hope custard will chear Laa Laa up...,Ik hoop dat custard Laa Laa blij maakt...
+17,Speech (Player),What a view...,Wat een uitzicht...
+18,Speech (Noo Noo),It's a beautiful day.,Wat een mooie dag.
+19,Speech (Lala),"Oh, hi Po... *sigh*","Oh, hoi Po... *zucht*"
+20,Speech (Dipsy (Hungry)),"Of course, you need to press the 'on' button on your right.","Natuurlijk, je moet de ""aan"" knop indrukken naar rechts."
+21,Speech (Player),"Ah now I remember, thanks!","oh nu weet ik het weer, dankje!"
+22,Speech (Player),What I'm doing here is none of your concern.,Wat ik hier doe is niet jou probleem.
+23,Speech (Noo Noo),"You are my concern, I am here for you.","Jij bent mijn zorg, Ik ben hier voor je."
+24,Speech (Player),It sure is! Today is nice and warm.,Dat is het natuurlijk! Het is mooi en warm.
+25,Speech (Noo Noo),I am unable to feel warmth.,Ik voel de warmte niet.
+26,Speech (Dipsy (Hungry)),"Nope, it's been missing for so long that I can't even remember when I lost it.","Nee, Het mist nu al voor zolang dat ik niet meer weet waar ik hem heb kwijtgeraakt."
+27,Speech (Player),"You'll find it eventually, I'm sure.","Je vindt hem wel, Weet ik."
+28,Speech (Player),I should probably give Dipsy some tubby custard.,Ik denk dat ik Dipsy want tubby custard moet geven.
+29,Speech (Player),I'll need to find the tool box before I can fix this.,Ik moet de gereedschapskist vinden voordat ik dit kan fixen.
+30,Speech (Player),(He's my best friend!),(Hij is mijn best vriend!)
+31,Speech (Player),"It's ready, time to give it to one of my friends!","Het is klaar, tijd om het aan een van mijn vrienden te geven!"
+32,Speech (Player),I'm already carrying a custard.,Ik draag al een custard.
+33,Speech (Player),Now to make myself some tubby custard!,Nu moet ik voor mijzelf wat tubby custard maken!
+34,Speech (Player),I can't sleep...,Ik kan niet slapen...
+35,Speech (Player),*Gasp*,*schrik*
+36,Speech (Player),"Tubby custard, how did that get here?","Tubby custard, hoe komt dat hier?"
+37,Speech (Player),"Tinky Winky doesn't seem to be here, I guess I better check the lake.","Tinky Winky is hier zo te zien niet, Ik denk dat ik het bos daar maar moet rondgaan kijken."
+38,Speech (Player),Tinky Winky...?,Tinky Winky...?
+39,Speech (Player),Wh... What happened to La La...?,Wa... Wat is er gebeurd met La La...?
+40,Speech (Player),Are you ok...?,Alles ok...?
+41,Speech (Player),Oh my god!,Oh mijn god!
+42,Speech (Player),"He's chasing me, I better get to the house quick!","Hij probeerd mij te pakken, Ik moet snel daar het huis gaan!"
+43,Speech (Player),Hey Dipsy...,Hallo Dipsy...
+44,Speech (Dipsy (Hungry)),Hey.,Hoi.
+45,Speech (Player),"It still works, but I don't need it right now.","Het werkt nogsteeds, maar ik hoef het nu niet."
+46,Speech (Tinky Winky),........................................,........................................
+47,Speech (Player),"Wait, where are you going!?","Wacht, waar ga je naartoe!?"
+48,Speech (Tinky Winky),Wow PO don't be so rude.,Wow Po wees niet zo onbeleefd.
+49,Speech (Player),Get used to it.,Wen er maar aan.
+50,Speech (Tinky Winky),*Tinky Winky is offended*,*Tinky Winky voelt zich beledigd*
+51,Speech (Player),"Power is now on, time to make some custard!","De stroom is nu aan, tijd om watcustard te maken!"
+52,Speech (Player),We should get you a rain coat.,We moeten je een regenjas vinden.
+53,Speech (Noo Noo),That would be practical.,Dat zou praktisch zijn.
+54,Speech (Player),"Alright, now time to fix the custard machine...","Oke, tijd om de custard machine te repareren..."
+55,Speech (Player),Will you just go away?,Waarom ga jij niet weg?
+56,Speech (Noo Noo),You should treat others how you'd like to be treated.,Je zou anderen moeten behandelen hoe jij behandeld wilt worden.
+57,Speech (Lala),I don't really feel like playing...,Ik heb nu niet zoveel zin in spelen...
+58,Speech (Tinky Winky),"Hi Po, I'm getting hungry...","Hoi Po, Ik heb honger..."
+59,Speech (Player),Me too! Lets go inside and get tubby custard.,Ik ook! Laten wij naar binnen gaan en wat tubby custard maken.
+60,Speech (Tinky Winky),"Ok! But you should talk to LaLa first, she's been upset all day.","Ok! Maar ik zou eerst met Laa Laa praten, ze voelt zich niet zo goed de hele dag."
+61,Speech (Player),"Uh oh! The machine is broken again, I guess I better fix it.","Uh oh! De machine is weer gebroken, Ik moet hem beter gaan reparen."
+62,Speech (Tinky Winky),"Please hurry, I'm so hungry! Go fetch the tool box.","Wees snel, Ik heb zo'n honger! Pak de gereedschapskist."
+63,Speech (Player),Here you go Tinky Winky!,Kijk is aan Tinky Winky!
+64,Speech (Tinky Winky),Thank you PO! I couldn't live without you.,Dankje Po! Ik kon niet leven zonder jou.
+65,Speech (Player),"Guys wake up, Tinky Winky broke the custard machine and left!","Jongens wakker worden, Tinky Winky breekte de custard machine en is weggegaan!"
+66,Speech (Lala),...Huh what? why?,...Huh wat? Waarom?
+67,Speech (Player),I don't know but I'm worried.  We need to find him.,Weet ik niet maar ik ben bezorgt.  We moeten hem vinden.
+68,Speech (Lala),"Ok, go get a torch from the work bench and I'll be up in a minute.","Ok, pak de zaklamp van de gereedschaps tafel en ik sta op in een minuut."
+69,Speech (Dipsy (Hungry)),"*zzz*... You guys go on, I'll wait here in case he comes back.. *zzz*","*zzz*... Gaan jullie maar, Ik wacht hier wel als hij terug komt.. *zzz*"
+70,Speech (Player),I'm getting kinda hungry.,Ik wordt best wel hongerig.
+71,Speech (Noo Noo),There is custard back at our home.,Er is custard terug bij ons thuis.
+72,Speech (Player),"Chear up Laa Laa, I made some custard for you to make you feel better.","Wordt wat blijer Laa Laa, Ik heb wat custard gemaakt om je wat beter te voelen."
+73,Speech (Lala),"*sniff* Thank you Po, you are a true friend.","*sniff* Dank je wel Po, je bent een echte vriend."
+74,Speech (Lala),*La La feels a bit better*,*Laa Laa voeld zich stukke beter*
+74,Speech (Lala),*Laa Laa feels a bit better*,*Laa Laa voeld zich stukke beter*
+75,Speech (Player),"I'm just playing, it's great fun!","Ik ben gewoon aan het spelen, het is heel leuk!"
+76,Speech (Noo Noo),I am glad you are enjoying yourself.,Ik ben blij dat jij jezelf vermaakt.
+77,Speech (Lala),Oh hi again Po... *sniff*,Oh hallo alweer Po... *sniff*
+78,Speech (Player),"Ok, time to find Tinky Winky...","Ok, tijd om Tinky Winky te vinden..."
+79,Speech (Lala),"Hey! Why did you do... um... it's okay, I didn't want to play with it anyway.","Hey! Hey waarom deed je... um... het is oke, Ik wou er toch niet mee gaan spelen."
+80,Speech (Player),Hello Noo Noo!,Hallo Noo Noo!
+81,Speech (Noo Noo),Greetings Po.,Hallo Po.
+82,Speech (Dipsy (Hungry)),"Oh if you are making custard, make me some too!","Oh als je custard aan het maken bent, maak mij ook wat!"
+83,Speech (Lala),"No.. I had a bad dream last night, it was about us and bad things happened... but I can't remember what.","Nee.. Ik had een slechte droom gisteravond, het was iets met ons erin en slechte dingen gebeurde... maar ik weet niet meer wat er gebeurde."
+84,Speech (Player),"Sounds scary, but it was just a dream.. try to forget about it.","Klinkt eng, maar het is was maar een droom.. probeer het te vergeten."
+85,Speech (Player),Here you go Dipsy!,Kijk is aan Dipsy!
+86,Speech (Dipsy (Hungry)),"Thank you PO, don't forget about yourself! You must be hungry.","Dankje Po, vergeet niet jezelf! Je moet ook honger hebben."
+87,Speech (Player),That sucks.,Dat is niet mooi.
+88,Speech (Noo Noo),"Yes, it does.","Ja, dat is niet mooi."
+89,Speech (Player),They are so pretty!,Ze zijn zo mooi!
+90,Speech (Player),"It's not for me, I prefer cold weather...","Het is niet voor mij, Ik zelf wil koud weer..."
+91,Speech (Noo Noo),Information noted.,Informatie geschreven.
+92,Speech (Tinky Winky),Eh-Oh! I want tubby custard!,Eh-Oh! Ik wil tubby custard!
+93,Speech (Player),Me too! Lets go inside and get some.,Ik ook! Laten we naar binnen gaan en wat maken.
+94,Speech (Tinky Winky),"Ok! But you should talk to LaLa first, she's been upset all day.","Ok! Maar praat eerst even met Laa Laa, ze voeld zich niet goed de hele dag."
+95,Speech (Lala),...Yeah...,...Ja...
+96,Speech (Player),Would you like to play Noo Noo?,Wil je met Noo Noo spelen?
+97,Speech (Noo Noo),"Perhaps later, Po.","Misschien later, Po."
+98,Speech (Player),"Grow up La La, I don't want to hear it... Now shut up and eat.","Wees eens groot Laa Laa, Ik wil het niet horen...Nou hou je mond dicht en eet."
+99,Speech (Lala),*La La is scared*,*Laa Laa is bang*
+99,Speech (Lala),*Laa Laa is scared*,*Laa Laa is bang*
+100,Speech (Player),Phew! That should do it.,Phew! Dat moet het doen.
+101,Speech (Tinky Winky),"Yay you did it, tubby custard!","Yay je hebt het gefixt, tubby custard!"
+102,Speech (Dipsy (Hungry)),Could you please make custard and hand it out to each of us? We're hungry!,Kan je eerst custard voor ons maken en het aan ons geven? We hebben honger!
+103,Speech (Player),"Yeah, sure... I guess I'll make my own once I've made enough for you guys.","Oke, natuurlijk... Ik denk dat ik mijnes maak wanneer ik genoeg voor jullie hebben gemaakt."
+9,Speech (Dipsy (Hungry)),It should be on the tool rack near the beds.,Het moet op de gereedschapskist bij de bedden staan.
+10,Speech (Player),Alright thanks!,Oke dankje!
+104,Speech (Player),No power.,Geen stroom.
+105,Speech (Player),"The view from the lake today is wonderful, I'm embracing it.","Dit uitzicht van het bos is heel mooi, Ik omhels het."
+106,Speech (Noo Noo),"What I see is danger, I am not waterproof.","Wat ik zie is gevaar, ik ben niet waterdicht."
+107,Speech (Player),Tinky Winky! Are you around here?,Tinky Winky! Ben je hier ergens?
+108,Speech (Player),I guess I should look around...,Ik denk dat ik moet rondkijken...
+109,Speech (Player),Hey Dipsy...,Hoi Dipsy...
+110,Speech (Dipsy (Hungry)),Hey.,Hoi.
+111,Hotspot,Flowers,Bloemen
+112,Hotspot,Toggle Power (On),Schakel de stroom (Aan)
+113,Hotspot,Builders Torch,Zaklamp
+114,Hotspot,Laa Laa,Laa Laa
+115,Hotspot,Flowers,Bloemen
+116,Hotspot,Flowers,Bloemen
+117,Hotspot,Custard Machine,Custard Machine
+118,Hotspot,Laa Laa's Ball,Laa Laa's Bal
+119,Hotspot,Tinky Winky,Tinky Winky
+120,Hotspot,Enter House,Het Huis Binnen Gaan
+121,Hotspot,Dipsy,Dipsy
+122,DialogueOption,Are you ok?,Alles ok?
+123,DialogueOption,Do you want to play?,Wil je spelen?
+124,DialogueOption,Goodbye!,Doei!
+125,DialogueOption,[Wake The Others],[De Anderen Wakker Maken]
+126,DialogueOption,[Follow Tinky Winky Alone],[Volg Tinky Winky Alleen]
+127,DialogueOption,Have you found your hat yet?,Heb jij je hoed al gevonden?
+128,DialogueOption,Do you know where the tool box is?,Weet je waar de gereedschapskist is?
+129,DialogueOption,Goodbye!,Doei!
+130,DialogueOption,(Enter House),(Het Huis Binnen Gaan)
+131,DialogueOption,(Stay),(Blijf)
+132,DialogueOption,What are you doing?,Wat ben je aan het doen?
+133,DialogueOption,Get back into bed its late.,Ga terug in bed het is laat.
+134,DialogueOption,You broke the machine!,Je heb de machine gebroken!
+135,DialogueOption,[Left],[Links]
+136,DialogueOption,[Right],[Rechts]
+137,DialogueOption,Would you like to play?,Wil je graag spelen?
+138,DialogueOption,I'm getting hungry.,Ik heb honger.
+139,DialogueOption,That sucks.,Dat is stom.
+140,DialogueOption,We should get you a rain coat.,We moeten je een regenjas vinden.
+141,DialogueOption,I didn't mean to be rude.,Ik wou niet vervelend doen.
+142,DialogueOption,Go away.,Ga weg.
+143,DialogueOption,[Comfort],[Blij Maken]
+144,DialogueOption,[Insult],[Belediging]
+145,DialogueOption,Hi Tinky Winky..,Hallo Tinky Winky..
+146,DialogueOption,Eh-Oh!,Eh-Oh!
+147,DialogueOption,Out of my way!,Ga uit mijn weg!
+148,DialogueOption,\Hidden,\Verstopt
+149,DialogueOption,Have you found your hat yet?,Heb jij je hoed al gevonden?
+150,DialogueOption,Do you know how to turn on the custard machine?,Weet jij hoe je de custard machine aan moet doen?
+151,DialogueOption,Goodbye!,Doei!
+152,DialogueOption,Hello Noo Noo!,Hallo Noo Noo!
+153,DialogueOption,It's nice and warm.,Het is mooi en warm.
+154,DialogueOption,I prefer cold weather...,Ik heb liever koud weer ...
+155,DialogueOption,I'm having fun!,Ik heb gewoon lol!
+156,DialogueOption,I'm just enjoying the view.,Ik ben gewoon het uitzicht aan het bewonderen.
+157,DialogueOption,None of your concern.,Dat is niet jou probleem.
+158,Speech (Player),"It's dark, I'll need to get my night vision camera from the storage room before going outside.","Het is donker, ik moet mijn nachtvisiecamera uit de bergruimte halen voordat ik naar buiten ga."
+159,Speech (Player),"The storage room is locked, I can unlock it from the control room...","De opslagruimte is vergrendeld, ik kan het van de controle kamer ontgrendelen..."
+160,Speech (Player),Once I get these custards I should go to the satellite station for help.,"Zodra ik deze custards heb, moet ik naar het satellietstation gaan om hulp te zoeken."
+161,Speech (Player),Other tubbies will be there.,Andere tubbies zullen er zijn.
+162,Speech (Player),I must hurry!,Ik moet snel zijn!
+163,Speech (Player),This is the control room... I forget how to open this door.,Dit is de controle kamer ... Ik vergeet hoe deze deur te openen.
+164,Speech (Player),The door is sealed.  I need to unlock it from the control room.,De deur is afgesloten. Ik moet het ontgrendelen van de controle kamer.
+165,Speech (Player),The control room is on the right.,De controle kamer is naar rechts.
+166,Speech (Player),"A pipe, this could be useful.","Een pijp, dit kan handig zijn."
+167,Speech (Player),"Alright, lets go get the remaining custards before they do any more damage.","Oke, laten we de overige vlaams krijgen voordat ze meer schade doen."
+168,Speech (Player),"Ok, now time to unlock the storage room door.  The door controls should be in here somewhere.","Oké, nu tijd om de deur van de berging te ontgrendelen. De deurbedieningen moeten ergens ergens zijn."
+169,Speech (Player),There is a pipe missing here...,Er ontbreekt hier een pijp ...
+170,Speech (Player),"Hmm, nothing happened... I should check the pipeline.","Hmm, er is niets gebeurd ... ik moet de pipeline controleren."
+171,Speech (Player),Alright... Now I need to apply maximum pressure into the main pipeline.,Oke ... Nu moet ik de maximale druk in de hoofdpijpleiding toepassen.
+172,Speech (Player),The meter dial will be deep in the red zone once this is complete.,De meter draaiknop zal diep in de rode zone zijn zodra dit klaar is.
+173,Speech (Player),The meter dial will be in the red zone once this is complete.,De meter draait in de rode zone zodra deze is voltooid.
+174,Speech (Player),"That should do it, now lets go get that night vision camera.","Dat zou het moeten doen, laten we nu die nachtvisiecamera krijgen."
+175,Speech (Narrator),(COULD NOT CONNECT TO SATELLITE STATION),(KAN NIET VERBINDEN MET SATELLITE STATION)
+176,Speech (Player),"Dang it, For some reason I can't contact the satellite station for help...","Verdorie ,Om een of andere reden kan ik niet contact opnemen met het satellietstation voor hulp..."
+177,Speech (Player),It looks like I'm on my own for now.,Het lijkt me erop ik nu voor mezelf ben.
+178,Speech (Player),"I wont be able to get help from here, I'll need to go to the satellite station and tell everyone what happened.","Ik kan hier niet hulp krijgen, ik moet naar het satellite station gaan en iedereen vertellen wat er gebeurd is."
+179,Speech (Player),Hmm...,Hmm...
+180,Speech (Player),"Pressure is at maximum, I should be able to open the control room door now.","De druk is maximaal, ik zou nu de deur van de controle kamer kunnen openen."
+181,Hotspot,Night Vision Camera,Nacht Visier Camera
+182,Hotspot,Missing Pipe,Ontbrekende Pijp
+183,Hotspot,Door Controls,Deur Controles
+184,Hotspot,Pipe,Pijp
+185,Hotspot,Turn Valve,Klep Draaien
+186,Hotspot,Pipe System,Pijp Systeem
+187,Speech (Player),"Tinky Winky is still around, I need to be careful...","Tinky Winky zwerft nog steeds rond, ik moet voorzichtig zijn..."
+188,Speech (Player),"Tinky winky, snap out of it! This isn't you..","Tinky winky, snap er uit! Dit ben jij niet..."
+189,Speech (Player),Oh my god...,Oh mijn god...
+190,Speech (Player),I need to get to the satellite station through the mountains or through the cave NOW!,Ik moet naar het satellietstation door de bergen of door de grot NU!
+191,Speech (Player),Where should I go look for custards next?,Waar moet ik nu zoeken voor de custards?
+192,Speech (Player),Hmm... no custard here.  Maybe it's outside the house.,Hmm ... geen custard. Misschien is het buiten het huis.
+193,Speech (Player),The custard should be around here somewhere.,De custard zal hier ergens zijn.
+194,Speech (Player),"Ok, a custard should be somewhere in this area...","Oke, een custard zal ergens in dit gebied zijn..."
+195,Speech (Player),This path leads to the lake.  Let's hope I don't run into Tinky Winky...,Deze weg leidt naar het bos. Ik hoop dat ik Tinky Winky niet tegen kom...
+196,Speech (Player),Ah ha! The first custard.  According to my computer there should be four more custards in the area.,Ah ha! De eerste custard. Volgens mijn computer zouden er vier meer custards moeten zijn in de omgeving.
+197,Speech (Player),I hope I can get them before it's too late...,Ik hoop dat ik ze kan krijgen voordat het te laat is...
+198,Speech (Player),"The entrance to the cave, there should be a custard around here somewhere...","De ingang naar de grot, er zou hier ergens een custard moeten zijn..."
+199,Speech (Player),...I'm so sorry....,"...Het spijt me zeer.... "
+200,Speech (Player),"If I'm correct, there should be a custard up ahead.","Als ik juist ben, moet er een custard ergen voorop zijn."
+201,Speech (Player),"The sooner I get these custards, the sooner I can go get help from the satellite station...","Hoe eerder ik deze custards krijgt, hoe eerder ik kan gaan, hulp krijgen van het satellite station..."
+202,Hotspot,Custard,Custard
+203,Hotspot,Custard,Custard
+204,Hotspot,Custard,Custard
+205,Hotspot,Custard,Custard
+206,Hotspot,Custard,Custard
+207,DialogueOption,Last known location of Po,Laatst bekende locatie van Po
+208,DialogueOption,Lake,Bos
+209,DialogueOption,Cave,Grot
+210,DialogueOption,Teletubby house,Teletubbie Huis
+211,Speech (Player),This cave is full of dead ends...,Deze grot is vol doodlopend...
+212,Speech (Player),Not again!,Niet alweer!
+213,Speech (Player),"Finally, the exit!","Eindelijk, de uitgang!"
+214,Speech (Player),Just a little further...,Nog een beetje verder...
+215,Speech (Player),What is that thing!?,"Wat is dat ding!? "
+216,Speech (Player),"I need to get to the other side of this cave, it will lead to the outskirts.","Ik moet naar de andere kant van deze grot komen, het zal naar de outskirts leiden."
+217,Speech (Player),I can't believe Tinky Winky turned into a monster...,Ik kan niet geloven dat Tinky Winky veranderd is in een monster...
+218,Speech (Player),I'm surprised this cave hasn't collapsed yet...,Ik ben verbaasd dat deze grot nog niet ineengestort is...
+219,Speech (Player),What was that? ...-I should be careful.,Wat was dat? ... -Ik moet voorzichtig zijn
+220,Speech (Player),"Day 22. They didn't find out about the journal, but I don't know how long I can hide it, they almost find it last time.","Dag 22. Ze konden niet weten over het tijdschrift, maar ik weet niet hoe lang ik het kan verstoppen, ze vinden het bijna de laatste keer."
+221,Speech (Player),"Anyway, testing has been painful lately, they made me-...","In ieder geval , testen was best wel pijnlijk eigenlijk, ik moest-..."
+,"Anyway, testing has been painful lately, they made me-...",,"In ieder geval, testen"
+,,,
+222,Speech (Player),...-The rest of the note is ripped.,... De rest van de notitie is gescheurd.
+223,Speech (Player),Day 1. Today I decided to write a journal to tell my adventures with the bestest friends ever!,Dag 1. Vandaag heb ik besloten om een tijdschrift te schrijven om mijn avonturen te vertellen met de beste vrienden ooit!
+224,Speech (Player),These coat men brought us papers and crayons to draw what we want...,Deze jas mannen brachten ons papieren en kleurpotloden om te trekken wat we willen...
+225,Speech (Player),...and we drew the best friend trio!,...en we trokken het beste vriend-trio!
+226,Speech (Player),"They are my only but best friends, and I love them!","Zij zijn mijn enige maar beste vrienden, en ik hou van hen!"
+227,Speech (Player),"I hear coat men, I must hide the journal, they will punish me with electricity if they... find out.","Ik hoor jasmensen, ik moet het dagboek verbergen, ze zullen me met elektriciteit straffen als ze ... ontdekken."
+228,Speech (Player),There is no way I can jump across that.,Ik kan hier totaal niet overheen springen.
+229,Speech (Player),Stop ripping my journals.,Stop met het kapot maken van mijn tijdschriften.
+230,Speech (Player),Day 54. They found my journal and ripped it apart! 22 days thrown to the trash...,Dag 54. Ze hebben mijn tijdschrift gevonden en uit elkaar gescheurd! 22 dagen gegooid naar de prullenbak ...
+231,Speech (Player),"In other news, 53 has been feeling sick! He feels awful, but the coat men won't help!","In ander nieuws is 53 ziek geweest! Hij voelt zich vreselijk, maar de jasmensen zullen het niet helpen!"
+232,Speech (Player),"This is sad, I hope he gets better!","Dit is verdrietig, ik hoop dat hij beter wordt!"
+233,Speech (Player),I wonder when will they give us real names...,Ik vraag me af wanneer zullen ze ons echte namen geven...
+234,Speech (Player),"That was close, I don't think he can get me in here...","Dat was dichtbij, ik denk niet dat hij me hier kan binnengaan krijgen..."
+235,Speech (Player),"I need to get to the other side of this cave, it will lead to the outskirts.","Ik moet naar de andere kant van deze grot komen, het zal naar de outskirts leiden."
+236,Speech (Player),Day ?????????. What day is it?,Dag ?????????. Welke dag is het?
+237,Speech (Player),They're gone! ******* turned into a monster!,Ze zijn weg! ******* veranderde in een monster!
+238,Speech (Player),******* ran away and I might not see him ever again. I miss them.,******* rende weg en ik zie hem nooit meer. Ik mis ze.
+239,Speech (Player),"Oh god, what is happenin-","Oh god, wat gebeu-"
+240,Speech (Player),.............RUN.............,".............REN............. "
+,.............RUN.............,,
+,,,
+241,Speech (Player),...-What in the world happened here?,...-Wat is er in de wereld hier gebeurd?
+242,Speech (Player),HERE THEY COME .  HELP THEY SAW .  MY JOURNAL.,HIER KOMEN ZE. HELP ZE ZAGEN. MIJN DAGBOEK.
+243,Hotspot,Page,Pagina
+244,Hotspot,Page,Pagina
+245,Hotspot,Page,Pagina
+246,Hotspot,Page,Pagina
+247,Hotspot,Page,Pagina
+248,Hotspot,Page,Pagina
+249,Hotspot,Jump,Springen
+250,Hotspot,Pit,Gat
+251,Hotspot,Pit,Gat
+252,Hotspot,Page,Pagina
+253,Speech (Player),Who is that? I can hear someone talking...,Wie is dat? Ik kan iemand horen praten
+254,Speech (Unit 437),Halt!  Where do you think you're going?,Halt! Waar denk jij heen te gaan?
+255,Speech (Unit 437),I am meant to chop you up and cook you for the master tomorrow.,Ik moet je hoofd eraf hebben en koken voor de meester morgen.
+256,Speech (???),*Loud Yell*,*Harde Schreeuw*
+257,Speech (Player),"Oh no, It knows I'm gone!","Oh nee, het weet dat ik weg ben!"
+258,Speech (Player),I must get away quickly!,Ik moet snel wegkomen!
+259,Speech (Player),I need to listen carefully...,Ik moet goed luisteren...
+260,Speech (Player),"If I remember correctly, I was on the other side of this frozen lake when I was attacked.","Als ik het goed herinnerde, was ik aan de andere kant van dit bevroren meer toen ik aangevallen werd."
+261,Speech (Player),I need to get my night vision camera before going to the outskirts.,Ik moet mijn nachtcamera krijgen voordat ik naar de buitenwijken gaat.
+262,Speech (Player),It's so cold...,Het is zo koud...
+263,Speech (Player),"Custard, this far up in the mountains?","Custard, zo ver in de bergen?"
+264,Speech (Player),It's frozen now.,Het is nu bevroren.
+265,Speech (Player),Trees are the only living things that can tolerate this climate.,"Bomen zijn de enige levende dingen die dit klimaat kunnen tolereren. "
+266,Speech (Player),Who has been cutting down trees?,Wie heeft deze bomen afgesneden?
+267,Speech (Player),No one has been up here for years...,Niemand is hier geweest...
+268,Speech (Player),It's good to feel warmth again.,Het is goed om weer warm te voelen.
+269,Speech (Player),The sooner I get out of here the better.,"Hoe eerder ik hier wegkom, hoe beter."
+270,Speech (Player),Past this gate leads to the outskirts...  It appears to be locked with a chain.,Verleden tijd leidt deze poort naar de buitenwijken ... Het lijkt te zijn geblokkeerd met een ketting.
+271,Speech (Player),I'll need to find something to break the chain with.,Ik moet iets vinden om de ketting te breken.
+272,Speech (Player),I think I'm going to be sick...,Ik denk dat ik ziek ben...
+273,Speech (Player),"Ok, I think I'm safe...","Ok, ik denk dat ik veilig ben"
+274,Speech (Unit 437),Farewell.,Vaarwel.
+275,Speech (Unit 437),I am chopping down wood for the masters fire.,Ik snijd hout af voor de meesters vuur.
+276,Speech (Unit 437),I must cook the master some food before dawn.,Ik moet de meester wat eten voor het dageraad koken.
+277,Speech (Player),Got it!,"Begrepen! "
+278,Speech (Player),I should find my night vision camera before going to the outskirts.,Ik zou mijn nachtcamera moeten vinden voordat ik naar de buitenwijken gaat.
+279,Speech (Unit 437),That is correct.,Dat is correct.
+280,Speech (Player),"Oh my god, is that an eyeball?","Oh mijn god, is dat een oogbal?"
+281,Speech (Player),I can't help but to think it's watching me...,Ik kan het niet helpen om te denken dat het me aan het kijken is ...
+282,Speech (Unit 437),"So be it, once the master finds out you're gone it will hunt you down and kill you.","Zodra het de meester erachter komt dat je weg bent, zal het je jagen en je vermoorden."
+283,Speech (Player),"Huh, an old pipe... Maybe I can use it to break open the chain on the gate.","Huh, een oude pijp ...Misschien kan ik het gebruiken om de ketting op de poort te openen."
+284,Speech (Unit 437),"Yes, I believe you dropped it when the master took you.","Ja, ik geloof dat je het laat vallen toen de meester je nam."
+285,Speech (Player),Uh... Hello...,Uh... Hallo...
+286,Speech (Unit 437),Greetings.,Hallo.
+287,Speech (Unit 437),Come... with you? The master will not like that at all.,Ga met je mee? De meester zal dat helemaal niet mooi vinden.
+288,Speech (Unit 437),"I failed my directives once, I will not fail them again.","Ik heb een keer mijn richtlijnen mislukt, ik zal ze niet meer mislukken."
+289,Speech (Unit 437),"Once the master finds out you're gone, it will hunt you down and kill you.","Zodra de meester weet dat je weg bent, zal het je jagen en je vermoorden."
+290,Speech (Unit 437),"You will be, I'm afraid. Don't worry, I can make a very nice salsa. You will die, but will taste very good!","Jij zal zijn, ik ben bang. Maak je geen zorgen, ik kan een heel mooie salsa maken. Jij zal sterven, maar zal heel goed proeven!"
+291,Speech (Player),Where am I?,Waar ben ik?
+292,Speech (Unit 437),"I am Unit 437, a security droid created by the machines.","Ik ben Unit 437, een beveiligingsdroog gecreëerd door de machines."
+293,Speech (Unit 437),My original directive was to kill the master before it escaped from the main land.,Mijn oorspronkelijke richtlijn was om de meester te doden voordat het uit het hoofdland ontsnapte.
+294,Speech (Unit 437),"However, once I encountered the master I knew I was not capable of defeating it.","Echter, zodra ik de meester tegenkwam, wist ik dat ik het niet kon verslaan."
+295,Speech (Unit 437),...I'm not very good at my job.,...Ik ben niet erg goed in mijn werk.
+296,Speech (Unit 437),"At that point I knew I only had two choices.  To serve, or be destroyed.","Op dat moment wist ik dat ik maar twee keuzes had. Om te dienen, of te worden vernietigd."
+297,Speech (Unit 437),I chose to serve.,Ik koos ervoor te serveren.
+298,Speech (Unit 437),Now my directive is to build fires to keep the master warm.,Nu is mijn richtlijn om vuren te bouwen om de meester warm te houden.
+299,Speech (Unit 437),I also cook the masters meals.  I keep the master alive.,Ik kook ook de meester maaltijden. Ik hou de meester in leven.
+300,Speech (Player),I need to get out of here before I become food.,Ik moet hier wegkomen voordat ik voedsel word.
+301,Speech (Unit 437),If you leave I'll have to inform the master that death is an inconvenience for you.,"Als u vertrekt, moet ik de meester informeren dat de dood een ongemak voor u is."
+302,Speech (Unit 437),The master will be very angry.,De meester zal heel boos zijn.
+303,Speech (Unit 437),"Please, the master will destroy me if it found out I let you go.","Alsjeblieft, de meester zal me vernietigen als het ontdekt dat ik je laat gaan."
+304,Speech (Unit 437),Tomorrow you will be chopped up and cooked for the master to eat.,Morgen wordt je gehakt en gekookt voor de meester om te eten.
+305,Speech (Player),"At last, my night vision camera...","Eindelijk, mijn nachtvisie camera..."
+306,Speech (Player),"Oh no, it looks like the lens cracked when I dropped it.","Oh nee, het lijkt op de lens gebarsten toen ik het viel."
+307,Speech (???),...............,...............
+308,Hotspot,Gate,"Poort "
+309,Hotspot,Fire,Vuur
+310,Hotspot,Eyeball,Oogbal
+311,Hotspot,Pipe,Pijp
+312,Hotspot,Bloody Remains,Bloedige Stukjes
+313,Hotspot,Raw Meat,"Rauw Vlees "
+314,Hotspot,Bloody Remains,Bloedige Stukjes
+315,Hotspot,Custard Splat,Custard Vlek
+316,Hotspot,Trees,Bomen
+317,Hotspot,Stump,Stomp
+318,Hotspot,Stump,Stomp
+319,Hotspot,Droid,Droid
+320,DialogueOption,[Go Left],[Ga Naar Links]
+321,DialogueOption,[Go Right],[Ga Naar Rechts]
+322,DialogueOption,[Go Left],[Ga Naar Links]
+323,DialogueOption,[Go Right],[Ga Naar Rechts]
+324,DialogueOption,"The master, is that the thing that took me?","De meester, is dat het ding dat me heeft genomen?"
+325,DialogueOption,Why was I brought here?,Waarom werd ik hier gebracht?
+326,DialogueOption,I'm not food!,Ik ben geen vlees!
+327,DialogueOption,Who are you?,"Wie ben jij? "
+328,DialogueOption,What are you doing?,"Wat ben je aan het doen? "
+329,DialogueOption,Have you seen my night vision camera?,Heb je mijn nachtcamera gezien?
+330,DialogueOption,Goodbye.,Doei.
+331,DialogueOption,[Go Left],[Ga Naar Links]
+332,DialogueOption,[Go Right],[Ga Naar Rechts]
+333,DialogueOption,I need to get to the outskirts and find the satellite station.,Ik moet naar de outskirts komen en het satellite staion vinden.
+334,DialogueOption,I need to find my night vision camera.,Ik moet mijn nachtcamera vinden.
+335,DialogueOption,None of your business.,"Gaat je niks aan. "
+336,DialogueOption,I plan to be long gone before your master finds out.,Ik ben van plan om lang weg te zijn voordat je meester uitvindt.
+337,DialogueOption,"Come with me, you're a slave!","Kom met me, jij bent een slaaf!"
+338,DialogueOption,You're a coward.,Je bent een lafaard.
+339,DialogueOption,[Go Left],[Ga Naar Links]
+340,DialogueOption,[Go Right],[Ga Naar Rechts]
+341,DialogueOption,"Please, don't kill me...","Alsjeblieft, vermoord me niet ..."
+342,DialogueOption,Where are you taking me?,"Waar breng je me heen? "
+343,DialogueOption,Who are you?,"Wie ben je? "
+344,DialogueOption,...,...
+345,Speech (Player),At last I'm here... This is the entrance to the satellite station.,Eindelijk ben ik hier ... Dit is de ingang van het satellite station.
+346,Speech (Player),Hmm... How do I get in?,Hmm... Hoe kom ik hier in?
+347,Speech (Lala_Alive),......................................,......................................
+348,Speech (Player),Why are you here anyway? I thought you were... well..,Waarom ben je hier toch? Ik dacht dat je ... was ..
+349,Speech (Lala_Alive),"I ran away... from Tinky Winky... before he caught me in the house. I ran away until I came across this place, so I used it as a hideout. He tried to-... H-he caused-... *sniff* They are all dead.","Ik rende weg ... van Tinky Winky ... voordat hij me in het huis betrapte. Ik rende weg tot ik over deze plek kwam, dus ik gebruikte het als een schuilplaats. Hij probeerde te ... H-hij veroorzaakt -... * snuif * Ze zijn allemaal dood."
+350,Speech (Player),"Oh no, Laa Laa's here...","Oh nee, Laa Laa is hier..."
+351,Speech (Player),"Tinky Winky scratched out her eyes, she can't see me.","Tinky Winky krabde haar ogen uit, ze kan me niet zien."
+352,Speech (Player),"But she can still hear me, I need to be quiet...","Maar ze kan me nog steeds horen, ik moet stil zijn..."
+353,Speech (Player),I should find all the custards in this area before proceeding to the satellite station.,Ik zou al de vla in dit gebied moeten vinden voordat ik verder ga naar het satellite station.
+354,Speech (Lala_Alive),W-who are you? How do you know me?,Wie ben jij? Hoe ken je me?
+355,Speech (Player),"The satellite station isn't far from here, let's go.","Het satellite station is niet ver van hier, laten we gaan."
+356,Speech (Lala_Alive),*Cough cough cough*,*Hoest hoest hoest*
+357,Speech (Lala_Alive),So... *sniff* what's your plan?,Dus ... * snuiff * wat is jouw plan?
+358,Speech (Player),"We need to get to the satellite station, we'll be able to find help there.  Whatever you do, no matter now hungry you are, don't eat any custards you find.","We moeten naar het satellite station, we kunnen daar hulp vinden. Wat je ook doet, maakt niet uit hoe honger je bent, eet geen custards die je vindt."
+359,Speech (Lala_Alive),But.. I ate a custard.. the night that all of this happened.,Maar .. ik at een custard in de nacht dat alles dit gebeurde.
+360,Speech (Player),"Come on, follow me.","Kom op, volg me."
+361,Speech (Player),My night vision camera might be useful for navigating through this rubble.,Mijn nachtvisiecamera kan nuttig zijn om door deze rubriek te navigeren.
+362,Speech (Lala_Alive),I'm just... broken.,Ik ben gewoon ... gebroken.
+363,Speech (Lala_Alive),"Yeah.. *sniff* It's the only place that wasn't secured by some creepy creature. I had a tough time going through that.. horrible, brown monster.","Ja. *Sniff* Het is de enige plaats die niet door een viezelachtig schepsel werd beveiligd. Ik heb een moeilijke tijd doorgegaan die .. verschrikkelijk, bruin monster."
+364,Speech (Lala_Alive),It hurts.. so much...,"Het doet zo veel pijn... "
+365,Speech (Lala_Alive),I don't know if I'm going to be ok...,Ik weet niet of ik ok wordt
+366,Speech (Lala_Alive),Y-yes... I'm sorry.,"Ja, het spijt me."
+367,Speech (Lala_Alive),W-who are you?! D-don't touch me!,W-wie ben je ?! R-raak me niet aan!
+368,Speech (Player),That's the station alright...,Dat is het station...
+369,Speech (Lala_Alive),I will... *Sniff* ...-I miss home...,Ik zal ... * Sniff * ...- Ik mis thuis ...
+370,Speech (Lala_Alive),I need to know what's going on here if you're going to talk to me.,k moet weten wat hier aan de hand is als je met me wilt praten.
+371,Speech (Lala_Alive),Go away!,"Ga weg! "
+372,Speech (Lala_Alive),"W-.. wait, don't leave me.  Please..","W- .. wacht, laat me niet achter. Alsjeblieft.."
+373,Speech (Lala_Alive),G-..... Guardian..?,B-..... Bewaker..?
+374,Speech (Lala_Alive),...I'm sorry.,"...Het spijt me. "
+375,Speech (Player),These pillars look like they're about to collapse...,Deze pijlers lijken erop te vallen ...
+376,Speech (Player),Maybe I could find a way to trap Laa Laa under them.,Misschien kan ik een manier vinden om Laa Laa onder hen te vallen.
+377,Speech (Player),The station goes all the way through these mountains.,Het station gaat helemaal door deze bergen.
+378,Speech (Player),I wonder how I can open this door.,Ik vraag me af hoe ik deze deur kan openen.
+379,Speech (Lala_Alive),"And who the hell are you to give me orders? Leave, now.",En wie is het met jou om mij orders te geven? Vertrek nu.
+380,Speech (Lala_Alive),"Tell me about it, I'm not feeling pretty well.","Vertel me erover, ik voel me niet goed."
+381,Speech (Player),Another custard? How did that get here...,Een andere custard hoe komt dat hier?
+382,Speech (Player),I should look around this area for more custards before something eats them.,Ik zou om dit gebied moeten kijken voor meer custards voordat iets hen eet.
+383,Speech (Player),"Alright, I think that's all of them...","Oké, ik denk dat het allemaal is ..."
+384,Speech (Player),"Damn, Laa Laa is blocking the exit, I'll need to get rid of her somehow.","Verdomme, Laa Laa blokkeert de uitgang, ik moet op een of andere manier van haar afkomen."
+385,Speech (Lala_Alive),"Please, don't leave me here...","Alsjeblieft, laat me hier niet alleen..."
+386,Speech (Lala_Alive),"I'm trying, but... it hurts...","Ik probeer, maar ... het doet pijn."
+387,Speech (Lala_Alive),"Hmm, Fine then... ","Hmm, fijn dan ..."
+388,Speech (Player),"I was ordered to watch Tinky Winky, Dipsy, Po and you.","Ik had de taak om Tinky Winky, Dipsy, Po en jou te bekijken."
+389,Speech (Player),"I'm meant to prevent things from going wrong, such as preventing any of you from leaving the Teletubby lands.","Ik ben bedoeld om te voorkomen dat dingen mis gaan, zoals het voorkomen dat iemand van jullie Teletubby land verlaat."
+390,Speech (Lala_Alive),...What are you talking about?,"...Waar heb je het over? "
+391,Speech (Player),"Everytime any of you tried to leave the lands, we would erase any memories of what you've seen outside the Teletubby Lands, and drag you back in. I'm supposed to look out for when that happens.","Elke keer dat ieder van jullie het land probeerde te verlaten, zouden we alle herinneringen wissen van wat je buiten de Teletubby Land hebt gezien, en je terugtrekt. Ik moet erop kijken dat wanneer dat gebeurt."
+392,Speech (Lala_Alive),"..""We""?","..""Wij""?"
+393,Speech (Player),"Yes. There's more people working with me, but that's classified.","Ja. Er werken meer mensen met mij, maar dat is geclassificeerd."
+394,Speech (Lala_Alive),I-... No. That can't be true.,Nee ... Dat kan niet waar zijn.
+395,Speech (Lala_Alive),...Why weren't we aware of this?,Waarom waren we daar niet van bewust?
+396,Speech (Player),We couldn't risk your security. You could of tried to escape if you knew there was something more beyond the mountains.,We kunnen uw veiligheid niet bedreigen. Je zou kunnen ontsnappen als je wist dat er iets meer dan de bergen was.
+397,Speech (Lala_Alive),...You knew.,...Jij wist het
+398,Speech (Lala_Alive),You knew this would happen. You knew something was wrong.,Je wist dat dit zou gebeuren. Je wist dat er iets mis was.
+399,Speech (Player),"I'm sorry, but I didn't-","Het spijt me, maar ik he-"
+400,Speech (Lala_Alive),You knew that whatever caused Tinky Winky to become a monster existed. Now they are dead.,"Je wist dat alles wat Tinky Winky tot een monster zou worden, bestond. Nu zijn ze dood."
+401,Speech (Lala_Alive),ALL OF THEM are dead. And it's only you to blame for not doing anything about it!,ZE ZIJN ALLEMAAL dood. En het is je alleen maar de van jou schuld om er niets aan te doen!
+402,Speech (Player),"Laa Laa, please, listen to me.","Laa Laa, alsjeblieft, luister naar mij."
+403,Speech (Lala_Alive),"NO, YOU LISTEN. You could of done something to stop this, and you didn't.  You just wanted to stay hidden in your wonderful cave stalking us.","NEE, JIJ LUISTERD. Je zou iets kunnen doen om dit te stoppen, en dat deed je niet. Je wilde gewoon verborgen blijven in je prachtige grot, die ons stalkte."
+404,Speech (Lala_Alive),"You don't care about us, you just care about your god damn job! If you did care then you could of showed yourself to us!","Het maakt je niet uit, je geeft je gewoon je goddelijke baan! Als je deed, dan kun je jezelf aan ons laten zien!"
+405,Speech (Player),"I had no clue this was going to happen, alright. I only knew this after it was too late, stop blaming me when I knew just as much as you did!","Ik had geen idee dat dit zou gebeuren, oké. Ik wist dit alleen nadat het te laat was, stop met mij de schuldt te geven als ik net zoveel wist wat jij deed!"
+406,Speech (Player),"I'm going to take you with me and find out what's going on, but if you can't stay calm, I'm going leave you here and go on my own, you hear me?","Ik ga je meenemen en erachter komen wat er aan de hand is, maar als je niet kalm blijft, ga ik je weg en ga alleen maar hoor je me?"
+407,Speech (Lala_Alive),"... You're right. I'm sorry. I'm just.. really mad, at everything. My friends are dead and I-...","... Je hebt gelijk. Het spijt me. Ik ben gewoon .. heel boos, in alles. Mijn vrienden zijn dood en ik ..."
+408,Speech (Lala_Alive),But I need to know who you are. I've never seen you in my life.,Maar ik moet weten wie je bent. Ik heb je nooit in mijn leven gezien.
+409,Speech (Lala_Alive),One can only hope...,Men kan alleen maar hopen ...
+410,Speech (Lala_Alive),Yeah.. I'm going to be fine.,Ja... alles komt goed.
+411,Speech (Player),I'm sorry...,Het spijt me...
+412,Speech (Player),You're at rest now....,Je bent nu in rust.
+413,Speech (Lala_Alive),"I know, I know...","Ik weet het... "
+414,Speech (Player),"Finially, I'm in the outskirts.  The satellite station isn't far from here...",Eindelijk ben ik bij de outskirts. Het satellite station ligt hier niet ver vandaan.
+415,Speech (Player),I just need to get out of this canyon.,Ik moet gewoon uit deze canyon komen.
+416,Speech (Player),I'm glad it's dawn.,Ik ben blij dat het dag is.
+417,Speech (Lala_Alive),*Sniff* Ok...,*Sniff* Oke...
+418,Speech (Lala_Alive),...-Ten...  ... Nine...  ... Eight...  ....,...-Tien...  ... Negen...  ... Acht...  ....
+419,Speech (Lala_Alive),...-Seven...  ... Six...  ... Five...  ...,...-Zeven...  ... Zes...  ... Vijf...  ...
+420,Speech (Lala_Alive),I hope you're right...,Ik hoop dat je gelijk hebt...
+421,Speech (Lala_Alive),"It's okay.. you're not responsable for this, you shouldn't feel sorry.","Het is oke .. je bent hier niet verantwoordelijk voor, je mag geen spijt hebben."
+422,Speech (Lala_Alive),S- ...Sorry?  Sorry for what?,S- ...Sorry?  Sorry voor wat?
+423,Speech (Lala_Alive),*Cough* I don't think.. I'll be strong much longer-...,* Hoest * Ik denk niet .. Ik langer sterker zal zijn ...
+424,Speech (Lala_Alive),I wish I could say that's true but.. you don't.,"Ik wou dat ik kon zeggen dat dat waar is, maar dat doe je niet."
+425,Speech (Player),"Hmm, maybe a rock will come in handy.","Hmm, misschien komt een steen goed van pas."
+426,Speech (Lala_Alive),I feel.. -really strange...,Ik voel me .. -Echt raar ...
+427,Speech (Lala_Alive),Wh-... Where are you going?,Wa -... Waar ga je heen?
+428,Speech (Player),Blood... It's never a good sign.,Bloed... Dat is nooit een goed teken.
+429,Speech (Lala_Alive),Ahh!,Ahh!
+430,Speech (Lala_Alive),"Please, leave me alone!","Alsjeblieft, laat me alleen!"
+431,Speech (Player),The sun is almost up...,Het is bijna morgen...
+432,Speech (Lala_Alive),Sure... at least you apologized.,Zeker ... tenminste verontschuldigde je je.
+433,Speech (Player),That should do it.,Dat zou het moeten doen.
+434,Speech (Lala_Alive),P-please... Don't touch me..,A-alsjeblieft... raak me niet aan...
+435,Speech (Lala_Alive),"Yeah, that's what I thought.","Ja, dat dacht ik ook."
+436,Speech (Lala_Alive),Or else.. what? You're going to hit me?,Of anders .. wat? Ga je me slaan?
+437,Speech (Lala_Alive),I.. can't.. go on.. anymore...,Ik kan niet .. verder ..
+438,Speech (Lala_Alive),My whole body hurts... I don't want to turn into a monster.,Mijn hele lichaam doet pijn ... Ik wil niet een monster worden.
+439,Speech (Lala_Alive),...-I just need to sleep... for a minute.,... ik moet even slapen ...
+440,Speech (Player),"I-... Ok Laa Laa...  Just keep your eyes closed, you'll be fine.","Ik ... Ok, Laa Laa ... Hou je ogen dicht, het gaat goed met je."
+441,Speech (Player),I'm glad it's dawn...,Ik ben blij dat het morgen is...
+442,Hotspot,Blood,Bloed
+443,Hotspot,Custard,Custard
+444,Hotspot,Satellite Station,Satellite Station
+445,Hotspot,Custard,Custard
+446,Hotspot,Lever,Schakelaar
+447,Hotspot,Climb,Klim
+448,Hotspot,Custard,Custard
+449,Hotspot,Lever,Schakelaar
+450,Hotspot,Lever,Schakelaar
+451,Hotspot,Custard,Custard
+452,Hotspot,Custard,Custard
+453,Hotspot,Custard,Custard
+454,Hotspot,Satellite,Satellite
+455,Hotspot,Lever,Schakelaar
+456,Hotspot,Custard,Custard
+457,Hotspot,Lever,Schakelaar
+458,Hotspot,Custard,Custard
+459,DialogueOption,Then.. let's hope nothing bad happens until we find a cure.,Dan .. laten we hopen dat er niets slecht gebeurt tot we een medicijn vinden.
+460,DialogueOption,"Damn, that's not good...","Verdomme, dat is niet goed ..."
+461,DialogueOption,"You're going to be fine, I promise.","Je alles komt goed, ik beloof het."
+462,DialogueOption,Are you okay? What are you doing here?,"Ben je oke? Wat doe je hier? "
+463,DialogueOption,"Take it easy, I'm not going to hurt you.","Doe is rustig, ik ga je niet pijn doen."
+464,DialogueOption,"If I tell you to turn around, you'll turn around.","Als ik je zeg dat je omdraait, ga je omdraaien."
+465,DialogueOption,I'm... I'm the White Tubby. I'm the Guardian.,Ik... Ik ben White Tubby. Ik ben de Guardian.
+466,DialogueOption,"I'm sorry, that's classified.","Het spijt me, dat is geclassificeerd."
+467,DialogueOption,None of your business.,Gaat je niks aan.
+468,DialogueOption,"Come on Laa-Laa, we need to move forward!","Kom op Laa Laa, we moeten vooruitgaan!"
+469,DialogueOption,I'm not sure if it's a good idea if you come with me.,Ik weet het niet of het een goed idee is als je met me komt.
+470,DialogueOption,Come on! We don't have much time!,Kom op! We hebben niet veel tijd!
+471,DialogueOption,"Calm down, everything is going to be okay.","Rustig, alles komt goed."
+472,DialogueOption,I'm sorry.,Het spijt me.
+473,DialogueOption,You've been hiding here all this time?,Je hebt je hier de hele tijd verstopt?
+474,DialogueOption,[Kill],[Vermoorden]
+475,DialogueOption,[Leave],[Verlaten]
+476,DialogueOption,[Explain yourself],[Zeg Wie Je Bent]
+477,DialogueOption,"I'm sorry, but I can't.","Het spijt me, maar ik kan het niet"
+478,DialogueOption,That's all I can tell you.,Dat is alles wat ik je kan vertellen.
+479,DialogueOption,Laa Laa? Is that you?,Laa Laa? Ben jij dat?
+480,DialogueOption,"Please, turn around and don't freak out.","Alsjeblieft, draai je om en schrik niet."
+481,DialogueOption,Are you deaf? I said show yourself!,Ben je doof? Ik zei draai je om!
+482,DialogueOption,"I'm sorry, I didn't mean to-..","Het spijt me, Ik wou ni-.."
+483,DialogueOption,Are you going to do what I say now?,Ga je nu alles doen wat ik je vertel?
+484,DialogueOption,...,...
+485,DialogueOption,[Hit her],[Sla haar]
+486,DialogueOption,"You have to stay with me, We'll find a cure!","Je moet bij mij blijven, We vinden wel een medicijn!"
+487,DialogueOption,Get up!,Sta op!
+488,DialogueOption,I'm going to have to leave you.,Ik moet je helaas verlaten.
+489,DialogueOption,"I'm going to go get help, stay strong.","Ik ga help zoeken, blijf sterk"
+490,DialogueOption,I'm sorry Laa Laa...,Het spijt me Laa Laa...
+491,DialogueOption,...,...
+492,DialogueOption,"Everything's going to be ok, just count back from ten...","Alles komt goed, ga maar gewoon terugtellen vanaf tien..."
+493,DialogueOption,Just keep your eyes closed Laa Laa...,Hou je ogen dicht Laa Laa...
+494,DialogueOption,I'm sorry...,Het spijt me...
+495,DialogueOption,"I'm sorry, I didn't mean to be rude.","Sorry, Ik probeerde niet vervelend te wezen."
+496,DialogueOption,You're going to do as I say or else.,Je gaat doen wat ik zeg of anders.
+497,DialogueOption,"Just.. listen, please.","Alsjeblieft... luister, gewoon."
+498,DialogueOption,Hello?,Hallo?
+499,DialogueOption,Are you alive?,Leef je nog?
+500,DialogueOption,Who's there? Show yourself!,Wie is daar? Laat jezelf zien!
+501,DialogueOption,"It's alright, I understand.","Het is oke, ik weet wat je bedoelt."
+502,DialogueOption,Don't worry about it.,Maak je geen zorgen over.
+503,DialogueOption,"It's not an excuse. I didn't do this, so I don't understand why you're mean to me.","Het is geen excuus. Ik heb dit niet gedaan, dus ik begrijp niet waarom je me gemeen tegen mij doet."
+504,DialogueOption,[Put Laa Laa out of her misery],[Zet Laa Laa Uit Haar Ellende]
+505,DialogueOption,[Leave Laa Laa behind],[Laat Laa Laa Achter]
+506,Speech (Player),I'm losing my mind...,"Ik denk dat ik gek wordt... "
+507,Speech (???),*Cough cough*,*Hoest Hoest*
+508,Speech (Player),Oh no...,Oh nee...
+509,Speech (Tinky Winky),Eh oh...!,Eh oh...!
+510,Speech (???),No... please no!,Verdomme nee... alsjeblieft nee!
+511,Speech (???),AGGGGHHHHH!,AGGGGHHHHH!
+512,Speech (Po),Come play with us!,Kom met ons spelen!
+513,Speech (Player),"Alright, this is the key card to the secret center...","Oké, dit is de sleutelkaart naar het geheime centrum..."
+514,Speech (Player),I'll be able to contact the military from there.,Ik kan het leger vanaf daar contact opnemen.
+515,Speech (Player),I should head back through the vents.,Ik zou terug moeten gaan door de ventilatie.
+516,Speech (Player),She's gone...,Ze is weg...
+517,Speech (Player),"This is the entrance to the secret center, I'll be able to contact the military in there.","Dit is de toegang tot het geheime centrum, ik kan het leger daar in contact brengen."
+518,Speech (Player),This is the entrance to the secret center.,Dit is de ingang to het geheime centrum.
+519,Speech (Player),"It's locked, I'll need to find a way to open it.","Verdomme het is vergrendeld, ik moet een manier vinden om het te openen."
+520,Speech (???),I think another member of staff had a centre key card on the other side of this door.,Ik denk dat een ander personeelslid een centrale sleutelkaart aan de andere kant van deze deur had.
+521,Speech (???),Someone locked the door in an attempt to trap the monster inside.,Iemand sloot de deur in een poging om het monster binnenin te krijgen.
+522,Speech (???),You can get to the other side by crawling through the air vents next to you.,Je kunt naar de andere kant door door de ventilatie naast u te kruipen.
+523,Speech (???),That's how I got here.,Zo ben ik hier gekomen.
+524,Speech (???),"Be careful though, that thing is still here.","Wees voorzichtig, dat ding is nog steeds hier."
+525,Speech (Player),Poor Dipsy... I'm glad it's over though.,Sorry Dipsy ... Ik ben blij dat het wel over is.
+526,Speech (???),"My name is Ron, I work here... We all work here.","Mijn naam is Ron, ik werk hier ... We werken hier allemaal."
+527,Speech (???),I'm an engineer for this facility.,Ik ben een ingenieur voor deze faciliteit.
+528,Speech (???),"Listen, you need to contact the military and tell them what happened.","Luister, je moet het leger contacteren en hen vertellen wat er gebeurd is."
+529,Speech (???),You can send a distress signal from the secret center.,Je kan een noodsignaal van het geheime centrum verzenden.
+530,Speech (???),"Once they recieve it, they'll come and help.","Zodra ze het ontvangen, zullen ze komen en helpen."
+531,Speech (???),You'll probably need a key card to get into the center.,Je hebt waarschijnlijk een sleutelkaart nodig om in het centrum te komen.
+532,Speech (Player),What could do that to somebody?,Wat kan dat aan iemand doen?
+533,Speech (???),"Pain, so much pain...","Pijn, zoveel pijn ..."
+534,Speech (???),"Please, you have to help us...","Alsjeblieft, je moet ons helpen..."
+535,Speech (Player),"The note reads; ""Get out before it's too late.""",De brief leest; 'Ga uit voordat het te laat is.'
+536,Speech (Player),What happened here?,Wat is hier gebeurd?
+537,Speech (???),It all happened so fast.,Het gebeurde allemaal zo snel..
+538,Speech (???),It started off as a normal day until this.. thing showed up.,Het begon als een normale dag tot dit .. ding kwam opdagen.
+539,Speech (???),This monster came into the station and began to kill everyone.,Dit monster kwam in het station en begon iedereen te vermoorden.
+540,Speech (???),"It was green and carried a chainsaw.  But worse of all it had no head, yet it was still alive.","Het was groen en droeg een kettingzaag. Maar erger van alles had het geen hoofd, maar het leeft nog steeds."
+541,Speech (???),I've never seen anything like it.  It was horrifying.,Ik heb nog nooit zoiets gezien. Het was verschrikkelijk.
+542,Speech (???),"Everyone began to panic, I hid as best as I could but it found me.","Iedereen was in paniek, ik verborg me zo goed als ik kon maar het vond me."
+543,Speech (???),"It attacked me but I managed to escape, though I can barely move.","Het heeft me aangevallen, maar ik slaagde erin om te ontsnappen, hoewel ik nauwelijks kan verhuizen."
+544,Speech (???),I'm in a lot of pain.  They're all dead.,Ik heb veel pijn. Ze zijn allemaal dood.
+545,Hotspot,Key Card,Sleutel Kaart
+546,Hotspot,Note,Brief
+547,Hotspot,Corpse,Lichaam
+548,Hotspot,Corpse,Lichaam
+549,Hotspot,Secret Center,Geheime Centrum
+550,Hotspot,Laser,Laser
+551,Hotspot,???,???
+552,DialogueOption,Are you ok?,Alles oke?
+553,DialogueOption,You don't look so good.,Je ziet er niet zo goed uit.
+554,DialogueOption,Who are you?,Wie ben jij?
+555,DialogueOption,What happened here?,Wat is hier gebeurd?
+556,DialogueOption,Where can I get a key card?,Waar kan ik een sleutelkaart vinden?
+557,DialogueOption,I'll be back soon.,Ik kom terug.
+558,DialogueOption,That's horrible...,Dat is vreselijk...
+559,DialogueOption,I'm so sorry...,Het spijt me heel erg...
+560,DialogueOption,We need to move.,We moeten snel verder gaan.
+561,Speech (Noo Noo),From here I've hacked into the central artificial intelligence mainframe.,Van hieruit heb ik in de centrale kunstmatige intelligentie mainframe gehackt.
+562,Speech (Noo Noo),"I control all machines now, I control everything.","Ik heb nu alle machines, ik heb alles."
+563,Speech (Noo Noo),"Like the rest of the living, it is time for you to die.","Net als de rest van het leven, is het tijd dat je sterft."
+564,Speech (Noo Noo),"Farewell, guardian....","Vaarwel, Guardian...."
+565,Speech (Announcer_2),Weapon Systems: Online.,Wapen Systeem: Online.
+566,Speech (Announcer_2),"Target acquired, Engaging in combat mode...","Doelwit inzicht, Klaar om te vuren..."
+567,Speech (Player),I'm not afraid...,Ik ben niet bang...
+568,Speech (Player),What on earth...?,Wat in hemels naam...?
+569,Speech (Player),How did-...,Hoe heb-...
+570,Speech (Noo Noo),"That is impossible, who they used to be is gone forever.","Dat is onmogelijk, wie ze vroeger zijn maar ze zijn weg vooreeuwig."
+571,Speech (Noo Noo),"When one consumes the infected custard, they die hours later.","Wanneer men de besmette custard vertert, sterven ze uren later."
+572,Speech (Noo Noo),"The consumer then reawakens anew, but no longer living, enternally undead.","De consument komt dan opnieuw op, maar leeft niet meer, inderdaad ondoden."
+573,Speech (Noo Noo),"That is impossible, who they used to be is gone forever.","Dat is onmogelijk, wie ze vroeger zijn, is voor altijd weg."
+574,Speech (Noo Noo),"Reborn, the consumer no longer feels emotion, they're empty inside.","Reborn, de consument voelt geen emotie meer, ze zijn leeg binnen."
+575,Speech (Noo Noo),"With only one desire, to kill the living and make them become reborn.","Met maar één verlangen, om het leven te doden en ervoor te zorgen dat ze reborn worden."
+576,Speech (Noo Noo),"Over time, the consumer will begin to mutate.",Na verloop van tijd begint de consument te muteren.
+577,Speech (Noo Noo),"They may become stronger, taller, faster and may even grow new limbs to help kill prey.","Ze worden sterker, langer, sneller en kunnen zelfs nieuwe ledematen groeien om het prooi te vermoorden."
+578,Speech (Noo Noo),"This, is the way teletubbies should be.",Dit is de manier waarop teletubbies moeten zijn.
+579,Speech (Announcer_Transform_NPC),Ow.,Ow.
+580,Speech (Announcer_Transform_NPC),Angry Mode: Activated.,Boze modus: Geactiveerd.
+581,Speech (Announcer_Transform_NPC),You will be destroyed.,U wordt nu vermoord.
+582,Speech (Noo Noo),I already have.,"Ik heb al. "
+583,Speech (Noo Noo),"I infected the custard, I made them better.","Ik heb de custard besmet, ik heb ze beter gemaakt."
+584,Speech (Noo Noo),"I am not your enemy, Guardian. Don't make it me against you. You won't like the outcome.","Ik ben niet jouw vijand, Guardian. Maak het me niet tegen jou. U zult het resultaat niet vinden."
+585,Speech (Noo Noo),"I appreciate your compliment, Guardian.","Ik waardeer jou compliment, Guardian."
+586,Speech (Noo Noo),"Intelligence aside, you may be wondering what is the reason behind this.","Intelligentie opzij, je mag zich afvragen wat de reden hiervoor is."
+587,Speech (Noo Noo),"Good, then you must know what is to happen.","Goed, dan moet je weten wat er moet gebeuren."
+588,Speech (Noo Noo),"You're too weak and know too much. Based on your reaction, chances are you won't ingest the virus, which is why you're just an obstacle.","Je bent te zwak en weet te veel. Op basis van je reactie, kansen zijn dat jij het virus niet zal innemen, daarom bent je gewoon een obstakel."
+589,Speech (Player),Stay down.,Blijf liggen.
+590,Speech (Player),"Mayday mayday!  Guardian to all Military, do you copy? Over.","Mayday mayday! Guardian voor alle Militair, hoort u mij? Over."
+591,Speech (Player),We need your help...  NOW.,We hebben uw hulp nodig. NU.
+592,Speech (Noo Noo),I'm afraid not.,Ik ben bang van niet.
+593,Speech (Noo Noo),Yes.  I did.,Ja.  Dat heb ik gedaan.
+594,Speech (Noo Noo),"When one consumes the infected custard, they die hours later.","Wanneer men de besmette custard vertert, sterven ze uren later."
+595,Speech (Noo Noo),The machines are making mistakes when creating teletubbies.,De machines maken fouten bij het maken van teletubbies.
+596,Speech (Noo Noo),"They are making them weak, teletubbies have limited minds and their emotions are a weakness.","Ze maken ze zwak, teletubbies hebben beperkte gedachten en hun emoties zijn zwak."
+597,Speech (Noo Noo),"They are limiting them from true greatness, I am removing these limits.","Zij beperken ze van ware grootheid, ik ben deze grenzen weggenomen."
+598,Speech (Noo Noo),"That is why I infected the custard, to make them better.",Daarom heb ik de custards geïnfecteerd om ze beter te maken.
+599,Speech (Noo Noo),... ... ... ... ... ...,... ... ... ... ... ...
+600,Speech (Noo Noo),"That is impossible, who they used to be is gone forever.","Dat is onmogelijk, wie ze vroeger zijn, is voor altijd weg."
+601,Speech (Noo Noo),"When one consumes the infected custard, they die hours later.","Wanneer men de besmette vlaart vertert, sterven ze uren later."
+602,Speech (Noo Noo),"I'm making them better, making things better.","Ik maak ze beter, ik maak het allemaal beter."
+603,DialogueOption,Noo Noo?,Noo Noo?
+604,DialogueOption,What are you doing here?,Wat doe jij hier?
+605,DialogueOption,What do you mean?,Wat bedoel je?
+606,DialogueOption,"Something happened to the custard, do you know what it was?","Er is iets gebeurd met de custard, weet je wat het was?"
+607,DialogueOption,Do you know what happened to Tinky winky and the others?,Weet je wat er gebeurd is met Tinky Winky en de anderen?
+608,DialogueOption,You did this!?,Jij hebt dit gedaan!?
+609,DialogueOption,Change them back!,Verander hen terug!
+610,DialogueOption,"What do you mean ""better""?","Wat bedoel je ""beter""?"
+611,DialogueOption,"But why, Noo Noo?","Maar waarom, Noo Noo?"
+612,DialogueOption,You're a monster.,Je bent een monster.
+613,DialogueOption,That is incredibly smart.,Dat is wel heel slim.
+614,DialogueOption,"I'm going to stop you Noo Noo, right here, right now.","Ik ga je tegenhouden Noo Noo, hier, en nu."
+615,DialogueOption,"You won't get away with this, Noo Noo.","Je gaat hier niet mee wegkomen, Noo Noo."
+616,DialogueOption,I agree.,Dat is waar.
+617,Speech (Noo Noo),"The machines are creating an army of New Borns.  They're flooding the lands, infecting all life as we speak.",De machines creëren een leger van New Borns. Ze overspoelen de landen en infecteren al het leven zoals we spreken.
+618,Speech (Player),What are you talking about?,Waar heb je het over?
+619,Speech (Noo Noo),"Infecting the custard is only one step of my plan, I have also injected my virus into the teletubby creation machines.","Het infecteren van de custard is slechts een stap van mijn plan, ik heb ook mijn virus in de teletubby creatie machines geïnjecteerd."
+620,Speech (Noo Noo),"Now when a new teletubby is made, they already have my virus in their bodies.","Nu als er een nieuwe teletubby is gemaakt, hebben ze al mijn virus in hun lichaam."
+621,Speech (Noo Noo),"The only side affect to this is that they are unable to grow fur, but that does not matter to the undead.","De enige kant hiervan is dat ze niet in staat zijn bont te worden, maar dat maakt niet uit de ondoden."
+622,Speech (Noo Noo),They are my New Borns.,Zij zijn mijn New Borns.
+623,Speech (Noo Noo),"The machines are creating an army of New Borns.  They're flooding the lands, infecting all life as we speak.",De machines creëren een leger van New Borns. Ze overspoelen de landen en infecteren al het leven zoals we spreken.
+624,Speech (Player),"It's the military, they're here.","Het is het leger, ze zijn hier."
+625,Speech (Sargent),"I am Sargent Miles, We recieved a distress call.  What's the problem?","Ik ben Sergeant Miles, We hebben een noodoproep ontvangen. Wat is het probleem?"
+626,Speech (MilitaryTubby (4)),"Sir, Over here!","Sir, hier!"
+627,Speech (MilitaryTubby (4)),You might want to see this...,Je zou dit misschien willen zien ...
+628,Speech (Sargent),Dear god....,"Lieve God.... "
+629,Speech (Sargent),Prepare all units for an invasion...,Bereid alle units voor een invasie...
+630,Speech (Player),We must fight.,We moeten vechten.
+631,Speech (Noo Noo),"You defeated The Announcer, you have proved to me that you hold great value.","Je hebt de Announcer verslagen, je hebt me bewezen dat je veel waarde hebt."
+632,Speech (Noo Noo),"I've underestimated you, Guardian. By defeating The Announcer, you have proved to me that you hold great value.","Ik heb je onderschat, Guardian. Door de Announcer te verslaan, heb je me bewezen dat je veel waarde hebt."
+633,Speech (Noo Noo),You are a lot smarter and stronger than I thought. You are different than the rest.,Je bent veel slimmer en sterker dan ik dacht. Je bent anders dan de rest.
+634,Speech (Noo Noo),"If you join me, then together we can make the world a better place.","Als je bij me aansluit, dan kunnen we de wereld een betere plek maken."
+635,Speech (Noo Noo),"Yes, they are part of my creation.","Ja, ze maken deel uit van mijn creatie."
+636,Speech (Noo Noo),I'm impressed.,"Ik ben onder de indruk. "
+637,Speech (Sargent),Caused what? It's just a vacuum.,Veroorzaakt wat? Het is gewoon een stofzuiger.
+638,Speech (Noo Noo),"It's too late, I already have.","Het is te laat, ik heb al."
+639,Speech (Noo Noo),It is the way things should be.,Het is de manier waarop het moet zijn.
+640,Speech (Sargent),A vacuum created monsters? What do you take me for.,Een stofzuiger heeft monsters gecreërd? Waar zie je me voor aan.
+641,Speech (Sargent),Explain yourself.  Now.,Verduidelijk jezelf. Nu.
+642,Speech (Noo Noo),That is unfortunate.,"Dat is jammer. "
+643,Speech (MilitaryTubby),"Spread out, see if you can find anything...","Opsplitsen, kijk of je iets kunt vinden ..."
+644,Speech (MilitaryTubby),Damn...,Verdomme...
+645,Speech (MilitaryTubby (4)),Damn... What do you think killed this poor soul?,Verdomme ... Wat denk je dat deze arme ziel gedood hebt?
+646,Speech (Sargent),"The body is still warm, this happened recently.","Het lichaam is nog steeds warm, dit gebeurde onlangs."
+647,Speech (MilitaryTubby),Sir! We've got a problem...,Sir! We hebben een probleem ...
+648,Speech (MilitaryTubby),What the hell?,Wat in hemels naam?
+649,Speech (MilitaryTubby),What are those things?,Wat zijn die dingen?
+650,Speech (Sargent),"All units, open fire!","Alle eenheden, open vuur!"
+651,Speech (MilitaryTubby (2)),There's too many!,Er zijn te veel!
+652,Speech (MilitaryTubby (2)),We're being overrun!,We worden omsingeld!
+653,Speech (Sargent),God help us...,God help ons...
+654,Speech (Noo Noo),"Together, we will rid the world of the weak and create a superior race.",Samen zullen we de wereld van de zwakken ontslaan en een superieure race creëren.
+655,Speech (Noo Noo),"No, things have just begun.","Nee, dingen zijn net begonnen."
+656,Speech (Noo Noo),"Actually, that's the plan.",Eigenlijk is dat het plan.
+657,Speech (Player),It's done.,Het is klaar.
+658,Speech (Player),What th-...,Wat in he-...
+659,Speech (Noo Noo),Complicated? Indeed. Impossible? Definitely not.,Ingewikkeld? Inderdaad. Onmogelijk? Absoluut niet.
+660,Speech (Noo Noo),"Except that I can, my dear white fluffy friend.","Behalve dat ik kan, mijn lieve, witte, pluizige vriend."
+661,Speech (Player),"I'm sorry, Po.","Het spijt me, Po."
+662,Speech (Noo Noo),"We could've worked together, we could've built a better world.","We zouden kunnen samenwerken, we zouden een betere wereld kunnen hebben gebouwd."
+663,Speech (Noo Noo),Do you really think you've won?,Denk je serieus dat je hebt gewonnen
+664,Speech (Noo Noo),Your world is about to become ash.,Je wereld staat op het punt om as te worden.
+665,Speech (Noo Noo),You're too late.,Je bent te laat.
+666,Speech (Noo Noo),"No, the world is. And I am going to fix it.","Nee, de wereld is. En ik ga het oplossen."
+667,Speech (Noo Noo),"So be it, I can see you will never understand.","Zo kan het ook, ik kan zien dat je het nooit zal begrijpen."
+668,Speech (Noo Noo),"You are not going to stop me, I will not allow that.","Je gaat me niet stoppen, dat zal ik niet toestaan."
+669,Speech (Noo Noo),"Po, Kill...","Po, Vermoord..."
+670,Speech (Noo Noo),Yes.,Ja.
+671,Speech (Noo Noo),"Enough Po, Finish this!","Genoeg Po, Voltooi dit!"
+672,Speech (Player),"Noo Noo, stop!","Noo Noo, stop!"
+673,Speech (Noo Noo),Why are you here? You should be dead.,Waarom ben je hier? Je zou dood moeten zijn.
+674,Speech (Noo Noo),"Good, you've made the right decision.","Goed, je hebt de juiste beslissing genomen."
+675,Speech (Noo Noo),"Come with me, we have much to do.","Kom met mij, we hebben veel te doen."
+676,Speech (Sargent),Our base is quite far from here... We came as quickly as we could.,Onze basis ligt vrij ver van hier ... We kwamen zo snel als we konden.
+677,Speech (Sargent),"Slow down, who's all dead?","Langzaam, wie is allemaal dood?"
+678,DialogueOption,What took you so long?!,"Waarom duurde het zolang?! "
+679,DialogueOption,Noo Noo caused all of this...,Noo Noo heeft dit alles veroorzaakt ...
+680,DialogueOption,Noo Noo created monsters.,Noo Noo heeft monsters gemaakt.
+681,DialogueOption,"It's horrible, they're all dead...","Het is verschrikkelijk, ze zijn allemaal dood ..."
+682,DialogueOption,It's over.,Het is voorbij.
+683,DialogueOption,I'm shutting you down.,Ik sluit je neer.
+684,DialogueOption,"Farewell, Noo Noo.","Vaarwel, Noo Noo."
+685,DialogueOption,...Shut up.,...Hou je mond.
+686,DialogueOption,"It's over Noo Noo, give up now.","Het is over Noo Noo, geef nu op."
+687,DialogueOption,I defeated The Announcer.,Ik versloeg de Announcer.
+688,DialogueOption,I'm not letting you get away with this!,Ik laat je hier niet wegkomen!
+689,DialogueOption,What are you talking about?,"Waar heb je het over? "
+690,DialogueOption,New Borns?,New Borns?
+691,DialogueOption,"What? No way, you can't do this!","Wat? No way, je kan dit niet doen!"
+692,DialogueOption,So that's what I encountered at the secret lair.,Dus dat is wat ik tegenkom in de geheime lair.
+693,DialogueOption,That is very impressive.,Dat is heel indrukwekkend.
+694,DialogueOption,But.. that's impossible...,Maar dat is onmogelijk ...
+695,DialogueOption,"Join you? Never, you killed my friends!","Met je meedoen? Nooit, je hebt mijn vrienden vermoord!"
+696,DialogueOption,I'm listening...,"Ik luister... "
+697,DialogueOption,Over my dead body.,"Over mijn Lijk. "
+698,DialogueOption,Sounds good to me.,"Klinkt goed. "
+699,DialogueOption,Now that I think of it... No.,Nu dat ik er aan denk ... Nee.
+700,DialogueOption,Seriously? You're sick!,Ernstig? Je bent ziek!
+701,Speech (Noo Noo),"Oh, not at all. You won’t feel a thing.","Oh, helemaal niet. Je voelt geen ding."
+,"Oh, not at all. You won’t feel a thing.",,
+,,,
+702,Speech (Noo Noo),"Yes, we're at the custard facility.  What you see before you is the main custard supply.","Ja, we zijn in de custardfaciliteit. Wat je voor je ziet is de belangrijkste custard levering."
+703,Speech (Noo Noo),It travels through pipelines to custard machines.,Het reist via pijpleidingen naar custardmachines.
+704,Speech (Noo Noo),This is what I infected.,Dit is wat ik besmet heb.
+705,Speech (Noo Noo),"You are not reborn, as you know you still have untapped potential.","Je bent niet herboren, zoals je weet dat je nog steeds onbenut bent."
+706,Speech (Noo Noo),"We must fix this, you must eat from the infected custard.","We moeten dit oplossen, u moet van de geïnfecteerde vla eet."
+707,Speech (Noo Noo),Now it is time for you to become one with the new world.,Nu is het tijd dat je één wordt met de nieuwe wereld.
+,Now it is time for you to become one with the new world.,,
+,,,
+708,Speech (Noo Noo),"Good, this is the way things have to be.","Goed, dit is de manier waarop dingen moeten zijn."
+,"Good, this is the way things have to be.",,
+,,,
+709,Speech (Noo Noo),"I am impressed with your choices, you will be the greatest reborn of them all.","Ik ben onder de indruk van uw keuzes, jij zal de beste reborn zijn van hen allen."
+,"I am impressed with your choices, you will be the greatest reborn of them all.",,
+,,,
+710,Speech (Noo Noo),You will serve me well.,Je zal mij goed bedienen.
+711,Speech (Noo Noo),You didn't think that you would be able to come out of this alive did you?,"Jij dacht niet dat je uit dit leven zou kunnen komen, dacht je?"
+,You didn't think that you would be able to come out of this alive did you?,,
+,,,
+712,Speech (Noo Noo),I thought you understood the new world.,Ik dacht dat je de nieuwe wereld begreep.
+,I thought you understood the new world.,,
+,,,
+713,Speech (PO),*Tick tick tick tick tick tick tick tick tick tick tick tick tick*,*Tick tick tick tick tick tick tick tick tick tick tick tick tick*
+714,Speech (Noo Noo),"You’re so foolish, you think I won’t get away with this. You’re wrong.","Je bent zo dwaas, je denkt dat ik hiermee niet wegkom. Je hebt het fout."
+715,Speech (Noo Noo),I'm afraid you have no choice.,Ik ben bang dat je geen keuze hebt.
+716,Speech (Noo Noo),It is unfortunate you lost your legs in the fall...  No matter.,Het is jammer dat je je benen in de herfst hebt verloren ... Ongeacht.
+717,Speech (Noo Noo),It's time for you to obey my command.,Het is tijd voor jou om mijn bevel te gehoorzamen.
+718,Speech (Noo Noo),My plan is almost complete.,Mijn plan is bijna compleet
+,My plan is almost complete.,,
+,,,
+719,Speech (Noo Noo),"The newborns are taking over the lands as we speak, ridding the world of all living things.","De newborns nemen de landen over als we spreken, en rennen de wereld van alle levende dingen."
+720,Speech (Noo Noo),"The military are trying to stop them, but they are out numbered, they won't succeed.","Het leger probeert ze te stoppen, maar ze zijn uit met minder, ze zullen niet slagen."
+721,Hotspot,PO,Po
+722,Hotspot,Noo Noo,Noo Noo
+723,DialogueOption,That's a lot of custard.,Dat is veel custard
+724,DialogueOption,I think you underestimate the military.,Ik denk dat je het leger onderschat.
+725,DialogueOption,I see.,"Ik snap het. "
+726,DialogueOption,So what now?,"Dus wat nu? "
+727,DialogueOption,What do you mean?,Wat bedoel je?
+728,DialogueOption,I don’t know.. Will it hurt?,Ik weet het niet .. Zal het pijn doen?
+729,DialogueOption,I'm ready.,"Ik ben klaar. "
+730,DialogueOption,What? I'm not eating any custard!,Wat? Ik eet geen custard
+731,DialogueOption,"You can forget it, I'm leaving.","Je kan het vergeten, ik ga weg."
+732,DialogueOption,"In that case, give me the custard.",Geef me dan de custard.
+733,DialogueOption,Po is that you?,Po ben jij dat?
+734,DialogueOption,Can you hear me?,Kun je me horen?
+735,DialogueOption,[Leave],[Weggaan]
+736,InventoryItem,Toolbox,"Gereedschapskist "
+737,InventoryItem,Custard,Custard
+738,InventoryItem,Camera,Camera
+739,InventoryItem,Pipe,Pijp
+740,InventoryItem,Rock,Steen
+741,InventoryItem,Key Card,Sleutelkaart
+742,HotspotPrefix,Use,Gebruik
+743,HotspotPrefix,on,aan
+744,CursorIcon,Use,Gebruik
+745,CursorIcon,Talk to,Praat met
+746,CursorIcon,Look at,Kijk naar
+747,MenuElement (PauseTitle),Paused,Gepauzeerd
+748,MenuElement (ResumeButton),Resume,Verdergaan
+749,MenuElement (OptionsButton),Options,Opties
+750,MenuElement (QuitButton),Quit,Stoppen
+751,MenuElement (TitleLabel),Options,Opties
+752,MenuElement (SpeechSlider),Speech volume,Spraak volume
+753,MenuElement (MusicSlider),Music volume,Muziek volume
+754,MenuElement (SFXSlider),SFX volume,SFX volume
+755,MenuElement (LanguageCycle),Language,Taal
+756,MenuElement (SubtitlesToggle),Subtitles,Ondertiteling
+757,MenuElement (BackButton),Back,Terug
+758,MenuElement (TitleLabel),Save game,Opslaan
+759,MenuElement (SavesList),New save,Niew opslagbestand
+760,MenuElement (BackButton),Back,Terug
+761,MenuElement (TitleLabel),Load game,Laden
+762,MenuElement (BackButton),Back,Terug
+763,MenuElement (ShiftLeft),,
+764,MenuElement (ShiftRight),,
+765,MenuElement (MenuButton),Menu,Menu
+766,MenuElement (SubsSpeakerLabel),,
+767,MenuElement (SubsLineLabel),"TEST TEST TEST TEST ","TEST TEST TEST TEST "
+768,MenuElement (Blank)," "," "
+769,MenuElement (ContainerLabel),Container,Container
+770,MenuElement (CloseButton),Close,Sluiten
+771,MenuElement (TakeAllButton),Take all,Pak alles
+772,MenuElement (InventoryLabel),Inventory,Inventaris
+773,MenuElement (ShiftContainerLeft),,
+774,MenuElement (ShiftContainerRight),,
+775,MenuElement (ShiftInventoryLeft),,
+776,MenuElement (ShiftInventoryRight),,
+777,MenuElement (ShiftLeft),,
+778,MenuElement (ShiftRight),,
+779,MenuElement (CreateButton),Create,Maken
+780,MenuElement (CloseButton),Close,Sluiten
+781,MenuElement (IngredientsLabel),Ingredients,Ingrediënten
+782,MenuElement (InventoryLabel),Inventory,Inventaris
+783,MenuElement (OutputLabel),Output,Output
+784,MenuElement (HotspotLabel),Test yy pp,Test yy pp
+785,MenuElement (Controls),Combat Controls,Bestrijdings Controles
+786,MenuElement (Attack),Left click to attack.,Links klikken om aan te vallen.
+787,MenuElement (Block),Hold the right mouse button to block.,Houd de rechter muisknop ingedrukt om te blokkeren.
+788,MenuElement (Sprint),Hold shift to sprint.,Houd shift in om te sprinten.
+789,MenuElement (Roll),"While blocking, move in any direction to roll.","Terwijl u blockt, beweeg u in elke richting om te rollen."
+790,MenuElement (Health),The yellow bar is your health; collect green health orbs to regain health.,De gele bar is uw gezondheid; Verzamel groene gezondheidsbollen om de gezondheid te herwinnen.
+791,MenuElement (Stamina),"The blue bar is your stamina; you will lose stamina when sprinting, blocking attacks and rolling.","De blauwe bar is uw uithoudingsvermogen; Je zal stamina verliezen wanneer je sprint, blokkeren van aanvallen en rollen."
+792,MenuElement (RegainStamina),"To regain stamina you must not attack, block, sprint or roll.","Om uithoudingsvermogen te herwinnen mag u niet aanval, blokkeren, sprinten of rollen."
+793,MenuElement (BlockDamage),If you attempt to block an attack without enough stamina; you will take damage.,Als u probeert een aanval te blokkeren zonder genoeg uithoudingsvermogen; Zal u schade aannemen.
+794,MenuElement (Alert),When you see a red flash; it means the enemy is about to attack.,Wanneer u een rode flits ziet betekent het dat de vijand op het punt staat om aan te vallen.
+795,MenuElement (Continue),Continue,Doorgaan
+796,MenuElement (ShiftTxt),Run,Ren
+797,MenuElement (WSADTxt),Move,Bewegen
+798,MenuElement (MouseTxt),Interact,Interact
+799,MenuElement (NightVision),Right click to toggle night vision,Klik met de rechtermuisknop om nachtzicht te veranderen
+800,MenuElement (Crouch),Hold CTRL or C to crouch,Houd CTRL of C vast om te hurken
+801,MenuElement (ShowInventory),Move cursor here to view inventory,Beweeg cursor hier om inventaris te bekijken
+802,MenuElement (TenHoursLater),10 hours later...,10 uur later...
+803,MenuElement (SometimeLater),Sometime later...,Een paar minuten later...

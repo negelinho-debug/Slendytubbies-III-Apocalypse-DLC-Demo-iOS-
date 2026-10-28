@@ -1,0 +1,58 @@
+[Original Text]:  [Translated Text]
+
+ZeoWorks Presents: ZeoWorks 呈现
+Campaign: 战役
+Continue Game: 继续游戏
+New Game: 新游戏
+Select Chapter: 选择章节
+Options: 选项
+Credits: 人员名单
+Exit: 离开
+Language: 语言
+Chapter 0 - "It Was Good": 第0章 - “曾经是美好的”
+Chapter 1 - "A New Day": 第1章 - “新的一天”
+Chapter 2 - "The Journey": 第2章 - “旅程”
+Chapter 3 - "Run Away": 第3章 - “逃跑”
+Back: 返回
+Apply: 同意
+Video: 视频
+Audio: 音频
+Quality: 质量
+Resolution: 分辨率
+Volume: 音量
+Are you sure you want to quit?: 你确定要离开吗？
+
+This game was downloaded from http: //zeoworks.com. If you downloaded it from somewhere else, we suggest you to report it on our website or Facebook page and redownload the game from our website, as this version might be outdated.: 这个游戏是从 http: //zeoworks.com上下载的。如果你是从其他地方下载的，我们建议你向我们的官网或Facebook页面上举报它，并且从我们的官网上重新下载。因为这个版本可能已经是旧的了。
+
+This language is based on broken English, dark humour and swearing. Are you sure you want to continue?: 这个语言是基於很菜的英语，黑色幽默及脏话来翻译的。你确定要继续吗？
+
+Translated by [your name]: 由Luke Liu翻译
+Po died: 小波死了
+HOLD: 按住
+PRESS: 按
+Teletubby House: 天线宝宝的家
+Lake: 湖
+Wrong Way: 错误的方向
+Custard Location: 奶昔位置
+Cave: 洞穴
+Mountains: 山脉
+
+Autosaving...: 自动存档...
+Press any key to continue: 按任意键继续
+
+In a distant land lies underground machines, created by the unknown; capable of creating life forms.  These machines have been creating creatures known as teletubbies for hundreds of years.  The machines worked in a secret underground lair.  One of their creations known as the "teletubby guardian", who had white fur; was designed to monitor a test group of four teletubbies in secret.  They were known as "Tinky winky, Dipsy, Laa Laa and Po".   The four teletubbies lived together in a dome-like home within a boxed landscape known as the "main land".  The group were like hampsters in a cage, not knowing that they were being monitored within a fixed area.  They also lived with an artificial intelligent machine known as "Noo Noo".  The teletubby guardian monitored the groups behavior and documented it into a database, ensured the groups health and also had to ensure that the group did not leave the area.  Over the years the guardian grew a strong bond with the group, enjoying watching over them, despite the group not knowing of the guardians existence.  One day, things went horribly wrong.: 在遥远的地方下有着地底机器设备，不知道是由谁创造的；它能够创造生命形式。 这些机器已经创造了几百年的生物了，像是人们所知的天线宝宝。这些机器在一个秘密的地下巢穴里运作着。他们有一个作品被称为“天线宝宝的守护者”，有一身白色的皮毛，它被设计出来是为了秘密监视着四个试验组。它们分别是“丁丁丶迪西丶拉拉以及小波”。这四只天线宝宝共同居住在一个圆顶形的家。这个家在一个称为“家园”的景观盒内。像笼子里的仓鼠，他们不知道自己在一个固定区域内被监视，它们同时与一个叫“努努”的人工智能设备一同居住着。守护者在资料库里记录着它们的行为，以确保它们的健康，并且还必须保证不会离开该地区。多年来，守护者与它们 建立了牢固的联系，享受着监视他们，尽管它们不知道守护者的存在。但是有一天，事情发生了严重的错误。
+
+It has begun, Tinky Winky has killed Po and the rest of his friends. You believe that the custards are responsible for his attacks.  You use your computer in an attempt to contact other tubbies at the satellite station, but with no success. Without any delay you prepare a plan to find all of the infected custards before traveling to the satellite station for help.  It's up to you to find out the truth.: 起初，丁丁杀了小波和他其他的朋友。你相信奶昔是他的袭击事件的根本原因。你企图使用你的电脑来与其他天线宝宝取得联系，但是并没有成功。再这紧要关头之际你准备拟定一个计划去前往卫星站寻求帮助。但这着之前必须找到所有被感染的奶昔。现在由你来查明事情的真相。
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You were able to escape to the cave.  From there you must travel through maze-like corridors to get to the outskirts. Once you're at the outskirts, you'll find the satellite station.: 在最後一个奶昔的位置你遇上了丁丁。他在你眼前活生生的变成了一只要杀了你的怪物。你逃到山洞里去了。在那里你必须穿过迷宫般的走道才能到达郊区。一旦你到了郊区，你就会找到卫星站。
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You where able to escape to the mountains.  The mountains stretch out for miles, they are cold and almost inhabitable.  You must travel through them and get to the outskirts.  You'll be able to find the satellite station from there.: 在最後一个奶昔的位置你遇上了丁丁。他在你眼前活生生的变成了一只要杀了你的怪物。你逃到山里头去了。群山绵延数英里，那边很冷且几乎无法居住。你必须穿过他们，到达郊区。一旦你到了郊区，你就会找到卫星站。
+
+You've travelled a long way,  You escaped those creatures at the Secret Lair. You ran away from Tinky Winky's new phase at the main land. You made your way through the Outskirts and encountered Laa Laa. But after all that's happened so far, you're still alive. At last, you arrive at the Satellite station.: 你走了漫长的路，逃离了秘密的巢穴里的那些生物。你离开了丁丁在家园的新阶段。 你穿过郊外，遇上了拉拉。到目前为止，你还活着。最后，你到达了卫星站。
+
+Good Ending: 美好的结局
+Bad Ending: 烂结局
+Evil Ending: 邪恶的结局
+Regretful Ending: 遗憾的结局
+
+Head over to multiplayer and continue the story: 前往多人模式来继续这个故事

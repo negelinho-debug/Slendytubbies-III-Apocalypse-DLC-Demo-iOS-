@@ -1,0 +1,58 @@
+[Original Text]: [Translated Text]
+
+ZeoWorks Presents: Zeoworks Презентираат
+Campaign: Кампања
+Continue Game: Продолжи игра
+New Game: Нова Игра
+Select Chapter: Селектирај поглавје
+Options: Опции
+Credits: кредити
+Exit: Излези
+Language: Јазик
+Chapter 0 - "It Was Good": Поглавје 0 - "Беше се добро" 
+Chapter 1 - "A New Day": Поглавје 1 - "Нов Ден"
+Chapter 2 - "The Journey": Поглавје 2 - "Патот"
+Chapter 3 - "Run Away": Поглавје 3 - "Трчај"
+Back: Назад
+Apply: Аплицирај
+Video: Видео
+Audio: Звук
+Quality: Квалитет
+Resolution: Резолуција
+Volume: Јачина
+Are you sure you want to quit?: Сигурни ли сте дека сакате да ја исклучите играта?
+
+This game was downloaded from http://zeoworks.com. If you downloaded it from somewhere else, we suggest you to report it on our website or Facebook page and redownload the game from our website, as this version might be outdated.:  Оваа игра беше симната од http://zeoworks.com Ако ја симнавте од друга страница репортијате ја до нашата фејсбоок страна и симнете ја играта од нашата страница.
+
+This language is based on broken English, dark humour and swearing. Are you sure you want to continue?: Овој јазик има скршен англиски, темен хумор и пцуење. Дали сте сигурне да продолжете?
+
+Translated by [your name]:Транслации од FroGonn
+Po died: Po умре
+HOLD: Држи
+PRESS: Притисни
+Teletubby House: Куќата на телетабиси
+Lake: Езеро
+Wrong Way: Грешен пат
+Custard Location: Локација на таби крем
+Cave:Пештера
+Mountains:Планини
+
+Autosaving...: Авто симинање...
+Press any key to continue: Притиснете било кое копче за да продолжете.
+
+In a distant land lies underground machines, created by the unknown; capable of creating life forms.  These machines have been creating creatures known as teletubbies for hundreds of years.  The machines worked in a secret underground lair.  One of their creations known as the "teletubby guardian", who had white fur; was designed to monitor a test group of four teletubbies in secret.  They were known as "Tinky winky, Dipsy, Laa Laa and Po".   The four teletubbies lived together in a dome-like home within a boxed landscape known as the "main land".  The group were like hampsters in a cage, not knowing that they were being monitored within a fixed area.  They also lived with an artificial intelligent machine known as "Noo Noo".  The teletubby guardian monitored the groups behavior and documented it into a database, ensured the groups health and also had to ensure that the group did not leave the area.  Over the years the guardian grew a strong bond with the group, enjoying watching over them, despite the group not knowing of the guardians existence.  One day, things went horribly wrong.: Во далечните земји има подземји машини, направени од незнаеното,кој можат да прават животни нешта.Овие машини се знаени да прават телетабиси за стотини години. Машините работеа скришно во нивната подземјина пештера. Кога еден телетаби кој го викале "Старателот" со бело крзно ги гледаше телтабиси со скришни камери, тие се; Po,Laa Laa, Tinky winky, Dipsy. Овие телетабиси живееле во кружен дом,Овие телетабиси биле како хрчаци во кафез, не знаеле дека биле гледани. Тие живееле и со машини како Noo Noo , Телетаби старателот исто така ги гледаше телетабисите и ги документираше. Преку годините старателот се здружи поблиску со телетабисите, додека тие незнаеле дека тој ги гледаше, еден ден, се беше грешно.
+
+It has begun, Tinky Winky has killed Po and the rest of his friends. You believe that the custards are responsible for his attacks.  You use your computer in an attempt to contact other tubbies at the satellite station, but with no success. Without any delay you prepare a plan to find all of the infected custards before traveling to the satellite station for help.  It's up to you to find out the truth.: И тогаш се почна, Tinky Winky  го уби Po и неговите другари, и ти мислиш дека таби кремот е причината. Со твојот компјутер, ти прова да зборуваш со други табиси во сателитската станица, но не работеше,без пречка, ти направи план да ги земеш сите таби крема, и да отидеш до сателитската станица за помош. Но кој ги инфицира таби кремата, е твоја работа да најдеш.
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You were able to escape to the cave.  From there you must travel through maze-like corridors to get to the outskirts. outskirts, you'll find the satellite station.: Кога го зема последниот таби крем, го сретна Tinky Winky, тој се претвори во чудовиште пред твојите очи и прова да те убије, но ти избега. Од таму треба да одиш преку коридори за да стасаш до сателитската станица преку периферијата.
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You where able to escape to the mountains.  The mountains stretch out for miles, they are cold and almost inhabitable.  You must travel through them and get to the outskirts.  You'll be able to find the satellite station from there.: Кога го зема последниот таби крем, го сретна Tinky Winky, тој се претвори во чудовиште пред твојите очи и прова да те убије, но ти избега. Од таму треба да одиш преку планините , кој се замрзнати и ладни. Ќе треба да стасаш до периферијата, и од таму ќе одиш накај сателитската станица.
+
+You've travelled a long way,  You escaped those creatures at the Secret Lair. You ran away from Tinky Winky's new phase at the main land. You made your way through the Outskirts and encountered Laa Laa. But after all that's happened so far, you're still alive. At last, you arrive at the Satellite station.: Ти одите долг пат, избега од чудовиштата и избега од на Tinky Winky новото тело.  Отиде преку периферијата и ја сретна Laa Laa. Но од се што се случи, ти си жив. Одвај ти стаса до сателитската станица.
+
+Good Ending:Добар крај
+Bad Ending:Лош крај
+Evil Ending: Крај со зло
+Regretful Ending: Жален крај
+
+Head over to multiplayer and continue the story: Отидете до мултиплејер за да продолжете.

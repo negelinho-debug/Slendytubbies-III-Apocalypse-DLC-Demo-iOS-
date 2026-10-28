@@ -1,0 +1,143 @@
+Original Text: [Translation]
+PLAY SOLO: JOACA SINGUR
+PLAY ONLINE: JOACA ONLINE
+CHARACTER CUSTOMIZATION: PERSONALIZAREA CARACTERULUI
+OPTIONS: OPTIUNI
+CREDITS: CREDITE
+EXIT: IESI
+Are you sure you want to quit this game?: Esti sigur ca vrei sa iesi din acest joc? 
+NO: NU
+YES: DA
+ZEOWORKS PRESENTS: ZEOWORKS PREZINTA
+HATS: PALARI
+CHANGE FUR COLOR: SCHIMBA CULOAREA BLANEI
+CUSTOM SKIN: SKIN PERSONALIZAT
+HEAD: CAP
+BODY: CORP
+ARMS: BRATE
+LEGS: PICIOARE
+URL: URL
+APPLY: APLICA
+BACK: INAPOI
+FUR COLOR: CULOAREA BLANEI
+DEFAULT: MOD IMPLICIT
+RANDOM COLOR: CULOARE LA INTAMPLARE
+COST: COSTA
+CUSTARDS: BUDINCI
+LOCKED: BLOCAT
+UNLOCK: DEBLOCHEAZA
+BUY: CUMPARA
+YOU NEED MORE CUSTARDS: AI NEVOIE DE MAI MULTE BUDINCI
+EQUIPMENT: ECHIPAMENT
+Night Vision Camera: Camera cu viziune nocturna
+Flashlight: Lanterna
+You must sign in to use custom skins: Trebuie sa te inscrii ca sa folosesti skinuri personalizate 
+USE CUSTOM SKIN: FOLOSESTE SKINURI PERSONALIZATE
+SIGN IN: CONETEAZATE
+SIGN OUT: DECONECTEAZATE
+LOGIN: LOGARE
+USERNAME: NUME DE UTILIZATOR
+PASSWORD: PAROLA
+CONNECT: CONECTEAZATE
+CREATE AN ACCOUNT: CREAZA UN CONT
+ERROR: INCORRECT USERNAME / PASSWORD!: EROARE:NUME DE UTILIZATOR/PAROLA! 
+TRY AGAIN: INCEARCA DIN NOU
+CONNECTING: SE CONECTEAZA
+COULD NOT CONNECT TO SERVER: NU SE POATE CONECTA LA SERVER 
+SERVER MAY BE FULL: SERVERUL POATE FI FULL
+PLEASE TRY ANOTHER SERVER: TE ROG INCEARCA ALT SERVER
+SELECT A SERVER: SELECTEAZA UN SERVER
+SERVER: SERVER
+Room Name: Numele serverului
+Private: Privat
+Game Mode: Modul jocului
+Players:  Jucatori
+Map Name: Numele mapei
+Host Game: Gazduieste un joc
+Game Settings: Setarile jocului
+Map size: Marimea mapei
+Small: Mica
+Medium: Medie
+Large: Larga
+Recommended Players: Jucatori recomandati 
+Timer: Cronometru
+# Minutes: # Minute
+Custard Amount: Cantitatea budinci
+Mute Guests: Muta oaspetii
+Start Game: Start joc
+COLLECT: COLECTEAZA
+CO-OP: CO-OP
+VERSUS: VERSUS
+SURVIVAL: SUPRAVIETUIESTE
+INFECTION: INFECTIE
+Join: Alature
+Player name: Numele jucatorului 
+Connected: Conectat
+Chat: Mesagerie
+You need to sign in to chat: Trebuie sa te inscrii pentru a scrie 
+Respawning in #: Te spawnezi in 
+A helpless victim has joined: O victima neajutorata s-a alaturat
+A player has been caught: Un jucator a fost prins
+# Joined: # s-a alaturat
+# Killed #: # l-a ucist pe #
+# Died: # a murit
+# Left: # a iesit
+# Became infected: # a devenit infectat
+Kill All Survivors: Ucide toti supravietuitorii
+Fight Off Infected Players To Win: Luptate cu jucatori infectati pentru a castiga
+Kill All Helpless Victims: Ucide toate victimele neajutorate
+Survive All Waves: Supravietuieste la toate valurile
+Kills: Ucideri
+Deaths: Morti
+Draw...: Egalitate
+# Wins...: # Castiga
+# Is The Winner: # este castigatorul
+Most Kills: Cele mai multe killuri
+# Is In the Lead: # este in conducere
+Restarting: Se restarteaza
+Starting new round: Incepe o runda noua
+All players have been killed...: Toti jucatori au fost ucisi…
+Your team survived...: Echipa ta a supravietuit…
+All custards have been found...: Toate budincile au fost gasite…
+Time is up: Timpul s-a sfarsit
+Survivors win: Supravietuitorii castiga
+Waiting for more players...: Asteapta pentru mai multi jucatori…
+You are infected: Esti infectat
+Infected: Infectat
+Infected win: Infectatii castiga
+Round: Runda
+Survive: Supravietuieste
+Loading...: Se incarca…
+Spectator Mode: Modul de spectator
+You are now in Spectator Mode: Esti acum in modul de spectator
+Respawn: Respawneaza
+Custards: Budinci
+Wave #: Valul #
+# Remaining: # au mai ramas
+Press 'E' To Buy Supplies: Apasa ‘E’ pentru a cumpara lucruri
+Shop: Magazin
+Supplies: Lucruri
+Get to the waypoint: Treci la punctul de parcurs  
+Buy: Cumpara
+Sell: Vinde
+Heal: Vindeca
+Ammo: Munitie
+Toast: Paine prajita
+# Custards remaining...: # budinci au mai ramas
+Collect All # Custards: Colecteaza toate cele
+Mouse Sensitivity: Sensibilitatea cursorului
+Resolution: Rezolutie
+Language: Limba
+This version is outdated, please download the latest version: Aceasta versiune este veche, te rugam sa downloadezi cea mai noua versiune
+Update Now: Updateaza acum
+Remind Me Later: Adu-mi aminte mai tarziu
+Notice: Tine minte
+You will be unable to access online features until you update.: Nu vei putea sa accesezi functiile online pana cand updatezi..
+Paused: Joc pauzat
+Quit: Iesi
+Resume: Reia 
+You're sending messages too quickly!:  Dai mesaje prea rapid
+
+Restart Match: Restarteaza meciul
+End Match: Termina meciul
+Restarting match...: Se restarteaza meciul…

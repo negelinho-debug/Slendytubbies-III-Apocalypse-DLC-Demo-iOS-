@@ -1,0 +1,58 @@
+[Original Text]: [Translated Text]
+
+ZeoWorks Presents:ZeoWorks prezinta
+Campaign:Campanie
+Continue Game:Continua jocul
+New Game:Joc nou
+Select Chapter:Selecteaza capitolul
+Options:Optiuni
+Credits:Credite
+Exit:Iesire
+Language:Limba
+Chapter 0 - "It Was Good":Capitolul 0 -"A fost bine"
+Chapter 1 - "A New Day":Capitolul 1 - "O zi noua" 
+Chapter 2 - "The Journey":Capitolul 2 - "Calatoria"
+Chapter 3 - "Run Away":Capitolul 3 - "Fugi"
+Back:Inapoi
+Apply:Aplica
+Video:Video
+Audio:Audio
+Quality:Calitate
+Resolution:Rezolutie
+Volume:Volum
+Are you sure you want to quit?:Esti sigur ca vrei sa iesi?
+
+This game was downloaded from http://zeoworks.com. If you downloaded it from somewhere else, we suggest you to report it on our website or Facebook page and redownload the game from our website, as this version might be outdated.:Acest joc a fost descarcat de pe http://zeoworks.com. Daca tu l-ai descarcat de pe alt link, iti sugeram sa reportezi link-ul pe http://zeoworks.com sau pe pagina de pe Facebook si sa descarci jocul de pe site-ul nostru, deoarece aceasta versiune ar putea sa fie veche
+
+This language is based on broken English, dark humour and swearing. Are you sure you want to continue?:Acest limbaj se bazeaza pe Engleza stricata, umor negru si injuraturi. Esti sigur ca vrei sa continui?
+
+Translated by [your name]:Tradus de Fasie Alexandru
+Po died:Po a murit
+HOLD:TINE
+PRESS:APASA
+Teletubby House:Casa Teletubby
+Lake:Lac
+Wrong Way:Directie gresita
+Custard Location:Locul budinci
+Cave:Pestera
+Mountains:Munti
+
+Autosaving...:Autosalvare…
+Press any key to continue:Apasati orice tasta pentru a continua
+
+In a distant land lies underground machines, created by the unknown; capable of creating life forms.  These machines have been creating creatures known as teletubbies for hundreds of years.  The machines worked in a secret underground lair.  One of their creations known as the "teletubby guardian", who had white fur; was designed to monitor a test group of four teletubbies in secret.  They were known as "Tinky winky, Dipsy, Laa Laa and Po".   The four teletubbies lived together in a dome-like home within a boxed landscape known as the "main land".  The group were like hampsters in a cage, not knowing that they were being monitored within a fixed area.  They also lived with an artificial intelligent machine known as "Noo Noo".  The teletubby guardian monitored the groups behavior and documented it into a database, ensured the groups health and also had to ensure that the group did not leave the area.  Over the years the guardian grew a strong bond with the group, enjoying watching over them, despite the group not knowing of the guardians existence.  One day, things went horribly wrong.:Intr-o zona indepartata se afla masinile subterane, create de necunoscut capabile sa creeze forme de viata. Aceste masini au creat creaturi numite Teletubbies de sute de ani. Masinile au lucrat intr-un santier secret subteran. Una dintre creatiile lor cunoscuta sub numele de “Gardianul Teletubby”, care avea blana alba; A fost proiectat pentru a monitoriza in secret un grup de testare de patru Teletubbies. Ele erau cunoscute sub numele de “Tinky winky, Dipsy, Laa Laa si Po”.Cei patru Teletubbies au locuit impreuna intr-o casa domoasa, intr-un peisaj de carton numit “Terenul principal”. Ei erau ca niste hamsteri intr-o cusca, fara sa stie ca au fost monitorizati intr-o zona fixa. Ei au trait de asemenea, cu o masina inteligenta artificiala cunoscuta sub numele de “Noo Noo”. Protectorul teletubbilor a monitorizat comportamentul grupurilor si a documentat-o intr-o baza de date, a asigurat sanatatea grupurilor si, de asemenea, a trebuit sa se asigure ca grupul nu a parasit zona. De-a lungul anilor, gardianul a devenit o legatura puternica cu grupul, bucurandu-se de supravegherea lor, in ciuda faptului ca grupul nu cunostea existenta tutorilor. Intr-o zi, lucrurile au mers oribil
+
+It has begun, Tinky Winky has killed Po and the rest of his friends. You believe that the custards are responsible for his attacks.  You use your computer in an attempt to contact other tubbies at the satellite station, but with no success. Without any delay you prepare a plan to find all of the infected custards before traveling to the satellite station for help.  It's up to you to find out the truth.:A inceput cand Tinky Winky la ucis pe Po si pe ceilalti prieteni. Tu crezi ca budincile sunt  responsabile pentru atacurile sale. Iti folosesti calculatorul in incercarea de a contacta alti teletubbies de la statia de satelit, dar fara succes. Fara intarziere ti-ai pregatit un plan pentru a gasi toate prajiturile infectate inainte de a calatori in statia de satelit pentru ajutor.Depinde de tine sa afli adevarul
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You were able to escape to the cave.  From there you must travel through maze-like corridors to get to the outskirts. Once you're at the outskirts, you'll find the satellite station.: La ultima locatie de budinca l-ai intalnit pe Tinky Winky. S-a transformat intr-un monstru chiar in fata ochilor tai si a incercat sa te omoare.Ai reusit sa fugi in pestera.De acolo trebuie sa calatoresti prin labirintul de coridoare asemanatoare pentru a ajunge la periferie. Odata ce sunteti la periferie, vei gasi statia de satelit
+
+At the last custard location you encountered Tinky Winky.  He transformed into a monster right before your eyes and tried to kill you. You where able to escape to the mountains.  The mountains stretch out for miles, they are cold and almost inhabitable.  You must travel through them and get to the outskirts.  You'll be able to find the satellite station from there.: . S-a transformat intr-un monstru chiar in fata ochilor tai si a incercat sa te omoare.Ai reusit sa fugi in munti.Muntii sunt kilometrici, sunt reci si aproape nelocuiti. Trebuie sa calatoresti pe munte si sa ajungi la periferie, acolo vei putea gasi postul de satelit.
+
+You've travelled a long way,  You escaped those creatures at the Secret Lair. You ran away from Tinky Winky's new phase at the main land. You made your way through the Outskirts and encountered Laa Laa. But after all that's happened so far, you're still alive. At last, you arrive at the Satellite station.: Ai trecut prin multe , ai scapat de acele creaturi din vizuina secreta. Ai fugit de Tinky Winky monstru. Ai trecut prin periferie si ai intalnit-o pe Laa Laa, dar cu toate astea tot esti in viata. Macar ai ajuns la statia satelita
+
+Good Ending:Sfarsit Bun
+Bad Ending:Sfarsit Rau
+Evil Ending:Sfarsit Malefic
+Regretful Ending:Sfarsit Regretabil
+
+Head over to multiplayer and continue the story:Treceti la multiplayer si continuati povestea
