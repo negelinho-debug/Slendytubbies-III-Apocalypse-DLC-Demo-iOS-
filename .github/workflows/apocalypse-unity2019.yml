@@ -1,0 +1,234 @@
+
+name: Apocalypse DLC - Prepare Unity 2019.4
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Download recovered game
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-Unity-With-Real-Code
+          run-id: 40566720391
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          path: work/download
+
+      - name: Extract game project
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p work/source work/output
+
+          archive=$(find work/download \
+            -name 'Apocalypse-Unity-Real-Code.tar.gz' \
+            -type f -print -quit)
+
+          test -n "$archive"
+
+          tar -xzf "$archive" -C work/source
+
+          test -f \
+            work/source/ExportedProject/ProjectSettings/ProjectVersion.txt
+
+          test -f \
+            "work/source/ExportedProject/Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity"
+
+      - name: Prepare Unity 2019 project
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          project = Path("work/source/ExportedProject")
+          assets = project / "Assets"
+
+          version_file = (
+              project / "ProjectSettings/ProjectVersion.txt"
+          )
+
+          old_version = version_file.read_text().strip()
+
+          if "2017.1.1f1" not in old_version:
+              raise SystemExit(
+                  "Unexpected Unity version: " + old_version
+              )
+
+          scripts = list(assets.rglob("*.cs"))
+
+          if len(scripts) < 900:
+              raise SystemExit(
+                  "Recovered CSharp project is incomplete"
+              )
+
+          scenes = [
+              "Assets/CHAPTER 4/Scenes/Chap4Menu.unity",
+              "Assets/Loading.unity",
+              "Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity",
+              "Assets/CHAPTER 4/easteregg/egg.unity",
+          ]
+
+          for scene in scenes:
+              if not (project / scene).exists():
+                  raise SystemExit(
+                      "Missing original scene: " + scene
+                  )
+
+          version_file.write_text(
+              "m_EditorVersion: 2019.4.40f1\n"
+          )
+
+          editor = assets / "Editor"
+          editor.mkdir(exist_ok=True)
+
+          (editor / "ApocalypseBuild2019.cs").write_text(
+              r'''
+          using System;
+          using System.IO;
+          using System.Linq;
+          using UnityEngine;
+          using UnityEditor;
+          using UnityEditor.Build.Reporting;
+
+          public static class ApocalypseBuild2019
+          {
+              public static void ExportIOS()
+              {
+                  string[] scenes = EditorBuildSettings.scenes
+                      .Where(s => s.enabled)
+                      .Select(s => s.path)
+                      .ToArray();
+
+                  if (scenes.Length == 0 ||
+                      !scenes.Any(s =>
+                          s.EndsWith("DEMOLEVEL.unity")))
+                  {
+                      throw new Exception(
+                          "Original DLC scenes missing"
+                      );
+                  }
+
+                  PlayerSettings.productName =
+                      "Slendytubbies Apocalypse DLC";
+
+                  PlayerSettings.SetApplicationIdentifier(
+                      BuildTargetGroup.iOS,
+                      "com.negelinho.apocalypsedlc"
+                  );
+
+                  PlayerSettings.defaultInterfaceOrientation =
+                      UIOrientation.LandscapeLeft;
+
+                  PlayerSettings.SetScriptingBackend(
+                      BuildTargetGroup.iOS,
+                      ScriptingImplementation.IL2CPP
+                  );
+
+                  string output =
+                      Path.GetFullPath("Builds/iOS");
+
+                  Directory.CreateDirectory(output);
+
+                  BuildReport report =
+                      BuildPipeline.BuildPlayer(
+                          new BuildPlayerOptions
+                          {
+                              scenes = scenes,
+                              locationPathName = output,
+                              target = BuildTarget.iOS,
+                              options = BuildOptions.None
+                          }
+                      );
+
+                  if (report.summary.result !=
+                      BuildResult.Succeeded)
+                  {
+                      throw new Exception(
+                          "iOS export failed: " +
+                          report.summary.result
+                      );
+                  }
+
+                  Debug.Log(
+                      "APOCALYPSE DLC IOS EXPORT SUCCESS"
+                  );
+              }
+          }
+          '''.lstrip(),
+              encoding="utf-8"
+          )
+
+          dummy = [
+              p for p in scripts
+              if "Dummy class. This could have happened"
+              in p.read_text(errors="replace")
+          ]
+
+          missing_meta = [
+              p for p in scripts
+              if not Path(str(p) + ".meta").exists()
+          ]
+
+          legacy = (
+              list(assets.rglob("*.js")) +
+              list(assets.rglob("*.boo"))
+          )
+
+          report = (
+              "APOCALYPSE DLC - UNITY 2019 PREPARATION\n"
+              f"Original version: {old_version}\n"
+              "Target version: 2019.4.40f1\n"
+              f"CSharp scripts: {len(scripts)}\n"
+              f"Dummy scripts: {len(dummy)}\n"
+              f"Legacy scripts: {len(legacy)}\n"
+              f"Missing CSharp meta: {len(missing_meta)}\n"
+              "Original scenes: 4\n"
+              "iOS export method: "
+              "ApocalypseBuild2019.ExportIOS\n"
+              "Unity import and compilation: NOT TESTED\n"
+              "IPA: NOT BUILT\n"
+          )
+
+          print(report)
+
+          Path("work/output/REPORT.txt").write_text(
+              report
+          )
+
+          with open(
+              os.environ["GITHUB_STEP_SUMMARY"], "a"
+          ) as f:
+              f.write(
+                  "```text\n" + report + "```\n"
+              )
+          PY
+
+      - name: Package Unity 2019 candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tar -czf \
+            work/output/Apocalypse-DLC-Unity2019-Source.tar.gz \
+            -C work/source ExportedProject
+
+      - name: Upload prepared project
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-DLC-Unity2019-Candidate
+          path: work/output/
+          retention-days: 7
+          if-no-files-found: error
