@@ -1,3 +1,4 @@
+
 using System;
 using System.IO;
 using System.Linq;
@@ -28,7 +29,7 @@ public static class ApocalypseBuild2019
 
         PlayerSettings.SetApplicationIdentifier(
             BuildTargetGroup.iOS,
-            "com.negelinho.apocalypsedlc"
+            "app.chili6614.lake1071"
         );
 
         PlayerSettings.defaultInterfaceOrientation =
