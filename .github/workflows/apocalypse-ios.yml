@@ -1,0 +1,122 @@
+
+name: Apocalypse DLC - REAL IPA Build Attempt
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unity_ios:
+    name: Export original game to Xcode
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Download recovered Apocalypse DLC Unity project
+        uses: actions/checkout@v4
+        with:
+          ref: unity2019-no-lfs
+          lfs: false
+          persist-credentials: false
+
+      - name: Verify original game files
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '2019.4.40f1' ProjectSettings/ProjectVersion.txt
+          test -s 'Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity'
+          test -s 'Assets/CHAPTER 4/Scenes/Chap4Menu.unity'
+          test -s 'Assets/Loading.unity'
+          test -s 'Assets/Editor/ApocalypseBuild2019.cs'
+          test "$(stat -c%s 'Assets/TerrainData/Demo 2.asset')" -gt 90000000
+          test "$(stat -c%s 'Assets/TerrainData/Demo 3.asset')" -gt 90000000
+          echo 'Original Unity project found.'
+
+      - name: Require Unity build activation
+        shell: bash
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+        run: |
+          if [ -z "$UNITY_LICENSE" ] && [ -z "$UNITY_SERIAL" ]; then
+            echo 'Unity activation missing: UNITY_LICENSE or UNITY_SERIAL required.'
+            exit 1
+          fi
+
+      - name: Export REAL iOS project using Unity 2019
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 2019.4.40f1
+          targetPlatform: iOS
+          buildMethod: ApocalypseBuild2019.ExportIOS
+          buildsPath: Builds
+
+      - name: Check generated Xcode project
+        shell: bash
+        run: |
+          test -s 'Builds/iOS/Unity-iPhone.xcodeproj/project.pbxproj'
+          test -d 'Builds/iOS/Data'
+
+      - name: Upload Xcode project
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-Xcode-Project
+          path: Builds/iOS/
+          if-no-files-found: error
+          retention-days: 7
+
+  build_ipa:
+    name: Compile real iPhone app and package IPA
+    needs: unity_ios
+    runs-on: macos-15
+    timeout-minutes: 90
+    steps:
+      - name: Download generated Xcode project
+        uses: actions/download-artifact@v4
+        with:
+          name: Apocalypse-Xcode-Project
+          path: xcode
+
+      - name: Compile for physical iPhone
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project xcode/Unity-iPhone.xcodeproj \
+            -scheme Unity-iPhone \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$PWD/DerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            build 2>&1 | tee xcode-build.log
+
+      - name: Package an actual unsigned IPA
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP="$(find DerivedData/Build/Products/Release-iphoneos -maxdepth 1 -type d -name '*.app' -print -quit)"
+          test -n "$APP" || { echo 'No real .app was compiled'; exit 1; }
+          test -f "$APP/Info.plist"
+          EXE="$(/usr/libexec/PlistBuddy -c 'Print CFBundleExecutable' "$APP/Info.plist")"
+          test -f "$APP/$EXE"
+          file "$APP/$EXE" | grep -q 'Mach-O' || { echo 'Not a real iPhone executable'; exit 1; }
+          test -d "$APP/Data" || { echo 'Unity game data not found'; exit 1; }
+          mkdir Payload
+          cp -R "$APP" Payload/
+          zip -qry Apocalypse-UNSIGNED.ipa Payload
+          test -s Apocalypse-UNSIGNED.ipa
+
+      - name: Upload the IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apocalypse-REAL-UNSIGNED-IPA
+          path: Apocalypse-UNSIGNED.ipa
+          if-no-files-found: error
+          retention-days: 7
