@@ -1,3 +1,4 @@
+#if !UNITY_2021_3_OR_NEWER
 using UnityEngine;
 using VacuumShaders.TerrainToMesh;
 
@@ -126,3 +127,5 @@ public class RunTime_Terrain_Convertion : MonoBehaviour
 		return material;
 	}
 }
+
+#endif
