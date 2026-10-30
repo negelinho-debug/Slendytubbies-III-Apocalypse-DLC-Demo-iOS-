@@ -15,7 +15,7 @@ public class GUITextLanguage : MonoBehaviour
 		Translator translator = new Translator();
 		if (PlayerPrefs.GetInt("Language") > 0)
 		{
-			languagetext[languageID] = translator.Translate(ID, "Campaign");
+			languagetext[languageID] = languagetext[languageID];
 		}
 	}
 }

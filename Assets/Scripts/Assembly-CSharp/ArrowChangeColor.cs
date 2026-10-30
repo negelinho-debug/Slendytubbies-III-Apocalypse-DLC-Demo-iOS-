@@ -18,20 +18,20 @@ public class ArrowChangeColor : MonoBehaviour
 		{
 			if (Input.GetAxis(buttonName) >= 0.01f)
 			{
-				GetComponent<GUITexture>().color = Color.green;
+				GetComponent<UnityEngine.UI.Graphic>().color = Color.green;
 			}
 			else
 			{
-				GetComponent<GUITexture>().color = Color.white;
+				GetComponent<UnityEngine.UI.Graphic>().color = Color.white;
 			}
 		}
 		else if (Input.GetAxis(buttonName) <= -0.01f)
 		{
-			GetComponent<GUITexture>().color = Color.green;
+			GetComponent<UnityEngine.UI.Graphic>().color = Color.green;
 		}
 		else
 		{
-			GetComponent<GUITexture>().color = Color.white;
+			GetComponent<UnityEngine.UI.Graphic>().color = Color.white;
 		}
 	}
 }

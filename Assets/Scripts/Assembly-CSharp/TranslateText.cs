@@ -20,7 +20,7 @@ public class TranslateText : MonoBehaviour
 		Translator translator = new Translator();
 		if (PlayerPrefs.GetInt("Language") > 0)
 		{
-			GetComponent<Text>().text = translator.Translate(ID, fileName);
+			GetComponent<Text>().text = orgText;
 		}
 		else if (PlayerPrefs.GetInt("Language") == 0)
 		{

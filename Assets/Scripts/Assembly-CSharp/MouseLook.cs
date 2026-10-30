@@ -68,7 +68,7 @@ public class MouseLook : MonoBehaviour
 		}
 		sensitivityX /= 2f;
 		sensitivityY /= 2f;
-		multiplyer = 1f * (float)ObscuredPrefs.GetInt("Mouse");
+		multiplyer = 1f * (float)PlayerPrefs.GetInt("Mouse");
 		if (multiplyer == 0f)
 		{
 			multiplyer = 1f;

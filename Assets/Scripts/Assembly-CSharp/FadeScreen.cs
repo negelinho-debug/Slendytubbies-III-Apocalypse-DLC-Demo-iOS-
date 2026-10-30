@@ -65,7 +65,7 @@ public class FadeScreen : MonoBehaviour
 		}
 		else
 		{
-			GetComponent<GUITexture>().color = new Color(GetComponent<GUITexture>().color.r, GetComponent<GUITexture>().color.g, GetComponent<GUITexture>().color.b, fadetime / 255f);
+			GetComponent<UnityEngine.UI.Graphic>().color = new Color(GetComponent<UnityEngine.UI.Graphic>().color.r, GetComponent<UnityEngine.UI.Graphic>().color.g, GetComponent<UnityEngine.UI.Graphic>().color.b, fadetime / 255f);
 		}
 		if (isFlash && !fadein)
 		{
@@ -90,7 +90,7 @@ public class FadeScreen : MonoBehaviour
 		}
 		else
 		{
-			GetComponent<GUITexture>().color = new Color(GetComponent<GUITexture>().color.r, GetComponent<GUITexture>().color.g, GetComponent<GUITexture>().color.b, 0f);
+			GetComponent<UnityEngine.UI.Graphic>().color = new Color(GetComponent<UnityEngine.UI.Graphic>().color.r, GetComponent<UnityEngine.UI.Graphic>().color.g, GetComponent<UnityEngine.UI.Graphic>().color.b, 0f);
 		}
 		fadetime = 0f;
 		fadeout = false;
@@ -105,7 +105,7 @@ public class FadeScreen : MonoBehaviour
 		}
 		else
 		{
-			GetComponent<GUITexture>().color = new Color(GetComponent<GUITexture>().color.r, GetComponent<GUITexture>().color.g, GetComponent<GUITexture>().color.b, maxFade);
+			GetComponent<UnityEngine.UI.Graphic>().color = new Color(GetComponent<UnityEngine.UI.Graphic>().color.r, GetComponent<UnityEngine.UI.Graphic>().color.g, GetComponent<UnityEngine.UI.Graphic>().color.b, maxFade);
 		}
 		fadetime = maxFade;
 		fadeout = true;

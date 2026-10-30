@@ -87,8 +87,8 @@ public class SwitchChapter : MonoBehaviour
 				if (PlayerPrefs.GetInt("Language") > 0)
 				{
 					Translator translator = new Translator();
-					chapters[i].title[0] = translator.Translate(chapters[i].lineID, "Campaign");
-					chapters[i].description[0] = translator.Translate(chapters[i].lineDescriptionID, "Campaign");
+					chapters[i].title[0] = chapters[i].title[0];
+					chapters[i].description[0] = chapters[i].description[0];
 				}
 				title.text = chapters[i].title[language];
 				description.text = chapters[i].description[language];
@@ -102,7 +102,7 @@ public class SwitchChapter : MonoBehaviour
 			fadeScreen.fadeout = true;
 			if (chapters[i].unlockHat != string.Empty)
 			{
-				ObscuredPrefs.SetString(chapters[i].unlockHat, "1");
+				PlayerPrefs.SetString(chapters[i].unlockHat, "1");
 			}
 		}
 	}

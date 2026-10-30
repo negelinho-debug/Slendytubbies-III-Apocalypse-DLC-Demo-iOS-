@@ -138,9 +138,9 @@ public class OptionsManager : MonoBehaviour
 		}
 		if (mouseSensitivity != null)
 		{
-			if (ObscuredPrefs.HasKey("Mouse"))
+			if (PlayerPrefs.HasKey("Mouse"))
 			{
-				mouseSensitivity.value = ObscuredPrefs.GetInt("Mouse");
+				mouseSensitivity.value = PlayerPrefs.GetInt("Mouse");
 			}
 			else
 			{
@@ -163,7 +163,7 @@ public class OptionsManager : MonoBehaviour
 
 	public void SetSensitivity()
 	{
-		ObscuredPrefs.SetInt("Mouse", (int)mouseSensitivity.value);
+		PlayerPrefs.SetInt("Mouse", (int)mouseSensitivity.value);
 	}
 
 	public void SetGlobalValues()

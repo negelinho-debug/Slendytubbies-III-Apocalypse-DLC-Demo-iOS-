@@ -5,7 +5,7 @@ public class AntiCheat : MonoBehaviour
 {
 	private void Start()
 	{
-		SpeedHackDetector.StartDetection(OnSpeedHackDetected);
+		// Missing anti-cheat plugin.
 	}
 
 	private void OnSpeedHackDetected()

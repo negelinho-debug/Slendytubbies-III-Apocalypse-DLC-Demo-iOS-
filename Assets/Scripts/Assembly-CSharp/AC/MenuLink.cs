@@ -37,9 +37,9 @@ namespace AC
 		{
 			if ((bool)element && setTextLabels)
 			{
-				if ((bool)GetComponent<GUIText>())
+				if ((bool)GetComponent<UnityEngine.UI.Text>())
 				{
-					GetComponent<GUIText>().text = GetLabel();
+					GetComponent<UnityEngine.UI.Text>().text = GetLabel();
 				}
 				if ((bool)GetComponent<TextMesh>())
 				{

@@ -93,7 +93,7 @@ public class DrawStraightLine
 
 	public static void Draw(Vector2 pointA, Vector2 pointB, Color color, float width, bool antiAlias)
 	{
-		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsWebPlayer)
+		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
 		{
 			DrawLineWindows(pointA, pointB, color, width, antiAlias);
 		}

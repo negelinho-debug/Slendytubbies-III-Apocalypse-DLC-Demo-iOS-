@@ -24,9 +24,9 @@ namespace AC
 			{
 				gameObject.layer = LayerMask.NameToLayer(AdvGame.GetReferences().settingsManager.backgroundImageLayer);
 			}
-			if ((bool)GetComponent<GUITexture>())
+			if ((bool)GetComponent<UnityEngine.UI.RawImage>())
 			{
-				GetComponent<GUITexture>().enabled = true;
+				GetComponent<UnityEngine.UI.RawImage>().enabled = true;
 			}
 			else
 			{
@@ -37,9 +37,9 @@ namespace AC
 		public void TurnOff()
 		{
 			gameObject.layer = LayerMask.NameToLayer(AdvGame.GetReferences().settingsManager.deactivatedLayer);
-			if ((bool)GetComponent<GUITexture>())
+			if ((bool)GetComponent<UnityEngine.UI.RawImage>())
 			{
-				GetComponent<GUITexture>().enabled = false;
+				GetComponent<UnityEngine.UI.RawImage>().enabled = false;
 			}
 			else
 			{
@@ -51,9 +51,9 @@ namespace AC
 		{
 			if (shakeIntensity > 0f)
 			{
-				GetComponent<GUITexture>().pixelInset = originalPixelInset;
+				LegacyGuiRect.Set(gameObject, originalPixelInset);
 			}
-			originalPixelInset = GetComponent<GUITexture>().pixelInset;
+			originalPixelInset = LegacyGuiRect.Get(gameObject);
 			shakeDuration = _duration;
 			startTime = Time.time;
 			shakeIntensity = _shakeIntensity;
@@ -62,18 +62,18 @@ namespace AC
 
 		private void Update()
 		{
-			if ((bool)GetComponent<GUITexture>())
+			if ((bool)GetComponent<UnityEngine.UI.RawImage>())
 			{
 				if (shakeIntensity > 0f)
 				{
 					float num = Random.Range(0f, shakeIntensity) * 0.2f;
-					GetComponent<GUITexture>().pixelInset = new Rect(originalPixelInset.x - Random.Range(0f, shakeIntensity) * 0.1f, originalPixelInset.y - Random.Range(0f, shakeIntensity) * 0.1f, originalPixelInset.width + num, originalPixelInset.height + num);
+					LegacyGuiRect.Set(gameObject, new Rect(originalPixelInset.x - Random.Range(0f, shakeIntensity) * 0.1f, originalPixelInset.y - Random.Range(0f, shakeIntensity) * 0.1f, originalPixelInset.width + num, originalPixelInset.height + num));
 					shakeIntensity = Mathf.Lerp(startShakeIntensity, 0f, AdvGame.Interpolate(startTime, shakeDuration, MoveMethod.Linear, null));
 				}
 				else if (shakeIntensity < 0f)
 				{
 					shakeIntensity = 0f;
-					GetComponent<GUITexture>().pixelInset = originalPixelInset;
+					LegacyGuiRect.Set(gameObject, originalPixelInset);
 				}
 			}
 		}

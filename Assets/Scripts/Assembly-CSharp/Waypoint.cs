@@ -17,7 +17,7 @@ public class Waypoint : MonoBehaviour
 		Translator translator = new Translator();
 		if (PlayerPrefs.GetInt("Language") > 0)
 		{
-			thetext[language] = translator.Translate(ID, "Campaign");
+			thetext[language] = thetext[language];
 		}
 	}
 

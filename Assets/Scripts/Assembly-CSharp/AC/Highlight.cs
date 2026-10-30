@@ -53,9 +53,9 @@ namespace AC
 					}
 				}
 			}
-			if ((bool)GetComponent<GUITexture>())
+			if ((bool)GetComponent<UnityEngine.UI.Graphic>())
 			{
-				originalColors.Add(GetComponent<GUITexture>().color);
+				originalColors.Add(GetComponent<UnityEngine.UI.Graphic>().color);
 			}
 		}
 
@@ -223,12 +223,12 @@ namespace AC
 					}
 				}
 			}
-			if ((bool)GetComponent<GUITexture>())
+			if ((bool)GetComponent<UnityEngine.UI.Graphic>())
 			{
 				float a = Mathf.Lerp(0.2f, 1f, highlight - 1f);
 				Color color3 = originalColors[num];
 				color3.a = a;
-				GetComponent<GUITexture>().color = color3;
+				GetComponent<UnityEngine.UI.Graphic>().color = color3;
 			}
 		}
 	}

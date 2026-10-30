@@ -15,7 +15,7 @@ public class QuicktimeEvent : MonoBehaviour
 	private void OnEnable()
 	{
 		hasCompleted = false;
-		GetComponent<GUITexture>().color = Color.white;
+		GetComponent<UnityEngine.UI.Graphic>().color = Color.white;
 		prefName = gameObject.name;
 		PlayerPrefs.SetString(prefName, "0");
 	}
@@ -26,7 +26,7 @@ public class QuicktimeEvent : MonoBehaviour
 		{
 			if (Input.GetAxis(buttonName) >= 0.01f && !hasCompleted)
 			{
-				GetComponent<GUITexture>().color = Color.green;
+				GetComponent<UnityEngine.UI.Graphic>().color = Color.green;
 				hasCompleted = true;
 				PlayerPrefs.SetString(prefName, "1");
 				GetComponent<AudioSource>().Play();
@@ -34,7 +34,7 @@ public class QuicktimeEvent : MonoBehaviour
 		}
 		else if (Input.GetAxis(buttonName) <= -0.01f && !hasCompleted)
 		{
-			GetComponent<GUITexture>().color = Color.green;
+			GetComponent<UnityEngine.UI.Graphic>().color = Color.green;
 			hasCompleted = true;
 			PlayerPrefs.SetString(prefName, "1");
 			GetComponent<AudioSource>().Play();
