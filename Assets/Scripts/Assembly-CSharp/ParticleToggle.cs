@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class ParticleToggle : MonoBehaviour
 {
-	public EllipsoidParticleEmitter[] epeList;
+	public ParticleSystem[] epeList;
 
 	private void OnEnable()
 	{
-		EllipsoidParticleEmitter[] array = epeList;
-		foreach (EllipsoidParticleEmitter ellipsoidParticleEmitter in array)
+		ParticleSystem[] array = epeList;
+		foreach (ParticleSystem ellipsoidParticleEmitter in array)
 		{
-			ellipsoidParticleEmitter.emit = true;
+			ellipsoidParticleEmitter.Play();
 		}
 	}
 
 	private void OnDisable()
 	{
-		EllipsoidParticleEmitter[] array = epeList;
-		foreach (EllipsoidParticleEmitter ellipsoidParticleEmitter in array)
+		ParticleSystem[] array = epeList;
+		foreach (ParticleSystem ellipsoidParticleEmitter in array)
 		{
-			ellipsoidParticleEmitter.emit = false;
+			ellipsoidParticleEmitter.Stop();
 		}
 	}
 }
