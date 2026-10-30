@@ -1,0 +1,133 @@
+
+name: Apocalypse - Fix Unity 2021 Compile Errors 1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a separate fixed branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const source = 'unity2021-no-lfs';
+            const target = 'unity2021-compile-fix1';
+
+            const sourceRef = await github.rest.git.getRef({
+              owner, repo,
+              ref: `heads/${source}`
+            });
+
+            try {
+              await github.rest.git.getRef({
+                owner, repo,
+                ref: `heads/${target}`
+              });
+              core.notice(`Continuing on ${target}`);
+            } catch (e) {
+              if (e.status !== 404) throw e;
+
+              await github.rest.git.createRef({
+                owner, repo,
+                ref: `refs/heads/${target}`,
+                sha: sourceRef.data.object.sha
+              });
+            }
+
+            async function patch(path, transform) {
+              const r = await github.rest.repos.getContent({
+                owner, repo, path, ref: target
+              });
+
+              if (Array.isArray(r.data) || !r.data.content) {
+                throw new Error(`Not a text file: ${path}`);
+              }
+
+              const before = Buffer.from(
+                r.data.content, 'base64'
+              ).toString('utf8');
+
+              const after = transform(before);
+
+              if (before === after) {
+                core.notice(`Unchanged: ${path}`);
+                return;
+              }
+
+              await github.rest.repos.createOrUpdateFileContents({
+                owner, repo,
+                branch: target,
+                path,
+                sha: r.data.sha,
+                message: `Unity 2021 fix: ${path}`,
+                content: Buffer.from(
+                  after, 'utf8'
+                ).toString('base64')
+              });
+
+              core.notice(`Patched: ${path}`);
+            }
+
+            await patch('Packages/manifest.json', content => {
+              const manifest = JSON.parse(content);
+              manifest.dependencies['com.unity.ugui'] = '1.0.0';
+              return JSON.stringify(manifest, null, 2) + '\n';
+            });
+
+            await patch(
+              'Assets/Scripts/Assembly-CSharp/ForcedReset.cs',
+              content => {
+                return content.replace(
+                  '[RequireComponent(typeof(GUITexture))]\n',
+                  ''
+                );
+              }
+            );
+
+            await patch(
+              'Assets/Scripts/Assembly-CSharp/UnityStandardAssets/Utility/SimpleActivatorMenu.cs',
+              content => {
+                return content.replace(
+                  'public GUIText camSwitchButton;',
+                  'public UnityEngine.UI.Text camSwitchButton;'
+                );
+              }
+            );
+
+            await patch(
+              'Assets/Scripts/Assembly-CSharp/ParticleToggle.cs',
+              content => {
+                return content
+                  .replaceAll(
+                    'EllipsoidParticleEmitter',
+                    'ParticleSystem'
+                  )
+                  .replaceAll(
+                    '.emit = true;',
+                    '.Play();'
+                  )
+                  .replaceAll(
+                    '.emit = false;',
+                    '.Stop();'
+                  );
+              }
+            );
+
+            await patch(
+              'Assets/Scripts/Assembly-CSharp/RunTime_Terrain_Convertion.cs',
+              content => {
+                if (content.startsWith('#if !UNITY_2021_3_OR_NEWER')) {
+                  return content;
+                }
+                return '#if !UNITY_2021_3_OR_NEWER\n' +
+                  content + '\n#endif\n';
+              }
+            );
+
+            core.notice(`Prepared ${target}`);
