@@ -1,0 +1,165 @@
+
+name: Apocalypse - Unity 2021 Compile Fix 3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix3:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out fix2 source
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix2
+          lfs: false
+          persist-credentials: true
+
+      - name: Patch remaining Unity 2021 compile API errors
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=unity2021-compile-fix3
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo 'Fix3 branch already exists; not overwriting.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('Assets/Scripts/Assembly-CSharp')
+          updated = []
+
+          def patch(name, old, new):
+              p = root / name
+              s = p.read_text(encoding='utf-8')
+              if old not in s:
+                  raise RuntimeError(f'Expected pattern missing: {name}: {old}')
+              p.write_text(s.replace(old, new), encoding='utf-8')
+              updated.append(str(p))
+
+          # Replace obsolete GUI components.
+          for name in ('ArrowChangeColor.cs', 'FadeScreen.cs',
+                       'QuicktimeEvent.cs', 'AC/Highlight.cs'):
+              patch(name, 'GetComponent<GUITexture>()',
+                    'GetComponent<UnityEngine.UI.Graphic>()')
+          patch('AC/MenuLink.cs', 'GetComponent<GUIText>()',
+                'GetComponent<UnityEngine.UI.Text>()')
+
+          # Adapt old pixelInset calls.
+          p = root / 'AC/BackgroundImage.cs'
+          s = p.read_text(encoding='utf-8')
+          expected = (
+              'GetComponent<GUITexture>().pixelInset = originalPixelInset;',
+              'originalPixelInset = GetComponent<GUITexture>().pixelInset;',
+              'GetComponent<GUITexture>().pixelInset = new Rect('
+          )
+          if not all(x in s for x in expected):
+              raise RuntimeError('BackgroundImage layout differs; aborting')
+          s = s.replace(
+              expected[0],
+              'LegacyGuiRect.Set(gameObject, originalPixelInset);'
+          )
+          s = s.replace(
+              expected[1],
+              'originalPixelInset = LegacyGuiRect.Get(gameObject);'
+          )
+          s, count = re.subn(
+              r'GetComponent<GUITexture>\(\)\.pixelInset = new Rect\(([^\n]+)\);',
+              r'LegacyGuiRect.Set(gameObject, new Rect(\1));',
+              s
+          )
+          if count != 1:
+              raise RuntimeError(
+                  f'Expected one pixelInset expression; found {count}'
+              )
+          s = s.replace(
+              'GetComponent<GUITexture>()',
+              'GetComponent<UnityEngine.UI.RawImage>()'
+          )
+          p.write_text(s, encoding='utf-8')
+          updated.append(str(p))
+
+          bridge = root / 'LegacyGuiRect.cs'
+          if bridge.exists():
+              raise RuntimeError('LegacyGuiRect already exists')
+          bridge.write_text('''using UnityEngine;
+          public static class LegacyGuiRect
+          {
+              public static Rect Get(GameObject obj)
+              {
+                  var t = obj.GetComponent<RectTransform>();
+                  return t == null ? new Rect() :
+                      new Rect(t.anchoredPosition.x, t.anchoredPosition.y,
+                               t.sizeDelta.x, t.sizeDelta.y);
+              }
+              public static void Set(GameObject obj, Rect rect)
+              {
+                  var t = obj.GetComponent<RectTransform>();
+                  if (t == null) return;
+                  t.anchoredPosition = new Vector2(rect.x, rect.y);
+                  t.sizeDelta = new Vector2(rect.width, rect.height);
+              }
+          }
+          ''', encoding='utf-8')
+          updated.append(str(bridge))
+
+          # Temporary original-text fallbacks.
+          patch('GUITextLanguage.cs',
+                'translator.Translate(ID, "Campaign")',
+                'languagetext[languageID]')
+          patch('TranslateText.cs',
+                'translator.Translate(ID, fileName)',
+                'orgText')
+          patch('Waypoint.cs',
+                'translator.Translate(ID, "Campaign")',
+                'thetext[language]')
+          patch('SwitchChapter.cs',
+                'translator.Translate(chapters[i].lineID, "Campaign")',
+                'chapters[i].title[0]')
+          patch('SwitchChapter.cs',
+                'translator.Translate(chapters[i].lineDescriptionID, "Campaign")',
+                'chapters[i].description[0]')
+
+          # Replace missing preference API.
+          for name in (
+              'MouseLook.cs',
+              'OptionsManager.cs',
+              'SwitchChapter.cs'
+          ):
+              patch(name, 'ObscuredPrefs.', 'PlayerPrefs.')
+
+          patch(
+              'AntiCheat.cs',
+              'SpeedHackDetector.StartDetection(OnSpeedHackDetected);',
+              '// Missing anti-cheat plugin.'
+          )
+
+          patch(
+              'DrawStraightLine.cs',
+              ' || Application.platform == RuntimePlatform.WindowsWebPlayer',
+              ''
+          )
+          patch(
+              'UnityStandardAssets/ImageEffects/DepthOfField.cs',
+              'Graphics.DrawProceduralIndirect(',
+              'Graphics.DrawProceduralIndirectNow('
+          )
+
+          print('Patched files:')
+          for p in sorted(set(updated)):
+              print(p)
+          print('UI and gameplay still require real testing.')
+          PY
+
+          git add -A
+          git diff --cached --stat
+          git commit -m 'Unity 2021 compile fixes pass 3'
+          git push origin "HEAD:refs/heads/$branch"
