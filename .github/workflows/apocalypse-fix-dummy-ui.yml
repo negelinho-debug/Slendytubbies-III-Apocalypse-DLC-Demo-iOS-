@@ -1,0 +1,78 @@
+
+name: Apocalypse - Remove Fake Unity UI Classes
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-dummy-unity-classes:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out patched Unity project
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix1
+          lfs: false
+          persist-credentials: true
+
+      - name: Create isolated fix branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=unity2021-compile-fix2
+
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Branch already exists; nothing overwritten."
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          roots = [Path('Assets/Scripts/UnityEngine.UI')]
+          candidates = [
+              Path('Assets/Scripts/UnityEngine/UnityEngine/GUISkin.cs')
+          ]
+
+          for root in roots:
+              if root.exists():
+                  candidates.extend(root.rglob('*.cs'))
+
+          deleted = 0
+          for path in candidates:
+              if not path.is_file():
+                  continue
+
+              content = path.read_text(
+                  encoding='utf-8', errors='replace'
+              )
+
+              if 'Dummy class.' not in content:
+                  continue
+
+              print('Removing dummy:', path)
+              path.unlink()
+
+              meta = Path(str(path) + '.meta')
+              if meta.exists():
+                  meta.unlink()
+
+              deleted += 1
+
+          if deleted == 0:
+              raise SystemExit('No dummy classes found')
+
+          print('Removed:', deleted)
+          PY
+
+          git add -A
+          git diff --cached --stat
+          git commit -m "Remove fake Unity UI classes"
+          git push origin "HEAD:refs/heads/$branch"
