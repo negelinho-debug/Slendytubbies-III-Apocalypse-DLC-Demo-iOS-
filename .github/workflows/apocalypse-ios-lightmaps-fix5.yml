@@ -1,0 +1,132 @@
+
+name: Apocalypse - Fix iOS Lightmaps 5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert-lightmaps:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Get Apocalypse fix4 source
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix4
+          lfs: false
+          persist-credentials: true
+
+      - name: Set up Python for texture conversion
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install BC3 texture decoder
+        run: python3 -m pip install --quiet 'Pillow>=10,<13'
+
+      - name: Convert two unsupported lightmaps and create fix5
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=unity2021-compile-fix5
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Branch $branch already exists; not overwriting it."
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          from PIL import Image
+
+          folder = Path('Assets/CHAPTER 4/Scenes/Chap4Menu')
+          files = (
+              folder / 'Lightmap-0_comp_dir.texture2D',
+              folder / 'Lightmap-0_comp_light.texture2D',
+          )
+
+          def get_int(text, name):
+              matches = re.findall(
+                  r'^  ' + re.escape(name) + r': (\d+)$',
+                  text, flags=re.M
+              )
+              if len(matches) != 1:
+                  raise RuntimeError(f'Expected one {name}, found {len(matches)}')
+              return int(matches[0])
+
+          def set_int(text, name, number):
+              pattern = r'^  ' + re.escape(name) + r': \d+$'
+              text, count = re.subn(
+                  pattern, f'  {name}: {number}', text, flags=re.M
+              )
+              if count != 1:
+                  raise RuntimeError(f'Unable to update {name}')
+              return text
+
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              width = get_int(text, 'm_Width')
+              height = get_int(text, 'm_Height')
+              levels = get_int(text, 'm_MipCount')
+              old_format = get_int(text, 'm_TextureFormat')
+              if old_format != 12:
+                  raise RuntimeError(f'{path}: expected DXT5 (12), found {old_format}')
+
+              match = re.search(r'^  _typelessdata: ([0-9A-Fa-f]+)$', text, re.M)
+              if not match:
+                  raise RuntimeError(f'{path}: missing inline compressed pixel data')
+              compressed = bytes.fromhex(match.group(1))
+              if get_int(text, 'm_CompleteImageSize') != len(compressed):
+                  raise RuntimeError(f'{path}: compressed length mismatch')
+              image_data_match = re.search(r'^  image data: (\d+)$', text, re.M)
+              if not image_data_match or int(image_data_match.group(1)) != len(compressed):
+                  raise RuntimeError(f'{path}: image data length mismatch')
+
+              output = bytearray()
+              offset = 0
+              w, h = width, height
+              for level in range(levels):
+                  block_bytes = ((w + 3) // 4) * ((h + 3) // 4) * 16
+                  chunk = compressed[offset:offset + block_bytes]
+                  if len(chunk) != block_bytes:
+                      raise RuntimeError(f'{path}: incomplete mip level {level}')
+                  rgba = Image.frombytes('RGBA', (w, h), chunk, 'bcn', 3).tobytes()
+                  if len(rgba) != w * h * 4:
+                      raise RuntimeError(f'{path}: invalid RGBA mip level {level}')
+                  output.extend(rgba)
+                  offset += block_bytes
+                  w, h = max(1, w // 2), max(1, h // 2)
+              if offset != len(compressed):
+                  raise RuntimeError(f'{path}: unexpected trailing image bytes')
+
+              text = set_int(text, 'm_TextureFormat', 4)
+              text = set_int(text, 'm_CompleteImageSize', len(output))
+              text, count = re.subn(
+                  r'^  image data: \d+$', f'  image data: {len(output)}',
+                  text, flags=re.M
+              )
+              if count != 1:
+                  raise RuntimeError(f'{path}: cannot update image-data size')
+              text, count = re.subn(
+                  r'^  _typelessdata: [0-9A-Fa-f]+$',
+                  lambda _: '  _typelessdata: ' + output.hex(),
+                  text, flags=re.M
+              )
+              if count != 1:
+                  raise RuntimeError(f'{path}: cannot update pixel data')
+              path.write_text(text, encoding='utf-8')
+              print(f'Converted {path}: {len(compressed)} DXT5 bytes '
+                    f'-> {len(output)} RGBA32 bytes, {levels} mips')
+          PY
+
+          git add -- 'Assets/CHAPTER 4/Scenes/Chap4Menu/Lightmap-0_comp_dir.texture2D' \
+            'Assets/CHAPTER 4/Scenes/Chap4Menu/Lightmap-0_comp_light.texture2D'
+          git diff --cached --check
+          git commit -m 'Convert DXT5 menu lightmaps to iOS-safe RGBA32'
+          git push origin "HEAD:refs/heads/$branch"
