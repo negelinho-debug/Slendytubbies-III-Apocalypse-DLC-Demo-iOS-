@@ -10,7 +10,7 @@ PlayerSettings:
     data[2]: 2416533183
     data[3]: 3889554518
   AndroidProfiler: 0
-  defaultScreenOrientation: 0
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
