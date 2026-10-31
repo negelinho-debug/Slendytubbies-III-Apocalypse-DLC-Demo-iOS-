@@ -1,0 +1,56 @@
+
+name: Apocalypse - Unity 2021 Compile Fix 4 HDR
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-hdr:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout previous working branch
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix3
+          lfs: false
+          persist-credentials: true
+
+      - name: Fix three Camera.hdr errors and create fix4
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=unity2021-compile-fix4
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Branch $branch already exists. Nothing overwritten."
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path('Assets/Scripts/Assembly-CSharp/UnityStandardAssets/ImageEffects')
+          files = ('SunShafts.cs', 'BloomAndFlares.cs', 'Bloom.cs')
+          old = 'GetComponent<Camera>().hdr'
+          new = 'GetComponent<Camera>().allowHDR'
+          for filename in files:
+              path = root / filename
+              content = path.read_text(encoding='utf-8')
+              count = content.count(old)
+              if count != 1:
+                  raise RuntimeError(f'{filename}: expected 1 old HDR call, got {count}')
+              path.write_text(content.replace(old, new), encoding='utf-8')
+              print('Fixed:', path)
+          PY
+
+          git add -A
+          git diff --cached --check
+          git diff --cached --stat
+          git commit -m 'Fix obsolete Camera.hdr references for Unity 2021'
+          git push origin "HEAD:refs/heads/$branch"
