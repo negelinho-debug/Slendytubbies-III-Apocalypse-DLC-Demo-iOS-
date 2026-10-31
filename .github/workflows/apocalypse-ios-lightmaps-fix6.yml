@@ -1,0 +1,185 @@
+
+name: Apocalypse - Fix iOS DEMOLEVEL Lightmaps 6
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-demolevel-lightmaps:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out Fix 5
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix5
+          lfs: false
+          persist-credentials: true
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow
+        run: python3 -m pip install --quiet 'Pillow>=10,<13'
+
+      - name: Convert DEMOLEVEL lightmaps
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          branch=unity2021-compile-fix6
+
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "Branch already exists; not overwriting."
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          from PIL import Image
+
+          folder = Path('Assets/CHAPTER 4/Scenes/DEMOLEVEL')
+          paths = (
+              folder / 'Lightmap-0_comp_dir.texture2D',
+              folder / 'Lightmap-0_comp_light.texture2D',
+          )
+
+          def read_int(text, name):
+              values = re.findall(
+                  r'^  ' + re.escape(name) + r': (\d+)$',
+                  text, re.M
+              )
+              if len(values) != 1:
+                  raise RuntimeError(
+                      f'Expected one {name}, found {len(values)}'
+                  )
+              return int(values[0])
+
+          def update_int(text, name, value):
+              text, count = re.subn(
+                  r'^  ' + re.escape(name) + r': \d+$',
+                  f'  {name}: {value}',
+                  text,
+                  flags=re.M
+              )
+              if count != 1:
+                  raise RuntimeError(f'Could not change {name}')
+              return text
+
+          for path in paths:
+              text = path.read_text(encoding='utf-8')
+              width = read_int(text, 'm_Width')
+              height = read_int(text, 'm_Height')
+              levels = read_int(text, 'm_MipCount')
+              fmt = read_int(text, 'm_TextureFormat')
+
+              if fmt != 12:
+                  raise RuntimeError(
+                      f'{path}: expected DXT5 format 12, got {fmt}'
+                  )
+
+              match = re.search(
+                  r'^  _typelessdata: ([0-9a-fA-F]+)$',
+                  text,
+                  re.M
+              )
+              if not match:
+                  raise RuntimeError(
+                      f'{path}: no embedded texture data'
+                  )
+
+              compressed = bytes.fromhex(match.group(1))
+
+              if read_int(text, 'm_CompleteImageSize') != len(compressed):
+                  raise RuntimeError(f'{path}: source size mismatch')
+
+              if not re.search(
+                  r'^  image data: ' + str(len(compressed)) + r'$',
+                  text,
+                  re.M
+              ):
+                  raise RuntimeError(
+                      f'{path}: inline image size mismatch'
+                  )
+
+              rgba_mips = bytearray()
+              offset = 0
+              w, h = width, height
+
+              for level in range(levels):
+                  size = ((w + 3) // 4) * ((h + 3) // 4) * 16
+                  mip = compressed[offset:offset + size]
+
+                  if len(mip) != size:
+                      raise RuntimeError(
+                          f'{path}: missing BC3 mip {level}'
+                      )
+
+                  rgba_mips.extend(
+                      Image.frombytes(
+                          'RGBA', (w, h), mip, 'bcn', 3
+                      ).tobytes()
+                  )
+
+                  offset += size
+                  w, h = max(1, w // 2), max(1, h // 2)
+
+              if offset != len(compressed):
+                  raise RuntimeError(
+                      f'{path}: extra compressed bytes'
+                  )
+
+              text = update_int(text, 'm_TextureFormat', 4)
+              text = update_int(
+                  text, 'm_CompleteImageSize', len(rgba_mips)
+              )
+
+              text, count = re.subn(
+                  r'^  image data: \d+$',
+                  f'  image data: {len(rgba_mips)}',
+                  text,
+                  flags=re.M
+              )
+
+              if count != 1:
+                  raise RuntimeError(
+                      f'{path}: could not update image size'
+                  )
+
+              text, count = re.subn(
+                  r'^  _typelessdata: [0-9a-fA-F]+$',
+                  lambda m: '  _typelessdata: ' + rgba_mips.hex(),
+                  text,
+                  flags=re.M
+              )
+
+              if count != 1:
+                  raise RuntimeError(
+                      f'{path}: could not update pixels'
+                  )
+
+              path.write_text(text, encoding='utf-8')
+
+              print(
+                  f'Converted {path}: BC3 -> RGBA32, '
+                  f'{width}x{height}, {levels} mips'
+              )
+          PY
+
+          git add -- \
+            'Assets/CHAPTER 4/Scenes/DEMOLEVEL/Lightmap-0_comp_dir.texture2D' \
+            'Assets/CHAPTER 4/Scenes/DEMOLEVEL/Lightmap-0_comp_light.texture2D'
+
+          git diff --cached --check
+
+          git commit -m 'Fix DEMOLEVEL lightmaps for iOS'
+          git push origin "HEAD:refs/heads/$branch"
