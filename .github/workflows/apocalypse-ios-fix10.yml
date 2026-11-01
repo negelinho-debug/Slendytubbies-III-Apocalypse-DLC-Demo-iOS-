@@ -1,0 +1,379 @@
+
+name: Apocalypse DLC - FIX 10 Original iOS Recovery
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix10:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout FIX 9 project
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix9
+          fetch-depth: 0
+
+      - name: Patch original scripts and create FIX 10 icon
+        shell: bash
+        run: |
+          set -euo pipefail
+          git switch -c unity2021-compile-fix10
+          test -f 'Assets/CHAPTER 4/Scenes/Chap4Menu.unity'
+          test -f 'Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity'
+          test -f 'Assets/Scripts/ApocalypseTouchControls.cs'
+          test -f 'Assets/Scripts/ApocalypseDiagnostics9.cs'
+
+          cat > /tmp/apocalypse_fix10_patch.py <<'PY'
+          from pathlib import Path
+          import zlib, struct
+
+          BASE = Path('Assets/Scripts/Assembly-CSharp')
+
+          def read(name):
+              p = BASE / (name + '.cs')
+              if not p.exists():
+                  raise RuntimeError('Missing source: ' + str(p))
+              return p.read_text(encoding='utf-8-sig')
+
+          def write(name, s):
+              (BASE / (name + '.cs')).write_text(
+                  s, encoding='utf-8')
+
+          def section(s, begin, end, replacement):
+              if s.count(begin) != 1:
+                  raise RuntimeError('Unexpected source: ' + begin)
+              i = s.index(begin)
+              j = s.find(end, i + len(begin))
+              if j < 0:
+                  raise RuntimeError('Missing ending: ' + end)
+              return s[:i] + replacement + '\n\n' + s[j:]
+
+          menu = read('MainMenu')
+          menu = section(
+              menu, '\tprivate void Awake()',
+              '\tprivate void Start()', '''
+              private void Awake()
+              {
+                  Time.timeScale = 1f;
+                  if (MenuItems == null ||
+                      languageButton == null ||
+                      languages == null ||
+                      languages.Count == 0)
+                  {
+                      Debug.LogWarning(
+                          "[FIX10] Original menu references missing");
+                      return;
+                  }
+                  if (!PlayerPrefs.HasKey("Language"))
+                      PlayerPrefs.SetInt("Language", 0);
+                  int id = Mathf.Clamp(
+                      PlayerPrefs.GetInt("Language"),
+                      0, languages.Count - 1);
+                  PlayerPrefs.SetInt("Language", id);
+                  languageButton.sprite = languages[id].icon;
+              }''')
+          menu = section(
+              menu, '\tprivate void Start()',
+              '\tprivate void Update()', '''
+              private void Start()
+              {
+                  if (continueButton != null &&
+                      !string.IsNullOrEmpty(
+                          PlayerPrefs.GetString("Chapter")))
+                      continueButton.SetActive(true);
+                  if (antiCheat != null &&
+                      GameObject.FindWithTag("AntiCheat") == null)
+                      UnityEngine.Object.DontDestroyOnLoad(
+                          UnityEngine.Object.Instantiate(
+                              antiCheat, transform.position,
+                              transform.rotation).gameObject);
+              }''')
+          menu = section(
+              menu, '\tprivate void Update()',
+              '\tpublic void StartNewGame()', '''
+              private void Update()
+              {
+                  if (fadeMusic && music != null)
+                      music.volume -= Time.deltaTime / 4f;
+                  if (zeoworksMessage != null &&
+                      zeoworksMessage.activeSelf)
+                  {
+                      timer += Time.deltaTime;
+                      if (Input.anyKeyDown || timer > 10f)
+                      {
+                          zeoworksMessage.SetActive(false);
+                          if (MenuItems != null)
+                              MenuItems.SetActive(true);
+                          firstTime = false;
+                          Splashes splash = GetComponent<Splashes>();
+                          if (splash != null &&
+                              splash.splashesContent != null)
+                              splash.enabled = true;
+                      }
+                  }
+              }''')
+
+          idx = menu.index('\tprivate void OnGUI()')
+          last = menu.rfind('\n}')
+          assert idx < last
+          menu = menu[:idx] + '''
+              private void OnGUI()
+              {
+              #if UNITY_IOS && !UNITY_EDITOR
+                  if (MenuItems == null ||
+                      languageButton == null ||
+                      languages == null ||
+                      languages.Count == 0)
+                  {
+                      GUI.skin = null;
+                      GUI.color = Color.white;
+                      float w = Screen.width, h = Screen.height;
+                      GUI.Box(
+                          new Rect(w*.2f,h*.12f,w*.6f,h*.76f),
+                          "SLENDYTUBBIES III : APOCALYPSE\\nFIX 10 - ORIGINAL SCENE RECOVERY");
+
+                      if (GUI.Button(
+                          new Rect(w*.27f,h*.37f,w*.46f,h*.15f),
+                          "PLAY ORIGINAL DEMOLEVEL"))
+                      {
+                          PlayerPrefs.SetString(
+                              "Chapter", startingChapter);
+                          PlayerPrefs.Save();
+                          SceneManager.LoadScene(startingChapter);
+                      }
+                      if (GUI.Button(
+                          new Rect(w*.27f,h*.57f,w*.46f,h*.15f),
+                          "TRY ORIGINAL LOADING"))
+                      {
+                          PlayerPrefs.SetString(
+                              "Chapter", startingChapter);
+                          PlayerPrefs.Save();
+                          SceneManager.LoadScene("Loading");
+                      }
+                      return;
+                  }
+              #endif
+                  if (!showLanguageOptions) return;
+                  GUI.skin = guiSkin;
+                  int num = Screen.height / 15;
+                  for (int i = 0; i < languages.Count; i++)
+                  {
+                      if (GUI.Button(
+                          new Rect(0f,
+                              Screen.height - num * languages.Count
+                              + i * num - num,
+                              Screen.width, num),
+                          languages[i].name))
+                      {
+                          showLanguageOptions = false;
+                          PlayerPrefs.SetInt("Language", i);
+                          if (firstTime &&
+                              zeoworksMessage != null)
+                              zeoworksMessage.SetActive(true);
+                          else if (MenuItems != null)
+                              MenuItems.SetActive(true);
+                          if (languageButton != null)
+                              languageButton.sprite =
+                                  languages[i].icon;
+                      }
+                  }
+              }''' + menu[last:]
+          write('MainMenu', menu)
+
+          spl = read('Splashes')
+          spl = section(
+              spl, '\tprivate void Start()',
+              '\tprivate IEnumerator PlayAllSplashes()', '''
+              private void Start()
+              {
+                  if (!useSplashScreen ||
+                      splashesContent == null)
+                  {
+                      Debug.LogWarning(
+                          "[FIX10] Missing splash content");
+                      GameObject overlay =
+                          GameObject.Find("Splashes");
+                      if (overlay != null &&
+                          overlay != gameObject)
+                          overlay.SetActive(false);
+                      enabled = false;
+                      return;
+                  }
+                  Graphic[] all =
+                      splashesContent.GetComponentsInChildren<Graphic>(
+                          true);
+                  if (all == null || all.Length == 0)
+                      return;
+                  foreach (Graphic graphic in all)
+                      if (graphic !=
+                          splashesContent.GetComponent<Graphic>())
+                          splashes.Add(graphic);
+                  StartCoroutine(PlayAllSplashes());
+              }''')
+          write('Splashes', spl)
+
+          up = read('Updater')
+          up = up.replace(
+              '\tpublic void Start()\n\t{',
+              '\tpublic void Start()\n\t{' +
+              '\n#if UNITY_IOS && !UNITY_EDITOR' +
+              '\n        enabled = false;' +
+              '\n        return;' +
+              '\n#endif', 1)
+          write('Updater', up)
+
+          disc = read('DiscordController')
+          for sig in [
+              '\tprivate void Update()\n\t{',
+              '\tprivate void OnEnable()\n\t{',
+              '\tprivate void OnDisable()\n\t{'
+          ]:
+              assert disc.count(sig) == 1
+              disabled = '\n#if UNITY_IOS && !UNITY_EDITOR\n'
+              if 'OnEnable' in sig:
+                  disabled += '        enabled = false;\n'
+              disabled += '        return;\n#endif'
+              disc = disc.replace(sig, sig + disabled, 1)
+          write('DiscordController', disc)
+
+          npc = read('NPCPatrol')
+          npc = npc.replace(
+              'if (hideModel)\n\t\t{\n\t\t\tmodel.gameObject.SetActive(false);',
+              'if (hideModel && model != null)\n\t\t{\n\t\t\tmodel.gameObject.SetActive(false);',
+              1)
+          npc = npc.replace(
+              'if (skipAnimFrame)\n\t\t{',
+              'if (skipAnimFrame && model != null && model.clip != null && model["skintubby_moving"] != null)\n\t\t{',
+              1)
+          needle = '\tprivate void Update()\n\t{'
+          assert npc.count(needle) == 1
+          npc = npc.replace(needle, needle + '''
+                  if (waypoints == null ||
+                      waypoints.Length == 0 ||
+                      curPoint < 0 ||
+                      curPoint >= waypoints.Length ||
+                      waypoints[curPoint] == null ||
+                      nma == null ||
+                      !nma.isActiveAndEnabled ||
+                      !nma.isOnNavMesh)
+                  {
+                      Debug.LogWarning(
+                          "[FIX10] Invalid NPC patrol: " +
+                          gameObject.name);
+                      enabled = false;
+                      return;
+                  }''', 1)
+          write('NPCPatrol', npc)
+
+          tog = read('toggleObject')
+          needle = '\tprivate void Update()\n\t{'
+          assert tog.count(needle) == 1
+          tog = tog.replace(needle, needle + '''
+                  if (toToggle == null)
+                  {
+                      Debug.LogWarning(
+                          "[FIX10] Missing toggle target");
+                      enabled = false;
+                      return;
+                  }''', 1)
+          write('toggleObject', tog)
+
+          p = Path('Assets/Scripts/ApocalypseDiagnostics9.cs')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace(
+              'Apocalypse-DIAG9', 'Apocalypse-FIX10'
+          ).replace(
+              'APOCALYPSE DIAG 9', 'APOCALYPSE FIX 10'
+          ).replace(
+              'unity2021-compile-fix9',
+              'unity2021-compile-fix10')
+          p.write_text(s, encoding='utf-8')
+
+          p = Path('Assets/Editor/ApocalypseDiagnostics9Build.cs')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace(
+              'Assets/DIAG9Icon.png',
+              'Assets/FIX10Icon.png'
+          ).replace(
+              'DIAG9 icon missing',
+              'FIX10 icon missing'
+          ).replace(
+              'Apocalypse DIAG 9',
+              'Apocalypse FIX 10')
+          p.write_text(s, encoding='utf-8')
+
+          n = 1024
+          scale = 62
+          glyphs = {
+              'D': [
+                  '11110','10001','10001','10001',
+                  '10001','10001','11110'
+              ],
+              '1': [
+                  '00100','01100','00100','00100',
+                  '00100','00100','01110'
+              ],
+              '0': [
+                  '01110','10001','10001','10001',
+                  '10001','10001','01110'
+              ]
+          }
+          raw = bytearray()
+          for y in range(n):
+              raw.append(0)
+              for x in range(n):
+                  color = (15,17,25)
+                  if (x < 30 or x >= n-30 or
+                      y < 30 or y >= n-30):
+                      color = (200,35,40)
+                  for letter,x0 in [
+                      ('D',50),('1',372),('0',694)
+                  ]:
+                      gx = (x-x0)//scale
+                      gy = (y-288)//scale
+                      if (x >= x0 and y >= 288 and
+                          0 <= gx < 5 and
+                          0 <= gy < 7 and
+                          glyphs[letter][gy][gx] == '1'):
+                          color = (245,245,245)
+                  raw.extend(color)
+
+          def png_chunk(k, data):
+              return (
+                  struct.pack('>I',len(data)) +
+                  k + data +
+                  struct.pack(
+                      '>I',
+                      zlib.crc32(k+data)&0xffffffff)
+              )
+
+          icon = (
+              b'\x89PNG\r\n\x1a\n' +
+              png_chunk(
+                  b'IHDR',
+                  struct.pack('>2I5B',n,n,8,2,0,0,0)
+              ) +
+              png_chunk(b'IDAT',zlib.compress(raw,6)) +
+              png_chunk(b'IEND',b'')
+          )
+          Path('Assets/FIX10Icon.png').write_bytes(icon)
+          print('FIX10 completed: original scenes retained')
+          PY
+
+          python3 /tmp/apocalypse_fix10_patch.py
+
+          git config user.name 'github-actions[bot]'
+          git config user.email \
+            '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add Assets/Scripts/Assembly-CSharp/ \
+                  Assets/Scripts/ApocalypseDiagnostics9.cs \
+                  Assets/Editor/ApocalypseDiagnostics9Build.cs \
+                  Assets/FIX10Icon.png
+
+          git commit -m 'FIX10 iOS original game recovery'
+          git push origin unity2021-compile-fix10
