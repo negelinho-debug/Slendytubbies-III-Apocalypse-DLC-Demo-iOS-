@@ -35,7 +35,7 @@ public class playerFPS : MonoBehaviour
 		{
 			return;
 		}
-		if (Input.GetButton("Run"))
+		if (ApocalypseTouchControls.Button("Run"))
 		{
 			speed = runSpeed;
 		}
@@ -68,7 +68,7 @@ public class playerFPS : MonoBehaviour
 			gameObject.transform.localScale = new Vector3(playerSize, crouchTimer, playerSize);
 			speed = walkSpeed / 2f;
 		}
-		if (Input.GetButton("Crouch"))
+		if (ApocalypseTouchControls.Button("Crouch"))
 		{
 			isCrouching = true;
 		}
@@ -80,8 +80,8 @@ public class playerFPS : MonoBehaviour
 		{
 			Cursor.lockState = CursorLockMode.Locked;
 		}
-		moveDir.x = Input.GetAxis("Horizontal");
-		moveDir.z = Input.GetAxis("Vertical");
+		moveDir.x = ApocalypseTouchControls.Axis("Horizontal");
+		moveDir.z = ApocalypseTouchControls.Axis("Vertical");
 		if (moveDir.z < 0f)
 		{
 			moveDir.z /= 2f;
@@ -91,7 +91,7 @@ public class playerFPS : MonoBehaviour
 		{
 			if (!GetComponent<Player>().soundChild.GetComponent<AudioSource>().isPlaying)
 			{
-				if (Input.GetButton("Run") && !Input.GetButton("Crouch") && !isCrouching)
+				if (ApocalypseTouchControls.Button("Run") && !ApocalypseTouchControls.Button("Crouch") && !isCrouching)
 				{
 					GetComponent<Player>().soundChild.GetComponent<AudioSource>().clip = GetComponent<Player>().runSound;
 				}
@@ -106,7 +106,7 @@ public class playerFPS : MonoBehaviour
 		{
 			GetComponent<Player>().soundChild.GetComponent<AudioSource>().Stop();
 		}
-		if (Input.GetButtonDown("NightVision"))
+		if (ApocalypseTouchControls.ButtonDown("NightVision"))
 		{
 			GameObject.FindWithTag("MainCamera").GetComponent<CameraGlitch>().enabled = !GameObject.FindWithTag("MainCamera").GetComponent<CameraGlitch>().enabled;
 			if (GameObject.FindWithTag("MainCamera").GetComponent<CameraGlitch>().enabled)

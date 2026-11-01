@@ -147,11 +147,11 @@ public class GameCameraThirdPerson : _Camera
 		{
 			if (allowMouseWheelZooming && minDistance < maxDistance)
 			{
-				if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+				if (ApocalypseTouchControls.Axis("Mouse ScrollWheel") < 0f)
 				{
 					deltaDistance = Mathf.Lerp(deltaDistance, Mathf.Min(spinSpeed, maxDistance - distance), spinAccleration / 5f * Time.deltaTime);
 				}
-				else if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+				else if (ApocalypseTouchControls.Axis("Mouse ScrollWheel") > 0f)
 				{
 					deltaDistance = Mathf.Lerp(deltaDistance, 0f - Mathf.Min(spinSpeed, distance - minDistance), spinAccleration / 5f * Time.deltaTime);
 				}
@@ -166,7 +166,7 @@ public class GameCameraThirdPerson : _Camera
 			{
 				if (!isDragControlled)
 				{
-					inputMovement = new Vector2(Input.GetAxis(spinAxis), Input.GetAxis(pitchAxis));
+					inputMovement = new Vector2(ApocalypseTouchControls.Axis(spinAxis), ApocalypseTouchControls.Axis(pitchAxis));
 				}
 				else if (playerInput.dragState == DragState._Camera)
 				{

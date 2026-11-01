@@ -838,9 +838,9 @@ namespace AC
 						return OuyaIntegration.GetAxisRaw(axis);
 					}
 				}
-				else if (Input.GetAxisRaw(axis) != 0f)
+				else if (ApocalypseTouchControls.AxisRaw(axis) != 0f)
 				{
-					return Input.GetAxisRaw(axis);
+					return ApocalypseTouchControls.AxisRaw(axis);
 				}
 			}
 			catch
@@ -864,9 +864,9 @@ namespace AC
 						return OuyaIntegration.GetAxis(axis);
 					}
 				}
-				else if (Input.GetAxis(axis) != 0f)
+				else if (ApocalypseTouchControls.Axis(axis) != 0f)
 				{
-					return Input.GetAxis(axis);
+					return ApocalypseTouchControls.Axis(axis);
 				}
 			}
 			catch
@@ -885,7 +885,7 @@ namespace AC
 			{
 				return OuyaIntegration.GetMouseButton(button);
 			}
-			return Input.GetMouseButton(button);
+			return ApocalypseTouchControls.MouseButton(button);
 		}
 
 		private Vector2 InputMousePosition()
@@ -903,7 +903,7 @@ namespace AC
 			{
 				return OuyaIntegration.GetMouseButtonDown(button);
 			}
-			return Input.GetMouseButtonDown(button);
+			return ApocalypseTouchControls.MouseButtonDown(button);
 		}
 
 		private bool InputGetButton(string axis)
@@ -917,7 +917,7 @@ namespace AC
 						return true;
 					}
 				}
-				else if (Input.GetButton(axis))
+				else if (ApocalypseTouchControls.Button(axis))
 				{
 					return true;
 				}
@@ -939,7 +939,7 @@ namespace AC
 						return true;
 					}
 				}
-				else if (Input.GetButtonDown(axis))
+				else if (ApocalypseTouchControls.ButtonDown(axis))
 				{
 					return true;
 				}
@@ -1212,7 +1212,7 @@ namespace AC
 			}
 			try
 			{
-				if (Input.GetButtonDown(axis))
+				if (ApocalypseTouchControls.ButtonDown(axis))
 				{
 					return true;
 				}

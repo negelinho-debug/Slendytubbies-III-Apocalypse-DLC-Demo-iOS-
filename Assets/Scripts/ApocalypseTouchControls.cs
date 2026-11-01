@@ -1,0 +1,225 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+[DefaultExecutionOrder(-10000)]
+public class ApocalypseTouchControls : MonoBehaviour
+{
+    private static ApocalypseTouchControls instance;
+    private readonly HashSet<string> held = new HashSet<string>();
+    private readonly HashSet<string> down = new HashSet<string>();
+    private Vector2 stick, look;
+    private int mode;
+    private bool cutscene;
+
+    #if UNITY_IOS && !UNITY_EDITOR
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void Install()
+    {
+        if (instance != null) return;
+        GameObject obj = new GameObject("Apocalypse iOS Touch Buttons");
+        DontDestroyOnLoad(obj);
+        instance = obj.AddComponent<ApocalypseTouchControls>();
+    }
+    #endif
+
+    private static float OriginalAxis(string name, bool raw)
+    {
+        try { return raw ? Input.GetAxisRaw(name) : Input.GetAxis(name); }
+        catch { return 0f; }
+    }
+
+    public static float Axis(string name) { return AxisValue(name, false); }
+    public static float AxisRaw(string name) { return AxisValue(name, true); }
+    private static float AxisValue(string name, bool raw)
+    {
+        #if UNITY_IOS && !UNITY_EDITOR
+        if (instance != null && instance.mode != 0)
+        {
+            if (name == "Horizontal") return instance.stick.x;
+            if (name == "Vertical") return instance.stick.y;
+            if (name == "CursorHorizontal" || name == "Mouse X") return instance.look.x;
+            if (name == "CursorVertical" || name == "Mouse Y") return instance.look.y;
+        }
+        #endif
+        return OriginalAxis(name, raw);
+    }
+
+    private static string Map(string name)
+    {
+        if (name == "Sprint") return "RUN";
+        if (name == "Run") return "RUN";
+        if (name == "Crouch") return "CROUCH";
+        if (name == "NightVision") return "NV";
+        if (name == "Attack") return "ATTACK";
+        if (name == "Block") return "BLOCK";
+        if (name == "InteractionA" || name == "Use") return "USE";
+        if (name == "FlashHotspots") return "HINT";
+        return name;
+    }
+
+    public static bool Button(string name)
+    {
+        #if UNITY_IOS && !UNITY_EDITOR
+        if (instance != null && instance.held.Contains(Map(name))) return true;
+        #endif
+        try { return Input.GetButton(name); } catch { return false; }
+    }
+
+    public static bool ButtonDown(string name)
+    {
+        #if UNITY_IOS && !UNITY_EDITOR
+        if (instance != null && instance.down.Contains(Map(name))) return true;
+        #endif
+        try { return Input.GetButtonDown(name); } catch { return false; }
+    }
+
+    public static bool MouseButton(int index)
+    {
+        #if UNITY_IOS && !UNITY_EDITOR
+        if (index == 0 && instance != null && instance.held.Contains("USE")) return true;
+        #endif
+        return Input.GetMouseButton(index);
+    }
+
+    public static bool MouseButtonDown(int index)
+    {
+        #if UNITY_IOS && !UNITY_EDITOR
+        if (index == 0 && instance != null && instance.down.Contains("USE")) return true;
+        #endif
+        return Input.GetMouseButtonDown(index);
+    }
+
+    private Rect Area(float x, float y, float radius)
+    {
+        float r = Screen.height * radius;
+        return new Rect(Screen.width * x - r, Screen.height * y - r, r * 2, r * 2);
+    }
+
+    private bool Accept(string key, float x, float y, float r, Vector2 pos, TouchPhase phase)
+    {
+        if (!Area(x, y, r).Contains(pos)) return false;
+        held.Add(key);
+        if (phase == TouchPhase.Began)
+        {
+            down.Add(key);
+            if (key == "INV") ToggleExistingMenu("Inventory");
+            if (key == "SET") ToggleExistingMenu("Settings", "Options");
+            if (key == "II") ToggleExistingMenu("Pause", "InGame", "Menu");
+        }
+        return true;
+    }
+
+    private void ToggleExistingMenu(params string[] names)
+    {
+        var menus = AC.PlayerMenus.GetMenus();
+        if (menus == null) return;
+        foreach (string name in names)
+        foreach (AC.Menu menu in menus)
+        {
+            if (menu == null || menu.isLocked ||
+                !string.Equals(menu.title, name, StringComparison.OrdinalIgnoreCase)) continue;
+            if (menu.IsEnabled()) menu.TurnOff(true);
+            else menu.TurnOn(true);
+            return;
+        }
+    }
+
+    private void Update()
+    {
+        held.Clear(); down.Clear(); stick = Vector2.zero; look = Vector2.zero;
+        string scene = SceneManager.GetActiveScene().name;
+        if (scene == "Chap4Menu" || scene == "Loading") { mode = 0; return; }
+
+        PlayerBattleMechanics battle = FindObjectOfType<PlayerBattleMechanics>();
+        playerFPS fps = FindObjectOfType<playerFPS>();
+        AC.Player player = FindObjectOfType<AC.Player>();
+        mode = battle != null ? 3 : fps != null ? 1 : player != null ? 2 : 0;
+        if (mode == 0) return;
+        cutscene = player != null && player.isCutscene();
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) continue;
+            Vector2 p = new Vector2(touch.position.x, Screen.height - touch.position.y);
+            TouchPhase ph = touch.phase;
+            bool used = false;
+            if (mode != 3 && !cutscene)
+            {
+                used |= Accept("HINT", .747f, .075f, .038f, p, ph);
+                used |= Accept("INV", .806f, .075f, .038f, p, ph);
+            }
+            used |= Accept("SET", .865f, .075f, .038f, p, ph);
+            used |= Accept("II", .93f, .075f, .038f, p, ph);
+            if (cutscene) continue;
+            if (mode == 1)
+            {
+                used |= Accept("CROUCH", .872f, .57f, .056f, p, ph);
+                used |= Accept("NV", .785f, .65f, .056f, p, ph);
+                used |= Accept("RUN", .785f, .83f, .058f, p, ph);
+                used |= Accept("USE", .872f, .78f, .07f, p, ph);
+            }
+            else if (mode == 2)
+            {
+                used |= Accept("RUN", .785f, .83f, .058f, p, ph);
+                used |= Accept("USE", .872f, .78f, .07f, p, ph);
+            }
+            else
+            {
+                used |= Accept("BLOCK", .705f, .48f, .06f, p, ph);
+                used |= Accept("ATTACK", .705f, .66f, .062f, p, ph);
+                used |= Accept("RUN", .79f, .71f, .057f, p, ph);
+            }
+            if (used) continue;
+            if (p.x < Screen.width * .40f && p.y > Screen.height * .48f)
+            {
+                stick = Vector2.ClampMagnitude((p - new Vector2(
+                    Screen.width * .16f, Screen.height * .79f)) /
+                    (Screen.height * .13f), 1f);
+            }
+            else if (p.x > Screen.width * .42f && ph == TouchPhase.Moved)
+            {
+                look += touch.deltaPosition * .12f;
+            }
+        }
+    }
+
+    private void Draw(string name, float x, float y, float size)
+    {
+        GUI.Box(Area(x, y, size), name);
+    }
+
+    private void OnGUI()
+    {
+        if (mode == 0) return;
+        GUI.color = new Color(1f, 1f, 1f, .55f);
+        if (mode != 3 && !cutscene)
+        {
+            Draw("HINT", .747f, .075f, .038f);
+            Draw("INV", .806f, .075f, .038f);
+        }
+        Draw("SET", .865f, .075f, .038f);
+        Draw("II", .93f, .075f, .038f);
+        if (!cutscene)
+        {
+            Draw("MOVE", .16f, .79f, .13f);
+            if (mode == 1)
+            {
+                Draw("CROUCH", .872f, .57f, .056f);
+                Draw("NV", .785f, .65f, .056f);
+            }
+            if (mode != 3)
+            {
+                Draw("RUN", .785f, .83f, .058f);
+                Draw("USE", .872f, .78f, .07f);
+            }
+            else
+            {
+                Draw("BLOCK", .705f, .48f, .06f);
+                Draw("ATTACK", .705f, .66f, .062f);
+                Draw("RUN", .79f, .71f, .057f);
+            }
+        }
+        GUI.color = Color.white;
+    }
+}

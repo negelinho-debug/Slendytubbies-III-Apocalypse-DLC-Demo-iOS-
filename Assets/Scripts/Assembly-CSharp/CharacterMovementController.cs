@@ -30,13 +30,13 @@ public class CharacterMovementController : MonoBehaviour
 
 	private void Update()
 	{
-		transform.Rotate(0f, Input.GetAxis("Mouse X"), 0f);
+		transform.Rotate(0f, ApocalypseTouchControls.Axis("Mouse X"), 0f);
 		Pistol();
 		if (controller.isGrounded)
 		{
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+			moveDirection = new Vector3(ApocalypseTouchControls.Axis("Horizontal"), 0f, ApocalypseTouchControls.Axis("Vertical"));
 			movementSpeed = moveDirection;
-			if (Input.GetButton("Sprint"))
+			if (ApocalypseTouchControls.Button("Sprint"))
 			{
 				speed = Mathf.Lerp(speed, runSpeed, Time.deltaTime * 2f);
 			}
@@ -59,9 +59,9 @@ public class CharacterMovementController : MonoBehaviour
 	{
 		if (controller.isGrounded)
 		{
-			if (Input.GetAxis("Horizontal") == 0f && animator.GetFloat("MovementZ") > 1.3f)
+			if (ApocalypseTouchControls.Axis("Horizontal") == 0f && animator.GetFloat("MovementZ") > 1.3f)
 			{
-				if (Input.GetButton("Jump"))
+				if (ApocalypseTouchControls.Button("Jump"))
 				{
 					animator.SetBool("Jump", true);
 				}
@@ -83,11 +83,11 @@ public class CharacterMovementController : MonoBehaviour
 
 	private void Pistol()
 	{
-		if (Input.GetButtonDown("Pistol"))
+		if (ApocalypseTouchControls.ButtonDown("Pistol"))
 		{
 			pistol = true;
 		}
-		else if (Input.GetButtonDown("Unarmed"))
+		else if (ApocalypseTouchControls.ButtonDown("Unarmed"))
 		{
 			pistol = false;
 		}

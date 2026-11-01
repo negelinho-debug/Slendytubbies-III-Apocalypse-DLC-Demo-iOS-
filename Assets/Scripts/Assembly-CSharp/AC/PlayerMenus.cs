@@ -438,7 +438,7 @@ namespace AC
 				}
 				try
 				{
-					if (!Input.GetButtonDown(menu.toggleKey))
+					if (!ApocalypseTouchControls.ButtonDown(menu.toggleKey))
 					{
 						return;
 					}

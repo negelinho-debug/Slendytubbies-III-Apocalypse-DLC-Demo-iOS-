@@ -90,7 +90,7 @@ public class PlayerBattleMechanics : MonoBehaviour
 		}
 		if (!isAttacking)
 		{
-			if (Input.GetButton("Run") && playerHealth.stamina > 0f)
+			if (ApocalypseTouchControls.Button("Run") && playerHealth.stamina > 0f)
 			{
 				speed = runSpeed;
 			}
@@ -105,8 +105,8 @@ public class PlayerBattleMechanics : MonoBehaviour
 		}
 		if (!isRolling)
 		{
-			float axis = Input.GetAxis("Vertical");
-			float axis2 = Input.GetAxis("Horizontal");
+			float axis = ApocalypseTouchControls.Axis("Vertical");
+			float axis2 = ApocalypseTouchControls.Axis("Horizontal");
 			direction = transform.forward * axis;
 			direction += transform.right * axis2;
 			if (!isBlocking && !hurt)
@@ -156,13 +156,13 @@ public class PlayerBattleMechanics : MonoBehaviour
 				mc.transform.rotation = Quaternion.Slerp(mc.transform.rotation, Quaternion.LookRotation(transform.forward), Time.deltaTime * 6f);
 			}
 		}
-		if (!isAttacking && !isBlocking && !hurt && !isRolling && Input.GetButtonDown("Attack"))
+		if (!isAttacking && !isBlocking && !hurt && !isRolling && ApocalypseTouchControls.ButtonDown("Attack"))
 		{
 			StartCoroutine(AttackNow());
 		}
 		if (!hurt && playerHealth.stamina > 1f && !isRolling)
 		{
-			isBlocking = Input.GetButton("Block");
+			isBlocking = ApocalypseTouchControls.Button("Block");
 		}
 		else
 		{
@@ -176,7 +176,7 @@ public class PlayerBattleMechanics : MonoBehaviour
 				mc.Play("Block");
 			}
 		}
-		if (!Input.GetButton("Block") && !isBlocking && !Input.GetButton("Run") && !isAttacking && !isRolling)
+		if (!ApocalypseTouchControls.Button("Block") && !isBlocking && !ApocalypseTouchControls.Button("Run") && !isAttacking && !isRolling)
 		{
 			if (playerHealth.stamina < playerHealth.maxStamina)
 			{
@@ -187,7 +187,7 @@ public class PlayerBattleMechanics : MonoBehaviour
 				playerHealth.stamina = playerHealth.maxStamina;
 			}
 		}
-		if (Input.GetButton("Run") && !isAttacking && direction != Vector3.zero && !isBlocking)
+		if (ApocalypseTouchControls.Button("Run") && !isAttacking && direction != Vector3.zero && !isBlocking)
 		{
 			playerHealth.stamina -= Time.deltaTime * 10f;
 		}
@@ -195,10 +195,10 @@ public class PlayerBattleMechanics : MonoBehaviour
 
 	private void checkRoll()
 	{
-		float axisRaw = Input.GetAxisRaw("Vertical");
+		float axisRaw = ApocalypseTouchControls.AxisRaw("Vertical");
 		if (axisRaw != 0f && !rollVert)
 		{
-			if (!isRolling && playerHealth.stamina >= 10f && Input.GetButton("Block"))
+			if (!isRolling && playerHealth.stamina >= 10f && ApocalypseTouchControls.Button("Block"))
 			{
 				StartCoroutine(Rolling());
 			}
@@ -208,10 +208,10 @@ public class PlayerBattleMechanics : MonoBehaviour
 		{
 			rollVert = false;
 		}
-		axisRaw = Input.GetAxisRaw("Horizontal");
+		axisRaw = ApocalypseTouchControls.AxisRaw("Horizontal");
 		if (axisRaw != 0f && !rollHorz)
 		{
-			if (!isRolling && playerHealth.stamina >= 10f && Input.GetButton("Block"))
+			if (!isRolling && playerHealth.stamina >= 10f && ApocalypseTouchControls.Button("Block"))
 			{
 				StartCoroutine(Rolling());
 			}
@@ -251,7 +251,7 @@ public class PlayerBattleMechanics : MonoBehaviour
 			combo = false;
 			while (delay)
 			{
-				if (Input.GetButtonDown("Attack"))
+				if (ApocalypseTouchControls.ButtonDown("Attack"))
 				{
 					combo = true;
 				}
@@ -312,8 +312,8 @@ public class PlayerBattleMechanics : MonoBehaviour
 	private IEnumerator Rolling()
 	{
 		isRolling = true;
-		float vertical = Input.GetAxisRaw("Vertical");
-		float horizontal = Input.GetAxisRaw("Horizontal");
+		float vertical = ApocalypseTouchControls.AxisRaw("Vertical");
+		float horizontal = ApocalypseTouchControls.AxisRaw("Horizontal");
 		direction = transform.forward * vertical;
 		direction += transform.right * horizontal;
 		playerHealth.stamina -= 15f;

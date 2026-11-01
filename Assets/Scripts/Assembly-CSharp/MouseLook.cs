@@ -42,18 +42,18 @@ public class MouseLook : MonoBehaviour
 		{
 			if (axes == RotationAxes.MouseXAndY)
 			{
-				float y = transform.localEulerAngles.y + Input.GetAxis("CursorHorizontal") * sensitivityX;
-				rotationY += Input.GetAxis("CursorVertical") * sensitivityY;
+				float y = transform.localEulerAngles.y + ApocalypseTouchControls.Axis("CursorHorizontal") * sensitivityX;
+				rotationY += ApocalypseTouchControls.Axis("CursorVertical") * sensitivityY;
 				rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 				transform.localEulerAngles = new Vector3(0f - rotationY, y, 0f);
 			}
 			else if (axes == RotationAxes.MouseX)
 			{
-				transform.Rotate(0f, Input.GetAxis("CursorHorizontal") * sensitivityX, 0f);
+				transform.Rotate(0f, ApocalypseTouchControls.Axis("CursorHorizontal") * sensitivityX, 0f);
 			}
 			else
 			{
-				rotationY += Input.GetAxis("CursorVertical") * sensitivityY;
+				rotationY += ApocalypseTouchControls.Axis("CursorVertical") * sensitivityY;
 				rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 				transform.localEulerAngles = new Vector3(0f - rotationY, transform.localEulerAngles.y, 0f);
 			}
