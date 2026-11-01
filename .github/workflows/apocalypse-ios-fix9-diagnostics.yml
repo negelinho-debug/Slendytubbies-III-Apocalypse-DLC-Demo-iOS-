@@ -1,0 +1,279 @@
+
+name: Apocalypse DLC - Fix 9 Diagnostics
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix9:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix8
+          fetch-depth: 0
+
+      - name: Create Fix 9
+        shell: bash
+        run: |
+          set -euo pipefail
+          git switch -c unity2021-compile-fix9
+
+          test -f 'Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity'
+          test -f 'Assets/Scripts/ApocalypseTouchControls.cs'
+
+          mkdir -p Assets/Editor
+
+          cat > Assets/Scripts/ApocalypseDiagnostics9.cs <<'CS'
+          #if UNITY_IOS && !UNITY_EDITOR
+          using System;
+          using System.IO;
+          using System.Collections;
+          using UnityEngine;
+          using UnityEngine.SceneManagement;
+
+          public class ApocalypseDiagnostics9 : MonoBehaviour
+          {
+              static ApocalypseDiagnostics9 current;
+              static readonly object sync = new object();
+              string folder, logfile;
+              int errors;
+              string sceneName = "starting";
+
+              [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+              static void Init()
+              {
+                  if (current != null) return;
+                  var obj = new GameObject("APOCALYPSE FIX 9 DIAGNOSTICS");
+                  DontDestroyOnLoad(obj);
+                  current = obj.AddComponent<ApocalypseDiagnostics9>();
+              }
+
+              void Awake()
+              {
+                  folder = Path.Combine(Application.persistentDataPath, "Apocalypse-DIAG9");
+                  logfile = Path.Combine(folder, "launch-log.txt");
+
+                  try
+                  {
+                      Directory.CreateDirectory(folder);
+                      File.WriteAllText(
+                          Path.Combine(folder, "BUILD-VERSION.txt"),
+                          "APOCALYPSE DIAG 9\nSource: unity2021-compile-fix9\n");
+                  }
+                  catch (Exception) { }
+
+                  Application.logMessageReceivedThreaded += OnLog;
+                  SceneManager.sceneLoaded += SceneLoaded;
+
+                  Record("BOOT | Unity=" + Application.unityVersion +
+                      " | GPU=" + SystemInfo.graphicsDeviceName +
+                      " | graphics=" + SystemInfo.graphicsDeviceType);
+
+                  StartCoroutine(Snapshot());
+              }
+
+              void OnLog(string message, string trace, LogType type)
+              {
+                  if (type == LogType.Exception ||
+                      type == LogType.Error ||
+                      type == LogType.Assert)
+                      System.Threading.Interlocked.Increment(ref errors);
+
+                  Record("[" + type + "] " + message + "\n" + trace);
+              }
+
+              void Record(string message)
+              {
+                  try
+                  {
+                      lock (sync)
+                          File.AppendAllText(
+                              logfile,
+                              DateTime.UtcNow.ToString("HH:mm:ss") +
+                              " " + message + "\n");
+                  }
+                  catch (Exception) { }
+              }
+
+              void SceneLoaded(Scene scene, LoadSceneMode mode)
+              {
+                  sceneName = scene.name;
+                  Record("SCENE LOADED: " + sceneName);
+                  StartCoroutine(Snapshot());
+              }
+
+              IEnumerator Snapshot()
+              {
+                  yield return new WaitForSecondsRealtime(10f);
+
+                  var cams = Camera.allCameras;
+                  string report =
+                      "Scene=" + SceneManager.GetActiveScene().name +
+                      " | cameras=" + cams.Length +
+                      " | orientation=" + Screen.orientation +
+                      " | errors=" + errors + "\n";
+
+                  foreach (var cam in cams)
+                  {
+                      report += cam.name +
+                          " depth=" + cam.depth +
+                          " mask=" + cam.cullingMask +
+                          " target=" +
+                          (cam.targetTexture ? cam.targetTexture.name : "screen") +
+                          "\n";
+                  }
+
+                  Record("CAMERAS\n" + report);
+
+                  try
+                  {
+                      File.WriteAllText(
+                          Path.Combine(folder, "camera-report.txt"), report);
+
+                      ScreenCapture.CaptureScreenshot(
+                          Path.Combine(folder, "screen-10s.png"));
+                  }
+                  catch (Exception ex)
+                  {
+                      Record("SCREENSHOT ERROR " + ex);
+                  }
+              }
+
+              void OnGUI()
+              {
+                  GUI.Box(new Rect(10, 10, 225, 55),
+                      "APOCALYPSE DIAG 9\n" +
+                      sceneName + " | errors: " + errors);
+              }
+
+              void OnDestroy()
+              {
+                  Application.logMessageReceivedThreaded -= OnLog;
+                  SceneManager.sceneLoaded -= SceneLoaded;
+              }
+          }
+          #endif
+          CS
+
+          cat > Assets/Editor/ApocalypseDiagnostics9Build.cs <<'CS'
+          using System.IO;
+          using UnityEditor;
+          using UnityEditor.Build;
+          using UnityEditor.Build.Reporting;
+          using UnityEditor.Callbacks;
+          using UnityEngine;
+
+          public class ApocalypseDiagnostics9Build : IPreprocessBuildWithReport
+          {
+              public int callbackOrder { get { return 100; } }
+
+              public void OnPreprocessBuild(BuildReport report)
+              {
+                  if (report.summary.platform != BuildTarget.iOS) return;
+
+                  var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                      "Assets/DIAG9Icon.png");
+
+                  if (icon == null)
+                      throw new System.Exception("DIAG9 icon missing");
+
+                  var sizes = PlayerSettings.GetIconSizesForTargetGroup(
+                      BuildTargetGroup.iOS, IconKind.Application);
+
+                  var icons = new Texture2D[sizes.Length];
+
+                  for (int i = 0; i < icons.Length; i++)
+                      icons[i] = icon;
+
+                  PlayerSettings.SetIconsForTargetGroup(
+                      BuildTargetGroup.iOS, icons, IconKind.Application);
+              }
+
+              [PostProcessBuild(100)]
+              public static void EnableFiles(
+                  BuildTarget target, string buildPath)
+              {
+                  if (target != BuildTarget.iOS) return;
+
+                  #if UNITY_IOS
+                  string path = Path.Combine(buildPath, "Info.plist");
+
+                  var plist = new UnityEditor.iOS.Xcode.PlistDocument();
+                  plist.ReadFromFile(path);
+
+                  plist.root.SetBoolean("UIFileSharingEnabled", true);
+                  plist.root.SetBoolean(
+                      "LSSupportsOpeningDocumentsInPlace", true);
+                  plist.root.SetString(
+                      "CFBundleDisplayName", "Apocalypse DIAG 9");
+
+                  plist.WriteToFile(path);
+                  #endif
+              }
+          }
+          CS
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import zlib, struct
+
+          n = 1024
+          scale = 70
+
+          glyphs = {
+            'D': ['11110','10001','10001','10001','10001','10001','11110'],
+            '9': ['11111','10001','10001','11111','00001','00001','11111']
+          }
+
+          raw = bytearray()
+
+          for y in range(n):
+              raw.append(0)
+              for x in range(n):
+                  color = (18,18,23)
+
+                  if x < 30 or x >= n-30 or y < 30 or y >= n-30:
+                      color = (195,30,32)
+
+                  for letter,x0 in [('D',110),('9',550)]:
+                      gx = (x-x0)//scale
+                      gy = (y-267)//scale
+
+                      if (x >= x0 and y >= 267 and
+                          0 <= gx < 5 and 0 <= gy < 7 and
+                          glyphs[letter][gy][gx] == '1'):
+                          color = (255,255,255)
+
+                  raw.extend(color)
+
+          def part(kind, data):
+              return (
+                  struct.pack('>I',len(data)) +
+                  kind + data +
+                  struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
+              )
+
+          png = (
+              b'\x89PNG\r\n\x1a\n' +
+              part(b'IHDR',struct.pack('>2I5B',n,n,8,2,0,0,0)) +
+              part(b'IDAT',zlib.compress(raw,9)) +
+              part(b'IEND',b'')
+          )
+
+          Path('Assets/DIAG9Icon.png').write_bytes(png)
+          PY
+
+          git config user.name 'github-actions[bot]'
+          git config user.email \
+            '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add Assets/Scripts/ApocalypseDiagnostics9.cs \
+                  Assets/Editor/ApocalypseDiagnostics9Build.cs \
+                  Assets/DIAG9Icon.png
+
+          git commit -m 'Fix 9: iPhone white-screen diagnostics'
+          git push origin unity2021-compile-fix9
