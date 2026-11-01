@@ -117,11 +117,18 @@ public class DiscordController : MonoBehaviour
 
 	private void Update()
 	{
+#if UNITY_IOS && !UNITY_EDITOR
+        return;
+#endif
 		DiscordRpc.RunCallbacks();
 	}
 
 	private void OnEnable()
 	{
+#if UNITY_IOS && !UNITY_EDITOR
+        enabled = false;
+        return;
+#endif
 		Debug.Log("Discord: init");
 		callbackCalls = 0;
 		handlers = default(DiscordRpc.EventHandlers);
@@ -136,6 +143,9 @@ public class DiscordController : MonoBehaviour
 
 	private void OnDisable()
 	{
+#if UNITY_IOS && !UNITY_EDITOR
+        return;
+#endif
 		Debug.Log("Discord: shutdown");
 		DiscordRpc.Shutdown();
 	}

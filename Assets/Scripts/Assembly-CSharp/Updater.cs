@@ -20,6 +20,10 @@ public class Updater : MonoBehaviour
 
 	public void Start()
 	{
+#if UNITY_IOS && !UNITY_EDITOR
+        enabled = false;
+        return;
+#endif
 		checking = true;
 		StartCoroutine(CheckForUpdate());
 		versionText.text = string.Empty + currentVersion;

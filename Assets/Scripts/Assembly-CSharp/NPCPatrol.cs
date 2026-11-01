@@ -25,7 +25,7 @@ public class NPCPatrol : MonoBehaviour
 
 	private void Awake()
 	{
-		if (hideModel)
+		if (hideModel && model != null)
 		{
 			model.gameObject.SetActive(false);
 		}
@@ -33,7 +33,7 @@ public class NPCPatrol : MonoBehaviour
 
 	private void Start()
 	{
-		if (skipAnimFrame)
+		if (skipAnimFrame && model != null && model.clip != null && model["skintubby_moving"] != null)
 		{
 			float time = Random.Range(0f, model.clip.length);
 			model["skintubby_moving"].time = time;
@@ -43,6 +43,21 @@ public class NPCPatrol : MonoBehaviour
 
 	private void Update()
 	{
+        if (waypoints == null ||
+            waypoints.Length == 0 ||
+            curPoint < 0 ||
+            curPoint >= waypoints.Length ||
+            waypoints[curPoint] == null ||
+            nma == null ||
+            !nma.isActiveAndEnabled ||
+            !nma.isOnNavMesh)
+        {
+            Debug.LogWarning(
+                "[FIX10] Invalid NPC patrol: " +
+                gameObject.name);
+            enabled = false;
+            return;
+        }
 		if (Vector3.Distance(transform.position, waypoints[curPoint].transform.position) < maxDistance)
 		{
 			if (curPoint != waypoints.Length - 1)

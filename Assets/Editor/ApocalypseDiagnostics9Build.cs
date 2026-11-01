@@ -14,10 +14,10 @@ public class ApocalypseDiagnostics9Build : IPreprocessBuildWithReport
         if (report.summary.platform != BuildTarget.iOS) return;
 
         var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(
-            "Assets/DIAG9Icon.png");
+            "Assets/FIX10Icon.png");
 
         if (icon == null)
-            throw new System.Exception("DIAG9 icon missing");
+            throw new System.Exception("FIX10 icon missing");
 
         var sizes = PlayerSettings.GetIconSizesForTargetGroup(
             BuildTargetGroup.iOS, IconKind.Application);
@@ -47,7 +47,7 @@ public class ApocalypseDiagnostics9Build : IPreprocessBuildWithReport
         plist.root.SetBoolean(
             "LSSupportsOpeningDocumentsInPlace", true);
         plist.root.SetString(
-            "CFBundleDisplayName", "Apocalypse DIAG 9");
+            "CFBundleDisplayName", "Apocalypse FIX 10");
 
         plist.WriteToFile(path);
         #endif

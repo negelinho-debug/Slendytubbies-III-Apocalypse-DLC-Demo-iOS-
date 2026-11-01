@@ -16,22 +16,33 @@ public class Splashes : MonoBehaviour
 
 	public float splashCrossFadeTime = 1f;
 
-	private void Start()
-	{
-		if (!useSplashScreen || splashesContent.GetComponentsInChildren<Graphic>(true).Length <= 0)
-		{
-			return;
-		}
-		for (int i = 0; i < splashesContent.GetComponentsInChildren<Graphic>(true).Length; i++)
-		{
-			Graphic graphic = splashesContent.GetComponentsInChildren<Graphic>(true)[i];
-			if (graphic != splashesContent.GetComponent<Graphic>())
-			{
-				splashes.Add(graphic);
-			}
-		}
-		StartCoroutine(PlayAllSplashes());
-	}
+
+    private void Start()
+    {
+        if (!useSplashScreen ||
+            splashesContent == null)
+        {
+            Debug.LogWarning(
+                "[FIX10] Missing splash content");
+            GameObject overlay =
+                GameObject.Find("Splashes");
+            if (overlay != null &&
+                overlay != gameObject)
+                overlay.SetActive(false);
+            enabled = false;
+            return;
+        }
+        Graphic[] all =
+            splashesContent.GetComponentsInChildren<Graphic>(
+                true);
+        if (all == null || all.Length == 0)
+            return;
+        foreach (Graphic graphic in all)
+            if (graphic !=
+                splashesContent.GetComponent<Graphic>())
+                splashes.Add(graphic);
+        StartCoroutine(PlayAllSplashes());
+    }
 
 	private IEnumerator PlayAllSplashes()
 	{

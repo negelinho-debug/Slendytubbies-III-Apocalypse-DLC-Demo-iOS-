@@ -10,6 +10,13 @@ public class toggleObject : MonoBehaviour
 
 	private void Update()
 	{
+        if (toToggle == null)
+        {
+            Debug.LogWarning(
+                "[FIX10] Missing toggle target");
+            enabled = false;
+            return;
+        }
 		timer += 1f * Time.deltaTime;
 		if (timer >= delay)
 		{
