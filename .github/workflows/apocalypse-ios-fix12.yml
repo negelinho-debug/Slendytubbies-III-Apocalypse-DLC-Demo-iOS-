@@ -1,0 +1,208 @@
+
+name: Apocalypse DLC - FIX 12 Visual Repair
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix12:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout FIX 11
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix11
+          fetch-depth: 0
+
+      - name: Apply FIX 12
+        shell: bash
+        run: |
+          set -euo pipefail
+          git switch -c unity2021-compile-fix12
+          mkdir -p Assets/Scripts Assets/Editor
+
+          cat > Assets/Scripts/Fix12ScreenRepair.cs <<'CS'
+          using System.Collections;
+          using UnityEngine;
+          using UnityEngine.SceneManagement;
+
+          public sealed class Fix12ScreenRepair : MonoBehaviour
+          {
+              [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+              static void Create()
+              {
+                  if (FindObjectOfType<Fix12ScreenRepair>() != null) return;
+                  var obj = new GameObject("FIX12 Screen Repair");
+                  DontDestroyOnLoad(obj);
+                  obj.AddComponent<Fix12ScreenRepair>();
+              }
+
+              void OnEnable() { SceneManager.sceneLoaded += OnLoaded; }
+              void OnDisable() { SceneManager.sceneLoaded -= OnLoaded; }
+              void Start() { OnLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single); }
+
+              void OnLoaded(Scene scene, LoadSceneMode mode)
+              {
+                  if (scene.name == "Chap4Menu") StartCoroutine(RepairMenu());
+              }
+
+              IEnumerator RepairMenu()
+              {
+                  yield return null;
+                  yield return new WaitForEndOfFrame();
+                  foreach (Camera cam in Camera.allCameras)
+                  {
+                      if (cam == null || cam.targetTexture != null) continue;
+                      Debug.Log("[FIX12] Menu camera " + cam.name + " rect=" + cam.rect);
+                      if (cam.rect.width < 0.99f || cam.rect.height < 0.99f ||
+                          cam.rect.x > 0.01f || cam.rect.y > 0.01f)
+                      {
+                          cam.rect = new Rect(0f, 0f, 1f, 1f);
+                          cam.ResetAspect();
+                          Debug.Log("[FIX12] Full viewport: " + cam.name);
+                      }
+                  }
+              }
+          }
+          CS
+
+          cat > Assets/Editor/Fix12MaterialRepair.cs <<'CS'
+          using System;
+          using System.Collections.Generic;
+          using System.IO;
+          using UnityEditor;
+          using UnityEditor.Build;
+          using UnityEditor.Build.Reporting;
+          using UnityEngine;
+
+          public class Fix12MaterialRepair : IPreprocessBuildWithReport
+          {
+              public int callbackOrder { get { return -100; } }
+
+              static string Normalize(string s)
+              {
+                  s = s.ToLowerInvariant().Replace(" ", "").Replace("-", "");
+                  foreach (string suffix in new [] {"_material", "_mat", "_albedo", "_diffuse", "_basecolor", "_d"})
+                      if (s.EndsWith(suffix, StringComparison.Ordinal))
+                          return s.Substring(0, s.Length - suffix.Length);
+                  return s;
+              }
+
+              public void OnPreprocessBuild(BuildReport report)
+              {
+                  var textures = new Dictionary<string, List<Texture2D>>();
+                  foreach (string guid in AssetDatabase.FindAssets("t:Texture2D", new [] { "Assets" }))
+                  {
+                      string path = AssetDatabase.GUIDToAssetPath(guid);
+                      Texture2D t = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+                      if (t == null) continue;
+                      string key = Normalize(Path.GetFileNameWithoutExtension(path));
+                      if (!textures.ContainsKey(key)) textures[key] = new List<Texture2D>();
+                      textures[key].Add(t);
+                  }
+
+                  int repaired = 0, unresolved = 0;
+                  foreach (string guid in AssetDatabase.FindAssets("t:Material", new [] { "Assets" }))
+                  {
+                      string path = AssetDatabase.GUIDToAssetPath(guid);
+                      if (!path.EndsWith(".mat", StringComparison.OrdinalIgnoreCase)) continue;
+                      Material m = AssetDatabase.LoadAssetAtPath<Material>(path);
+                      if (m == null) continue;
+
+                      if (m.shader == null || m.shader.name == "Hidden/InternalErrorShader")
+                      {
+                          Debug.LogWarning("[FIX12] Missing shader: " + path);
+                          unresolved++;
+                          continue;
+                      }
+
+                      string property = m.HasProperty("_MainTex") ? "_MainTex" :
+                                        (m.HasProperty("_BaseMap") ? "_BaseMap" : null);
+                      if (property == null || m.GetTexture(property) != null) continue;
+
+                      List<Texture2D> candidates;
+                      if (textures.TryGetValue(Normalize(m.name), out candidates) && candidates.Count == 1)
+                      {
+                          m.SetTexture(property, candidates[0]);
+                          EditorUtility.SetDirty(m);
+                          repaired++;
+                          Debug.Log("[FIX12] Restored texture " + candidates[0].name + " on " + path);
+                      }
+                  }
+
+                  AssetDatabase.SaveAssets();
+                  Debug.Log("[FIX12] Texture bindings restored=" + repaired + "; missing shaders=" + unresolved);
+              }
+          }
+          CS
+
+          python3 - <<'PY'
+          from pathlib import Path
+          editor = Path('Assets/Editor/ApocalypseDiagnostics9Build.cs')
+          s = editor.read_text(encoding='utf-8-sig')
+          if 'Assets/FIX11Icon.png' not in s:
+              raise SystemExit('FIX12: expected FIX11 icon reference; inspect build script')
+          s = s.replace('Assets/FIX11Icon.png', 'Assets/FIX12Icon.png')
+          s = s.replace('Apocalypse FIX 11', 'Apocalypse FIX 12')
+          editor.write_text(s, encoding='utf-8')
+
+          diag = Path('Assets/Scripts/ApocalypseDiagnostics9.cs')
+          s = diag.read_text(encoding='utf-8-sig')
+          s = s.replace('Apocalypse-FIX11', 'Apocalypse-FIX12')
+          s = s.replace('APOCALYPSE FIX 11', 'APOCALYPSE FIX 12')
+          diag.write_text(s, encoding='utf-8')
+          PY
+
+          if git show "origin/${{ github.event.repository.default_branch }}:Assets/FIX12Icon.png" > Assets/FIX12Icon.png 2>/dev/null; then
+            echo '[FIX12] Using supplied artwork'
+          else
+            echo '[FIX12] Creating backup icon'
+            python3 - <<'PY'
+          import math, struct, zlib
+          from pathlib import Path
+
+          n=1024
+          pixels=bytearray()
+          for y in range(n):
+              pixels.append(0)
+              for x in range(n):
+                  xx=x/2
+                  yy=y/2
+                  ear=(math.hypot((xx-130)/36,(yy-283)/67)<1 or
+                       math.hypot((xx-382)/36,(yy-283)/67)<1)
+                  head=math.hypot((xx-256)/160,(yy-280)/172)<1
+                  ant=(abs(xx-256)<15 and 91<yy<152) or (
+                      math.hypot((xx-256)/36,(yy-91)/19)<1)
+                  eye1=math.hypot((xx-199)/35,(yy-288)/43)<1
+                  eye2=math.hypot((xx-313)/35,(yy-288)/43)<1
+                  if eye1 or eye2:
+                      c=(8,9,14)
+                  elif head or ear or ant:
+                      c=(168,30+int(20*y/n),37)
+                  else:
+                      c=(13+int(18*y/n),11,18)
+                  pixels.extend(c)
+
+          def chunk(tag,b):
+              return struct.pack('>I',len(b))+tag+b+struct.pack('>I',zlib.crc32(tag+b)&0xffffffff)
+
+          png=(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>2I5B',n,n,8,2,0,0,0))+
+               chunk(b'IDAT',zlib.compress(pixels,7))+chunk(b'IEND',b''))
+          Path('Assets/FIX12Icon.png').write_bytes(png)
+          PY
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add Assets/Scripts/Fix12ScreenRepair.cs \
+            Assets/Editor/Fix12MaterialRepair.cs \
+            Assets/Editor/ApocalypseDiagnostics9Build.cs \
+            Assets/Scripts/ApocalypseDiagnostics9.cs \
+            Assets/FIX12Icon.png
+
+          git commit -m 'FIX12 visual repair and icon'
+          git push origin unity2021-compile-fix12
