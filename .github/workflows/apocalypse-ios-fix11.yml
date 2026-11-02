@@ -1,0 +1,202 @@
+
+name: Apocalypse DLC - FIX 11 Restore AC and Loading
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix11:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout original Fix 10
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix10
+          fetch-depth: 0
+
+      - name: Patch and preserve original assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git switch -c unity2021-compile-fix11
+          cat > /tmp/apocalypse_fix11_patch.py <<'PY'
+          #!/usr/bin/env python3
+          """Recover recoverable iOS errors from the Apocalypse DLC Fix 10 logs.
+
+          This DOES NOT reconstruct missing proprietary cutscene/animation/manager serialized values.
+          """
+          from pathlib import Path
+          import re
+          import struct
+          import zlib
+
+          ROOT = Path('.')
+          BASE = ROOT / 'Assets/Scripts/Assembly-CSharp'
+
+          def source(rel):
+              p = BASE / rel
+              if not p.is_file():
+                  raise FileNotFoundError(p)
+              return p, p.read_text(encoding='utf-8-sig')
+
+          def write(p, content):
+              p.write_text(content, encoding='utf-8')
+              print('[FIX11] Patched', p)
+
+          def replace_once(s, needle, new, label):
+              count = s.count(needle)
+              if count != 1:
+                  raise RuntimeError(f'{label}: expected one anchor, found {count}: {needle[:100]}')
+              return s.replace(needle, new, 1)
+
+          # Restore original manager references.
+          guids = {
+              'actionsManager': 'fd16128df05377541a6ce8835f3bc7da',
+              'sceneManager': '0df3b6cd03591244d8b93ffd5e6f39a0',
+              'settingsManager': '06fae935b3d8d50499f0ad5cf34b2ca1',
+              'inventoryManager': '5265709e121b1d94b878957bcdee8afb',
+              'variablesManager': '9106797297c6dec4382b1bd514bd62e2',
+              'speechManager': '093fb45ee3b22194da3aa5d5e2b3eb89',
+              'cursorManager': '38b4d411bd1005340aabb6981009e1f2',
+              'menuManager': 'a458d55e03e43294b84aba63bb0a86c1',
+          }
+          references = ROOT / 'Assets/Resources/References.asset'
+          s = references.read_text(encoding='utf-8')
+          for name, guid in guids.items():
+              meta = ROOT / ('Assets/MonoBehaviour/Slendytubbies 3_' + name[0].upper() + name[1:] + '.asset.meta')
+              actual = re.search(r'^guid: ([0-9a-f]{32})$', meta.read_text(), re.M)
+              if actual is None or actual.group(1) != guid:
+                  raise RuntimeError('Manager GUID mismatch: ' + str(meta))
+              if re.search(r'^  '+name+r':', s, flags=re.M):
+                  raise RuntimeError('Ref already contains ' + name + '; manual merge needed')
+              s += f'  {name}: {{fileID: 11400000, guid: {guid}, type: 2}}\n'
+          write(references, s)
+
+          # Set loading configuration without inventing cutscene data.
+          settings = ROOT / 'Assets/MonoBehaviour/Slendytubbies 3_SettingsManager.asset'
+          s = settings.read_text(encoding='utf-8')
+          if '  useLoadingScreen:' not in s:
+              s += ('  useLoadingScreen: 1\n'
+                    '  loadingScene: 1\n'
+                    '  hotspotLayer: Hotspot\n'
+                    '  deactivatedLayer: Deactivated\n'
+                    '  navMeshLayer: NavMesh\n'
+                    '  backgroundImageLayer: BackgroundImage\n'
+                    '  landscapeModeOnly: 1\n')
+          write(settings, s)
+
+          # Restore AC-specific layers.
+          tag_file = ROOT / 'ProjectSettings/TagManager.asset'
+          tag_text = tag_file.read_text(encoding='utf-8')
+          layer_anchor = '  - Boss\n  - MAP\n  - \n  - \n'
+          if tag_text.count(layer_anchor) != 1:
+              raise RuntimeError('TagManager layer layout changed; refusing to overwrite assigned layers')
+          tag_text = tag_text.replace(layer_anchor,
+              '  - Boss\n  - MAP\n  - Hotspot\n  - Deactivated\n', 1)
+          write(tag_file, tag_text)
+
+          # Mesh animation null guard.
+          p,s=source('FSG/MeshAnimator/MeshAnimator.cs')
+          s=replace_once(s,'private void OnDestroy()\n\t\t{\n\t\t\tif (!mMeshCount.ContainsKey(baseMesh))',
+              'private void OnDestroy()\n\t\t{\n\t\t\tif (baseMesh == null) return;\n\t\t\tif (!mMeshCount.ContainsKey(baseMesh))','MeshAnimator.OnDestroy')
+          write(p,s)
+
+          # FadeScreen null guards.
+          p,s=source('FadeScreen.cs')
+          s=replace_once(s,'\tprivate void Update()\n\t{',
+              '\tprivate void Update()\n\t{\n\t\tif (GetComponent<UnityEngine.UI.Graphic>() == null)\n\t\t{\n\t\t\tDebug.LogWarning("[FIX11] FadeScreen has no UI Graphic: " + name);\n\t\t\tenabled = false;\n\t\t\treturn;\n\t\t}', 'FadeScreen.Update')
+          for method in ['FadeIn','FadeOut']:
+              anchor = f'\tpublic void {method}()\n\t{{'
+              s = replace_once(s,anchor,anchor+'\n\t\tif (GetComponent<UnityEngine.UI.Graphic>() == null) return;',f'FadeScreen.{method}')
+          write(p,s)
+
+          # Loading scene fallback to original DEMOLEVEL.
+          p,s=source('SwitchChapter.cs')
+          s=replace_once(s,'\t\tchapterName = PlayerPrefs.GetString("Chapter");\n\t\tfor (int i = 0; i < chapters.Count; i++)',
+              '\t\tchapterName = PlayerPrefs.GetString("Chapter");\n\t\tif (chapters == null) chapters = new List<chapterInfo>();\n\t\tfor (int i = 0; i < chapters.Count; i++)','SwitchChapter.Awake')
+          s=replace_once(s,'\tprivate IEnumerator Start()\n\t{',
+              '''\tprivate IEnumerator Start()
+          \t{
+          #if UNITY_IOS && !UNITY_EDITOR
+                  if (chapters == null || chapters.Count == 0)
+                  {
+                      string destination = chapterName;
+                      if (string.IsNullOrEmpty(destination) || !Application.CanStreamedLevelBeLoaded(destination))
+                          destination = "DEMOLEVEL";
+                      Debug.LogWarning("[FIX11] Loading chapter data missing; opening original scene " + destination);
+                      yield return new WaitForSecondsRealtime(1f);
+                      if (Application.CanStreamedLevelBeLoaded(destination))
+                          SceneManager.LoadScene(destination);
+                      else
+                          Debug.LogError("[FIX11] Original DEMOLEVEL is not included in build settings");
+                      yield break;
+                  }
+          #endif''','SwitchChapter.Start')
+          write(p,s)
+
+          # Adventure Creator null guards.
+          p,s=source('AC/Char.cs')
+          s=replace_once(s,
+              'if (this is Player && settingsManager.movementMethod == MovementMethod.UltimateFPS)',
+              'if (this is Player && settingsManager != null && settingsManager.movementMethod == MovementMethod.UltimateFPS)',
+              'Char.IsUFPSPlayer')
+          write(p,s)
+          p,s=source('AC/PlayerCursor.cs')
+          s=replace_once(s,'\t\tpublic void UpdateCursor()\n\t\t{',
+              '\t\tpublic void UpdateCursor()\n\t\t{\n\t\t\tif (cursorManager == null || settingsManager == null) return;',
+              'PlayerCursor.UpdateCursor')
+          write(p,s)
+
+          # Update diagnostics and test build name.
+          diag=ROOT/'Assets/Scripts/ApocalypseDiagnostics9.cs'
+          s=diag.read_text(encoding='utf-8')
+          for a,b in [('Apocalypse-FIX10','Apocalypse-FIX11'),('APOCALYPSE FIX 10','APOCALYPSE FIX 11'),('unity2021-compile-fix10','unity2021-compile-fix11')]:
+              if a not in s: raise RuntimeError('Diagnostic anchor missing: '+a)
+              s=s.replace(a,b)
+          write(diag,s)
+          editor=ROOT/'Assets/Editor/ApocalypseDiagnostics9Build.cs'
+          s=editor.read_text(encoding='utf-8')
+          for a,b in [('Assets/FIX10Icon.png','Assets/FIX11Icon.png'),('FIX10 icon missing','FIX11 icon missing'),('Apocalypse FIX 10','Apocalypse FIX 11')]:
+              if a not in s: raise RuntimeError('Editor anchor missing: '+a)
+              s=s.replace(a,b)
+          write(editor,s)
+
+          # Generate diagnostic icon.
+          FONT={
+           'D':['11110','10001','10001','10001','10001','10001','11110'],
+           '1':['00100','01100','00100','00100','00100','00100','01110'],
+          }
+          n=1024; scale=65; raw=bytearray()
+          for y in range(n):
+              raw.append(0)
+              for x in range(n):
+                  col=(16,19,26)
+                  if x<26 or x>=n-26 or y<26 or y>=n-26:
+                      col=(214,32,35)
+                  for letter,x0 in [('D',35),('1',356),('1',678)]:
+                      gx=(x-x0)//scale;gy=(y-280)//scale
+                      if 0<=gx<5 and 0<=gy<7 and x>=x0 and y>=280 and FONT[letter][gy][gx]=='1':
+                          col=(245,243,237)
+                  raw.extend(col)
+          def chunk(name,data):
+              return struct.pack('>I',len(data))+name+data+struct.pack('>I',zlib.crc32(name+data)&0xffffffff)
+          icon=(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>2I5B',n,n,8,2,0,0,0))+
+                chunk(b'IDAT',zlib.compress(raw,6))+chunk(b'IEND',b''))
+          (ROOT/'Assets/FIX11Icon.png').write_bytes(icon)
+          print('[FIX11] Created Assets/FIX11Icon.png',len(icon),'bytes')
+
+          assert (ROOT/'Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity').is_file()
+          assert (ROOT/'Assets/Loading.unity').is_file()
+          print('[FIX11] Preserved original scenes; finished patching')
+          PY
+          python3 /tmp/apocalypse_fix11_patch.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ProjectSettings/TagManager.asset Assets/Resources/References.asset Assets/MonoBehaviour/ \
+            Assets/Scripts/Assembly-CSharp/ Assets/Scripts/ApocalypseDiagnostics9.cs \
+            Assets/Editor/ApocalypseDiagnostics9Build.cs Assets/FIX11Icon.png
+          git commit -m 'FIX11 restore AC references, Loading, null guards, diagnostic icon'
+          git push origin unity2021-compile-fix11
