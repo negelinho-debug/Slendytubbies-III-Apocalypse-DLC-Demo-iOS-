@@ -37,6 +37,12 @@ public class FadeScreen : MonoBehaviour
 
 	private void Update()
 	{
+		if (GetComponent<UnityEngine.UI.Graphic>() == null)
+		{
+			Debug.LogWarning("[FIX11] FadeScreen has no UI Graphic: " + name);
+			enabled = false;
+			return;
+		}
 		if (fadein)
 		{
 			if (fadetime < maxFade)
@@ -84,6 +90,7 @@ public class FadeScreen : MonoBehaviour
 
 	public void FadeIn()
 	{
+		if (GetComponent<UnityEngine.UI.Graphic>() == null) return;
 		if (newGUI)
 		{
 			GetComponent<Image>().color = new Color(GetComponent<Image>().color.r, GetComponent<Image>().color.g, GetComponent<Image>().color.b, 0f);
@@ -99,6 +106,7 @@ public class FadeScreen : MonoBehaviour
 
 	public void FadeOut()
 	{
+		if (GetComponent<UnityEngine.UI.Graphic>() == null) return;
 		if (newGUI)
 		{
 			GetComponent<Image>().color = new Color(GetComponent<Image>().color.r, GetComponent<Image>().color.g, GetComponent<Image>().color.b, maxFade);

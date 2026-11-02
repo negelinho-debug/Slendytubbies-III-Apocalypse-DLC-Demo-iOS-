@@ -314,6 +314,7 @@ namespace FSG.MeshAnimator
 
 		private void OnDestroy()
 		{
+			if (baseMesh == null) return;
 			if (!mMeshCount.ContainsKey(baseMesh))
 			{
 				return;

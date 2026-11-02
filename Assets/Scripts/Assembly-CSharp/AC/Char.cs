@@ -612,7 +612,7 @@ namespace AC
 
 		protected bool IsUFPSPlayer()
 		{
-			if (this is Player && settingsManager.movementMethod == MovementMethod.UltimateFPS)
+			if (this is Player && settingsManager != null && settingsManager.movementMethod == MovementMethod.UltimateFPS)
 			{
 				return true;
 			}

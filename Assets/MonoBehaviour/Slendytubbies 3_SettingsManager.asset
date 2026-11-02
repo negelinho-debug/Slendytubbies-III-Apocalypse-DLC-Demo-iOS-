@@ -11,3 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59279c48b5ae01db9b79e914f2a4fc86, type: 3}
   m_Name: Slendytubbies 3_SettingsManager
   m_EditorClassIdentifier:
+  useLoadingScreen: 1
+  loadingScene: 1
+  hotspotLayer: Hotspot
+  deactivatedLayer: Deactivated
+  navMeshLayer: NavMesh
+  backgroundImageLayer: BackgroundImage
+  landscapeModeOnly: 1

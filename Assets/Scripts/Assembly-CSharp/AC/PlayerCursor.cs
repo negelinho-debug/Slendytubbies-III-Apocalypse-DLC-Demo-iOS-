@@ -74,6 +74,7 @@ namespace AC
 
 		public void UpdateCursor()
 		{
+			if (cursorManager == null || settingsManager == null) return;
 			if (cursorManager.cursorRendering == CursorRendering.Software)
 			{
 				if (!canShowHardwareCursor)

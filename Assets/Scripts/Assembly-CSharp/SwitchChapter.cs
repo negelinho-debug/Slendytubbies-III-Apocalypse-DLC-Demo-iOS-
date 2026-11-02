@@ -68,6 +68,7 @@ public class SwitchChapter : MonoBehaviour
 			UnityEngine.Object.Destroy(GameObject.Find("PersistentEngine"));
 		}
 		chapterName = PlayerPrefs.GetString("Chapter");
+		if (chapters == null) chapters = new List<chapterInfo>();
 		for (int i = 0; i < chapters.Count; i++)
 		{
 			if (!(chapters[i].sceneName == chapterName))
@@ -109,6 +110,21 @@ public class SwitchChapter : MonoBehaviour
 
 	private IEnumerator Start()
 	{
+#if UNITY_IOS && !UNITY_EDITOR
+        if (chapters == null || chapters.Count == 0)
+        {
+            string destination = chapterName;
+            if (string.IsNullOrEmpty(destination) || !Application.CanStreamedLevelBeLoaded(destination))
+                destination = "DEMOLEVEL";
+            Debug.LogWarning("[FIX11] Loading chapter data missing; opening original scene " + destination);
+            yield return new WaitForSecondsRealtime(1f);
+            if (Application.CanStreamedLevelBeLoaded(destination))
+                SceneManager.LoadScene(destination);
+            else
+                Debug.LogError("[FIX11] Original DEMOLEVEL is not included in build settings");
+            yield break;
+        }
+#endif
 		yield return new WaitForSeconds(7f);
 		if (!isEnding)
 		{
