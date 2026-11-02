@@ -14,7 +14,7 @@ public class ApocalypseDiagnostics9Build : IPreprocessBuildWithReport
         if (report.summary.platform != BuildTarget.iOS) return;
 
         var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(
-            "Assets/FIX11Icon.png");
+            "Assets/FIX12Icon.png");
 
         if (icon == null)
             throw new System.Exception("FIX11 icon missing");
@@ -47,7 +47,7 @@ public class ApocalypseDiagnostics9Build : IPreprocessBuildWithReport
         plist.root.SetBoolean(
             "LSSupportsOpeningDocumentsInPlace", true);
         plist.root.SetString(
-            "CFBundleDisplayName", "Apocalypse FIX 11");
+            "CFBundleDisplayName", "Apocalypse FIX 12");
 
         plist.WriteToFile(path);
         #endif

@@ -24,7 +24,7 @@ public class ApocalypseDiagnostics9 : MonoBehaviour
 
     void Awake()
     {
-        folder = Path.Combine(Application.persistentDataPath, "Apocalypse-FIX11");
+        folder = Path.Combine(Application.persistentDataPath, "Apocalypse-FIX12");
         logfile = Path.Combine(folder, "launch-log.txt");
 
         try
@@ -32,7 +32,7 @@ public class ApocalypseDiagnostics9 : MonoBehaviour
             Directory.CreateDirectory(folder);
             File.WriteAllText(
                 Path.Combine(folder, "BUILD-VERSION.txt"),
-                "APOCALYPSE FIX 11\nSource: unity2021-compile-fix11\n");
+                "APOCALYPSE FIX 12\nSource: unity2021-compile-fix11\n");
         }
         catch (Exception) { }
 
@@ -116,7 +116,7 @@ public class ApocalypseDiagnostics9 : MonoBehaviour
     void OnGUI()
     {
         GUI.Box(new Rect(10, 10, 225, 55),
-            "APOCALYPSE FIX 11\n" +
+            "APOCALYPSE FIX 12\n" +
             sceneName + " | errors: " + errors);
     }
 
