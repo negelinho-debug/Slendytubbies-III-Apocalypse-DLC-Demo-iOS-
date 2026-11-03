@@ -1,0 +1,230 @@
+
+name: Apocalypse DLC - FIX 13 Touch and Menu
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix13:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout FIX 12
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix12
+          fetch-depth: 0
+
+      - name: Install FIX 13
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin unity2021-compile-fix13 >/dev/null; then
+            echo 'FIX 13 branch already exists; refusing to overwrite it.' >&2
+            exit 1
+          fi
+          git switch -c unity2021-compile-fix13
+          test -f Assets/Scripts/ApocalypseTouchControls.cs
+          test -f 'Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity'
+
+          cat > Assets/Scripts/ApocalypseFix13Bridge.cs <<'CS'
+          using System;
+          using UnityEngine;
+          using UnityEngine.SceneManagement;
+
+          [DefaultExecutionOrder(-9999)]
+          public sealed class ApocalypseFix13Bridge : MonoBehaviour
+          {
+              AC.Player player;
+              Camera gameCamera;
+              Vector2 movement;
+              Vector2 cameraDrag;
+              Vector3 playerAtUpdate;
+              Quaternion cameraAtUpdate;
+              float retryAt;
+              float reportAt;
+              bool enabledFallback = true;
+
+              [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+              static void Install()
+              {
+                  if (FindObjectOfType<ApocalypseFix13Bridge>() != null) return;
+                  GameObject obj = new GameObject("Apocalypse FIX13 Touch Bridge");
+                  DontDestroyOnLoad(obj);
+                  obj.AddComponent<ApocalypseFix13Bridge>();
+              }
+
+              void OnEnable() { SceneManager.sceneLoaded += OnLoaded; }
+              void OnDisable() { SceneManager.sceneLoaded -= OnLoaded; }
+
+              void OnLoaded(Scene scene, LoadSceneMode mode)
+              {
+                  player = null;
+                  gameCamera = null;
+                  retryAt = 0f;
+                  Debug.Log("[FIX13] Loaded scene " + scene.name);
+              }
+
+              Camera FindGameCamera()
+              {
+                  Camera main = Camera.main;
+                  if (main != null && main.name.IndexOf("GUI", StringComparison.OrdinalIgnoreCase) < 0)
+                      return main;
+                  foreach (Camera cam in Camera.allCameras)
+                      if (cam != null && cam.isActiveAndEnabled &&
+                          cam.name.IndexOf("GUI", StringComparison.OrdinalIgnoreCase) < 0)
+                          return cam;
+                  return null;
+              }
+
+              void Update()
+              {
+                  if (SceneManager.GetActiveScene().name != "DEMOLEVEL") return;
+                  if (Time.unscaledTime >= retryAt)
+                  {
+                      if (player == null) player = FindObjectOfType<AC.Player>();
+                      if (gameCamera == null) gameCamera = FindGameCamera();
+                      retryAt = Time.unscaledTime + 1f;
+                  }
+                  movement = Vector2.zero;
+                  cameraDrag = Vector2.zero;
+                  playerAtUpdate = player != null ? player.transform.position : Vector3.zero;
+                  cameraAtUpdate = gameCamera != null ? gameCamera.transform.rotation : Quaternion.identity;
+
+                  foreach (Touch touch in Input.touches)
+                  {
+                      if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) continue;
+                      Vector2 point = new Vector2(touch.position.x, Screen.height - touch.position.y);
+                      if (point.x < Screen.width * .40f && point.y > Screen.height * .48f)
+                      {
+                          Vector2 center = new Vector2(Screen.width * .16f, Screen.height * .79f);
+                          movement = Vector2.ClampMagnitude((point - center) / (Screen.height * .13f), 1f);
+                      }
+                      else if (point.x > Screen.width * .42f && point.x < Screen.width * .72f &&
+                               point.y > Screen.height * .16f && touch.phase == TouchPhase.Moved)
+                      {
+                          cameraDrag += touch.deltaPosition;
+                      }
+                  }
+
+                  if (Time.unscaledTime >= reportAt)
+                  {
+                      string p = player == null ? "MISSING" : player.name;
+                      string c = gameCamera == null ? "MISSING" : gameCamera.name;
+                      Debug.Log("[FIX13] player=" + p + " camera=" + c +
+                                " touches=" + Input.touchCount + " stick=" + movement +
+                                " drag=" + cameraDrag + " fallback=" + enabledFallback);
+                      reportAt = Time.unscaledTime + 3f;
+                  }
+              }
+
+              void LateUpdate()
+              {
+                  if (!enabledFallback || SceneManager.GetActiveScene().name != "DEMOLEVEL") return;
+                  if (player == null || gameCamera == null) return;
+
+                  // If original controls moved the player, do not move them twice.
+                  if (movement.sqrMagnitude > .02f &&
+                      Vector3.Distance(player.transform.position, playerAtUpdate) < .002f)
+                  {
+                      Vector3 forward = Vector3.ProjectOnPlane(gameCamera.transform.forward, Vector3.up).normalized;
+                      Vector3 right = Vector3.ProjectOnPlane(gameCamera.transform.right, Vector3.up).normalized;
+                      Vector3 delta = (right * movement.x + forward * movement.y) *
+                                      (2.6f * Time.deltaTime);
+                      Vector3 oldPosition = player.transform.position;
+                      CharacterController character = player.GetComponent<CharacterController>();
+                      if (character != null && character.enabled)
+                          character.Move(delta);
+                      else
+                      {
+                          Rigidbody body = player.GetComponent<Rigidbody>();
+                          if (body == null) player.transform.position += delta;
+                          else body.MovePosition(body.position + delta);
+                      }
+                      Vector3 moved = player.transform.position - oldPosition;
+                      if (!gameCamera.transform.IsChildOf(player.transform) && moved.sqrMagnitude > 0f)
+                          gameCamera.transform.position += moved;
+                  }
+
+                  if (cameraDrag.sqrMagnitude > .01f &&
+                      Quaternion.Angle(gameCamera.transform.rotation, cameraAtUpdate) < .2f)
+                  {
+                      float yaw = cameraDrag.x * .12f;
+                      float pitch = -cameraDrag.y * .12f;
+                      if (gameCamera.transform.IsChildOf(player.transform))
+                      {
+                          player.transform.Rotate(0f, yaw, 0f, Space.World);
+                          gameCamera.transform.Rotate(pitch, 0f, 0f, Space.Self);
+                      }
+                      else
+                      {
+                          gameCamera.transform.Rotate(0f, yaw, 0f, Space.World);
+                          gameCamera.transform.Rotate(pitch, 0f, 0f, Space.Self);
+                      }
+                  }
+              }
+
+              void OnGUI()
+              {
+                  if (SceneManager.GetActiveScene().name != "DEMOLEVEL") return;
+                  if (GUI.Button(new Rect(Screen.width * .015f, Screen.height * .025f,
+                      Screen.width * .12f, Screen.height * .08f),
+                      enabledFallback ? "TOUCH ON" : "TOUCH OFF"))
+                      enabledFallback = !enabledFallback;
+              }
+          }
+          CS
+
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('Assets/Scripts/Assembly-CSharp/MainMenu.cs')
+          s = p.read_text(encoding='utf-8-sig')
+          old = ('GUI.Box(new Rect(w*.2f,h*.12f,w*.6f,h*.76f),\n'
+                 '\t\t\t\t"SLENDYTUBBIES III : APOCALYPSE\\nFIX 10 - ORIGINAL SCENE RECOVERY");')
+          new = ('GUIStyle title = new GUIStyle(GUI.skin.label);\n'
+                 '\t\t\ttitle.alignment = TextAnchor.MiddleCenter;\n'
+                 '\t\t\ttitle.fontSize = Mathf.RoundToInt(h * .052f);\n'
+                 '\t\t\ttitle.normal.textColor = Color.white;\n'
+                 '\t\t\tGUI.Label(new Rect(w*.22f,h*.12f,w*.56f,h*.14f), '
+                 '"APOCALYPSE DLC - FIX 13", title);')
+          if s.count(old) != 1:
+              raise SystemExit('FIX13: original large GUI.Box was changed; do not patch blindly')
+          s = s.replace(old, new, 1)
+          for before, after in [
+              ('new Rect(w*.27f,h*.37f,w*.46f,h*.15f)',
+               'new Rect(w*.30f,h*.39f,w*.40f,h*.12f)'),
+              ('new Rect(w*.27f,h*.57f,w*.46f,h*.15f)',
+               'new Rect(w*.30f,h*.56f,w*.40f,h*.12f)')]:
+              if s.count(before) != 1: raise SystemExit('FIX13: menu button changed: '+before)
+              s = s.replace(before, after, 1)
+          p.write_text(s, encoding='utf-8')
+
+          p = Path('Assets/Scripts/ApocalypseDiagnostics9.cs')
+          s = p.read_text(encoding='utf-8-sig')
+          s = s.replace('Apocalypse-FIX12','Apocalypse-FIX13')
+          s = s.replace('APOCALYPSE FIX 12','APOCALYPSE FIX 13')
+          p.write_text(s, encoding='utf-8')
+
+          p = Path('Assets/Editor/ApocalypseDiagnostics9Build.cs')
+          s = p.read_text(encoding='utf-8-sig')
+          s = s.replace('Apocalypse FIX 12','Apocalypse FIX 13')
+          p.write_text(s, encoding='utf-8')
+
+          for path in ('Assets/CHAPTER 4/Scenes/DEMOLEVEL.unity',
+                       'Assets/CHAPTER 4/Scenes/Chap4Menu.unity',
+                       'Assets/Loading.unity'):
+              assert Path(path).is_file(), path
+          print('[FIX13] Original scenes untouched. Existing FIX12 icon retained.')
+          PY
+
+          git add Assets/Scripts/ApocalypseFix13Bridge.cs \
+                  Assets/Scripts/Assembly-CSharp/MainMenu.cs \
+                  Assets/Scripts/ApocalypseDiagnostics9.cs \
+                  Assets/Editor/ApocalypseDiagnostics9Build.cs
+          git diff --cached --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'FIX13: touch bridge, smaller menu and diagnostics'
+          git push origin unity2021-compile-fix13
