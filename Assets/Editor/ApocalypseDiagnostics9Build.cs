@@ -47,7 +47,7 @@ public class ApocalypseDiagnostics9Build : IPreprocessBuildWithReport
         plist.root.SetBoolean(
             "LSSupportsOpeningDocumentsInPlace", true);
         plist.root.SetString(
-            "CFBundleDisplayName", "Apocalypse FIX 12");
+            "CFBundleDisplayName", "Apocalypse FIX 13");
 
         plist.WriteToFile(path);
         #endif

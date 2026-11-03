@@ -170,12 +170,10 @@ public class MainMenu : MonoBehaviour
             GUI.skin = null;
             GUI.color = Color.white;
             float w = Screen.width, h = Screen.height;
-            GUI.Box(
-                new Rect(w*.2f,h*.12f,w*.6f,h*.76f),
-                "SLENDYTUBBIES III : APOCALYPSE\nFIX 10 - ORIGINAL SCENE RECOVERY");
+			GUI.Label(new Rect(w*.25f,h*.13f,w*.5f,h*.12f), "APOCALYPSE DLC - FIX 13");
 
             if (GUI.Button(
-                new Rect(w*.27f,h*.37f,w*.46f,h*.15f),
+                new Rect(w*.3f,h*.39f,w*.4f,h*.12f),
                 "PLAY ORIGINAL DEMOLEVEL"))
             {
                 PlayerPrefs.SetString(
@@ -184,7 +182,7 @@ public class MainMenu : MonoBehaviour
                 SceneManager.LoadScene(startingChapter);
             }
             if (GUI.Button(
-                new Rect(w*.27f,h*.57f,w*.46f,h*.15f),
+                new Rect(w*.3f,h*.56f,w*.4f,h*.12f),
                 "TRY ORIGINAL LOADING"))
             {
                 PlayerPrefs.SetString(
