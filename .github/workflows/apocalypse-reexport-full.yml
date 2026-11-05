@@ -1,5 +1,5 @@
 
-name: Apocalypse DLC - Original PC Data Check
+name: Apocalypse DLC - Original Mono Recovery
 
 on:
   workflow_dispatch:
@@ -8,11 +8,12 @@ permissions:
   contents: read
 
 jobs:
-  check-original:
-    runs-on: ubuntu-latest
+  recover-original:
+    runs-on: ubuntu-24.04
     timeout-minutes: 90
+
     steps:
-      - name: Checkout working FIX 13
+      - name: Checkout FIX 13
         uses: actions/checkout@v4
         with:
           ref: unity2021-compile-fix13
@@ -23,194 +24,225 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -p work/download work/game work/report
+          mkdir -p work/game work/download work/report
+
           gh release download pc-recovery-v1 \
             --repo "$GITHUB_REPOSITORY" \
             --pattern 'slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip' \
             --dir work/download
+
           unzip -q work/download/*.zip -d work/game
 
-          test -n "$(find work/game -name globalgamemanagers -print -quit)"
           test -n "$(find work/game -name Assembly-CSharp.dll -print -quit)"
-          echo 'Original PC assets and gameplay DLL found'
+          test -n "$(find work/game -name globalgamemanagers -print -quit)"
 
-      - name: Install Unity asset reader
-        run: python -m pip install 'UnityPy==1.25.4'
+      - name: Install original data recovery tools
+        run: |
+          python3 -m pip install \
+            UnityPy==1.25.4 \
+            TypeTreeGeneratorAPI==0.0.10
 
-      - name: Inspect original serialized game data
+      - name: Decode original Mono behaviours
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          from collections import Counter
           import csv
           import json
-          import collections
           import UnityPy
+          from UnityPy.helpers.TypeTreeGenerator import TypeTreeGenerator
 
-          report = Path('work/report')
-          gm = next(Path('work/game').rglob('globalgamemanagers'))
-          data = gm.parent
+          out = Path("work/report")
+          decoded_dir = out / "decoded"
+          decoded_dir.mkdir(parents=True, exist_ok=True)
 
-          sources = [
+          game = Path("work/game")
+          dll = next(game.rglob("Assembly-CSharp.dll"))
+          managed = dll.parent
+          data = next(game.rglob("globalgamemanagers")).parent
+
+          sources = sorted([
               p for p in data.iterdir()
               if p.is_file() and (
-                  p.name == 'globalgamemanagers'
-                  or p.name == 'resources.assets'
-                  or (p.name.startswith('sharedassets')
-                      and p.suffix == '.assets')
-                  or (p.name.startswith('level')
-                      and p.name[5:].isdigit())
+                  p.name == "globalgamemanagers"
+                  or p.name == "resources.assets"
+                  or p.name.startswith("sharedassets")
+                     and p.suffix == ".assets"
+                  or p.name.startswith("level")
+                     and p.name[5:].isdigit()
               )
-          ]
-          sources.sort(key=lambda p: p.name)
+          ])
 
-          counts = collections.Counter()
-          classes = collections.Counter()
-          results = []
-          problems = []
+          if not sources:
+              raise RuntimeError("Original asset files missing")
 
-          keywords = (
-              'cutscene', 'actionlist', 'sceneManager',
-              'settingsManager', 'actionsManager',
-              'menuManager', 'animation', 'meshAnimator',
-              'newborn', 'playerstart'
+          sample = UnityPy.load(str(sources[0]))
+          first_object = next(iter(sample.objects), None)
+
+          if first_object is None:
+              raise RuntimeError("Cannot detect Unity version")
+
+          version = first_object.assets_file.unity_version
+          print("Original Unity version:", version)
+
+          generator = TypeTreeGenerator(version)
+          generator.load_local_dll_folder(str(managed))
+
+          targets = (
+              "AC.Cutscene",
+              "AC.Action",
+              "AC.Interaction",
+              "AC.AC_Trigger",
+              "AC.SceneManager",
+              "AC.SettingsManager",
+              "AC.ActionsManager",
+              "AC.MenuManager",
+              "FSG.MeshAnimator",
+              "NPCPatrol",
+              "playerFPS",
           )
 
-          for file in sources:
+          counts = Counter()
+          selected = Counter()
+          records = []
+          decoded = 0
+
+          for source in sources:
+              print("Reading:", source.name)
               try:
-                  env = UnityPy.load(str(file))
+                  env = UnityPy.load(str(source))
+                  env.typetree_generator = generator
               except Exception as exc:
-                  problems.append(
-                      f'{file.name}: {type(exc).__name__}: {exc}'
-                  )
+                  records.append([
+                      source.name, "FILE", "error",
+                      0, "", str(exc)[:300]
+                  ])
                   continue
 
               for obj in env.objects:
-                  typ = obj.type.name
-                  counts[typ] += 1
-
-                  if typ != 'MonoBehaviour':
+                  if obj.type.name != "MonoBehaviour":
                       continue
 
                   try:
                       head = obj.parse_monobehaviour_head()
                       script = head.m_Script.read()
-                      cls = str(getattr(script, 'm_ClassName', ''))
-                      ns = str(getattr(script, 'm_Namespace', ''))
-                      full = (ns + '.' if ns else '') + cls
-                      classes[full or 'UNKNOWN'] += 1
-                  except Exception as exc:
-                      full = 'UNKNOWN'
-                      counts['header_failed'] += 1
-                      if len(problems) < 50:
-                          problems.append(str(exc))
+                      if script is None:
+                          continue
+
+                      name = str(
+                          getattr(script, "m_ClassName", "")
+                      )
+                      namespace = str(
+                          getattr(script, "m_Namespace", "")
+                      )
+                      cls = (
+                          namespace + "." if namespace else ""
+                      ) + name
+
+                  except Exception:
+                      counts["header_failed"] += 1
+                      continue
 
                   if not any(
-                      k.lower() in full.lower()
-                      for k in keywords
+                      cls == t or cls.startswith(t + ".")
+                      for t in targets
                   ):
                       continue
 
+                  if selected[cls] >= 20:
+                      continue
+
+                  selected[cls] += 1
+                  counts["selected"] += 1
+
                   try:
                       tree = obj.parse_as_dict()
-                      keys = list(tree) if isinstance(tree, dict) else []
-                      state = 'decoded' if len(keys) > 4 else 'limited_fields'
-                      error = ''
-                  except Exception as exc:
-                      keys = []
-                      state = 'cannot_decode'
-                      error = (
-                          f'{type(exc).__name__}: '
-                          f'{str(exc)[:180]}'
+
+                      if not isinstance(tree, dict):
+                          raise ValueError(
+                              "Decoded result is not a dictionary"
+                          )
+
+                      keys = list(tree.keys())
+
+                      if len(keys) <= 4:
+                          raise ValueError(
+                              "Only basic component header decoded"
+                          )
+
+                      decoded += 1
+                      counts["decoded"] += 1
+
+                      payload = json.dumps(
+                          tree,
+                          indent=2,
+                          ensure_ascii=False,
+                          default=str
                       )
 
-                  results.append([
-                      file.name, full, typ, state,
-                      len(keys), ', '.join(keys[:35]), error
-                  ])
+                      if len(payload) < 2000000:
+                          filename = (
+                              f"{source.name}_"
+                              f"{decoded:04d}.json"
+                          )
+                          (decoded_dir / filename).write_text(
+                              payload, encoding="utf-8"
+                          )
 
-          with (report / 'pc-serialized-objects.csv').open(
-              'w', newline='', encoding='utf-8'
+                      records.append([
+                          source.name, cls, "decoded",
+                          len(keys), ", ".join(keys[:50]), ""
+                      ])
+
+                  except Exception as exc:
+                      counts["failed"] += 1
+                      records.append([
+                          source.name, cls, "failed",
+                          0, "",
+                          f"{type(exc).__name__}: {exc}"[:300]
+                      ])
+
+          with (out / "recovery.csv").open(
+              "w", newline="", encoding="utf-8"
           ) as f:
               writer = csv.writer(f)
               writer.writerow([
-                  'asset_file', 'class', 'object_type',
-                  'status', 'field_count', 'fields', 'error'
+                  "file", "class", "status",
+                  "fields", "field_names", "error"
               ])
-              writer.writerows(results)
-
-          manager_dir = Path('Assets/MonoBehaviour')
-          managers = {}
-
-          for name in [
-              'SceneManager', 'SettingsManager',
-              'ActionsManager', 'MenuManager',
-              'InventoryManager', 'VariablesManager',
-              'SpeechManager', 'CursorManager'
-          ]:
-              p = manager_dir / f'Slendytubbies 3_{name}.asset'
-              if p.exists():
-                  text = p.read_text(
-                      encoding='utf-8-sig',
-                      errors='replace'
-                  )
-                  fields = [
-                      line.split(':', 1)[0].strip()
-                      for line in text.splitlines()
-                      if line.startswith('  ') and ':' in line
-                  ]
-                  managers[name] = fields
-              else:
-                  managers[name] = []
+              writer.writerows(records)
 
           summary = {
-              'pc_asset_files_scanned': len(sources),
-              'object_counts': dict(counts),
-              'components_examined': len(results),
-              'decoded_components': sum(
-                  x[3] == 'decoded' for x in results
+              "original_unity_version": version,
+              "original_assembly": dll.name,
+              "files_scanned": len(sources),
+              "results": dict(counts),
+              "classes_checked": dict(selected),
+              "decoded_json_files": len(
+                  list(decoded_dir.glob("*.json"))
               ),
-              'not_decoded': sum(
-                  x[3] == 'cannot_decode' for x in results
-              ),
-              'script_classes': classes.most_common(60),
-              'current_managers': managers,
-              'problems': problems
           }
 
-          (report / 'summary.json').write_text(
-              json.dumps(summary, indent=2, ensure_ascii=False),
-              encoding='utf-8'
+          (out / "summary.json").write_text(
+              json.dumps(summary, indent=2),
+              encoding="utf-8"
           )
 
-          readme = (
-              'APOCALYPSE ORIGINAL PC DATA CHECK\n'
-              f'Asset files: {len(sources)}\n'
-              f'AnimationClips: {counts["AnimationClip"]}\n'
-              f'MonoBehaviours: {counts["MonoBehaviour"]}\n'
-              f'Candidate components: {len(results)}\n'
-              f'Decoded components: {summary["decoded_components"]}\n'
-              f'Not decoded: {summary["not_decoded"]}\n'
-              '\nOriginal PC files remain unchanged.\n'
-              'A decode failure does not mean assets are missing.\n'
-              'This check does not build an IPA.\n'
-          )
-          (report / 'readme.txt').write_text(
-              readme, encoding='utf-8'
-          )
-          print(readme)
+          print(json.dumps(summary, indent=2))
 
-          if not sources or counts['MonoBehaviour'] == 0:
-              raise SystemExit(
-                  'No usable serialized objects; inspect report'
+          if decoded == 0:
+              raise RuntimeError(
+                  "No original script data decoded. "
+                  "Read recovery.csv for errors."
               )
           PY
 
-      - name: Upload original PC diagnostics
+      - name: Upload original recovery report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Apocalypse-Original-PC-Data-Report
+          name: Apocalypse-Original-Mono-Recovery
           path: work/report/
-          if-no-files-found: warn
           retention-days: 14
+          if-no-files-found: warn
