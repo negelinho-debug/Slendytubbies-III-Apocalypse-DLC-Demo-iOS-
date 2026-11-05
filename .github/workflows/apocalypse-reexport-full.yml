@@ -1,5 +1,5 @@
 
-name: Apocalypse - Restore Scripts From Original PC Folder
+name: Apocalypse DLC - Original PC Data Check
 
 on:
   workflow_dispatch:
@@ -8,152 +8,209 @@ permissions:
   contents: read
 
 jobs:
-  export-full-game:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 120
-
+  check-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
-      - name: Download original PC archive
+      - name: Checkout working FIX 13
+        uses: actions/checkout@v4
+        with:
+          ref: unity2021-compile-fix13
+
+      - name: Download original PC game
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -p work/download work/game work/logs
+          mkdir -p work/download work/game work/report
           gh release download pc-recovery-v1 \
             --repo "$GITHUB_REPOSITORY" \
             --pattern 'slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip' \
             --dir work/download
+          unzip -q work/download/*.zip -d work/game
 
-          unzip -q \
-            work/download/slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip \
-            -d work/game
+          test -n "$(find work/game -name globalgamemanagers -print -quit)"
+          test -n "$(find work/game -name Assembly-CSharp.dll -print -quit)"
+          echo 'Original PC assets and gameplay DLL found'
 
-      - name: Install AssetRipper CLI
+      - name: Install Unity asset reader
+        run: python -m pip install 'UnityPy==1.25.4'
+
+      - name: Inspect original serialized game data
         shell: bash
         run: |
-          set -euo pipefail
-          mkdir -p work/assetripper
-
-          curl -fL --retry 3 \
-            -o work/AssetRipper_linux_x64.zip \
-            'https://github.com/nowl-it/AssetRipperCLI/releases/download/v1.0.1/AssetRipper_linux_x64.zip'
-
-          unzip -q work/AssetRipper_linux_x64.zip \
-            -d work/assetripper
-
-      - name: Export full game directory
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          global_managers="$(find "$PWD/work/game" \
-            -type f -name 'globalgamemanagers' \
-            -print -quit)"
-
-          if [ -z "$global_managers" ]; then
-            echo "globalgamemanagers not found"
-            exit 1
-          fi
-
-          game_root="$(dirname "$(dirname "$global_managers")")"
-
-          exe="$(find "$game_root" -maxdepth 1 \
-            -type f -iname '*.exe' -print -quit)"
-
-          if [ -z "$exe" ]; then
-            echo "Game EXE not found"
-            exit 1
-          fi
-
-          dll="$(find "$game_root" -type f \
-            -name 'Assembly-CSharp.dll' -print -quit)"
-
-          if [ -z "$dll" ]; then
-            echo "Assembly-CSharp.dll missing"
-            exit 1
-          fi
-
-          echo "Game folder: $game_root"
-          echo "Game DLL: $dll"
-
-          assetripper="$(find "$PWD/work/assetripper" \
-            -type f \( -name 'AssetRipper' \
-            -o -name 'AssetRipper.GUI.Free' \) \
-            -print -quit)"
-
-          test -n "$assetripper"
-          chmod +x "$assetripper"
-
-          mkdir -p work/export
-
-          "$assetripper" --cli \
-            --input "$game_root" \
-            --output "$PWD/work/export" \
-            --mode Unity \
-            --script-content-level Level0 \
-            2>&1 | tee work/logs/assetripper-full-root.log
-
-      - name: Check recovered CSharp scripts
-        shell: bash
-        run: |
-          set -euo pipefail
-
           python3 - <<'PY'
           from pathlib import Path
+          import csv
+          import json
+          import collections
+          import UnityPy
 
-          scripts = list(Path("work/export").rglob("*.cs"))
+          report = Path('work/report')
+          gm = next(Path('work/game').rglob('globalgamemanagers'))
+          data = gm.parent
 
-          dummy = [
-              x for x in scripts
-              if "Dummy class. This could have happened"
-              in x.read_text(
-                  encoding="utf-8-sig",
-                  errors="replace"
+          sources = [
+              p for p in data.iterdir()
+              if p.is_file() and (
+                  p.name == 'globalgamemanagers'
+                  or p.name == 'resources.assets'
+                  or (p.name.startswith('sharedassets')
+                      and p.suffix == '.assets')
+                  or (p.name.startswith('level')
+                      and p.name[5:].isdigit())
               )
           ]
+          sources.sort(key=lambda p: p.name)
 
-          real = len(scripts) - len(dummy)
+          counts = collections.Counter()
+          classes = collections.Counter()
+          results = []
+          problems = []
 
-          report = (
-              f"C# files: {len(scripts)}\n"
-              f"Dummy files: {len(dummy)}\n"
-              f"Non-dummy files: {real}\n"
+          keywords = (
+              'cutscene', 'actionlist', 'sceneManager',
+              'settingsManager', 'actionsManager',
+              'menuManager', 'animation', 'meshAnimator',
+              'newborn', 'playerstart'
           )
 
-          Path("work/logs/CSharp-Report.txt").write_text(
-              report
+          for file in sources:
+              try:
+                  env = UnityPy.load(str(file))
+              except Exception as exc:
+                  problems.append(
+                      f'{file.name}: {type(exc).__name__}: {exc}'
+                  )
+                  continue
+
+              for obj in env.objects:
+                  typ = obj.type.name
+                  counts[typ] += 1
+
+                  if typ != 'MonoBehaviour':
+                      continue
+
+                  try:
+                      head = obj.parse_monobehaviour_head()
+                      script = head.m_Script.read()
+                      cls = str(getattr(script, 'm_ClassName', ''))
+                      ns = str(getattr(script, 'm_Namespace', ''))
+                      full = (ns + '.' if ns else '') + cls
+                      classes[full or 'UNKNOWN'] += 1
+                  except Exception as exc:
+                      full = 'UNKNOWN'
+                      counts['header_failed'] += 1
+                      if len(problems) < 50:
+                          problems.append(str(exc))
+
+                  if not any(
+                      k.lower() in full.lower()
+                      for k in keywords
+                  ):
+                      continue
+
+                  try:
+                      tree = obj.parse_as_dict()
+                      keys = list(tree) if isinstance(tree, dict) else []
+                      state = 'decoded' if len(keys) > 4 else 'limited_fields'
+                      error = ''
+                  except Exception as exc:
+                      keys = []
+                      state = 'cannot_decode'
+                      error = (
+                          f'{type(exc).__name__}: '
+                          f'{str(exc)[:180]}'
+                      )
+
+                  results.append([
+                      file.name, full, typ, state,
+                      len(keys), ', '.join(keys[:35]), error
+                  ])
+
+          with (report / 'pc-serialized-objects.csv').open(
+              'w', newline='', encoding='utf-8'
+          ) as f:
+              writer = csv.writer(f)
+              writer.writerow([
+                  'asset_file', 'class', 'object_type',
+                  'status', 'field_count', 'fields', 'error'
+              ])
+              writer.writerows(results)
+
+          manager_dir = Path('Assets/MonoBehaviour')
+          managers = {}
+
+          for name in [
+              'SceneManager', 'SettingsManager',
+              'ActionsManager', 'MenuManager',
+              'InventoryManager', 'VariablesManager',
+              'SpeechManager', 'CursorManager'
+          ]:
+              p = manager_dir / f'Slendytubbies 3_{name}.asset'
+              if p.exists():
+                  text = p.read_text(
+                      encoding='utf-8-sig',
+                      errors='replace'
+                  )
+                  fields = [
+                      line.split(':', 1)[0].strip()
+                      for line in text.splitlines()
+                      if line.startswith('  ') and ':' in line
+                  ]
+                  managers[name] = fields
+              else:
+                  managers[name] = []
+
+          summary = {
+              'pc_asset_files_scanned': len(sources),
+              'object_counts': dict(counts),
+              'components_examined': len(results),
+              'decoded_components': sum(
+                  x[3] == 'decoded' for x in results
+              ),
+              'not_decoded': sum(
+                  x[3] == 'cannot_decode' for x in results
+              ),
+              'script_classes': classes.most_common(60),
+              'current_managers': managers,
+              'problems': problems
+          }
+
+          (report / 'summary.json').write_text(
+              json.dumps(summary, indent=2, ensure_ascii=False),
+              encoding='utf-8'
           )
 
-          print(report)
+          readme = (
+              'APOCALYPSE ORIGINAL PC DATA CHECK\n'
+              f'Asset files: {len(sources)}\n'
+              f'AnimationClips: {counts["AnimationClip"]}\n'
+              f'MonoBehaviours: {counts["MonoBehaviour"]}\n'
+              f'Candidate components: {len(results)}\n'
+              f'Decoded components: {summary["decoded_components"]}\n'
+              f'Not decoded: {summary["not_decoded"]}\n'
+              '\nOriginal PC files remain unchanged.\n'
+              'A decode failure does not mean assets are missing.\n'
+              'This check does not build an IPA.\n'
+          )
+          (report / 'readme.txt').write_text(
+              readme, encoding='utf-8'
+          )
+          print(readme)
 
-          if not scripts or real == 0:
+          if not sources or counts['MonoBehaviour'] == 0:
               raise SystemExit(
-                  "No real scripts recovered."
+                  'No usable serialized objects; inspect report'
               )
           PY
 
-      - name: Pack recovered Unity project
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          tar -C work/export -czf \
-            work/Apocalypse-ReExported-With-Scripts.tar.gz .
-
-      - name: Upload recovered project
-        uses: actions/upload-artifact@v4
-        with:
-          name: Apocalypse-ReExported-With-Scripts
-          path: work/Apocalypse-ReExported-With-Scripts.tar.gz
-          retention-days: 7
-          if-no-files-found: error
-
-      - name: Upload diagnostic logs
+      - name: Upload original PC diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Apocalypse-Scripts-Diagnostics
-          path: work/logs/
-          retention-days: 7
-          if-no-files-found: ignore
+          name: Apocalypse-Original-PC-Data-Report
+          path: work/report/
+          if-no-files-found: warn
+          retention-days: 14
