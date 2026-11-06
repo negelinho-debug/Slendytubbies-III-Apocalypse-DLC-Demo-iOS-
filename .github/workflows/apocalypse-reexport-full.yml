@@ -1,248 +1,298 @@
 
-name: Apocalypse DLC - Original Mono Recovery
+name: Apocalypse DLC - Restore Original Game Data
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  actions: read
 
 jobs:
-  recover-original:
+  restore:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
-
+    timeout-minutes: 30
     steps:
-      - name: Checkout FIX 13
+      - name: Checkout last working FIX 13
         uses: actions/checkout@v4
         with:
           ref: unity2021-compile-fix13
+          fetch-depth: 0
 
-      - name: Download original PC game
+      - name: Download original decoded PC data
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -p work/game work/download work/report
-
-          gh release download pc-recovery-v1 \
+          mkdir -p work/original
+          gh run download 42066759094 \
             --repo "$GITHUB_REPOSITORY" \
-            --pattern 'slendytubbies-iii-the-apocalypse-dlc-demo-64bit.zip' \
-            --dir work/download
+            --name Apocalypse-Original-Mono-Recovery \
+            --dir work/original
 
-          unzip -q work/download/*.zip -d work/game
+          test -f work/original/summary.json
+          test -f work/original/recovery.csv
 
-          test -n "$(find work/game -name Assembly-CSharp.dll -print -quit)"
-          test -n "$(find work/game -name globalgamemanagers -print -quit)"
-
-      - name: Install original data recovery tools
-        run: |
-          python3 -m pip install \
-            UnityPy==1.25.4 \
-            TypeTreeGeneratorAPI==0.0.10
-
-      - name: Decode original Mono behaviours
+      - name: Restore original verified settings and action list
         shell: bash
         run: |
+          set -euo pipefail
           python3 - <<'PY'
-          from pathlib import Path
-          from collections import Counter
-          import csv
           import json
-          import UnityPy
-          from UnityPy.helpers.TypeTreeGenerator import TypeTreeGenerator
+          import re
+          from pathlib import Path
 
-          out = Path("work/report")
-          decoded_dir = out / "decoded"
-          decoded_dir.mkdir(parents=True, exist_ok=True)
+          base = Path('Assets/MonoBehaviour')
+          decoded = Path('work/original/decoded')
+          original = {}
 
-          game = Path("work/game")
-          dll = next(game.rglob("Assembly-CSharp.dll"))
-          managed = dll.parent
-          data = next(game.rglob("globalgamemanagers")).parent
-
-          sources = sorted([
-              p for p in data.iterdir()
-              if p.is_file() and (
-                  p.name == "globalgamemanagers"
-                  or p.name == "resources.assets"
-                  or p.name.startswith("sharedassets")
-                     and p.suffix == ".assets"
-                  or p.name.startswith("level")
-                     and p.name[5:].isdigit()
+          for path in decoded.glob('resources.assets_*.json'):
+              data = json.loads(
+                  path.read_text(encoding='utf-8')
               )
-          ])
+              original[data.get('m_Name', '')] = data
 
-          if not sources:
-              raise RuntimeError("Original asset files missing")
+          required = [
+              'Slendytubbies 3_ActionsManager',
+              'Slendytubbies 3_MenuManager',
+              'Slendytubbies 3_SettingsManager',
+          ]
 
-          sample = UnityPy.load(str(sources[0]))
-          first_object = next(iter(sample.objects), None)
+          for name in required:
+              if name not in original:
+                  raise SystemExit(
+                      'Missing original data: ' + name
+                  )
+              if not (base / (name + '.asset')).exists():
+                  raise SystemExit(
+                      'Missing Unity asset: ' + name
+                  )
 
-          if first_object is None:
-              raise RuntimeError("Cannot detect Unity version")
+          def scalar(value):
+              if isinstance(value, bool):
+                  return '1' if value else '0'
+              if isinstance(value, (int, float)):
+                  return repr(value)
+              if isinstance(value, str):
+                  return json.dumps(
+                      value, ensure_ascii=True
+                  )
+              raise TypeError('Unsupported field type')
 
-          version = first_object.assets_file.unity_version
-          print("Original Unity version:", version)
+          def write_fields(name, fields):
+              path = base / (name + '.asset')
+              contents = path.read_text(
+                  encoding='utf-8-sig'
+              )
 
-          generator = TypeTreeGenerator(version)
-          generator.load_local_dll_folder(str(managed))
+              if 'm_EditorClassIdentifier:' not in contents:
+                  raise SystemExit(
+                      'Unexpected Unity asset: ' + str(path)
+                  )
 
-          targets = (
-              "AC.Cutscene",
-              "AC.Action",
-              "AC.Interaction",
-              "AC.AC_Trigger",
-              "AC.SceneManager",
-              "AC.SettingsManager",
-              "AC.ActionsManager",
-              "AC.MenuManager",
-              "FSG.MeshAnimator",
-              "NPCPatrol",
-              "playerFPS",
+              for field, value in fields.items():
+                  if not re.fullmatch(
+                      r'[A-Za-z][A-Za-z0-9_]*', field
+                  ):
+                      raise SystemExit(
+                          'Unsafe field name: ' + field
+                      )
+
+                  if isinstance(value, list):
+                      if field not in (
+                          'AllActions', 'EnabledActions'
+                      ):
+                          raise SystemExit(
+                              'Unsupported list: ' + field
+                          )
+
+                      lines = ['  ' + field + ':']
+
+                      for entry in value:
+                          if set(entry) != {
+                              'fileName',
+                              'title',
+                              'isEnabled'
+                          }:
+                              raise SystemExit(
+                                  'Unknown ActionType layout'
+                              )
+
+                          lines.extend([
+                              '  - fileName: ' +
+                              scalar(entry['fileName']),
+
+                              '    title: ' +
+                              scalar(entry['title']),
+
+                              '    isEnabled: ' +
+                              scalar(entry['isEnabled']),
+                          ])
+
+                      rendered = '\n'.join(lines)
+
+                  else:
+                      rendered = (
+                          '  ' + field + ': ' +
+                          scalar(value)
+                      )
+
+                  pattern = re.compile(
+                      r'^  ' + re.escape(field) +
+                      r':[^\n]*(?:\n(?:(?:    |  - ).*))*',
+                      flags=re.MULTILINE
+                  )
+
+                  if pattern.search(contents):
+                      contents = pattern.sub(
+                          lambda m: rendered,
+                          contents,
+                          count=1
+                      )
+                  else:
+                      contents = (
+                          contents.rstrip('\n') +
+                          '\n' + rendered + '\n'
+                      )
+
+              path.write_text(
+                  contents.rstrip('\n') + '\n',
+                  encoding='utf-8'
+              )
+
+          # Original Adventure Creator actions
+          actions = original[
+              'Slendytubbies 3_ActionsManager'
+          ]
+
+          all_actions = actions['AllActions']
+          enabled = actions['EnabledActions']
+
+          if len(all_actions) != 85 or len(enabled) != 85:
+              raise SystemExit(
+                  'Original actions count changed'
+              )
+
+          if len({
+              x['fileName'] for x in all_actions
+          }) != 85:
+              raise SystemExit(
+                  'Duplicate original action names'
+              )
+
+          write_fields(
+              'Slendytubbies 3_ActionsManager',
+              {
+                  'defaultClass': actions['defaultClass'],
+                  'AllActions': all_actions,
+                  'EnabledActions': enabled,
+              }
           )
 
-          counts = Counter()
-          selected = Counter()
-          records = []
-          decoded = 0
+          # Restore original scalar game settings
+          settings = original[
+              'Slendytubbies 3_SettingsManager'
+          ]
 
-          for source in sources:
-              print("Reading:", source.name)
-              try:
-                  env = UnityPy.load(str(source))
-                  env.typetree_generator = generator
-              except Exception as exc:
-                  records.append([
-                      source.name, "FILE", "error",
-                      0, "", str(exc)[:300]
-                  ])
-                  continue
-
-              for obj in env.objects:
-                  if obj.type.name != "MonoBehaviour":
-                      continue
-
-                  try:
-                      head = obj.parse_monobehaviour_head()
-                      script = head.m_Script.read()
-                      if script is None:
-                          continue
-
-                      name = str(
-                          getattr(script, "m_ClassName", "")
-                      )
-                      namespace = str(
-                          getattr(script, "m_Namespace", "")
-                      )
-                      cls = (
-                          namespace + "." if namespace else ""
-                      ) + name
-
-                  except Exception:
-                      counts["header_failed"] += 1
-                      continue
-
-                  if not any(
-                      cls == t or cls.startswith(t + ".")
-                      for t in targets
-                  ):
-                      continue
-
-                  if selected[cls] >= 20:
-                      continue
-
-                  selected[cls] += 1
-                  counts["selected"] += 1
-
-                  try:
-                      tree = obj.parse_as_dict()
-
-                      if not isinstance(tree, dict):
-                          raise ValueError(
-                              "Decoded result is not a dictionary"
-                          )
-
-                      keys = list(tree.keys())
-
-                      if len(keys) <= 4:
-                          raise ValueError(
-                              "Only basic component header decoded"
-                          )
-
-                      decoded += 1
-                      counts["decoded"] += 1
-
-                      payload = json.dumps(
-                          tree,
-                          indent=2,
-                          ensure_ascii=False,
-                          default=str
-                      )
-
-                      if len(payload) < 2000000:
-                          filename = (
-                              f"{source.name}_"
-                              f"{decoded:04d}.json"
-                          )
-                          (decoded_dir / filename).write_text(
-                              payload, encoding="utf-8"
-                          )
-
-                      records.append([
-                          source.name, cls, "decoded",
-                          len(keys), ", ".join(keys[:50]), ""
-                      ])
-
-                  except Exception as exc:
-                      counts["failed"] += 1
-                      records.append([
-                          source.name, cls, "failed",
-                          0, "",
-                          f"{type(exc).__name__}: {exc}"[:300]
-                      ])
-
-          with (out / "recovery.csv").open(
-              "w", newline="", encoding="utf-8"
-          ) as f:
-              writer = csv.writer(f)
-              writer.writerow([
-                  "file", "class", "status",
-                  "fields", "field_names", "error"
-              ])
-              writer.writerows(records)
-
-          summary = {
-              "original_unity_version": version,
-              "original_assembly": dll.name,
-              "files_scanned": len(sources),
-              "results": dict(counts),
-              "classes_checked": dict(selected),
-              "decoded_json_files": len(
-                  list(decoded_dir.glob("*.json"))
-              ),
+          safe_settings = {
+              k: v for k, v in settings.items()
+              if not k.startswith('m_')
+              and type(v) in (
+                  str, int, float, bool
+              )
           }
 
-          (out / "summary.json").write_text(
-              json.dumps(summary, indent=2),
-              encoding="utf-8"
+          if len(safe_settings) < 50:
+              raise SystemExit(
+                  'Too few original settings'
+              )
+
+          write_fields(
+              'Slendytubbies 3_SettingsManager',
+              safe_settings
           )
 
-          print(json.dumps(summary, indent=2))
+          # Restore original MenuManager scalar settings
+          menu = original[
+              'Slendytubbies 3_MenuManager'
+          ]
 
-          if decoded == 0:
-              raise RuntimeError(
-                  "No original script data decoded. "
-                  "Read recovery.csv for errors."
-              )
+          write_fields(
+              'Slendytubbies 3_MenuManager',
+              {
+                  'drawOutlines': menu['drawOutlines'],
+                  'drawInEditor': menu['drawInEditor'],
+                  'globalDepth': menu['globalDepth'],
+              }
+          )
+
+          # Preserve scene GUIDs and working FIX13 controls.
+          # Do not copy raw original PPtr object IDs.
+          # The menu, cutscene, and animation references
+          # still require proper Unity object remapping.
+
+          report = '\n'.join([
+              'APOCALYPSE DLC - ORIGINAL DATA RESTORE V1',
+              'Source: original PC DEMO',
+              '85 original actions restored.',
+              f'{len(safe_settings)} original settings restored.',
+              '3 MenuManager settings restored.',
+              f'Original menu references pending: {len(menu["menus"])}',
+              'Cutscene object references not yet remapped.',
+              'MeshAnimator references not yet remapped.',
+              'FIX13 scenes and touch controls preserved.',
+              'This is not yet a complete playable DLC.',
+              ''
+          ])
+
+          Path(
+              'ORIGINAL_DATA_RESTORE_REPORT.txt'
+          ).write_text(
+              report,
+              encoding='utf-8'
+          )
+
+          print(report)
           PY
 
-      - name: Upload original recovery report
+      - name: Commit original data to separate branch
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          branch=unity2021-original-data-v1
+
+          if git ls-remote --exit-code \
+            --heads origin "$branch" \
+            >/dev/null 2>&1; then
+            echo "Branch already exists: $branch"
+            exit 1
+          fi
+
+          git switch -c "$branch"
+
+          git add \
+            'Assets/MonoBehaviour/Slendytubbies 3_ActionsManager.asset' \
+            'Assets/MonoBehaviour/Slendytubbies 3_SettingsManager.asset' \
+            'Assets/MonoBehaviour/Slendytubbies 3_MenuManager.asset' \
+            ORIGINAL_DATA_RESTORE_REPORT.txt
+
+          git diff --cached --check
+
+          git config user.name 'github-actions[bot]'
+          git config user.email \
+            '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git commit -m \
+            'Restore verified original Apocalypse manager data'
+
+          git push origin "$branch"
+
+      - name: Upload restoration summary
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Apocalypse-Original-Mono-Recovery
-          path: work/report/
-          retention-days: 14
+          name: Apocalypse-Original-Data-Restore-Report
+          path: ORIGINAL_DATA_RESTORE_REPORT.txt
           if-no-files-found: warn
