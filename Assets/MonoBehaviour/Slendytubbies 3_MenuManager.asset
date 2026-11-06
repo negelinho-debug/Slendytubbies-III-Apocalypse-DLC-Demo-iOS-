@@ -11,3 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a67595be802e3ed8d21fa0b4e0c11e, type: 3}
   m_Name: Slendytubbies 3_MenuManager
   m_EditorClassIdentifier:
+  drawOutlines: 1
+  drawInEditor: 1
+  globalDepth: 0

@@ -1,0 +1,10 @@
+APOCALYPSE DLC - ORIGINAL DATA RESTORE V1
+Source: original PC DEMO
+85 original actions restored.
+69 original settings restored.
+3 MenuManager settings restored.
+Original menu references pending: 19
+Cutscene object references not yet remapped.
+MeshAnimator references not yet remapped.
+FIX13 scenes and touch controls preserved.
+This is not yet a complete playable DLC.
